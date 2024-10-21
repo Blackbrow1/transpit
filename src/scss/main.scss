@@ -1,0 +1,33 @@
+// global
+@import "./global/reset.scss";
+@import "./global/variables.scss";
+@import "./global/mixins.scss";
+@import "./global/global-styles.scss";
+@import "./global/fonts.scss";
+@import "./global/visually-hidden.scss";
+//blocks
+// Главная
+@import "./blocks/page.scss";
+@import "./blocks/h2.scss";
+@import "./blocks/header.scss";
+@import "./blocks/button.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/information.scss";
+@import "./blocks/footer.scss";
+// Личная карточка сотрудника
+@import "./blocks/user-card.scss";
+@import "./blocks/user-progress.scss";
+// Редактировать профиль
+@import "./blocks/update-profile.scss";
+// Восстановление пароля
+@import "./blocks/password-recovery.scss";
+@import "./blocks/popup.scss";
+// Установить новый пароль
+@import "./blocks/set-new-password.scss";
+// Добавить нового пользователя
+@import "./blocks/filter.scss";
+@import "./blocks/add-user.scss";
+@import "./blocks/users-list.scss";
+@import "./blocks/users-finished-test.scss";
+
+

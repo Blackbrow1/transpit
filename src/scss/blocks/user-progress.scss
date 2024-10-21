@@ -1,0 +1,42 @@
+.user-progress__wrap {
+  @include wrapper-desktop();
+  margin-bottom: 100px;
+}
+
+.user-progress__title {
+  color: $main-dark-color;
+  margin-bottom: 40px;
+}
+
+.user-progress__list {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 30px;
+}
+
+.user-progress__item {
+  display: grid;
+  grid-template-columns: 308px 1fr 175px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-top: 1px solid $border-color;
+
+  p {
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 500;
+  }
+}
+
+.user-progress__item-success {
+  color: $color-success;
+}
+
+.user-progress__item-unsuccess {
+  color: $color-unsuccess;
+}
+
+.user-progress__button {
+  margin-bottom: 0;
+  width: 483px;
+  background-color: $main-dark-color;
+}

@@ -1,0 +1,27 @@
+@mixin font-template($font-family, $font-weight, $font-style, $font-src-woff2, $font-src-woff) {
+  @font-face {
+    font-weight: $font-weight;
+    font-family: $font-family;
+    font-style: $font-style;
+    src: $font-src-woff2, $font-src-woff;
+    font-display: swap;
+  }
+}
+
+@mixin wrapper-mobile() {
+  min-width: 360px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@mixin wrapper-tablet() {
+  min-width: 768px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@mixin wrapper-desktop() {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

@@ -1,0 +1,112 @@
+.hero {
+  padding-top: 50px;
+}
+
+.hero__wrap {
+  @include wrapper-desktop();
+
+  display: grid;
+  grid-template-columns: 482px 585px;
+  grid-template-rows: min-content min-content min-content;
+  justify-content: space-between;
+  margin-bottom: 170px;
+}
+
+.hero__title {
+  font-size: 78px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 40px;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  span {
+    color: $main-dark-color;
+  }
+}
+
+.hero__text {
+  font-size: 20px;
+
+  &:first-of-type {
+    margin-bottom: 20px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  &:last-of-type {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+}
+
+.hero__form {
+  width: 585px;
+  color: $basic-white;
+  background-color: $main-dark-color;
+  padding: 40px 30px;
+  border-radius: 20px;
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+
+  legend {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+}
+
+.hero__input {
+  background-color: $basic-white;
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  font-family: $font-first;
+  padding: 22px;
+  color: $text-color;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  line-height: 1;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 1;
+    color: $placeholder-color;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hero__form-remember-pass {
+  position: relative;
+  color: $basic-white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 1px;
+    background-color: $basic-white;
+  }
+}

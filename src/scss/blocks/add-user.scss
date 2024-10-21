@@ -1,0 +1,131 @@
+.add-user {
+  padding-top: 50px;
+}
+
+.add-user__wrap {
+  @include wrapper-desktop();
+  display: grid;
+  grid-template-columns: 1fr 175px;
+  column-gap: 20px;
+  margin-bottom: 170px;
+}
+
+.add-user__form {
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  legend {
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 500;
+    color: $main-dark-color;
+    margin-bottom: 40px;
+  }
+}
+
+.add-user__input {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  font-family: $font-first;
+  padding: 22px;
+  color: $text-color;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  line-height: 1;
+  border: 1px solid $border-color;
+
+  &:focus {
+    outline: 1px solid $text-color;
+  }
+
+  &--surname {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  &--name {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  &--patronymic {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  &--submit {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  &--post {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  &--tab-number {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  &--password {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 1;
+    color: $placeholder-color;
+  }
+}
+
+.add-user__submit {
+  margin-bottom: 0;
+  background-color: $main-dark-color;
+}
+
+.add-user__select {
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  padding-left: 22px;
+  font-family: $font-first;
+  color: $placeholder-color;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  line-height: 1;
+  border: 1px solid $border-color;
+
+  &:focus {
+    outline: 1px solid $text-color;
+  }
+
+  option[selected] {
+    color: $placeholder-color;
+  }
+}
+
+.add-user__standart-pass {
+  margin-top: 104px;
+  padding: 30px 20px;
+  background-color: $main-dark-color;
+  width: 175px;
+  height: 220px;
+  color: $basic-white;
+  border-radius: 20px;
+
+  p {
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  span {
+    font-size: 64px;
+    line-height: 1;
+  }
+}

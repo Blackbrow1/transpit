@@ -1,0 +1,57 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 585px;
+  padding: 40px 30px;
+  background-color: $basic-white;
+  border-radius: 20px;
+}
+
+.popup__form {
+  legend {
+    margin-bottom: 20px;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 500;
+    color: $main-dark-color;
+  }
+}
+
+.popup__input {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  padding: 22px;
+  color: $text-color;
+  border-radius: 20px;
+  border: 1px solid $border-color;
+  line-height: 1;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 1;
+    color: $placeholder-color;
+  }
+}
+
+.popup__submit {
+  background-color: $main-dark-color;
+}
+
+.popup__into {
+  position: relative;
+  color: $text-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 1px;
+    background-color: $text-color;
+  }
+}

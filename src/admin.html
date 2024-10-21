@@ -1,0 +1,184 @@
+@@include('./parts/header.html', {
+  "title": "Установить новый пароль | Транспит"
+})
+
+<main>
+  <section class="add-user">
+    <div class="add-user__wrap">
+      <h1 class="visually-hidden">Страница администратора</h1>
+
+      <form class="add-user__form" action="#" method="POST">
+        <fieldset>
+          <legend>Добавить нового сотрудника</legend>
+
+          <input class="add-user__input add-user__input--surname" type="text" name="surname" placeholder="Фамилия">
+          <input class="add-user__input add-user__input--name" type="text" name="name" placeholder="Имя">
+          <input class="add-user__input add-user__input--patronymic" type="text" name="patronymic" placeholder="Отчество">
+          <select class="add-user__select add-user__select--post" name="post">
+            <option value="post-name" selected>Должность</option>
+            <option value="driver">Водитель</option>
+            <option value="expeditor">Экспедитор</option>
+            <option value="supervisor">Супервайзер</option>
+          </select>
+          <input class="add-user__input add-user__input--tub-number" type="number" name="tab-number" placeholder="Табельный номер">
+          <input class="add-user__input add-user__input--password" type="password" name="password" placeholder="Пароль">
+
+          <button class="add-user__submit add-user__input--submit button" type="submit" name="add-user">Добавить</button>
+        </fieldset>
+      </form>
+
+      <div class="add-user__standart-pass">
+        <p>Пароль для нового сотрудника</p>
+        <span>123</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="users-list">
+    <div class="users-list__wrap">
+      <h2 class="users-list__title h2">Список всех сотрудников</h2>
+
+      <div class="users-list__menu filter">
+        <select name="users-list-post" id="post">
+          <option value="all">Все</option>
+          <option value="driver">Водитель</option>
+          <option value="expeditor">Экспедитор</option>
+          <option value="supervisor">Супервайзер</option>
+        </select>
+
+        <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+      </div>
+
+      <ul class="users-list__list">
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+      </ul>
+
+      <button class="users-list__button button" type="button">Смотреть еще</button>
+    </div>
+  </section>
+
+  <section class="users-finished-test">
+    <div class="users-finished-test__wrap">
+      <h2 class="users-finished-test__title h2">Сотрудники, сдавшие тест</h2>
+
+      <div class="users-list__menu filter">
+        <select name="users-finished-test" id="post">
+          <option value="post">Должность</option>
+          <option value="driver">Водитель</option>
+          <option value="expeditor">Экспедитор</option>
+          <option value="supervisor">Супервайзер</option>
+        </select>
+
+        <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+      </div>
+
+      <div class="users-list__menu filter">
+        <select name="users-finished-test" id="post">
+          <option value="year" selected>Год</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+        </select>
+
+        <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+      </div>
+
+      <ul class="users-finished-test__list">
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress unsuccess">Незачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+@@include('./parts/footer.html')

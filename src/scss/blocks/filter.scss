@@ -1,0 +1,28 @@
+.filter {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+
+  select {
+    padding: 10px 40px 10px 10px;
+    border-radius: 10px;
+    border: 1px solid $border-color;
+    font-family: $font-first;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+      outline: 1px solid $text-color;
+    }
+  }
+}
+
+.filter__img {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
