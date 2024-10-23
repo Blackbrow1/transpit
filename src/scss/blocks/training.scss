@@ -78,6 +78,11 @@
   height: 50px;
   border-radius: 15px;
   background-color: $main-dark-color;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }
 
 .training__img-block {
@@ -102,4 +107,9 @@
   margin-bottom: 0;
   width: 585px;
   background-color: $main-dark-color;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }
