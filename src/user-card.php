@@ -1,6 +1,10 @@
-@@include('./parts/header.html', {
-  "title": "Личная карточка сотрудника | Транспит"
-})
+<?php
+require('./config.php');
+
+$title = 'Личная карточка сотрудника | Транспит';
+
+include ROOT . 'parts/header.php';
+?>
 
 <main>
   <section class="user-card">
@@ -31,13 +35,15 @@
             </li>
           </ul>
 
-          <a class="user-card__button button" href="update-profile.html">Редактировать профиль</a>
+          <a class="user-card__button button" href="<?php echo HOST; ?>update-profile.php">Редактировать профиль</a>
         </div>
 
         <div class="user-card__avatar">
           <picture>
-            <source width="482" height="428" type="image/webp" srcset="img/user-img-desktop@1x.webp 1x, img/user-img-desktop@2x.webp 2x">
-            <img class="user-card__avatar-img" width="482" height="428" loading="lazy" src="img/user-img-desktop@1x.jpg" srcset="img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
+            <source width="482" height="428" type="image/webp"
+              srcset="img/user-img-desktop@1x.webp 1x, img/user-img-desktop@2x.webp 2x">
+            <img class="user-card__avatar-img" width="482" height="428" loading="lazy" src="img/user-img-desktop@1x.jpg"
+              srcset="img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
           </picture>
         </div>
       </div>
@@ -73,4 +79,6 @@
   </section>
 </main>
 
-@@include('./parts/footer.html')
+<?php
+include ROOT . 'parts/footer.php';
+?>

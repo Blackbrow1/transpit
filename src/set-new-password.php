@@ -1,6 +1,10 @@
-@@include('./parts/header.html', {
-  "title": "Установить новый пароль | Транспит"
-})
+<?php
+require('./config.php');
+
+$title = 'Установить новый пароль | Транспит';
+
+include ROOT . 'parts/header.php';
+?>
 
 <main>
   <section class="set-new-pass">
@@ -19,4 +23,6 @@
   </section>
 </main>
 
-@@include('./parts/footer.html')
+<?php
+include ROOT . 'parts/footer.php';
+?>

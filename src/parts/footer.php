@@ -25,7 +25,7 @@
 
       <p class="footer__prasaim" href="#" target="_blank">
         <span>Сайт сделан в</span>
-        <a href="#">
+        <a href="https://prasaim.ru" target="_blank">
           <svg viewBox="0 0 105 21" width="105" height="21">
             <use class="footer__svg" href="img/icons/stack.svg#logo-prasaim"></use>
           </svg>
@@ -35,4 +35,5 @@
   </div>
 </footer>
 </body>
+
 </html>

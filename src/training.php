@@ -1,6 +1,10 @@
-@@include('./parts/header.html', {
-  "title": "Обучение сотрудников | Транспит"
-})
+<?php
+require('./config.php');
+
+$title = 'Обучение сотрудников | Транспит';
+
+include ROOT . 'parts/header.php';
+?>
 
 <main>
   <section class="training">
@@ -13,11 +17,15 @@
         <div class="training__text">
           <h3 class="training__block-title h3">Тема первого урока</h3>
 
-          <p>Lorem ipsum dolor sit amet consectetur. Eu donec sit lobortis metus odio nulla dui. Aenean mauris egestas posuere porttitor id enim. Libero volutpat ultricies quis commodo ut interdum. At facilisis in tortor massa est.</p>
+          <p>Lorem ipsum dolor sit amet consectetur. Eu donec sit lobortis metus odio nulla dui. Aenean mauris egestas
+            posuere porttitor id enim. Libero volutpat ultricies quis commodo ut interdum. At facilisis in tortor massa
+            est.</p>
 
-          <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
+          <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam
+            urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
 
-          <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
+          <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam
+            urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
 
           <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.</p>
         </div>
@@ -46,8 +54,11 @@
 
           <div class="training__img-block">
             <picture>
-              <source width="555" height="487" type="image/webp" srcset="img/training/training-img-1-desktop@1x.webp 1x, img/training/training-img-1-desktop@2x.webp 2x">
-              <img class="training__img" width="555" height="487" loading="lazy" src="img/training/training-img-1-desktop@1x.jpg" srcset="img/training/training-img-1-desktop@2x.jpg 2x" alt="Изображение к теме урока">
+              <source width="555" height="487" type="image/webp"
+                srcset="img/training/training-img-1-desktop@1x.webp 1x, img/training/training-img-1-desktop@2x.webp 2x">
+              <img class="training__img" width="555" height="487" loading="lazy"
+                src="img/training/training-img-1-desktop@1x.jpg" srcset="img/training/training-img-1-desktop@2x.jpg 2x"
+                alt="Изображение к теме урока">
             </picture>
           </div>
         </div>
@@ -58,4 +69,6 @@
   </section>
 </main>
 
-@@include('./parts/footer.html')
+<?php
+include ROOT . 'parts/footer.php';
+?>

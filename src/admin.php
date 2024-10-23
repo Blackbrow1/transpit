@@ -1,6 +1,10 @@
-@@include('./parts/header.html', {
-  "title": "Кабинет администратора | Транспит"
-})
+<?php
+require('./config.php');
+
+$title = 'Кабинет администратора | Транспит';
+
+include ROOT . 'parts/header.php';
+?>
 
 <main>
   <section class="add-user">
@@ -13,7 +17,8 @@
 
           <input class="add-user__input add-user__input--surname" type="text" name="surname" placeholder="Фамилия">
           <input class="add-user__input add-user__input--name" type="text" name="name" placeholder="Имя">
-          <input class="add-user__input add-user__input--patronymic" type="text" name="patronymic" placeholder="Отчество">
+          <input class="add-user__input add-user__input--patronymic" type="text" name="patronymic"
+            placeholder="Отчество">
           <div class="add-user__menu">
             <select class="add-user__select add-user__select--post" name="post">
               <option value="post-name" selected>Должность</option>
@@ -22,7 +27,8 @@
               <option value="supervisor">Супервайзер</option>
             </select>
           </div>
-          <input class="add-user__input add-user__input--tub-number" type="number" name="tab-number" placeholder="Табельный номер">
+          <input class="add-user__input add-user__input--tub-number" type="number" name="tab-number"
+            placeholder="Табельный номер">
           <input class="add-user__input add-user__input--password" type="password" name="password" placeholder="Пароль">
 
           <button class="add-user__submit button" type="submit" name="add-user">Добавить</button>
@@ -185,4 +191,6 @@
   </section>
 </main>
 
-@@include('./parts/footer.html')
+<?php
+include ROOT . 'parts/footer.php';
+?>

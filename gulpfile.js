@@ -2,10 +2,10 @@ import gulp from 'gulp';
 
 import server from 'browser-sync';
 import plumber from 'gulp-plumber';
-import htmlmin from 'gulp-htmlmin';
+// import htmlmin from 'gulp-htmlmin';
 import bemlinter from 'gulp-html-bemlinter';
 import size from 'gulp-size';
-import fileinclude from 'gulp-file-include';
+// import fileinclude from 'gulp-file-include';
 import notify from 'gulp-notify';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -34,28 +34,26 @@ const PATHS_TO_STATIC = [
 ];
 
 export function html() {
-  return src(`${PATH_TO_SRC}**/*.html`, {
-    ignore: `${PATH_TO_SRC}parts/**/*`
-  })
-  .pipe(fileinclude({
-    prefix: '@@',
-    basepath: '@file'
-  }))
-  .pipe(plumber({
-    errorHandler: notify.onError(error => ({
-        title: 'HTML',
-        message: error.message
-    }))
-  }))
-  .pipe(size({title: 'До сжатия'}))
-  .pipe(htmlmin({ collapseWhitespace: true }))
-  .pipe(size({title: 'После сжатия'}))
+  return src(`${PATH_TO_SRC}**/*.php`)
+  // .pipe(fileinclude({
+  //   prefix: '@@',
+  //   basepath: '@file'
+  // }))
+  // .pipe(plumber({
+  //   errorHandler: notify.onError(error => ({
+  //       title: 'HTML',
+  //       message: error.message
+  //   }))
+  // }))
+  // .pipe(size({title: 'До сжатия'}))
+  // .pipe(htmlmin({ collapseWhitespace: true }))
+  // .pipe(size({title: 'После сжатия'}))
   .pipe(dest(`${PATH_TO_DIST}`))
   .pipe(server.stream());
 }
 
 export function lintBem () {
-  return src(`${PATH_TO_SRC}*.html`)
+  return src(`${PATH_TO_SRC}*.php`)
     .pipe(bemlinter());
 }
 
@@ -143,7 +141,7 @@ export function startServer() {
 }
 
 export function watcher() {
-  watch(`${PATH_TO_SRC}**/*.html`, series(html));
+  watch(`${PATH_TO_SRC}**/*.php`, series(html));
   watch(`${PATH_TO_SRC}scss/**/*.scss`, series(styles));
   watch(`${PATH_TO_SRC}img/**/*.{jpg,jpeg,png,gif,svg}`, series(images));
   watch(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`, series(fonts));

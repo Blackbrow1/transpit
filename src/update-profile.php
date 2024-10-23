@@ -1,6 +1,10 @@
-@@include('./parts/header.html', {
-  "title": "Редактировать профиль | Транспит"
-})
+<?php
+require('./config.php');
+
+$title = 'Редактировать профиль | Транспит';
+
+include ROOT . 'parts/header.php';
+?>
 
 <main>
   <section class="update-profile">
@@ -24,7 +28,8 @@
 
         <div class="update-profile__update-img">
           <div class="update-profile__update-img-info">
-            <p>Изображение в формате jpg или png. Рекомендуемая ширина от 945 пикселей, высота от 400 пикселей. Вес не более 2 мб.</p>
+            <p>Изображение в формате jpg или png. Рекомендуемая ширина от 945 пикселей, высота от 400 пикселей. Вес не
+              более 2 мб.</p>
 
             <div class="update-profile__buttons">
               <button class="update-profile__button-choose" type="button">Выбрать файл</button>
@@ -34,8 +39,10 @@
 
           <div class="update-profile__img-block">
             <picture>
-              <source width="482" height="428" type="image/webp" srcset="img/user-img-desktop@1x.webp 1x, img/user-img-desktop@2x.webp 2x">
-              <img class="update-profile__img" width="482" height="428" loading="lazy" src="img/user-img-desktop@1x.jpg" srcset="img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
+              <source width="482" height="428" type="image/webp"
+                srcset="img/user-img-desktop@1x.webp 1x, img/user-img-desktop@2x.webp 2x">
+              <img class="update-profile__img" width="482" height="428" loading="lazy" src="img/user-img-desktop@1x.jpg"
+                srcset="img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
             </picture>
           </div>
         </div>
@@ -44,4 +51,6 @@
   </section>
 </main>
 
-@@include('./parts/footer.html')
+<?php
+include ROOT . 'parts/footer.php';
+?>

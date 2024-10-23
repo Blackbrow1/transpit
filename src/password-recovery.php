@@ -1,6 +1,10 @@
-@@include('./parts/header.html', {
-  "title": "Восстановление пароля | Транспит"
-})
+<?php
+require('./config.php');
+
+$title = 'Восстановление пароля | Транспит';
+
+include ROOT . 'parts/header.php';
+?>
 
 <main>
   <section class="password-recovery">
@@ -19,4 +23,6 @@
   </section>
 </main>
 
-@@include('./parts/footer.html')
+<?php
+include ROOT . 'parts/footer.php';
+?>
