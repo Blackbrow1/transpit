@@ -15,7 +15,7 @@
   transition: all 0.5s ease;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
@@ -35,6 +35,7 @@ use.header__svg {
   height: 100%;
   object-fit: cover;
 }
+
 .header__login {
   display: flex;
   justify-content: end;
@@ -44,6 +45,11 @@ use.header__svg {
 
 .header__login-link {
   margin-right: 10px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .header__menu {
@@ -61,18 +67,34 @@ use.header__svg {
 
 .header__menu-item {
   position: relative;
+  transition: all 0.5s ease;
+
+  .header__menu-link {
+    transition: all 0.5s ease;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -15px;
+    right: -15px;
+    border: 1px solid $border-color;
+    border-radius: 100px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
 
   &:hover {
+    .header__menu-link:not(.header__menu-link--active) {
+      opacity: 0.6;
+    }
+
     &::before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      bottom: -10px;
-      left: -15px;
-      right: -15px;
-      border: 1px solid $border-color;
-      border-radius: 100px;
-      z-index: -1;
+      opacity: 1;
+      transition: all 0.5s ease;
     }
   }
 }

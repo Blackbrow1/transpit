@@ -87,6 +87,11 @@
 .add-user__submit {
   margin-bottom: 0;
   background-color: $main-dark-color;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }
 
 .add-user__select {
@@ -95,7 +100,6 @@
   font-size: 16px;
   padding-left: 22px;
   font-family: $font-first;
-  color: $placeholder-color;
   background-color: $basic-white;
   border-radius: 20px;
   margin-bottom: 20px;

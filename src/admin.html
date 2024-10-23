@@ -1,5 +1,5 @@
 @@include('./parts/header.html', {
-  "title": "Установить новый пароль | Транспит"
+  "title": "Кабинет администратора | Транспит"
 })
 
 <main>
@@ -14,12 +14,14 @@
           <input class="add-user__input add-user__input--surname" type="text" name="surname" placeholder="Фамилия">
           <input class="add-user__input add-user__input--name" type="text" name="name" placeholder="Имя">
           <input class="add-user__input add-user__input--patronymic" type="text" name="patronymic" placeholder="Отчество">
-          <select class="add-user__select add-user__select--post" name="post">
-            <option value="post-name" selected>Должность</option>
-            <option value="driver">Водитель</option>
-            <option value="expeditor">Экспедитор</option>
-            <option value="supervisor">Супервайзер</option>
-          </select>
+          <div class="add-user__menu">
+            <select class="add-user__select add-user__select--post" name="post">
+              <option value="post-name" selected>Должность</option>
+              <option value="driver">Водитель</option>
+              <option value="expeditor">Экспедитор</option>
+              <option value="supervisor">Супервайзер</option>
+            </select>
+          </div>
           <input class="add-user__input add-user__input--tub-number" type="number" name="tab-number" placeholder="Табельный номер">
           <input class="add-user__input add-user__input--password" type="password" name="password" placeholder="Пароль">
 
@@ -39,8 +41,8 @@
       <h2 class="users-list__title h2">Список всех сотрудников</h2>
 
       <div class="users-list__menu filter">
-        <select name="users-list-post" id="post">
-          <option value="all">Все</option>
+        <select class="users-list__select" name="users-list-post" id="post">
+          <option value="all" selected>Все</option>
           <option value="driver">Водитель</option>
           <option value="expeditor">Экспедитор</option>
           <option value="supervisor">Супервайзер</option>
@@ -98,9 +100,9 @@
     <div class="users-finished-test__wrap">
       <h2 class="users-finished-test__title h2">Сотрудники, сдавшие тест</h2>
 
-      <div class="users-list__menu filter">
-        <select name="users-finished-test" id="post">
-          <option value="post">Должность</option>
+      <div class="users-finished-test__menu filter">
+        <select class="users-finished-test__select" name="users-finished-test" id="post">
+          <option value="post" selected>Должность</option>
           <option value="driver">Водитель</option>
           <option value="expeditor">Экспедитор</option>
           <option value="supervisor">Супервайзер</option>
@@ -109,8 +111,8 @@
         <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
       </div>
 
-      <div class="users-list__menu filter">
-        <select name="users-finished-test" id="post">
+      <div class="users-finished-test__menu filter">
+        <select class="users-finished-test__year" name="users-finished-test" id="post">
           <option value="year" selected>Год</option>
           <option value="2024">2024</option>
           <option value="2025">2025</option>
@@ -177,6 +179,8 @@
           <p class="users-finished-test__progress success">Зачет</p>
         </li>
       </ul>
+
+      <button class="users-finished-test__button button" type="button">Смотреть еще</button>
     </div>
   </section>
 </main>

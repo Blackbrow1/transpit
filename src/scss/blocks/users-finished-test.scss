@@ -8,12 +8,20 @@
   color: $main-dark-color;
 }
 
-.users-list__menu:first-of-type {
+.users-finished-test__menu:first-of-type {
   margin-right: 10px;
+}
+
+.users-finished-test__select,
+.users-finished-test__year {
+  option[selected] {
+    color: $placeholder-color;
+  }
 }
 
 .users-finished-test__list {
   border-bottom: 1px solid $border-color;
+  margin-bottom: 30px;
 }
 
 .users-finished-test__item {
@@ -52,4 +60,15 @@
 
 .users-finished-test__user-post {
   margin-bottom: 10px;
+}
+
+.users-finished-test__button {
+  margin-bottom: 0;
+  width: 483px;
+  background-color: $main-dark-color;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }

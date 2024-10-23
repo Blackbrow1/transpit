@@ -30,6 +30,10 @@
   border: 1px solid $border-color;
   line-height: 1;
 
+  &:focus {
+    border: 1px solid $text-color;
+  }
+
   &::placeholder {
     font-size: 16px;
     line-height: 1;
@@ -39,6 +43,11 @@
 
 .popup__submit {
   background-color: $main-dark-color;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }
 
 .popup__into {

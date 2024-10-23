@@ -55,6 +55,11 @@
   margin-bottom: 0;
   background-color: $main-dark-color;
   width: 483px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }
 
 .user-card__avatar {

@@ -35,6 +35,10 @@
   line-height: 1;
   border: 1px solid $border-color;
 
+  &:focus {
+    outline: 1px solid $text-color;
+  }
+
   &::placeholder {
     font-size: 16px;
     line-height: 1;
@@ -45,6 +49,11 @@
 .update-profile__submit {
   margin-bottom: 0;
   background-color: $main-dark-color;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }
 
 .update-profile__update-img {
@@ -96,8 +105,37 @@
   background-color: $main-dark-color;
   color: $basic-white;
   margin-bottom: 10px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
 }
 
 .update-profile__button-delete {
+  position: relative;
   border: 1px solid $text-color;
+  transition: all 0.5s ease;
+  overflow: hidden;
+
+  &:hover {
+    color: $basic-white;
+
+    &::before {
+      left: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 175px;
+    height: 50px;
+    top: 0;
+    left: calc(-100% - 2px);
+    background-color: $main-dark-color;
+    border-radius: 15px;
+    z-index: -1;
+    transition: all 0.5s ease;
+  }
 }

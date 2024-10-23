@@ -7,6 +7,7 @@
     padding: 10px 40px 10px 10px;
     border-radius: 10px;
     border: 1px solid $border-color;
+    background-color: $basic-white;
     font-family: $font-first;
     font-size: 14px;
     line-height: 1;
@@ -25,4 +26,5 @@
   position: absolute;
   top: 12px;
   right: 10px;
+  pointer-events: none;
 }
