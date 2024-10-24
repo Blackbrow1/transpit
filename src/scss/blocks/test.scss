@@ -1,0 +1,153 @@
+.test {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.test__wrap {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.test__form {
+  p {
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  fieldset {
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    border: 1px solid $border-color;
+    border-radius: 15px;
+  }
+
+  fieldset legend {
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 1;
+    color: $border-color;
+    font-size: 18px;
+  }
+
+  fieldset div:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+}
+
+.test__answer-checkbox,
+.test__answer-radio {
+  position: relative;
+  padding-left: 30px;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.test__answer-radio label::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid $placeholder-color;
+  border-radius: 100%;
+}
+
+.test__answer-radio input:checked + label::before {
+  box-shadow: inset 0 0 0 4px $basic-white, inset 0 0 0 10px $placeholder-color;
+}
+
+.test__answer-checkbox label::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid $placeholder-color;
+}
+
+.test__answer-checkbox input:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  width: 14px;
+  height: 8px;
+  border-bottom: 3px solid $placeholder-color;
+  border-left: 3px solid $placeholder-color;
+  transform: rotate(-45deg);
+}
+
+.test__result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 32px;
+  color: $basic-white;
+  z-index: 1;
+}
+
+.test__result--access {
+  background-color: $color-success;
+}
+
+.test__result--fail {
+  background-color: $color-unsuccess;
+}
+
+.test__result-close {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.test__result-close::before,
+.test__result-close::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -6px;
+  width: 40px;
+  height: 2px;
+  background-color: $basic-white;
+}
+
+.test__result-close::before {
+  transform: rotate(-45deg);
+}
+
+.test__result-close::after {
+  transform: rotate(45deg);
+}
+
+.test__time-block {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 17px;
+  width: 120px;
+  height: 60px;
+  font-size: 32px;
+  background-color: $main-dark-color;
+  color: $basic-white;
+  border-radius: 15px;
+}
+
+.test__result--hidden {
+  display: none;
+}

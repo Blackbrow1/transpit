@@ -64,7 +64,7 @@ include ROOT . 'parts/header.php';
         </div>
       </div>
 
-      <a class="training__button button" href="#">Сдать тест</a>
+      <a class="training__button button" href="<?php echo HOST; ?>test-hero.php">Сдать тест</a>
     </div>
   </section>
 </main>
