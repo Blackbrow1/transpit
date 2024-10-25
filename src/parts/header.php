@@ -19,24 +19,35 @@
 
       <div class="header__menu">
         <ul class="header__menu-list">
-          <li class="header__menu-item"><a class="header__menu-link header__menu-link--active"
-              href="<?php echo HOST; ?>admin.php">Админ</a></li>
-          <li class="header__menu-item"><a class="header__menu-link" href="<?php echo HOST; ?>user-card.php">Кабинет</a>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="<?php echo HOST; ?>admin.php">
+              Админ
+            </a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="<?php echo HOST; ?>user-card.php">
+              Кабинет
+            </a>
           </li>
           <li class="header__menu-item header__menu-item--training">
-            <span>Обучение</span>
+            <a class="header__menu-link"><span>Обучение</span></a>
 
             <ul class="header__training-list">
               <li class="header__training-item">
-                <a href="<?php echo HOST; ?>training.php">Зимняя подготовка водителей</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка водителей</a>
               </li>
 
               <li class="header__training-item">
-                <a href="#">Зимняя подготовка экспедиторов</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка
+                  экспедиторов</a>
               </li>
             </ul>
           </li>
-          <li class="header__menu-item"><a class="header__menu-link" href="http://">Тест</a></li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="<?php echo HOST; ?>password-recovery.php">
+              Тест
+            </a>
+          </li>
         </ul>
 
         <div class="header__login">

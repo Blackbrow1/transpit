@@ -731,6 +731,8 @@ include ROOT . 'parts/header.php';
 
         <input class="test__button-stop button" type="button" value="Завершить тест">
       </form>
+
+      <div class="test__time-block">18:00</div>
     </div>
   </section>
 </main>
@@ -740,8 +742,6 @@ include ROOT . 'parts/header.php';
 
   <button class="test__result-close"><span class="visually-hidden">Закрыть окно</span></button>
 </div>
-
-<div class="test__time-block">18:00</div>
 
 <?php
 include ROOT . 'parts/footer.php';
