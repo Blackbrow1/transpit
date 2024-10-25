@@ -2,6 +2,7 @@
 
 const answerCheckboxBlock = document.querySelectorAll('.test__answer-checkbox-block');
 const buttonStop = document.querySelector('.test__button-stop');
+const buttonCabinet = document.querySelector('.test__button-cabinet');
 const testResult = document.querySelector('.test__result');
 const testResultText = document.querySelector('.test__result-text');
 const timeBlock = document.querySelector('.test__time-block');
@@ -121,8 +122,6 @@ function getResult() {
     } else {
       sum += 1;
     }
-
-    console.log(answerAccData);
   });
 
   const progress = Math.round((sum / MAX_QUESTIONS) * 100);
@@ -186,31 +185,23 @@ function getResult() {
   }
 
   buttonStop.classList.add('test__result--hidden');
+  buttonCabinet.classList.remove('test__button-cabinet--none');
 
   buttonClose.addEventListener('click', () => {
     testResult.classList.add('test__result--hidden');
   });
 }
 
-buttonStop.addEventListener('click', getResult);
-
-// time block
-function getTime(time) {
-  const end = new Date().getTime() + time;
-  const interval = setInterval(() => {
-    timeBlock.textContent = new Intl.DateTimeFormat('ru-RU', {
-      minute: 'numeric',
-      second: 'numeric'
-    }).format(end + 100 - new Date())
-  }, 1000);
-
-  setTimeout(() => {
-    clearInterval(interval);
-    getResult();
-  }, time);
+try {
+  buttonStop.addEventListener('click', getResult);
+} catch {
+  console.log('На этой странице нет обработчика теста');
 }
 
-getTime(1000 * 60 * 18);
+// if (window.location.reload()) {
+//   window.location.href == 'index.php'
+// }
+
 
 
 

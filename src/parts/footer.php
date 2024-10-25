@@ -33,6 +33,12 @@
       </p>
     </div>
   </div>
+
+  <div class="test__result test__result--hidden">
+    <p class="test__result-text">Тест пройден успешно</p>
+
+    <button class="test__result-close"><span class="visually-hidden">Закрыть окно</span></button>
+  </div>
 </footer>
 
 <script src="js/script.js"></script>

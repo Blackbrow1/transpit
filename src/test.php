@@ -729,19 +729,16 @@ include ROOT . 'parts/header.php';
           </div>
         </fieldset>
 
-        <input class="test__button-stop button" type="button" value="Завершить тест">
+        <input class="test__button-stop button" type="button" name="test-finish" value="Завершить тест">
       </form>
+
+      <a class="test__button-cabinet test__button-cabinet--none button" href="<?php echo HOST; ?>user-card.php">В
+        личный кабинет</a>
 
       <div class="test__time-block">18:00</div>
     </div>
   </section>
 </main>
-
-<div class="test__result test__result--hidden">
-  <p class="test__result-text">Тест пройден успешно</p>
-
-  <button class="test__result-close"><span class="visually-hidden">Закрыть окно</span></button>
-</div>
 
 <?php
 include ROOT . 'parts/footer.php';

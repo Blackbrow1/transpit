@@ -1,6 +1,6 @@
 .test {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .test__wrap {
@@ -15,13 +15,17 @@
     font-size: 28px;
     font-weight: 500;
     line-height: 1.2;
+    color: $main-dark-color;
   }
 
   fieldset {
-    margin-bottom: 40px;
     padding: 30px 20px;
     border: 1px solid $border-color;
     border-radius: 15px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
   }
 
   fieldset legend {
@@ -150,5 +154,38 @@
 }
 
 .test__result--hidden {
+  display: none;
+}
+
+.test__button-stop {
+  margin-top: 30px;
+  margin-bottom: 0;
+  background-color: $main-dark-color;
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+.test__button-cabinet {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  background-color: $main-dark-color;
+  width: 250px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+.test__button-cabinet--none {
   display: none;
 }

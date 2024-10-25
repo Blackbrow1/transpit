@@ -51,7 +51,7 @@
         </ul>
 
         <div class="header__login">
-          <a class="header__login-link" href="http://">Выход</a>
+          <a class="header__login-link" href="<?php echo HOST; ?>">Выход</a>
 
           <div class="header__avatar">
             <picture>
