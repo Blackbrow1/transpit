@@ -202,6 +202,240 @@ try {
 //   window.location.href == 'index.php'
 // }
 
+const trainList = [
+  {
+    theme: 'Тема урока 1',
+    imgJpg1: 'img/user-img-desktop@1x.jpg',
+    imgJpg2: 'img/user-img-desktop@2x.jpg',
+    imgWebp1: 'img/user-img-desktop@1x.webp',
+    imgWebp2: 'img/user-img-desktop@2x.webp',
+    paragraph: [
+      'Lorem ipsum dolor sit amet consectetur. Eu donec sit lobortis metus odio nulla dui. Aenean mauris egestas posuere porttitor id enim. Libero volutpat ultricies quis commodo ut interdum. At facilisis in tortor massa est.',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+    ]
+  },
+  {
+    theme: 'Тема урока 2',
+    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
+    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
+    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
+    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    paragraph: [
+      'Сверстаем первый экран сайта с учетом всех тонкостей дизайна Figma. Освоим основные инструменты верстки: тексты, изображения, векторные объекты, кнопки. Сделаем наш дизайн отзывчивым с помощью Grid и Window Container',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+    ]
+  },
+  {
+    theme: 'Тема урока 3',
+    imgJpg1: 'img/user-img-desktop@1x.jpg',
+    imgJpg2: 'img/user-img-desktop@2x.jpg',
+    imgWebp1: 'img/user-img-desktop@1x.webp',
+    imgWebp2: 'img/user-img-desktop@2x.webp',
+    paragraph: [
+      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
+    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
+    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
+    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    paragraph: [
+      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+    ]
+  },
+  {
+    theme: 'Тема урока 5',
+    imgJpg1: 'img/user-img-desktop@1x.jpg',
+    imgJpg2: 'img/user-img-desktop@2x.jpg',
+    imgWebp1: 'img/user-img-desktop@1x.webp',
+    imgWebp2: 'img/user-img-desktop@2x.webp',
+    paragraph: [
+      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+    ]
+  },
+  {
+    theme: 'Тема урока 6',
+    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
+    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
+    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
+    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    paragraph: [
+      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+    ]
+  },
+  {
+    theme: 'Тема урока 7',
+    imgJpg1: 'img/user-img-desktop@1x.jpg',
+    imgJpg2: 'img/user-img-desktop@2x.jpg',
+    imgWebp1: 'img/user-img-desktop@1x.webp',
+    imgWebp2: 'img/user-img-desktop@2x.webp',
+    paragraph: [
+      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
+      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+    ]
+  },
+  {
+    theme: 'Тема урока 8',
+    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
+    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
+    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
+    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    paragraph: [
+      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
+      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+    ]
+  },
+];
+
+const trainingInfo = document.querySelector('.training__info');
+const trainingImgBlock = document.querySelector('.training__img-block');
+const btnNext = document.querySelector('.training__btn--next');
+const btnPrev = document.querySelector('.training__btn--prev');
+const visualCountLenght = document.querySelector('.training__visual-count-lenght');
+const visualCountNum = document.querySelector('.training__visual-count-number');
+const trainingButton = document.querySelector('.training__button');
+const trainingBlockTitle = document.querySelector('.training__block-title');
+
+let currentActiveIndex = 0;
+let currentNum = 1;
+
+visualCountLenght.textContent = trainList.length;
+
+if (currentActiveIndex === 0) {
+  btnPrev.classList.add('training__btn--disable');
+  btnPrev.disabled = true;
+
+  trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
+
+  trainList[currentActiveIndex].paragraph.forEach(item => {
+    let par = document.createElement('p');
+    par.textContent = item;
+    trainingInfo.append(par);
+  });
+
+  let container = `
+    <picture>
+      <source width="555" height="487" type="image/webp"
+        srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
+      <img class="training__img" width="555" height="487" loading="lazy"
+        src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
+        alt="Изображение к теме урока">
+    </picture>
+  `;
+
+  trainingImgBlock.innerHTML = container;
+  visualCountNum.textContent = currentNum;
+}
+
+btnNext.addEventListener('click', () => {
+  currentActiveIndex++;
+  currentNum++;
+
+  if (currentActiveIndex < trainList.length) {
+    trainingInfo.innerHTML = '';
+    trainingImgBlock.innerHTML = '';
+
+    trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
+
+    trainList[currentActiveIndex].paragraph.forEach(item => {
+      let par = document.createElement('p');
+      par.textContent = item;
+      trainingInfo.append(par);
+    });
+
+    let container = `
+      <picture>
+        <source width="555" height="487" type="image/webp"
+          srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
+        <img class="training__img" width="555" height="487" loading="lazy"
+          src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
+          alt="Изображение к теме урока">
+      </picture>
+    `;
+
+    trainingImgBlock.innerHTML = container;
+  }
+
+  if (currentActiveIndex === trainList.length - 1) {
+    btnNext.classList.add('training__btn--disable');
+    btnNext.disabled = true;
+  }
+
+  if (currentActiveIndex > 0) {
+    btnPrev.classList.remove('training__btn--disable');
+    btnPrev.disabled = false;
+  }
+
+  visualCountNum.textContent = currentNum;
+
+  if (currentActiveIndex === trainList.length - 1) {
+    trainingButton.classList.remove('training__btn--disable');
+    trainingButton.setAttribute('href', 'test-hero.php');
+  }
+});
 
 
+btnPrev.addEventListener('click', () => {
+  currentActiveIndex--;
+  currentNum--;
 
+  if (currentActiveIndex >= 0) {
+    trainingInfo.innerHTML = '';
+    trainingImgBlock.innerHTML = '';
+
+    trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
+
+    trainList[currentActiveIndex].paragraph.forEach(item => {
+      let par = document.createElement('p');
+      par.textContent = item;
+      trainingInfo.append(par);
+    });
+
+    let container = `
+      <picture>
+        <source width="555" height="487" type="image/webp"
+          srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
+        <img class="training__img" width="555" height="487" loading="lazy"
+          src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
+          alt="Изображение к теме урока">
+      </picture>
+    `;
+
+    trainingImgBlock.innerHTML = container;
+  }
+
+  if (currentActiveIndex === 0) {
+    btnPrev.classList.add('training__btn--disable');
+    btnPrev.disabled = true;
+  }
+
+  if (currentActiveIndex >= 0) {
+    btnNext.classList.remove('training__btn--disable');
+    btnNext.disabled = false;
+  }
+
+  visualCountNum.textContent = currentNum;
+
+  if (currentActiveIndex < answersData.length) {
+    trainingButton.classList.add('training__btn--disable');
+    trainingButton.removeAttribute('href');
+  }
+});

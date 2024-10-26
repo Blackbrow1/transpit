@@ -113,3 +113,12 @@
     background-color: $button-hover;
   }
 }
+
+.training__btn--disable {
+  background-color: $border-color;
+  transition: none;
+
+  &:hover {
+    background-color: $border-color;
+  }
+}

@@ -7,6 +7,25 @@ include ROOT . 'parts/header.php';
 ?>
 
 <main>
+  <script>
+  // time block
+  function getTime(time) {
+    const end = new Date().getTime() + time;
+    const interval = setInterval(() => {
+      timeBlock.textContent = new Intl.DateTimeFormat('ru-RU', {
+        minute: 'numeric',
+        second: 'numeric'
+      }).format(end + 100 - new Date())
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(interval);
+      getResult();
+    }, time);
+  }
+
+  getTime(1000 * 60 * 18);
+  </script>
   <section class="test">
     <div class="test__wrap">
       <form class="test__form">

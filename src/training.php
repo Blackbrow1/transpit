@@ -17,22 +17,25 @@ include ROOT . 'parts/header.php';
         <div class="training__text">
           <h3 class="training__block-title h3">Тема первого урока</h3>
 
-          <p>Lorem ipsum dolor sit amet consectetur. Eu donec sit lobortis metus odio nulla dui. Aenean mauris egestas
-            posuere porttitor id enim. Libero volutpat ultricies quis commodo ut interdum. At facilisis in tortor massa
-            est.</p>
+          <div class="training__info">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur. Eu donec sit lobortis metus odio nulla dui. Aenean mauris egestas
+              posuere porttitor id enim. Libero volutpat ultricies quis commodo ut interdum. At facilisis in tortor
+              massa
+              est.</p>
 
-          <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam
-            urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
+            <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam
+              urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
 
-          <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam
-            urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
+            <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam
+              urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.</p>
 
-          <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.</p>
+            <p>Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.</p> -->
+          </div>
         </div>
 
         <div class="training__visual">
           <div class="training__visual-count">
-            <span>1</span> / <span>30</span>
+            <span class="training__visual-count-number"></span> / <span class="training__visual-count-lenght"></span>
           </div>
 
           <div class="training__visual-buttons">
@@ -53,18 +56,18 @@ include ROOT . 'parts/header.php';
           </div>
 
           <div class="training__img-block">
-            <picture>
+            <!-- <picture>
               <source width="555" height="487" type="image/webp"
                 srcset="img/training/training-img-1-desktop@1x.webp 1x, img/training/training-img-1-desktop@2x.webp 2x">
               <img class="training__img" width="555" height="487" loading="lazy"
                 src="img/training/training-img-1-desktop@1x.jpg" srcset="img/training/training-img-1-desktop@2x.jpg 2x"
                 alt="Изображение к теме урока">
-            </picture>
+            </picture> -->
           </div>
         </div>
       </div>
 
-      <a class="training__button button" href="<?php echo HOST; ?>test-hero.php">Сдать тест</a>
+      <a class="training__button button training__btn--disable">Сдать тест</a>
     </div>
   </section>
 </main>

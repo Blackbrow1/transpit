@@ -4,6 +4,7 @@ require('./config.php');
 $title = 'Кабинет администратора | Транспит';
 
 include ROOT . 'parts/header.php';
+
 ?>
 
 <main>
@@ -47,12 +48,14 @@ include ROOT . 'parts/header.php';
       <h2 class="users-list__title h2">Список всех сотрудников</h2>
 
       <div class="users-list__menu filter">
-        <select class="users-list__select" name="users-list-post" id="post">
-          <option value="all" selected>Все</option>
-          <option value="driver">Водитель</option>
-          <option value="expeditor">Экспедитор</option>
-          <option value="supervisor">Супервайзер</option>
-        </select>
+        <form action="admin.php" method="GET">
+          <select class="users-list__select" name="users-list-post">
+            <option value="all" selected>Все</option>
+            <option value="driver">Водитель</option>
+            <option value="expeditor">Экспедитор</option>
+            <option value="supervisor">Супервайзер</option>
+          </select>
+        </form>
 
         <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
       </div>
