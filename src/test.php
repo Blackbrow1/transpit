@@ -28,7 +28,7 @@ include ROOT . 'parts/header.php';
   </script>
   <section class="test">
     <div class="test__wrap">
-      <form class="test__form">
+      <form class="test__form" action="test.php" method="POST">
         <fieldset class="test__answer-checkbox-block">
           <legend>Вопрос 1</legend>
           <p>Что нужно сделать первым делом, прибыв на рабочее место к 08:00</p>
@@ -748,7 +748,7 @@ include ROOT . 'parts/header.php';
           </div>
         </fieldset>
 
-        <input class="test__button-stop button" type="button" name="test-finish" value="Завершить тест">
+        <input class="test__button-stop button" type="submit" name="test-finish" value="Завершить тест">
       </form>
 
       <a class="test__button-cabinet test__button-cabinet--none button" href="<?php echo HOST; ?>user-card.php">В

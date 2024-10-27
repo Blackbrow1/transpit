@@ -2,6 +2,7 @@
 
 const answerCheckboxBlock = document.querySelectorAll('.test__answer-checkbox-block');
 const buttonStop = document.querySelector('.test__button-stop');
+const testForm = document.querySelector('.test__form');
 const buttonCabinet = document.querySelector('.test__button-cabinet');
 const testResult = document.querySelector('.test__result');
 const testResultText = document.querySelector('.test__result-text');
@@ -81,7 +82,9 @@ navItems.forEach((item) => {
 
 let sum = 0;
 
-function getResult() {
+function getResult(evt) {
+  evt.preventDefault();
+
   answerRadioBlock.forEach(item => {
     const answerRadio = item.querySelectorAll('.test__answer-radio');
 
@@ -184,7 +187,7 @@ function getResult() {
     timeBlock.classList.add('test__result--hidden');
   }
 
-  buttonStop.classList.add('test__result--hidden');
+  buttonStop.remove();
   buttonCabinet.classList.remove('test__button-cabinet--none');
 
   buttonClose.addEventListener('click', () => {
@@ -193,14 +196,10 @@ function getResult() {
 }
 
 try {
-  buttonStop.addEventListener('click', getResult);
+  testForm.addEventListener('submit', getResult);
 } catch {
   console.log('На этой странице нет обработчика теста');
 }
-
-// if (window.location.reload()) {
-//   window.location.href == 'index.php'
-// }
 
 const trainList = [
   {
@@ -305,6 +304,8 @@ const trainList = [
   },
 ];
 
+// Обучающая страница
+
 const trainingInfo = document.querySelector('.training__info');
 const trainingImgBlock = document.querySelector('.training__img-block');
 const btnNext = document.querySelector('.training__btn--next');
@@ -317,125 +318,154 @@ const trainingBlockTitle = document.querySelector('.training__block-title');
 let currentActiveIndex = 0;
 let currentNum = 1;
 
-visualCountLenght.textContent = trainList.length;
-
-if (currentActiveIndex === 0) {
-  btnPrev.classList.add('training__btn--disable');
-  btnPrev.disabled = true;
-
-  trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
-
-  trainList[currentActiveIndex].paragraph.forEach(item => {
-    let par = document.createElement('p');
-    par.textContent = item;
-    trainingInfo.append(par);
-  });
-
-  let container = `
-    <picture>
-      <source width="555" height="487" type="image/webp"
-        srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
-      <img class="training__img" width="555" height="487" loading="lazy"
-        src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
-        alt="Изображение к теме урока">
-    </picture>
-  `;
-
-  trainingImgBlock.innerHTML = container;
-  visualCountNum.textContent = currentNum;
-}
-
-btnNext.addEventListener('click', () => {
-  currentActiveIndex++;
-  currentNum++;
-
-  if (currentActiveIndex < trainList.length) {
-    trainingInfo.innerHTML = '';
-    trainingImgBlock.innerHTML = '';
-
-    trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
-
-    trainList[currentActiveIndex].paragraph.forEach(item => {
-      let par = document.createElement('p');
-      par.textContent = item;
-      trainingInfo.append(par);
-    });
-
-    let container = `
-      <picture>
-        <source width="555" height="487" type="image/webp"
-          srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
-        <img class="training__img" width="555" height="487" loading="lazy"
-          src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
-          alt="Изображение к теме урока">
-      </picture>
-    `;
-
-    trainingImgBlock.innerHTML = container;
-  }
-
-  if (currentActiveIndex === trainList.length - 1) {
-    btnNext.classList.add('training__btn--disable');
-    btnNext.disabled = true;
-  }
-
-  if (currentActiveIndex > 0) {
-    btnPrev.classList.remove('training__btn--disable');
-    btnPrev.disabled = false;
-  }
-
-  visualCountNum.textContent = currentNum;
-
-  if (currentActiveIndex === trainList.length - 1) {
-    trainingButton.classList.remove('training__btn--disable');
-    trainingButton.setAttribute('href', 'test-hero.php');
-  }
-});
-
-
-btnPrev.addEventListener('click', () => {
-  currentActiveIndex--;
-  currentNum--;
-
-  if (currentActiveIndex >= 0) {
-    trainingInfo.innerHTML = '';
-    trainingImgBlock.innerHTML = '';
-
-    trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
-
-    trainList[currentActiveIndex].paragraph.forEach(item => {
-      let par = document.createElement('p');
-      par.textContent = item;
-      trainingInfo.append(par);
-    });
-
-    let container = `
-      <picture>
-        <source width="555" height="487" type="image/webp"
-          srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
-        <img class="training__img" width="555" height="487" loading="lazy"
-          src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
-          alt="Изображение к теме урока">
-      </picture>
-    `;
-
-    trainingImgBlock.innerHTML = container;
-  }
+try {
+  visualCountLenght.textContent = trainList.length;
 
   if (currentActiveIndex === 0) {
     btnPrev.classList.add('training__btn--disable');
     btnPrev.disabled = true;
+
+    trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
+
+    trainList[currentActiveIndex].paragraph.forEach(item => {
+      let par = document.createElement('p');
+      par.textContent = item;
+      trainingInfo.append(par);
+    });
+
+    let container = `
+      <picture>
+        <source width="555" height="487" type="image/webp"
+          srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
+        <img class="training__img" width="555" height="487" loading="lazy"
+          src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
+          alt="Изображение к теме урока">
+      </picture>
+    `;
+
+    trainingImgBlock.innerHTML = container;
+    visualCountNum.textContent = currentNum;
   }
+} catch {}
 
-  if (currentActiveIndex >= 0) {
-    btnNext.classList.remove('training__btn--disable');
-    btnNext.disabled = false;
-  }
+try {
+  btnNext.addEventListener('click', () => {
+    currentActiveIndex++;
+    currentNum++;
 
-  visualCountNum.textContent = currentNum;
+    if (currentActiveIndex < trainList.length) {
+      trainingInfo.innerHTML = '';
+      trainingImgBlock.innerHTML = '';
 
-  if (currentActiveIndex < answersData.length) {
-    trainingButton.classList.add('training__btn--disable');
-    trainingButton.removeAttribute('href');
+      trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
+
+      trainList[currentActiveIndex].paragraph.forEach(item => {
+        let par = document.createElement('p');
+        par.textContent = item;
+        trainingInfo.append(par);
+      });
+
+      let container = `
+        <picture>
+          <source width="555" height="487" type="image/webp"
+            srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
+          <img class="training__img" width="555" height="487" loading="lazy"
+            src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
+            alt="Изображение к теме урока">
+        </picture>
+      `;
+
+      trainingImgBlock.innerHTML = container;
+    }
+
+    if (currentActiveIndex === trainList.length - 1) {
+      btnNext.classList.add('training__btn--disable');
+      btnNext.disabled = true;
+    }
+
+    if (currentActiveIndex > 0) {
+      btnPrev.classList.remove('training__btn--disable');
+      btnPrev.disabled = false;
+    }
+
+    visualCountNum.textContent = currentNum;
+
+    if (currentActiveIndex === trainList.length - 1) {
+      trainingButton.classList.remove('training__btn--disable');
+      trainingButton.setAttribute('href', 'test-hero.php');
+    }
+  });
+} catch {}
+
+try {
+  btnPrev.addEventListener('click', () => {
+    currentActiveIndex--;
+    currentNum--;
+
+    if (currentActiveIndex >= 0) {
+      trainingInfo.innerHTML = '';
+      trainingImgBlock.innerHTML = '';
+
+      trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
+
+      trainList[currentActiveIndex].paragraph.forEach(item => {
+        let par = document.createElement('p');
+        par.textContent = item;
+        trainingInfo.append(par);
+      });
+
+      let container = `
+        <picture>
+          <source width="555" height="487" type="image/webp"
+            srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
+          <img class="training__img" width="555" height="487" loading="lazy"
+            src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
+            alt="Изображение к теме урока">
+        </picture>
+      `;
+
+      trainingImgBlock.innerHTML = container;
+    }
+
+    if (currentActiveIndex === 0) {
+      btnPrev.classList.add('training__btn--disable');
+      btnPrev.disabled = true;
+    }
+
+    if (currentActiveIndex >= 0) {
+      btnNext.classList.remove('training__btn--disable');
+      btnNext.disabled = false;
+    }
+
+    visualCountNum.textContent = currentNum;
+
+    if (currentActiveIndex < answersData.length) {
+      trainingButton.classList.add('training__btn--disable');
+      trainingButton.removeAttribute('href');
+    }
+  });
+} catch {}
+
+// Кнопочка с количеством тренингов к прохождению
+
+const headerTrainingList = document.querySelector('.header__training-list');
+const headerTrainingItem = document.querySelectorAll('.header__training-item');
+const headerTrainingSticker = document.querySelector('.header__menu-item--all-trainings');
+
+let trainingsCount = 0;
+
+headerTrainingItem.forEach(item => {
+  if (item) {
+    trainingsCount++;
   }
 });
+
+if (trainingsCount === 0) {
+  headerTrainingSticker.classList.add('header__training-delete');
+  headerTrainingList.classList.add('header__training-delete');
+}
+
+headerTrainingSticker.textContent = trainingsCount;
+
+console.log(trainingsCount);
+

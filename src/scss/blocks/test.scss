@@ -153,11 +153,7 @@
   border-radius: 15px;
 }
 
-.test__result--hidden {
-  display: none;
-}
-
-.test__button-stop {
+.test__button-stop[type="submit"] {
   margin-top: 30px;
   margin-bottom: 0;
   background-color: $main-dark-color;
@@ -167,6 +163,10 @@
   &:hover {
     background-color: $button-hover;
   }
+}
+
+.test__result--hidden {
+  display: none;
 }
 
 .test__button-cabinet {

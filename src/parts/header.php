@@ -31,9 +31,10 @@
           </li>
           <li class="header__menu-item header__menu-item--training">
             <a class="header__menu-link"><span>Обучение</span></a>
+            <span class="header__menu-item--all-trainings"></span>
 
             <ul class="header__training-list">
-              <li class="header__training-item">
+              <!-- <li class="header__training-item">
                 <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка водителей</a>
               </li>
 
@@ -41,6 +42,11 @@
                 <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка
                   экспедиторов</a>
               </li>
+
+              <li class="header__training-item">
+                <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка
+                  экспедиторов</a>
+              </li> -->
             </ul>
           </li>
           <li class="header__menu-item">

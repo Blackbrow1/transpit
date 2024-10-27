@@ -93,6 +93,10 @@ use.header__svg {
       opacity: 0.6;
     }
 
+    .header__menu-item--all-trainings {
+      opacity: 1;
+    }
+
     &::before {
       opacity: 1;
       transition: all 0.5s ease;
@@ -145,6 +149,21 @@ use.header__svg {
   }
 }
 
+.header__menu-item--all-trainings {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -18px;
+  right: -18px;
+  font-size: 14px;
+  color: $basic-white;
+  background-color: $color-success;
+  width: 23px;
+  height: 23px;
+  border-radius: 100px;
+}
+
 .header__training-list {
   position: absolute;
   padding: 20px 20px;
@@ -172,7 +191,11 @@ use.header__svg {
     }
   }
 
-  &:first-of-type {
+  &:not(:last-of-type) {
     margin-bottom: 10px;
   }
+}
+
+.header__training-delete {
+  display: none;
 }
