@@ -322,7 +322,7 @@ try {
   visualCountLenght.textContent = trainList.length;
 
   if (currentActiveIndex === 0) {
-    btnPrev.classList.add('training__btn--disable');
+    btnPrev.classList.add('training__button--disable');
     btnPrev.disabled = true;
 
     trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
@@ -379,19 +379,19 @@ try {
     }
 
     if (currentActiveIndex === trainList.length - 1) {
-      btnNext.classList.add('training__btn--disable');
+      btnNext.classList.add('training__button--disable');
       btnNext.disabled = true;
     }
 
     if (currentActiveIndex > 0) {
-      btnPrev.classList.remove('training__btn--disable');
+      btnPrev.classList.remove('training__button--disable');
       btnPrev.disabled = false;
     }
 
     visualCountNum.textContent = currentNum;
 
     if (currentActiveIndex === trainList.length - 1) {
-      trainingButton.classList.remove('training__btn--disable');
+      trainingButton.classList.remove('training__button--disable');
       trainingButton.setAttribute('href', 'test-hero.php');
     }
   });
@@ -428,19 +428,19 @@ try {
     }
 
     if (currentActiveIndex === 0) {
-      btnPrev.classList.add('training__btn--disable');
+      btnPrev.classList.add('training__button--disable');
       btnPrev.disabled = true;
     }
 
     if (currentActiveIndex >= 0) {
-      btnNext.classList.remove('training__btn--disable');
+      btnNext.classList.remove('training__button--disable');
       btnNext.disabled = false;
     }
 
     visualCountNum.textContent = currentNum;
 
     if (currentActiveIndex < answersData.length) {
-      trainingButton.classList.add('training__btn--disable');
+      trainingButton.classList.add('training__button--disable');
       trainingButton.removeAttribute('href');
     }
   });
@@ -462,10 +462,51 @@ headerTrainingItem.forEach(item => {
 
 if (trainingsCount === 0) {
   headerTrainingSticker.classList.add('header__training-delete');
-  headerTrainingList.classList.add('header__training-delete');
+  headerTrainingList.remove();
 }
 
 headerTrainingSticker.textContent = trainingsCount;
 
-console.log(trainingsCount);
+// Показать следующие 3 элемента при клике
+// const ITEMS_COUNT_PER_CLICK = 3;
 
+const usersListButton = document.querySelector('.users-list__button');
+const usersListItems = document.querySelectorAll('.users-list__item');
+const visibleItemCount = 3;
+const hiddenItemCount = usersListItems.length - visibleItemCount;;
+
+for (let i = visibleItemCount; i < usersListItems.length; i++) {
+  usersListItems[i].style.display = "none";
+}
+
+usersListButton.addEventListener('click', () => {
+  for (let i = visibleItemCount; i < visibleItemCount + hiddenItemCount; i++) {
+    if (usersListItems[i]) {
+      usersListItems[i].style.display = "";
+    }
+  }
+});
+// const itemsCount = items.length;
+// let i = ITEMS_COUNT_PER_CLICK;
+
+// for (; i < itemsCount; ++i) {
+// 	items[i].style.display = 'none';
+// }
+
+// i = ITEMS_COUNT_PER_CLICK;
+
+// const callback = (event) => {
+// 	if (i >= itemsCount) {
+//   	alert('nothing to show!');
+//     //showButton.removeEventListener('click', callback);
+//     //showButton.outerHTML = '';
+//     return;
+//   }
+
+//   items[i++].style.display = '';
+//   if (i < itemsCount) {
+//   	items[i++].style.display = '';
+//   }
+// };
+
+// showButton.addEventListener('click', callback);

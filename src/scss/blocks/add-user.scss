@@ -134,3 +134,20 @@
     line-height: 1;
   }
 }
+
+.add-user__filter {
+  position: relative;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+.add-user__filter-img {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  pointer-events: none;
+}

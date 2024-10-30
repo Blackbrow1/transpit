@@ -20,13 +20,16 @@ include ROOT . 'parts/header.php';
           <input class="add-user__input add-user__input--name" type="text" name="name" placeholder="Имя">
           <input class="add-user__input add-user__input--patronymic" type="text" name="patronymic"
             placeholder="Отчество">
-          <div class="add-user__menu">
+          <div class="add-user__menu add-user__filter">
             <select class="add-user__select add-user__select--post" name="post">
               <option value="post-name" selected>Должность</option>
               <option value="driver">Водитель</option>
               <option value="expeditor">Экспедитор</option>
               <option value="supervisor">Супервайзер</option>
             </select>
+
+            <img class="add-user__filter-img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
+              alt="Открыть меню">
           </div>
           <input class="add-user__input add-user__input--tub-number" type="number" name="tab-number"
             placeholder="Табельный номер">
@@ -61,6 +64,84 @@ include ROOT . 'parts/header.php';
       </div>
 
       <ul class="users-list__list">
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
+
         <li class="users-list__item">
           <p class="users-list__item-user">Константинопольский Е.С.</p>
           <div class="users-list__item-info">

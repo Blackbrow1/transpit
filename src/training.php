@@ -67,7 +67,7 @@ include ROOT . 'parts/header.php';
         </div>
       </div>
 
-      <a class="training__button button training__btn--disable">Сдать тест</a>
+      <a class="training__button button training__button--disable">Сдать тест</a>
     </div>
   </section>
 </main>
