@@ -180,9 +180,22 @@ include ROOT . 'parts/header.php';
             <button class="users-list__item-button-delete" type="button">Удалить</button>
           </div>
         </li>
+
+        <li class="users-list__item">
+          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <div class="users-list__item-info">
+            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+          </div>
+
+          <div class="users-list__item-buttons">
+            <a class="users-list__item-button-edit" href="#">Редактировать</a>
+            <button class="users-list__item-button-delete" type="button">Удалить</button>
+          </div>
+        </li>
       </ul>
 
-      <button class="users-list__button button" type="button">Смотреть еще</button>
+      <button class="users-list__button button button--all" type="button">Показать всех</button>
     </div>
   </section>
 
@@ -268,9 +281,93 @@ include ROOT . 'parts/header.php';
 
           <p class="users-finished-test__progress success">Зачет</p>
         </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
+
+        <li class="users-finished-test__item">
+          <div class="users-finished-test__user">
+            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
+            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+          </div>
+
+          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+
+          <p class="users-finished-test__date">01.10.2024</p>
+
+          <p class="users-finished-test__progress success">Зачет</p>
+        </li>
       </ul>
 
-      <button class="users-finished-test__button button" type="button">Смотреть еще</button>
+      <button class="users-finished-test__button button button--all" type="button">Показать всех</button>
     </div>
   </section>
 </main>

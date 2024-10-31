@@ -468,45 +468,27 @@ if (trainingsCount === 0) {
 headerTrainingSticker.textContent = trainingsCount;
 
 // Показать следующие 3 элемента при клике
-// const ITEMS_COUNT_PER_CLICK = 3;
 
 const usersListButton = document.querySelector('.users-list__button');
 const usersListItems = document.querySelectorAll('.users-list__item');
-const visibleItemCount = 3;
-const hiddenItemCount = usersListItems.length - visibleItemCount;;
+
+let visibleItemCount = 5;
+let hiddenItemCount = usersListItems.length - visibleItemCount;
 
 for (let i = visibleItemCount; i < usersListItems.length; i++) {
-  usersListItems[i].style.display = "none";
+  usersListItems[i].style.display = 'none';
 }
 
 usersListButton.addEventListener('click', () => {
   for (let i = visibleItemCount; i < visibleItemCount + hiddenItemCount; i++) {
     if (usersListItems[i]) {
-      usersListItems[i].style.display = "";
+      usersListItems[i].style.display = '';
     }
   }
+
+  if (visibleItemCount + hiddenItemCount >= usersListItems.length) {
+    usersListButton.style.display = 'none';
+  }
+
+  visibleItemCount += hiddenItemCount;
 });
-// const itemsCount = items.length;
-// let i = ITEMS_COUNT_PER_CLICK;
-
-// for (; i < itemsCount; ++i) {
-// 	items[i].style.display = 'none';
-// }
-
-// i = ITEMS_COUNT_PER_CLICK;
-
-// const callback = (event) => {
-// 	if (i >= itemsCount) {
-//   	alert('nothing to show!');
-//     //showButton.removeEventListener('click', callback);
-//     //showButton.outerHTML = '';
-//     return;
-//   }
-
-//   items[i++].style.display = '';
-//   if (i < itemsCount) {
-//   	items[i++].style.display = '';
-//   }
-// };
-
-// showButton.addEventListener('click', callback);
