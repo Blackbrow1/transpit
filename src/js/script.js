@@ -575,7 +575,7 @@ try {
         btnNext.disabled = true;
         btnNext.style.cursor = 'default';
       }
-    }, 5000);
+    }, );
 
     if (currentActiveIndex < trainList.length) {
       trainingInfo.innerHTML = '';
@@ -665,11 +665,12 @@ try {
     if (currentActiveIndex >= 0) {
       btnNext.classList.remove('training__button--disable');
       btnNext.disabled = false;
+      btnNext.style.cursor = 'pointer';
     }
 
     visualCountNum.textContent = currentNum;
 
-    if (currentActiveIndex < answersData.length) {
+    if (currentActiveIndex < trainList.length - 1) {
       trainingButton.classList.add('training__button--disable');
       trainingButton.removeAttribute('href');
     }
