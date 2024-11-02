@@ -203,105 +203,313 @@ try {
 
 const trainList = [
   {
-    theme: 'Тема урока 1',
-    imgJpg1: 'img/user-img-desktop@1x.jpg',
-    imgJpg2: 'img/user-img-desktop@2x.jpg',
-    imgWebp1: 'img/user-img-desktop@1x.webp',
-    imgWebp2: 'img/user-img-desktop@2x.webp',
+    theme: 'Мусор на перроне',
+    imgJpg1: 'img/trainings/sequrity/img-1-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-1-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-1-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-1-desktop@2x.webp',
     paragraph: [
-      'Lorem ipsum dolor sit amet consectetur. Eu donec sit lobortis metus odio nulla dui. Aenean mauris egestas posuere porttitor id enim. Libero volutpat ultricies quis commodo ut interdum. At facilisis in tortor massa est.',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+      'Любые посторонние предметы, находящиеся вблизи перрона, могут привести к повреждению ВС или оборудования, или же к серьезным инцидентам.',
+      'Всегда поднимайте и утилизируйте посторонние предметы на перроне. Для посторонних предметов на перроне определены специальные контейнеры с маркировкой FOD'
     ]
   },
   {
-    theme: 'Тема урока 2',
-    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
-    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
-    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
-    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    theme: 'Области маневрирования',
+    imgJpg1: 'img/trainings/sequrity/img-2-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-2-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-2-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-2-desktop@2x.webp',
     paragraph: [
-      'Сверстаем первый экран сайта с учетом всех тонкостей дизайна Figma. Освоим основные инструменты верстки: тексты, изображения, векторные объекты, кнопки. Сделаем наш дизайн отзывчивым с помощью Grid и Window Container',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu. Consequat aliquam urna ut pellentesque lorem. Tortor elit volutpat penatibus et facilisis volutpat orci massa.',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+      'Область маневрирования – исключительно для воздушных судов. ',
+      'Транспортным средствам предоставлен ограниченный вход (въезд), в то время как пешеходам (наземным службам) проход строго воспрещен.'
     ]
   },
   {
-    theme: 'Тема урока 3',
-    imgJpg1: 'img/user-img-desktop@1x.jpg',
-    imgJpg2: 'img/user-img-desktop@2x.jpg',
-    imgWebp1: 'img/user-img-desktop@1x.webp',
-    imgWebp2: 'img/user-img-desktop@2x.webp',
+    theme: 'Когда подходить к ВС',
+    imgJpg1: 'img/trainings/sequrity/img-3-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-3-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-3-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-3-desktop@2x.webp',
     paragraph: [
-      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
-      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+      'Дождитесь сигнала «большой палец вверх» от механика или инженера, прежде чем подходить к ВС'
+    ]
+  },
+  {
+    theme: 'Использование СИЗ',
+    imgJpg1: 'img/trainings/sequrity/img-4-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-4-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-4-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-4-desktop@2x.webp',
+    paragraph: [
+      'Всегда носите специальную одежду и средства персональной защиты при работе на перроне. Это необходимо для вашей безопасности'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/sequrity/img-5-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-5-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-5-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-5-desktop@2x.webp',
+    paragraph: [
+      'Сообщите инженеру или представителю авиакомпании, если вы обнаружили какое-либо повреждение ВС'
+    ]
+  },
+  {
+    theme: 'Ответственность за безопасность',
+    imgJpg1: 'img/trainings/sequrity/img-6-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-6-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-6-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-6-desktop@2x.webp',
+    paragraph: [
+      'Вне зависимости от того, какую должность вы занимаете или какие обязанности исполняете при обслуживании ВС…',
+      'Если вы работаете на перроне, ВЫ несете ответственность за безопасность!'
+    ]
+  },
+  {
+    theme: 'Нормативно-правовые документы',
+    imgJpg1: 'img/trainings/sequrity/img-7-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-7-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-7-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-7-desktop@2x.webp',
+    paragraph: [
+      'Все действия в Гражданской Авиации регламентируются правилами и положениями.'
+    ]
+  },
+  {
+    theme: 'Международный уровень',
+    imgJpg1: 'img/trainings/sequrity/img-8-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-8-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-8-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-8-desktop@2x.webp',
+    paragraph: [
+      'ICAO - Международная организация гражданской авиации, которая разрабатывает стандарты и рекомендации таких сфер авиаиндустрии, как:',
+      '- аэронавигация',
+      '- инфраструктура',
+      '- Полетная инспекция',
+      '- разработка мер по предупреждению незаконных вмешательств',
+      '- процедуры пересечения границы для международной гражданской авиации ОАЭ являются участником ИКАО и ее специализированных подразделений.'
     ]
   },
   {
     theme: 'Тема урока 4',
-    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
-    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
-    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
-    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sequrity/img-9-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-9-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-9-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-9-desktop@2x.webp',
     paragraph: [
-      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+
     ]
   },
   {
-    theme: 'Тема урока 5',
-    imgJpg1: 'img/user-img-desktop@1x.jpg',
-    imgJpg2: 'img/user-img-desktop@2x.jpg',
-    imgWebp1: 'img/user-img-desktop@1x.webp',
-    imgWebp2: 'img/user-img-desktop@2x.webp',
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-10-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-10-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-10-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-10-desktop@2x.webp',
     paragraph: [
-      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
-      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+
     ]
   },
   {
-    theme: 'Тема урока 6',
-    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
-    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
-    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
-    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-11-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-11-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-11-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-11-desktop@2x.webp',
     paragraph: [
-      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+
     ]
   },
   {
-    theme: 'Тема урока 7',
-    imgJpg1: 'img/user-img-desktop@1x.jpg',
-    imgJpg2: 'img/user-img-desktop@2x.jpg',
-    imgWebp1: 'img/user-img-desktop@1x.webp',
-    imgWebp2: 'img/user-img-desktop@2x.webp',
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-12-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-12-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-12-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-12-desktop@2x.webp',
     paragraph: [
-      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
-      'Тильда, он помогает реализовать любую творческую идею во всех деталях и с анимацией. Осваиваем Zero Block на полную: верстаем, анимируем и адаптируем под мобильные. От запуска до сбора заявок!',
-      'Dolor augue leo eget pretium adipiscing convallis odio. Ultrices non mattis viverra eu.'
+
     ]
   },
   {
-    theme: 'Тема урока 8',
-    imgJpg1: 'img/training/training-img-1-desktop@1x.jpg',
-    imgJpg2: 'img/training/training-img-1-desktop@2x.jpg',
-    imgWebp1: 'img/training/training-img-1-desktop@1x.webp',
-    imgWebp2: 'img/training/training-img-1-desktop@2x.webp',
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-13-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-13-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-13-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-13-desktop@2x.webp',
     paragraph: [
-      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
-      'Сначала вы освоитесь в Tilda, а затем возьметесь превращать макеты из Figma в полноценные сайты и настраивать продвинутые анимации. Вас ждет практика по верстке нестандартных композиций, работа с пошаговой анимацией и адаптация дизайна под мобильные.',
-      'Подготовим Tilda к работе: подключим шрифты с библиотеки шрифтов Google Fonts, оглядимся в стандартных блоках, сделаем первые шаги в Zero block',
+
     ]
   },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-14-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-14-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-14-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-14-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-15-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-15-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-15-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-15-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-16-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-16-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-16-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-16-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-17-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-17-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-17-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-17-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-18-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-18-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-18-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-18-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-19-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-19-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-19-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-19-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-20-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-20-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-20-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-20-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-21-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-21-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-21-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-21-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-22-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-22-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-22-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-22-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-23-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-23-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-23-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-23-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-24-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-24-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-24-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-24-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-25-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-25-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-25-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-25-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-26-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-26-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-26-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-26-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-27-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-27-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-27-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-27-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-28-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-28-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-28-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-28-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-29-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-29-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-29-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-29-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  },
+  {
+    theme: 'Тема урока 4',
+    imgJpg1: 'img/trainings/sequrity/img-30-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sequrity/img-30-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sequrity/img-30-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sequrity/img-30-desktop@2x.webp',
+    paragraph: [
+
+    ]
+  }
 ];
 
 // Обучающая страница
@@ -353,6 +561,22 @@ try {
     currentActiveIndex++;
     currentNum++;
 
+    btnNext.classList.add('training__button--disable');
+    btnNext.disabled = true;
+    btnNext.style.cursor = 'default';
+
+    setTimeout(() => {
+      btnNext.classList.remove('training__button--disable');
+      btnNext.disabled = false;
+      btnNext.style.cursor = 'pointer';
+
+      if (currentActiveIndex === trainList.length - 1) {
+        btnNext.classList.add('training__button--disable');
+        btnNext.disabled = true;
+        btnNext.style.cursor = 'default';
+      }
+    }, 5000);
+
     if (currentActiveIndex < trainList.length) {
       trainingInfo.innerHTML = '';
       trainingImgBlock.innerHTML = '';
@@ -378,14 +602,15 @@ try {
       trainingImgBlock.innerHTML = container;
     }
 
-    if (currentActiveIndex === trainList.length - 1) {
-      btnNext.classList.add('training__button--disable');
-      btnNext.disabled = true;
-    }
+    // if (currentActiveIndex === trainList.length - 1) {
+    //   btnNext.classList.add('training__button--disable');
+    //   btnNext.disabled = true;
+    // }
 
     if (currentActiveIndex > 0) {
       btnPrev.classList.remove('training__button--disable');
       btnPrev.disabled = false;
+      btnPrev.style.cursor = 'pointer';
     }
 
     visualCountNum.textContent = currentNum;
@@ -395,6 +620,10 @@ try {
       trainingButton.setAttribute('href', 'test-hero.php');
     }
   });
+} catch {}
+
+try {
+  btnPrev.style.cursor = 'default';
 } catch {}
 
 try {
@@ -430,6 +659,7 @@ try {
     if (currentActiveIndex === 0) {
       btnPrev.classList.add('training__button--disable');
       btnPrev.disabled = true;
+      btnPrev.style.cursor = 'default';
     }
 
     if (currentActiveIndex >= 0) {
@@ -479,16 +709,18 @@ for (let i = visibleItemCount; i < usersListItems.length; i++) {
   usersListItems[i].style.display = 'none';
 }
 
-usersListButton.addEventListener('click', () => {
-  for (let i = visibleItemCount; i < visibleItemCount + hiddenItemCount; i++) {
-    if (usersListItems[i]) {
-      usersListItems[i].style.display = '';
+try {
+  usersListButton.addEventListener('click', () => {
+    for (let i = visibleItemCount; i < visibleItemCount + hiddenItemCount; i++) {
+      if (usersListItems[i]) {
+        usersListItems[i].style.display = '';
+      }
     }
-  }
 
-  if (visibleItemCount + hiddenItemCount >= usersListItems.length) {
-    usersListButton.style.display = 'none';
-  }
+    if (visibleItemCount + hiddenItemCount >= usersListItems.length) {
+      usersListButton.style.display = 'none';
+    }
 
-  visibleItemCount += hiddenItemCount;
-});
+    visibleItemCount += hiddenItemCount;
+  });
+} catch {}

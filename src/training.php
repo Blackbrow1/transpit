@@ -9,7 +9,7 @@ include ROOT . 'parts/header.php';
 <main>
   <section class="training">
     <div class="training__wrap">
-      <h1 class="training__title">Сезонная подготовка водителей</h1>
+      <h1 class="training__title">Безопасность на перроне</h1>
 
       <div class="training__block">
         <h2 class="visually-hidden">Обучающий блок</h2>
