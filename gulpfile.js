@@ -17,9 +17,13 @@ import newer from 'gulp-newer';
 import webp from 'gulp-webp';
 // import fonter from 'gulp-fonter';
 // import ttf2woff2 from 'gulp-ttf2woff2';
-import terser from 'gulp-terser';
+// import terser from 'gulp-terser';
 import { stacksvg } from 'gulp-stacksvg';
 import svgo from 'gulp-svgmin';
+import webpack from 'webpack-stream';
+import webpackConfig from './webpack.config.js';
+import babel from 'gulp-babel';
+
 import {deleteAsync} from 'del';
 
 const { src, dest, watch, series, parallel } = gulp;
@@ -110,7 +114,9 @@ export function fonts() {
 
 export function scripts() {
   return src(`${PATH_TO_SRC}js/*.js`)
-  .pipe(terser())
+  .pipe(babel())
+  .pipe(webpack(webpackConfig))
+  // .pipe(terser())
   .pipe(dest(`${PATH_TO_DIST}js/`))
   .pipe(server.stream());
 }
@@ -132,12 +138,19 @@ export function copyAssets () {
     .pipe(dest(PATH_TO_DIST));
 }
 
+// export function startServer() {
+//   server.init({
+//       server: {
+//           baseDir: PATH_TO_DIST
+//       },
+//       notify: false,
+//   });
+// }
+
 export function startServer() {
   server.init({
-      server: {
-          baseDir: PATH_TO_DIST
-      },
-      notify: false,
+    proxy: 'transpit.loc',
+    notify: false,
   });
 }
 

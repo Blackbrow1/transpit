@@ -4,6 +4,7 @@ require('./config.php');
 $title = 'Редактировать профиль | Транспит';
 
 include ROOT . 'parts/header.php';
+
 ?>
 
 <main>
@@ -12,7 +13,7 @@ include ROOT . 'parts/header.php';
       <h1 class="update-profile__title">Редактировать профиль</h1>
 
       <div class="update-profile__content">
-        <form class="update-profile__form" action="#" method="POST">
+        <form class="update-profile__form" action="" method="POST">
           <fieldset>
             <legend class="visually-hidden">Обновить данные пользователя</legend>
 
