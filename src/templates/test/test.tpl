@@ -1,12 +1,3 @@
-<?php
-require('./config.php');
-
-$title = 'Кабинет администратора | Транспит';
-
-include ROOT . 'parts/header.php';
-
-?>
-
 <main>
   <section class="test">
     <div class="test__wrap">
@@ -740,7 +731,3 @@ include ROOT . 'parts/header.php';
     </div>
   </section>
 </main>
-
-<?php
-include ROOT . 'parts/footer.php';
-?>

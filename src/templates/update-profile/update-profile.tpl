@@ -1,12 +1,3 @@
-<?php
-require('./config.php');
-
-$title = 'Редактировать профиль | Транспит';
-
-include ROOT . 'parts/header.php';
-
-?>
-
 <main>
   <section class="update-profile">
     <div class="update-profile__wrap">
@@ -51,7 +42,3 @@ include ROOT . 'parts/header.php';
     </div>
   </section>
 </main>
-
-<?php
-include ROOT . 'parts/footer.php';
-?>

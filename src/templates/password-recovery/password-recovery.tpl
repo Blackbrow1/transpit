@@ -1,11 +1,3 @@
-<?php
-require('./config.php');
-
-$title = 'Восстановление пароля | Транспит';
-
-include ROOT . 'parts/header.php';
-?>
-
 <main>
   <section class="password-recovery">
     <div class="password-recovery__popup popup">
@@ -22,7 +14,3 @@ include ROOT . 'parts/header.php';
     </div>
   </section>
 </main>
-
-<?php
-include ROOT . 'parts/footer.php';
-?>

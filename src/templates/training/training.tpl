@@ -1,11 +1,3 @@
-<?php
-require('./config.php');
-
-$title = 'Обучение сотрудников | Транспит';
-
-include ROOT . 'parts/header.php';
-?>
-
 <main>
   <section class="training">
     <div class="training__wrap">
@@ -71,7 +63,3 @@ include ROOT . 'parts/header.php';
     </div>
   </section>
 </main>
-
-<?php
-include ROOT . 'parts/footer.php';
-?>

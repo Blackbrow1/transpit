@@ -57,6 +57,12 @@ export function html() {
   .pipe(server.stream());
 }
 
+export function tplFiles() {
+  return src(`${PATH_TO_SRC}**/*.tpl`)
+  .pipe(dest(`${PATH_TO_DIST}`))
+  .pipe(server.stream());
+}
+
 export function lintBem () {
   return src(`${PATH_TO_SRC}*.php`)
     .pipe(bemlinter());
@@ -156,6 +162,7 @@ export function startServer() {
 
 export function watcher() {
   watch(`${PATH_TO_SRC}**/*.php`, series(html));
+  watch(`${PATH_TO_SRC}**/*.tpl`, series(tplFiles));
   watch(`${PATH_TO_SRC}scss/**/*.scss`, series(styles));
   watch(`${PATH_TO_SRC}img/**/*.{jpg,jpeg,png,gif,svg}`, series(images));
   watch(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`, series(fonts));
@@ -176,7 +183,7 @@ export function clear() {
 export function buildProd(done) {
   parallel(
     clear,
-    series(html, styles, fonts, images, scripts, createStack, copyAssets),
+    series(html, tplFiles, styles, fonts, images, scripts, createStack, copyAssets),
     startServer,
     watcher
   )(done)
@@ -185,7 +192,7 @@ export function buildProd(done) {
 export function runDev(done) {
   parallel(
     clear,
-    series(html, styles, images, fonts, scripts, createStack, copyAssets),
+    series(html, tplFiles, styles, images, fonts, scripts, createStack, copyAssets),
     startServer,
     watcher
   )(done)

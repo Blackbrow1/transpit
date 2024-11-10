@@ -1,67 +1,43 @@
 <?php
-require('./config.php');
 
-$title = 'Транспит Северо-Запад';
+require_once "config.php";
 
-include ROOT . 'parts/header.php';
-?>
+/* ..........................................
 
-<main>
-  <section class="hero" id="hero">
-    <div class="hero__wrap">
-      <h1 class="hero__title">Внутренняя система обучения <span>ООО “Транспит Северо-Запад”</span></h1>
+РОУТЕР // ROUTE - МАРШРУТ
 
-      <p class="hero__text">Противоположная точка зрения подразумевает, что независимые государства преданы
-        социально-демократической анафеме. Приятно, граждане, наблюдать, как элементы политического процесса подвергнуты
-        целой серии независимых исследований.</p>
+............................................. */
 
-      <p class="hero__text">Ясность нашей позиции очевидна: повышение уровня гражданского сознания предопределяет
-        высокую востребованность благоприятных перспектив. Вот вам яркий пример современных тенденций — повышение уровня
-        гражданского сознания в значительной степени</p>
+// Обработка запроса
+$uri = $_SERVER['REQUEST_URI'];
+$uri = rtrim($uri, "/"); // 'site.ru/' => 'site.ru'
+$uri = filter_var($uri, FILTER_SANITIZE_URL);
+$uri = substr($uri, 1);
+$uri = explode('?', $uri);
 
-      <form class="hero__form" action="#" method="POST">
-        <fieldset>
-          <legend>Войти в личный кабинет</legend>
+// Роутер
+switch ($uri[0]){
+    case '':
+        require (ROOT . "modules/main/index.php");
+        break;
 
-          <input class="hero__input" type="number" name="tab-number" placeholder="Табельный номер">
-          <input class="hero__input" type="password" name="password" placeholder="Пароль">
+    case 'admin':
+        require ROOT . "modules/admin/index.php";
+        break;
 
-          <button class="hero__submit button" type="submit" name="send-form">Войти</button>
+    case 'training':
+        require ROOT . "modules/training/index.php";
+        break;
 
-          <a class="hero__form-remember-pass" href="#">Забыли пароль?</a>
-        </fieldset>
-      </form>
-    </div>
-  </section>
+    case 'user-card':
+        require ROOT . "modules/user-card/index.php";
+        break;
 
-  <section class="information">
-    <div class="information__wrap">
-      <h2 class="information__title">Об онлайн школе Транспит С-З</h2>
+    case 'update-profile':
+      require ROOT . "modules/update-profile/index.php";
+      break;
 
-      <div class="information__content">
-        <p class="information__text">Система обучения создана с целью предоставления сотрудникам ООО "Транспит
-          Северо-Запад" актуальных знаний и информации. Обучение проходит как на рабочем месте, так и вне отрыва от
-          работы.</p>
-
-        <p class="information__text">Система пополняется актуальными дисциплинами, призванными помочь сотрудникам в
-          выполенинии рабочих задач. А так же, дисциплинами, отвечающими за введение в аэропортовую деятельность новых
-          сотрудников.</p>
-
-        <a class="information__button button" href="#hero">Начать пользоваться</a>
-
-        <div class="information__img">
-          <picture>
-            <source width="545" height="408" type="image/webp"
-              srcset="img/inform-img-desktop@1x.webp 1x, img/inform-img-desktop@2x.webp 2x">
-            <img width="545" height="408" loading="lazy" src="img/inform-img-desktop@1x.jpg"
-              srcset="img/inform-img-desktop@2x.jpg 2x" alt="Блюдо от шефа на столе">
-          </picture>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<?php
-include ROOT . 'parts/footer.php';
-?>
+    default:
+        require ROOT . "modules/main/index.php";
+        break;
+}

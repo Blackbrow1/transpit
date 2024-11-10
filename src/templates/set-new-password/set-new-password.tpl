@@ -1,11 +1,3 @@
-<?php
-require('./config.php');
-
-$title = 'Установить новый пароль | Транспит';
-
-include ROOT . 'parts/header.php';
-?>
-
 <main>
   <section class="set-new-pass">
     <div class="set-new-pass__popup popup">
@@ -22,7 +14,3 @@ include ROOT . 'parts/header.php';
     </div>
   </section>
 </main>
-
-<?php
-include ROOT . 'parts/footer.php';
-?>

@@ -1,11 +1,3 @@
-<?php
-require('./config.php');
-
-$title = 'Установить новый пароль | Транспит';
-
-include ROOT . 'parts/header.php';
-?>
-
 <main>
   <section class="test-hero">
     <div class="test-hero__wrap">
@@ -21,7 +13,3 @@ include ROOT . 'parts/header.php';
     </div>
   </section>
 </main>
-
-<?php
-include ROOT . 'parts/footer.php';
-?>
