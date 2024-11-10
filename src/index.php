@@ -1,6 +1,7 @@
 <?php
 
 require_once "config.php";
+require_once "db.php";
 
 /* ..........................................
 
@@ -35,6 +36,14 @@ switch ($uri[0]){
 
     case 'update-profile':
       require ROOT . "modules/update-profile/index.php";
+      break;
+
+    case 'test-hero':
+      require ROOT . "modules/test-hero/index.php";
+      break;
+
+    case 'test':
+      require ROOT . "modules/test/index.php";
       break;
 
     default:

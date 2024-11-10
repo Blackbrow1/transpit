@@ -1,4 +1,10 @@
 <?php
+$details = R::find('users', 1);
+
+echo '<pre>';
+echo $details[1]['name'];
+echo '</pre>';
+
 $title = 'Транспит Северо-Запад';
 
 ob_start();

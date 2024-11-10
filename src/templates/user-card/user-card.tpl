@@ -27,7 +27,7 @@
             </li>
           </ul>
 
-          <a class="user-card__button button" href="<?php echo HOST; ?>update-profile.php">Редактировать профиль</a>
+          <a class="user-card__button button" href="<?php echo HOST; ?>update-profile">Редактировать профиль</a>
         </div>
 
         <div class="user-card__avatar">

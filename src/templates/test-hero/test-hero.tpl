@@ -9,7 +9,7 @@
         правильно на 26 вопросов, что соответствует прогрессу 80%. На прохождение теста отводится 18 минут. Нажимая на
         кнопку, включится таймер</p>
 
-      <a class="test-hero__button button" href="<?php echo HOST; ?>test.php">Начать тестирование</a>
+      <a class="test-hero__button button" href="<?php echo HOST; ?>test">Начать тестирование</a>
     </div>
   </section>
 </main>

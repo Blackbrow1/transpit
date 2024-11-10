@@ -20,12 +20,12 @@
       <div class="header__menu">
         <ul class="header__menu-list">
           <li class="header__menu-item">
-            <a class="header__menu-link" href="<?php echo HOST; ?>admin.php">
+            <a class="header__menu-link" href="<?php echo HOST; ?>admin">
               Админ
             </a>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link" href="<?php echo HOST; ?>user-card.php">
+            <a class="header__menu-link" href="<?php echo HOST; ?>user-card">
               Кабинет
             </a>
           </li>
@@ -35,22 +35,22 @@
 
             <ul class="header__training-list">
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка водителей</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training">Зимняя подготовка водителей</a>
               </li>
 
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка
+                <a class="header__training-link" href="<?php echo HOST; ?>training">Зимняя подготовка
                   экспедиторов</a>
               </li>
 
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training.php">Зимняя подготовка
+                <a class="header__training-link" href="<?php echo HOST; ?>training">Зимняя подготовка
                   экспедиторов</a>
               </li>
             </ul>
           </li>
           <li class="header__menu-item">
-            <a class="header__menu-link" href="<?php echo HOST; ?>password-recovery.php">
+            <a class="header__menu-link" href="<?php echo HOST; ?>password-recovery">
               Тест
             </a>
           </li>

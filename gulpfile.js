@@ -35,6 +35,8 @@ const PATH_TO_RAW = './raw/';
 const PATHS_TO_STATIC = [
   `${PATH_TO_SRC}favicons/*.{png,svg}`,
   `${PATH_TO_SRC}.htaccess`,
+  `${PATH_TO_SRC}libs/**/*`,
+  `${PATH_TO_SRC}db.php`,
   `!${PATH_TO_SRC}img/icons/**/*`
 ];
 

@@ -724,7 +724,7 @@
         <input class="test__button-stop button" type="submit" name="test-finish" value="Завершить тест">
       </form>
 
-      <a class="test__button-cabinet test__button-cabinet--none button" href="<?php echo HOST; ?>user-card.php">В
+      <a class="test__button-cabinet test__button-cabinet--none button" href="<?php echo HOST; ?>user-card">В
         личный кабинет</a>
 
       <div class="test__time-block">18:00</div>
