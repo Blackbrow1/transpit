@@ -768,3 +768,33 @@ try {
     visibleItemCount += hiddenItemCount;
   });
 } catch {}
+
+// Фильтрация всех сотрудников
+
+const usersSelect = document.querySelector('.users-list__select');
+const usersItems = document.querySelectorAll('.users-list__item');
+
+usersSelect.addEventListener('change', (evt) => {
+  usersItems.forEach(item => {
+    item.classList.remove('users-list__item--none');
+
+    if (evt.target.value === 'driver') {
+      // item.classList.remove('users-list__item--none');
+      if (item.querySelector('.users-list__item-post').textContent !== 'Водитель') {
+        item.classList.add('users-list__item--none');
+      }
+    } else if (evt.target.value === 'expeditor') {
+      // item.classList.remove('users-list__item--none');
+      if (item.querySelector('.users-list__item-post').textContent !== 'Экспедитор') {
+        item.classList.add('users-list__item--none');
+      }
+    } else if (evt.target.value === 'supervisor') {
+      // item.classList.remove('users-list__item--none');
+      if (item.querySelector('.users-list__item-post').textContent !== 'Супервайзер') {
+        item.classList.add('users-list__item--none');
+      }
+    } else if (evt.target.value === 'all') {
+      item.classList.remove('users-list__item--none');
+    }
+  });
+});

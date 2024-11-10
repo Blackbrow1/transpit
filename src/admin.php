@@ -12,7 +12,7 @@ include ROOT . 'parts/header.php';
     <div class="add-user__wrap">
       <h1 class="visually-hidden">Страница администратора</h1>
 
-      <form class="add-user__form" action="#" method="POST">
+      <form class="add-user__form" action="" method="POST">
         <fieldset>
           <legend>Добавить нового сотрудника</legend>
 
@@ -51,7 +51,7 @@ include ROOT . 'parts/header.php';
       <h2 class="users-list__title h2">Список всех сотрудников</h2>
 
       <div class="users-list__menu filter">
-        <form action="admin.php" method="GET">
+        <form class="users-list__all-users" action="admin.php" method="GET">
           <select class="users-list__select" name="users-list-post">
             <option value="all" selected>Все</option>
             <option value="driver">Водитель</option>
@@ -93,7 +93,7 @@ include ROOT . 'parts/header.php';
         <li class="users-list__item">
           <p class="users-list__item-user">Константинопольский Е.С.</p>
           <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Должность: <span class="users-list__item-post">Супервайзер</span></p>
             <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
           </div>
 
@@ -184,7 +184,7 @@ include ROOT . 'parts/header.php';
         <li class="users-list__item">
           <p class="users-list__item-user">Константинопольский Е.С.</p>
           <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Должность: <span class="users-list__item-post">Экспедитор</span></p>
             <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
           </div>
 
