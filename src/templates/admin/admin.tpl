@@ -1,53 +1,54 @@
 <main>
   <section class="add-user">
     <div class="add-user__wrap">
-      <h1 class="visually-hidden">Страница администратора</h1>
 
-      <form class="add-user__form" action="<?php echo HOST; ?>admin" method="POST">
+      <?php include ROOT . "templates/components/errors.tpl"; ?>
+      <?php include ROOT . "templates/components/success.tpl"; ?>
 
-        <?php if (!empty($errors)): ?>
-        <?php foreach ($errors as $error): ?>
-        <p><?php echo $error['title'] ?></p>
-        <?php endforeach; ?>
-        <?php endif; ?>
+      <h1 class="add-user__title h1">Добавить нового сотрудника</h1>
 
-        <fieldset>
-          <legend>Добавить нового сотрудника</legend>
+      <div class="add-user__container">
+        <form class="add-user__form" action="<?php echo HOST; ?>admin" method="POST">
+          <fieldset>
+            <legend class="visually-hidden">Добавить нового сотрудника</legend>
 
-          <input
-            class="add-user__input add-user__input--surname<?php if (!empty($_POST)): ?><?php if (empty($_POST['surname'])): ?> error-message<?php endif; ?><?php endif; ?>"
-            type="text" name="surname" placeholder="Фамилия">
-          <input
-            class="add-user__input add-user__input--name<?php if (!empty($_POST)): ?><?php if (empty($_POST['name'])): ?> error-message<?php endif; ?><?php endif; ?>"
-            type="text" name="name" placeholder="Имя">
-          <input
-            class="add-user__input add-user__input--patronymic<?php if (!empty($_POST)): ?><?php if (empty($_POST['patronymic'])): ?> error-message<?php endif; ?><?php endif; ?>"
-            type="text" name="patronymic" placeholder="Отчество">
-          <div class="add-user__menu add-user__filter">
-            <select class="add-user__select add-user__select--post" name="post">
-              <option value="post-name" selected>Должность</option>
-              <option value="driver">Водитель</option>
-              <option value="expeditor">Экспедитор</option>
-              <option value="supervisor">Супервайзер</option>
-            </select>
+            <div class="add-user__inputs">
+              <input
+                class="add-user__input add-user__input--surname<?php if (!empty($_POST)): ?><?php if (empty($_POST['surname'])): ?> error-message<?php endif; ?><?php endif; ?>"
+                type="text" name="surname" placeholder="Фамилия">
+              <input
+                class="add-user__input add-user__input--name<?php if (!empty($_POST)): ?><?php if (empty($_POST['name'])): ?> error-message<?php endif; ?><?php endif; ?>"
+                type="text" name="name" placeholder="Имя">
+              <input
+                class="add-user__input add-user__input--patronymic<?php if (!empty($_POST)): ?><?php if (empty($_POST['patronymic'])): ?> error-message<?php endif; ?><?php endif; ?>"
+                type="text" name="patronymic" placeholder="Отчество">
+              <div class="add-user__menu add-user__filter">
+                <select class="add-user__select add-user__select--post" name="post">
+                  <option value="post-name" selected>Должность</option>
+                  <option value="driver">Водитель</option>
+                  <option value="expeditor">Экспедитор</option>
+                  <option value="supervisor">Супервайзер</option>
+                </select>
 
-            <img class="add-user__filter-img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
-              alt="Открыть меню">
-          </div>
-          <input
-            class="add-user__input add-user__input--tub-number<?php if (!empty($_POST)): ?><?php if (empty($_POST['tab-number'])): ?> error-message<?php endif; ?><?php endif; ?>"
-            type="text" name="tab-number" placeholder="Табельный номер">
-          <input
-            class="add-user__input add-user__input--password<?php if (!empty($_POST)): ?><?php if (empty($_POST['password'])): ?> error-message<?php endif; ?><?php endif; ?>"
-            type="password" name="password" placeholder="Пароль">
+                <img class="add-user__filter-img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
+                  alt="Открыть меню">
+              </div>
+              <input
+                class="add-user__input add-user__input--tub-number<?php if (!empty($_POST)): ?><?php if (empty($_POST['tab-number'])): ?> error-message<?php endif; ?><?php endif; ?>"
+                type="text" name="tab-number" placeholder="Табельный номер">
+              <input
+                class="add-user__input add-user__input--password<?php if (!empty($_POST)): ?><?php if (empty($_POST['password'])): ?> error-message<?php endif; ?><?php endif; ?>"
+                type="password" name="password" placeholder="Пароль">
 
-          <button class="add-user__submit button" type="submit" name="add-user" value="add-user">Добавить</button>
-        </fieldset>
-      </form>
+              <button class="add-user__submit button" type="submit" name="add-user" value="add-user">Добавить</button>
+            </div>
+          </fieldset>
+        </form>
 
-      <div class="add-user__standart-pass">
-        <p>Пароль для нового сотрудника</p>
-        <span>123</span>
+        <div class="add-user__standart-pass">
+          <p>Пароль для нового сотрудника</p>
+          <span>123</span>
+        </div>
       </div>
     </div>
   </section>
@@ -205,7 +206,7 @@
     </div>
   </section>
 
-  <sec class="users-finished-test">
+  <section class="users-finished-test">
     <div class="users-finished-test__wrap">
       <h2 class="users-finished-test__title h2">Сотрудники, сдавшие тест</h2>
 
@@ -373,8 +374,7 @@
         </li>
       </ul>
 
-
-      < button class="users-finished-test__button button button--all" type="button">Показать всех</>
+      <button class="users-finished-test__button button button--all" type="button">Показать всех</button>
     </div>
-  </sec tion>
+  </section>
 </main>

@@ -9,3 +9,21 @@
 .error-message {
   background-color: $error-mesage-color;
 }
+
+.message-container {
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  border-radius: 15px;
+  color: $basic-white;
+}
+
+.error-block {
+  background-color: $color-unsuccess;
+}
+
+.success-block {
+  background-color: $color-success;
+}

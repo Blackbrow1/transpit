@@ -33,9 +33,9 @@ if (isset($_POST['add-user'])) {
   }
 
   // Проверка существующего пользователя
-  if (R::count('users', 'tab_namber = ?', array($_POST['tab-number'])) > 0) {
+  if (R::count('users', 'tab_number = ?', array($_POST['tab-number'])) > 0) {
     $errors[] = [
-      'title' => 'Такой сотрудник уже записан'
+      'title' => 'Сотрудник с таким табельным номером уже записан'
     ];
   }
 
@@ -48,7 +48,17 @@ if (isset($_POST['add-user'])) {
     $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $user->email = '';
     $user->role = 'user';
-    R::store($user);
+    $result = R::store($user);
+
+    if (is_int($result)) {
+      $success[] = [
+        'title' => 'Сотрудник зарегистрирован'
+      ];
+    } else {
+      $errors[] = [
+        'title' => 'Что-то пошло не так. Попробуйте еще раз!'
+      ];
+    }
   }
 }
 

@@ -1,5 +1,4 @@
 <?php
-$details = R::find('users', 1);
 
 $title = 'Транспит Северо-Запад';
 
