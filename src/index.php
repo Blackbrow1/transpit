@@ -3,6 +3,9 @@
 require_once "config.php";
 require_once "db.php";
 
+$errors = [];
+$success = [];
+
 /* ..........................................
 
 РОУТЕР // ROUTE - МАРШРУТ
@@ -44,6 +47,14 @@ switch ($uri[0]){
 
     case 'test':
       require ROOT . "modules/test/index.php";
+      break;
+
+    case 'password-recovery':
+      require ROOT . "modules/password-recovery/index.php";
+      break;
+
+    case 'set-new-password':
+      require ROOT . "modules/set-new-password/index.php";
       break;
 
     default:
