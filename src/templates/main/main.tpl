@@ -1,6 +1,7 @@
 <main>
   <section class="hero" id="hero">
     <div class="hero__wrap">
+
       <h1 class="hero__title">Внутренняя система обучения <span>ООО “Транспит Северо-Запад”</span></h1>
 
       <p class="hero__text">Противоположная точка зрения подразумевает, что независимые государства преданы
@@ -11,16 +12,19 @@
         высокую востребованность благоприятных перспектив. Вот вам яркий пример современных тенденций — повышение уровня
         гражданского сознания в значительной степени</p>
 
-      <form class="hero__form" action="#" method="POST">
+      <form class="hero__form" action="<?php echo HOST; ?>" method="POST">
         <fieldset>
+          <?php include ROOT . "templates/components/errors.tpl"; ?>
+          <?php include ROOT . "templates/components/success.tpl"; ?>
+
           <legend>Войти в личный кабинет</legend>
 
-          <input class="hero__input" type="number" name="tab-number" placeholder="Табельный номер">
+          <input class="hero__input" type="text" name="tab-number" placeholder="Табельный номер">
           <input class="hero__input" type="password" name="password" placeholder="Пароль">
 
-          <button class="hero__submit button" type="submit" name="send-form">Войти</button>
+          <button class="hero__submit button" type="submit" name="send-form" value="Войти">Войти</button>
 
-          <a class="hero__form-remember-pass" href="#">Забыли пароль?</a>
+          <a class="hero__form-remember-pass" href="<?php echo HOST; ?>password-recovery">Забыли пароль?</a>
         </fieldset>
       </form>
     </div>
@@ -28,7 +32,7 @@
 
   <section class="information">
     <div class="information__wrap">
-      <h2 class="information__title">Об онлайн школе Транспит С-З</h2>
+      <h2 class="information__title">Об онлайн-школе ООО "Транспит С-З"</h2>
 
       <div class="information__content">
         <p class="information__text">Система обучения создана с целью предоставления сотрудникам ООО "Транспит

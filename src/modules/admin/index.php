@@ -45,6 +45,7 @@ if (isset($_POST['add-user'])) {
     $user->surname = $_POST['surname'];
     $user->patronymic = $_POST['patronymic'];
     $user->tab_number = $_POST['tab-number'];
+    $user->post = $_POST['post'];
     $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $user->email = '';
     $user->role = 'user';

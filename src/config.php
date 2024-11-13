@@ -16,4 +16,8 @@ define('HOST', $protocol . $_SERVER['HTTP_HOST'] . '/');
 // Физический путь к корневой директории скрипта
 define('ROOT', dirname(__FILE__) . '/');
 
+// Доп настройки
+define('SITE_NAME', 'Транспит');
+define('SITE_EMAIL', 'info@project.com');
+
 ?>
