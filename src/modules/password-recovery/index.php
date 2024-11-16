@@ -1,10 +1,6 @@
 <?php
 $title = 'Восстановить пароль | Транспит';
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-
 if (isset($_POST['popup-submit'])) {
   $_POST['email'] = trim($_POST['email']);
 

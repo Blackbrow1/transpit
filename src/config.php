@@ -18,6 +18,6 @@ define('ROOT', dirname(__FILE__) . '/');
 
 // Доп настройки
 define('SITE_NAME', 'Транспит');
-define('SITE_EMAIL', 'info@project.com');
+define('SITE_EMAIL', 'info@transpit.ru');
 
 ?>
