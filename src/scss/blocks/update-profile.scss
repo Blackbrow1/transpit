@@ -47,7 +47,6 @@
 }
 
 .update-profile__submit {
-  margin-bottom: 0;
   background-color: $main-dark-color;
   transition: all 0.5s ease;
 
@@ -131,6 +130,45 @@
     position: absolute;
     width: 175px;
     height: 50px;
+    top: 0;
+    left: calc(-100% - 2px);
+    background-color: $main-dark-color;
+    border-radius: 15px;
+    z-index: -1;
+    transition: all 0.5s ease;
+  }
+}
+
+.update-profile__back {
+  position: relative;
+  display: flex;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  justify-content: center;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  font-family: $font-first;
+  font-size: 18px;
+  color: $text-color;
+  font-weight: 400;
+  width: 100%;
+  border: 1px solid $text-color;
+  border-radius: 20px;
+  line-height: 1;
+
+  &:hover {
+    color: $basic-white;
+
+    &::before {
+      left: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: calc(-100% - 2px);
     background-color: $main-dark-color;

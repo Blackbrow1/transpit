@@ -1,31 +1,6 @@
 <?php
 $title = 'Задать новый пароль | Транспит';
 
-// if (!empty($_GET['email']) && !empty($_GET['code'])) {
-//   $user = R::findOne('users', 'email = ?', array($_GET['email']));
-
-//   if (!$user) {
-//     header("Location: " . HOST . "password-recovery");
-//   } else if (!empty($_POST['popup-submit'])) {
-//     $user = R::findOne('users', 'email = ?', array($_GET['email']));
-
-//     if ($user) {
-//       if ($user->recovery_code === $_POST['reset-code'] && $user->recovery_code != '' && $user->recovery_code != NULL) {
-//         $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-//         $user->recovery_code = '';
-//         R::store($user);
-
-//         $success[] = [
-//           'title' => 'Пароль обновлен успешно!'
-//         ];
-//       }
-//     }
-//   } else {
-//     header("Location: " . HOST . "password-recovery");
-//     die();
-//   }
-// }
-
 // 1) Пришли по секретной ссылке с EMAIl
 if (!empty($_GET['email']) && !empty($_GET['code'])) {
 

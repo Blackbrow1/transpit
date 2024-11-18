@@ -722,24 +722,26 @@ try {
 
 // Кнопочка с количеством тренингов к прохождению
 
-const headerTrainingList = document.querySelector('.header__training-list');
-const headerTrainingItem = document.querySelectorAll('.header__training-item');
-const headerTrainingSticker = document.querySelector('.header__menu-item--all-trainings');
+try {
+  const headerTrainingList = document.querySelector('.header__training-list');
+  const headerTrainingItem = document.querySelectorAll('.header__training-item');
+  const headerTrainingSticker = document.querySelector('.header__menu-item--all-trainings');
 
-let trainingsCount = 0;
+  let trainingsCount = 0;
 
-headerTrainingItem.forEach(item => {
-  if (item) {
-    trainingsCount++;
+  headerTrainingItem.forEach(item => {
+    if (item) {
+      trainingsCount++;
+    }
+  });
+
+  if (trainingsCount === 0) {
+    headerTrainingSticker.classList.add('header__training-delete');
+    headerTrainingList.remove();
   }
-});
 
-if (trainingsCount === 0) {
-  headerTrainingSticker.classList.add('header__training-delete');
-  headerTrainingList.remove();
-}
-
-headerTrainingSticker.textContent = trainingsCount;
+  headerTrainingSticker.textContent = trainingsCount;
+} catch {}
 
 // Показать следующие 3 элемента при клике
 
@@ -798,5 +800,20 @@ try {
         item.classList.remove('users-list__item--none');
       }
     });
+  });
+} catch {}
+
+// Установить курсор по клику в поле
+try {
+  const loginLink = document.querySelector('.header__login-link');
+  const informationButton = document.querySelector('.information__button');
+  const heroInputTab = document.querySelector('.hero__input--tab');
+
+  loginLink.addEventListener('click', () => {
+    heroInputTab.focus();
+  });
+
+  informationButton.addEventListener('click', () => {
+    heroInputTab.focus();
   });
 } catch {}

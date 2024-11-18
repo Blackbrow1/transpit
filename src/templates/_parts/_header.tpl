@@ -11,19 +11,31 @@
 <body class="page__body">
   <header class="header">
     <div class="header__wrap">
-      <a href="#" class="header__logo">
+      <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
+      <a href="<?php echo HOST; ?>user-card" class="header__logo">
         <svg viewBox="0 0 184 35" width="184" height="35">
-          <use class="header__svg" href="img/icons/stack.svg#logo-desktop"></use>
+          <use class="header__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-desktop"></use>
         </svg>
       </a>
+      <?php else: ?>
+      <a href="#" class="header__logo">
+        <svg viewBox="0 0 184 35" width="184" height="35">
+          <use class="header__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-desktop"></use>
+        </svg>
+      </a>
+      <?php endif; ?>
 
+      <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
       <div class="header__menu">
         <ul class="header__menu-list">
+          <?php if ($_SESSION['role'] === 'admin'): ?>
           <li class="header__menu-item">
             <a class="header__menu-link" href="<?php echo HOST; ?>admin">
               Админ
             </a>
           </li>
+          <?php endif; ?>
+
           <li class="header__menu-item">
             <a class="header__menu-link" href="<?php echo HOST; ?>user-card">
               Кабинет
@@ -49,24 +61,35 @@
               </li>
             </ul>
           </li>
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="<?php echo HOST; ?>password-recovery">
-              Тест
-            </a>
-          </li>
         </ul>
 
         <div class="header__login">
-          <a class="header__login-link" href="<?php echo HOST; ?>">Выход</a>
+          <a class="header__login-link" href="<?php echo HOST; ?>logout">Выход</a>
 
           <div class="header__avatar">
             <picture>
-              <source type="image/webp" srcset="img/user-img-desktop@1x.webp 1x, img/user-img-desktop@2x.webp 2x">
-              <img class="header__avatar-img" loading="lazy" src="img/user-img-desktop@1x.jpg"
-                srcset="img/user-img-desktop@2x.jpg 2x" alt="Аватар">
+              <source type="image/webp"
+                srcset="<?php echo HOST; ?>img/user-img-desktop@1x.webp 1x, <?php echo HOST; ?>img/user-img-desktop@2x.webp 2x">
+              <img class="header__avatar-img" loading="lazy" src="<?php echo HOST; ?>img/user-img-desktop@1x.jpg"
+                srcset="<?php echo HOST; ?>img/user-img-desktop@2x.jpg 2x" alt="Аватар">
             </picture>
           </div>
         </div>
       </div>
+      <?php else: ?>
+      <div class="header__login">
+        <a class="header__login-link"
+          href="<?php if (isset($mainPage)) {echo $mainPage;} else {echo HOST . 'main';} ?>">Вход</a>
+
+        <div class="header__avatar">
+          <picture>
+            <source type="image/webp"
+              srcset="<?php echo HOST; ?>img/user-img-desktop@1x.webp 1x, <?php echo HOST; ?>img/user-img-desktop@2x.webp 2x">
+            <img class="header__avatar-img" loading="lazy" src="<?php echo HOST; ?>img/user-img-desktop@1x.jpg"
+              srcset="<?php echo HOST; ?>img/user-img-desktop@2x.jpg 2x" alt="Аватар">
+          </picture>
+        </div>
+      </div>
+      <?php endif; ?>
     </div>
   </header>

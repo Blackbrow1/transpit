@@ -1,6 +1,7 @@
 <?php
 
 $title = 'Онлайн-школа ООО "Транспит Северо-Запад"';
+$mainPage = '#hero';
 
 if (isset($_POST['send-form'])) {
   if (trim($_POST['tab-number']) == '') {
@@ -23,6 +24,13 @@ if (isset($_POST['send-form'])) {
         $success[] = [
           'title' => 'Верный пароль'
         ];
+
+        $_SESSION['logged_user'] = $user;
+        $_SESSION['login'] = 1;
+        $_SESSION['role'] = $user->role;
+
+        header('Location: ' . HOST . 'user-card');
+        exit();
       } else {
         $errors[] = [
           'title' => 'Неверный пароль'

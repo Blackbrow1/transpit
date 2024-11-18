@@ -6,6 +6,8 @@ require_once "db.php";
 $errors = [];
 $success = [];
 
+session_start();
+
 /* ..........................................
 
 РОУТЕР // ROUTE - МАРШРУТ
@@ -19,11 +21,22 @@ $uri = filter_var($uri, FILTER_SANITIZE_URL);
 $uri = substr($uri, 1);
 $uri = explode('?', $uri);
 
+if (isset($uri[1])) {
+  $uriGet = $uri[1];
+}
+
+$uriArray = explode('/', $uri[0]);
+$uriModule = $uriArray[0];
+
 // Роутер
-switch ($uri[0]){
+switch ($uriModule){
     case '':
-        require (ROOT . "modules/main/index.php");
+        require ROOT . "modules/main/index.php";
         break;
+
+    case 'logout':
+      require ROOT . "modules/main/logout.php";
+      break;
 
     case 'admin':
         require ROOT . "modules/admin/index.php";

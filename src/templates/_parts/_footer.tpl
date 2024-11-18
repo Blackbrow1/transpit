@@ -3,7 +3,7 @@
     <div class="footer__content">
       <a href="#" class="footer__logo">
         <svg viewBox="0 0 184 35" width="184" height="35">
-          <use class="footer__svg" href="img/icons/stack.svg#logo-desktop"></use>
+          <use class="footer__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-desktop"></use>
         </svg>
       </a>
 
@@ -27,7 +27,7 @@
         <span>Сайт сделан в</span>
         <a href="https://prasaim.ru" target="_blank">
           <svg viewBox="0 0 105 21" width="105" height="21">
-            <use class="footer__svg" href="img/icons/stack.svg#logo-prasaim"></use>
+            <use class="footer__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-prasaim"></use>
           </svg>
         </a>
       </p>
@@ -41,7 +41,7 @@
   </div>
 </footer>
 
-<script src="./js/index.bundle.js" type="module"></script>
+<script src="js/index.bundle.js" type="module"></script>
 </body>
 
 </html>
