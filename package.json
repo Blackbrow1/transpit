@@ -13,11 +13,14 @@
   "author": "Alex Blackbrow",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
     "browser-sync": "^3.0.3",
     "css-loader": "^7.1.2",
     "del": "^8.0.0",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
@@ -37,10 +40,7 @@
     "gulp-webp": "^5.0.0",
     "sass": "^1.80.1",
     "style-loader": "^4.0.0",
-    "webpack-stream": "^7.0.0",
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
-    "gulp-babel": "^8.0.0"
+    "webpack-stream": "^7.0.0"
   },
   "babel": {
     "presets": [

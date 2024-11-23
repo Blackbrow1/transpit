@@ -4,14 +4,17 @@
 
       <h1 class="hero__title">Внутренняя система обучения <span>ООО “Транспит Северо-Запад”</span></h1>
 
-      <p class="hero__text">Получите ваш логин и пароль от личного кабинета у непосредственного руководителя.
-        Логин равен табельному номеру, пароль - 123, по умолчанию. Когда войдете в личный кабинет, то обязательно
-        поменяйте ваш пароль на более сложный.</p>
+      <div class="hero__description">
+        <p class="hero__text">Получите ваш логин от личного кабинета у непосредственного руководителя.
+          Логин равен табельному номеру, пароль - 123, по умолчанию. Когда войдете в личный кабинет, то обязательно
+          поменяйте ваш пароль на более сложный.</p>
 
-      <p class="hero__text">Добавьте адрес электронной почты в личном кабинете для восстановления пароля, в случае, если
-        не помните старый
-        пароль. Изучите учебные материалы, которые появятся во вкладке "Обучение" и сдавайте тесты. Приятного и
-        продуктивного вам обучения!</p>
+        <p class="hero__text">Добавьте адрес электронной почты в личном кабинете для восстановления пароля, в случае,
+          если
+          не помните старый
+          пароль. Изучите учебные материалы, которые появятся во вкладке "Обучение" и сдавайте тесты. Приятного и
+          продуктивного вам обучения!</p>
+      </div>
 
       <form class="hero__form" action="<?php echo HOST; ?>" method="POST">
         <fieldset>
@@ -20,7 +23,8 @@
 
           <legend>Войти в личный кабинет</legend>
 
-          <input class="hero__input hero__input--tab" type="text" name="tab-number" placeholder="Табельный номер">
+          <input class="hero__input hero__input--tab" type="text" name="tab-number" placeholder="Табельный номер"
+            <?php echo isset($_POST['tab-number']) ? 'value="' . $_POST['tab-number'] . '"' : ''; ?>>
           <input class="hero__input" type="password" name="password" placeholder="Пароль">
 
           <button class="hero__submit button" type="submit" name="send-form" value="Войти">Войти</button>
@@ -31,7 +35,7 @@
     </div>
   </section>
 
-  <sec class="information">
+  <section class="information">
     <div class="information__wrap">
       <h2 class="information__title">Об онлайн-школе ООО "Транспит С-З"</h2>
 
@@ -56,5 +60,5 @@
         </div>
       </div>
     </div>
-  </sec tion>
+  </section>
 </main>

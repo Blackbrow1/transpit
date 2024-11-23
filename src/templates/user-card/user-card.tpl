@@ -16,6 +16,8 @@
   <?php else: ?>
   <section class="user-card">
     <div class="user-card__wrap">
+      <?php include ROOT . "templates/components/errors.tpl"; ?>
+      <?php include ROOT . "templates/components/success.tpl"; ?>
       <h1 class="user-card__title">Личная карточка сотрудника</h1>
 
       <div class="user-card__content">

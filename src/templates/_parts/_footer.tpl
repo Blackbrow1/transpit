@@ -41,7 +41,7 @@
   </div>
 </footer>
 
-<script src="js/index.bundle.js" type="module"></script>
+<script src="<?php echo HOST; ?>js/index.bundle.js" type="module"></script>
 </body>
 
 </html>

@@ -5,39 +5,43 @@ $mainPage = '#hero';
 
 if (isset($_POST['send-form'])) {
   if (trim($_POST['tab-number']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите табельный номер'
     ];
   }
 
   if (trim($_POST['password']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите пароль'
     ];
   }
 
-  if (empty($errors)) {
+  if (empty($_SESSION['errors'])) {
     $user = R::findOne('users', 'tab_number = ?', array($_POST['tab-number']));
 
     if ($user) {
       if (password_verify($_POST['password'], $user->password)) {
-        $success[] = [
-          'title' => 'Верный пароль'
-        ];
+        // $_SESSION['success'][] = [
+        //   'title' => 'Верный пароль'
+        // ];
 
         $_SESSION['logged_user'] = $user;
         $_SESSION['login'] = 1;
         $_SESSION['role'] = $user->role;
 
+        $_SESSION['success'][] = [
+          'title' => 'Рады снова Вас видеть. Учение - свет!'
+        ];
+
         header('Location: ' . HOST . 'user-card');
         exit();
       } else {
-        $errors[] = [
+        $_SESSION['errors'][] = [
           'title' => 'Неверный пароль'
         ];
       }
     } else {
-      $errors[] = [
+      $_SESSION['errors'][] = [
         'title' => 'Такой пользователь не зарегистрирован'
       ];
     }

@@ -3,8 +3,8 @@
 require_once "config.php";
 require_once "db.php";
 
-$errors = [];
-$success = [];
+$_SESSION['errors'] = [];
+$_SESSION['success'] = [];
 
 session_start();
 
@@ -29,7 +29,13 @@ $uriArray = explode('/', $uri[0]);
 $uriModule = $uriArray[0];
 
 // Роутер
-switch ($uriModule){
+switch ($uriModule) {
+    case '':
+      if (isset($_SESSION['login']) && $_SESSION['login'] === 1) {
+        require ROOT . "modules/user-card/index.php";
+        break;
+      }
+
     case '':
         require ROOT . "modules/main/index.php";
         break;

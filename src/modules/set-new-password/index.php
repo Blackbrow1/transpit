@@ -27,11 +27,11 @@ else if (!empty($_POST['popup-submit'])) {
           R::store($user);
 
           // Сообщение об успехе и вход на сайт
-          $success[] = ['title' => 'Пароль успешно обновлен!'];
+          $_SESSION['success'][] = ['title' => 'Пароль успешно обновлен!'];
 
           $newPasswordReady = true;
       } else {
-          $errors[] = ['title' => 'Неверный код'];
+          $_SESSION['errors'][] = ['title' => 'Неверный код'];
       }
   }
 }

@@ -5,16 +5,16 @@ if (isset($_POST['popup-submit'])) {
   $_POST['email'] = trim($_POST['email']);
 
   if (trim($_POST['email']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите Email'
     ];
   } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите корректный Email'
     ];
   }
 
-  if (empty($errors)) {
+  if (empty($_SESSION['errors'])) {
     $user = R::findOne('users', 'email =?', array($_POST['email']));
 
     if ($user) {
@@ -42,17 +42,17 @@ if (isset($_POST['popup-submit'])) {
       $resultEmail = mail($_POST['email'], 'Восстановление доступа', $recovery_message, $headers);
 
       if ($resultEmail) {
-        $success[] = [
+        $_SESSION['success'][] = [
           'title' => 'Отправили ссылку для сброса пароля на вашу почту'
         ];
       } else {
-        $errors[] = [
+        $_SESSION['errors'][] = [
           'title' => 'Что-то пошло не так. Попробуйте еще раз'
         ];
       }
 
     } else {
-      $errors[] = [
+      $_SESSION['errors'][] = [
         'title' => 'Неверный Email'
       ];
     }

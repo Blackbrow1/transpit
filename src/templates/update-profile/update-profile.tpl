@@ -61,9 +61,10 @@
             <div class="update-profile__img-block">
               <picture>
                 <source width="482" height="428" type="image/webp"
-                  srcset="img/user-img-desktop@1x.webp 1x, img/user-img-desktop@2x.webp 2x">
+                  srcset="<?php echo HOST; ?>img/user-img-desktop@1x.webp 1x, <?php echo HOST; ?>img/user-img-desktop@2x.webp 2x">
                 <img class="update-profile__img" width="482" height="428" loading="lazy"
-                  src="img/user-img-desktop@1x.jpg" srcset="img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
+                  src="<?php echo HOST; ?>img/user-img-desktop@1x.jpg"
+                  srcset="<?php echo HOST; ?>img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
               </picture>
             </div>
           </div>

@@ -24,10 +24,11 @@
                 type="text" name="patronymic" placeholder="Отчество">
               <div class="add-user__menu add-user__filter">
                 <select class="add-user__select add-user__select--post" name="post">
-                  <option value="post-name" selected>Должность</option>
-                  <option value="driver">Водитель</option>
-                  <option value="expeditor">Экспедитор</option>
-                  <option value="supervisor">Супервайзер</option>
+                  <option value="Должность" selected>Должность</option>
+                  <option value="Водитель">Водитель</option>
+                  <option value="Экспедитор">Экспедитор</option>
+                  <option value="Супервайзер">Супервайзер</option>
+                  <option value="Начальник смены">Начальник смены</option>
                 </select>
 
                 <img class="add-user__filter-img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
@@ -60,10 +61,11 @@
       <div class="users-list__menu filter">
         <form class="users-list__all-users" action="admin.php" method="GET">
           <select class="users-list__select" name="users-list-post">
-            <option value="all" selected>Все</option>
-            <option value="driver">Водитель</option>
-            <option value="expeditor">Экспедитор</option>
-            <option value="supervisor">Супервайзер</option>
+            <option value="Все" selected>Все</option>
+            <option value="Водитель">Водитель</option>
+            <option value="Экспедитор">Экспедитор</option>
+            <option value="Супервайзер">Супервайзер</option>
+            <option value="Начальник смены">Начальник смены</option>
           </select>
         </form>
 
@@ -87,7 +89,7 @@
         <li class="users-list__item">
           <p class="users-list__item-user">Константинопольский Е.С.</p>
           <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
+            <p>Должность: <span class="users-list__item-post">Начальник смены</span></p>
             <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
           </div>
 

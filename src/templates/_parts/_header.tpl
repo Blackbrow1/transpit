@@ -82,12 +82,8 @@
           href="<?php if (isset($mainPage)) {echo $mainPage;} else {echo HOST . 'main';} ?>">Вход</a>
 
         <div class="header__avatar">
-          <picture>
-            <source type="image/webp"
-              srcset="<?php echo HOST; ?>img/user-img-desktop@1x.webp 1x, <?php echo HOST; ?>img/user-img-desktop@2x.webp 2x">
-            <img class="header__avatar-img" loading="lazy" src="<?php echo HOST; ?>img/user-img-desktop@1x.jpg"
-              srcset="<?php echo HOST; ?>img/user-img-desktop@2x.jpg 2x" alt="Аватар">
-          </picture>
+          <img class="header__avatar-img" width="512" height="512" loading="lazy"
+            src="<?php echo HOST; ?>img/icons/user.svg" alt="Аватар">
         </div>
       </div>
       <?php endif; ?>

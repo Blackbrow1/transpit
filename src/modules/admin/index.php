@@ -3,43 +3,43 @@ $title = 'Кабинет администратора | Транспит';
 
 if (isset($_POST['add-user'])) {
   if (trim($_POST['name']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите имя сотрудника'
     ];
   }
 
   if (trim($_POST['surname']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите фамилию сотрудника'
     ];
   }
 
   if (trim($_POST['patronymic']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите отчество сотрудника'
     ];
   }
 
   if (trim($_POST['tab-number']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Введите табельный номер сотрудника'
     ];
   }
 
   if (trim($_POST['password']) == '') {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Задайте пароль сотруднику'
     ];
   }
 
   // Проверка существующего пользователя
   if (R::count('users', 'tab_number = ?', array($_POST['tab-number'])) > 0) {
-    $errors[] = [
+    $_SESSION['errors'][] = [
       'title' => 'Сотрудник с таким табельным номером уже записан'
     ];
   }
 
-  if (empty($errors)) {
+  if (empty($_SESSION['errors'])) {
     $user = R::dispense('users');
     $user->name = $_POST['name'];
     $user->surname = $_POST['surname'];
@@ -52,11 +52,11 @@ if (isset($_POST['add-user'])) {
     $result = R::store($user);
 
     if (is_int($result)) {
-      $success[] = [
+      $_SESSION['success'][] = [
         'title' => 'Сотрудник зарегистрирован'
       ];
     } else {
-      $errors[] = [
+      $_SESSION['errors'][] = [
         'title' => 'Что-то пошло не так. Попробуйте еще раз!'
       ];
     }

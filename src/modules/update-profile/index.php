@@ -2,25 +2,46 @@
 
 function updateUserAndGoToProfile($user) {
   if (isset($_POST['update'])) {
-    global $errors;
-
     if ( trim($_POST['name']) === '') {
-      $errors[] = ['title' => 'Введите имя'];
+      $_SESSION['errors'][] = ['title' => 'Введите имя'];
     }
+
     if ( trim($_POST['surname']) === '') {
-      $errors[] = ['title' => 'Введите фамилию'];
+      $_SESSION['errors'][] = ['title' => 'Введите фамилию'];
     }
+
     if ( trim($_POST['patronymic']) === '') {
-      $errors[] = ['title' => 'Введите отчество'];
+      $_SESSION['errors'][] = ['title' => 'Введите отчество'];
     }
+
+
+
+
+    // $mails = R::getAssoc('SELECT email FROM users');
+
+    // foreach($mails as $mail) {
+    //   if ($mail === $_POST['email']) {
+    //     $_SESSION['errors'][] = ['title' => 'Такой адрес почты уже зарегистрирован'];
+    //     header('Location: ' . HOST . 'user-card');
+    //   }
+    // }
+
+
+
+
+
+
 
     // Обновить инфу в БД
-    if (empty($errors)) {
+    if (empty($_SESSION['errors'])) {
       $user->name = htmlentities($_POST['name']);
       $user->surname = htmlentities($_POST['surname']);
       $user->patronymic = htmlentities($_POST['patronymic']);
       $user->email = htmlentities($_POST['email']);
-      $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+      if (isset($_POST['password']) && $_POST['password'] !== '') {
+        $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+      }
 
       R::store($user);
       $_SESSION['logged_user'] = $user;

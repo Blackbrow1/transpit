@@ -781,22 +781,27 @@ try {
     usersItems.forEach(item => {
       item.classList.remove('users-list__item--none');
 
-      if (evt.target.value === 'driver') {
+      if (evt.target.value === 'Водитель') {
         // item.classList.remove('users-list__item--none');
         if (item.querySelector('.users-list__item-post').textContent !== 'Водитель') {
           item.classList.add('users-list__item--none');
         }
-      } else if (evt.target.value === 'expeditor') {
+      } else if (evt.target.value === 'Экспедитор') {
         // item.classList.remove('users-list__item--none');
         if (item.querySelector('.users-list__item-post').textContent !== 'Экспедитор') {
           item.classList.add('users-list__item--none');
         }
-      } else if (evt.target.value === 'supervisor') {
+      } else if (evt.target.value === 'Супервайзер') {
         // item.classList.remove('users-list__item--none');
         if (item.querySelector('.users-list__item-post').textContent !== 'Супервайзер') {
           item.classList.add('users-list__item--none');
         }
-      } else if (evt.target.value === 'all') {
+      } else if (evt.target.value === 'Начальник смены') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Начальник смены') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Все') {
         item.classList.remove('users-list__item--none');
       }
     });
