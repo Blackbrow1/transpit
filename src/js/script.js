@@ -822,3 +822,15 @@ try {
     heroInputTab.focus();
   });
 } catch {}
+
+// Убрать сообщение об успехе
+
+const messageContainers = document.querySelectorAll('.message-container');
+
+try {
+  messageContainers.forEach((item) => {
+    setTimeout(() => {
+      item.remove();
+    }, 5000);
+  });
+} catch {}
