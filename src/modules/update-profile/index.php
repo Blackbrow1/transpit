@@ -27,12 +27,7 @@ function updateUserAndGoToProfile($user) {
     // }
 
 
-
-
-
-
-
-    // Обновить инфу в БД
+    // // Обновить инфу в БД
     if (empty($_SESSION['errors'])) {
       $user->name = htmlentities($_POST['name']);
       $user->surname = htmlentities($_POST['surname']);
@@ -42,6 +37,91 @@ function updateUserAndGoToProfile($user) {
       if (isset($_POST['password']) && $_POST['password'] !== '') {
         $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
       }
+
+      // Работа с файлом фотографии для аватара пользователя
+      if ( isset($_FILES['avatar']['name']) && $_FILES['avatar']['tmp_name'] !== '') {
+
+        // echo $_FILES['avatar']['name'];
+        // echo $_FILES['avatar']['tmp_name'];
+        // die();
+
+        // 1. Записываем параметры файла в переменные
+        $fileName = $_FILES["avatar"]["name"];
+        $fileTmpLoc = $_FILES["avatar"]["tmp_name"];
+        $fileType = $_FILES["avatar"]["type"];
+        $fileSize = $_FILES["avatar"]["size"];
+        $fileErrorMsg = $_FILES["avatar"]["error"];
+        $kaboom = explode(".", $fileName);
+        $fileExt = end($kaboom);
+
+        // 2. Проверка файла на корректность
+        // 2.1 Проверка на маленький размер изображения
+        list($width, $height) = getimagesize($fileTmpLoc);
+        if ($width < 160 || $height < 160) {
+            $_SESSION['errors'][] = [
+                'title' => 'Изображение слишком маленького размера. '
+            ];
+        }
+
+        // 2.2 Проверка на большой вес файла
+        if ($fileSize > 4194304) {
+            $_SESSION['errors'][] = ['title' => 'Файл изображения не должен быть более 4 Mb'];
+        }
+
+        // 2.3 Проверка на формат файла
+        if (!preg_match("/\.(gif|jpg|jpeg|png)$/i", $fileName)) {
+            $_SESSION['errors'][]  = ['title' => 'Неверный формат файла'];
+        }
+
+        // 2.4 Проверка на формат файла
+        if ($fileErrorMsg == 1) {
+            $_SESSION['errors'][] = ['title' => 'При загрузке изображения произошла ошибка. Повторите попытку'];
+        }
+
+        // Если нет ошибок - двигаемся дальше
+        if (empty($_SESSION['errors'])) {
+
+            // Поверям установлен ли аватар у пользователя
+            $avatar = $user->avatar;
+            $avatarFolderLocation = ROOT . 'user-content/avatars/';
+
+            // Если у подльзователя уже есть старый аватар - тогда удаляем его
+            if (!empty($avatar)) {
+                // Определяем путь к большой аватарке и удаляем ее
+                $pictureUrl = $avatarFolderLocation . $avatar;
+                file_exists($pictureUrl) ? unlink($pictureUrl) : '' ;
+
+                // Определяем путь к маленькой аватарке и удаляем ее
+                $pictureUrl277 = $avatarFolderLocation . '277-' . $avatar;
+                file_exists( $pictureUrl277) ? unlink($pictureUrl277) : '';
+            }
+
+            // $moveResult = move_uploaded_file($fileTmpLoc, $uploadfile);
+
+            $db_file_name =
+            rand(100000000000,999999999999) . "." . $fileExt;
+            $uploadfile482 = $avatarFolderLocation . $db_file_name;
+            $uploadfile277 = $avatarFolderLocation . '277-' . $db_file_name;
+
+            // Обработать фотографию
+            // 1. Обрезать до 160х160
+            // 2. Обрезать до 48х48
+            $result482 = resize_and_crop($fileTmpLoc, $uploadfile482, 482, 428);
+            $result277 = resize_and_crop($fileTmpLoc, $uploadfile277, 277, 277);
+
+            if ($result482 != true || $result277 != true) {
+              $_SESSION['errors'][] = ['title' => 'Ошибка сохранения файла'];
+              return false;
+          }
+
+            // Сохраняем имя файла в БД
+            $user->avatar = $db_file_name;
+            $user->avatarSmall = '277-' . $db_file_name;
+
+        }
+
+      }
+
 
       R::store($user);
       $_SESSION['logged_user'] = $user;

@@ -19,12 +19,13 @@
 
         <?php if (isset($uriArray[1])): ?>
         <form class="update-profile__form" action="<?php echo HOST; ?>update-profile/<?php echo $uriArray[1]; ?>"
-          method="POST">
+          method="POST" enctype="multipart/form-data">
           <?php else: ?>
-          <form class="update-profile__form" action="<?php echo HOST; ?>update-profile" method="POST">
+          <form class="update-profile__form" action="<?php echo HOST; ?>update-profile" method="POST"
+            enctype="multipart/form-data">
             <?php endif; ?>
 
-            <fieldset>
+            <fieldset class="update-profile__inputs">
               <legend class="visually-hidden">Обновить данные пользователя</legend>
 
               <input class="update-profile__input" type="text" name="surname"
@@ -45,29 +46,41 @@
 
               <a href="<?php echo HOST; ?>user-card" class="update-profile__back">Перейти в кабинет</a>
             </fieldset>
-          </form>
 
-          <div class="update-profile__update-img">
-            <div class="update-profile__update-img-info">
-              <p>Изображение в формате jpg или png. Рекомендуемая ширина от 945 пикселей, высота от 400 пикселей. Вес не
-                более 2 мб.</p>
+            <div class="update-profile__update-img">
+              <div class="update-profile__update-img-info">
+                <p>Изображение в формате jpg или png. Рекомендуемая ширина от 277 пикселей, высота от 277 пикселей. Вес
+                  не
+                  более 4 мб.</p>
 
-              <div class="update-profile__buttons">
-                <button class="update-profile__button-choose" type="button">Выбрать файл</button>
-                <button class="update-profile__button-delete" type="button">Удалить</button>
+                <div class="update-profile__buttons">
+                  <input class="update-profile__button-choose" type="file" name="avatar" value="Выбрать файл">
+
+                  <?php if(!empty($user->avatar)): ?>
+                  <button class="update-profile__button-delete" type="button">Удалить</button>
+                  <?php endif; ?>
+                </div>
+              </div>
+
+              <div class="update-profile__img-block">
+                <!-- <picture>
+                  <source width="482" height="428" type="image/webp"
+                    srcset="<?php echo HOST; ?>img/user-img-desktop@1x.webp 1x, <?php echo HOST; ?>img/user-img-desktop@2x.webp 2x">
+                  <img class="update-profile__img" width="482" height="428" loading="lazy"
+                    src="<?php echo HOST; ?>img/user-img-desktop@1x.jpg"
+                    srcset="<?php echo HOST; ?>img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
+                </picture> -->
+
+                <?php if(!empty($user->avatar)): ?>
+                <img class="user-card__avatar-img" width="482" height="428" loading="lazy"
+                  src="<?php echo HOST; ?>user-content/avatars/<?php echo $user->avatar; ?>" alt="Фото сотрудника">
+                <?php else: ?>
+                <img class="user-card__avatar-img" width="482" height="428" loading="lazy"
+                  src="<?php echo HOST; ?>user-content/avatars/no-avatar.jpg" alt="Фото сотрудника">
+                <?php endif; ?>
               </div>
             </div>
-
-            <div class="update-profile__img-block">
-              <picture>
-                <source width="482" height="428" type="image/webp"
-                  srcset="<?php echo HOST; ?>img/user-img-desktop@1x.webp 1x, <?php echo HOST; ?>img/user-img-desktop@2x.webp 2x">
-                <img class="update-profile__img" width="482" height="428" loading="lazy"
-                  src="<?php echo HOST; ?>img/user-img-desktop@1x.jpg"
-                  srcset="<?php echo HOST; ?>img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
-              </picture>
-            </div>
-          </div>
+          </form>
       </div>
     </div>
   </section>

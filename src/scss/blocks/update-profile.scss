@@ -15,13 +15,13 @@
   margin-bottom: 40px;
 }
 
-.update-profile__content {
-  display: flex;
-  justify-content: space-between;
+.update-profile__inputs {
+  width: 482px;
 }
 
 .update-profile__form {
-  width: 482px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .update-profile__input {
@@ -103,7 +103,6 @@
 .update-profile__button-choose {
   background-color: $main-dark-color;
   color: $basic-white;
-  margin-bottom: 10px;
   transition: all 0.5s ease;
 
   &:hover {
@@ -113,6 +112,7 @@
 
 .update-profile__button-delete {
   position: relative;
+  margin-top: 10px;
   border: 1px solid $text-color;
   transition: all 0.5s ease;
   overflow: hidden;

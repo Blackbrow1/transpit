@@ -824,7 +824,6 @@ try {
 } catch {}
 
 // Убрать сообщение об успехе
-
 const messageContainers = document.querySelectorAll('.message-container');
 
 try {

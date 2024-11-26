@@ -108,6 +108,18 @@ export function images() {
   .pipe(dest(`${PATH_TO_DIST}img/`));
 }
 
+export function copyImages() {
+  return src(`${PATH_TO_SRC}user-content/**/*.{jpg,jpeg,png,gif,svg}`, { encoding: false })
+  .pipe(plumber({
+    errorHandler: notify.onError(error => ({
+        title: 'IMAGES',
+        message: error.message
+    }))
+  }))
+  .pipe(newer(`${PATH_TO_DIST}user-content`))
+  .pipe(dest(`${PATH_TO_DIST}user-content/`));
+}
+
 export function fonts() {
   return src(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`)
   .pipe(plumber({
@@ -167,6 +179,7 @@ export function watcher() {
   watch(`${PATH_TO_SRC}**/*.tpl`, series(tplFiles));
   watch(`${PATH_TO_SRC}scss/**/*.scss`, series(styles));
   watch(`${PATH_TO_SRC}img/**/*.{jpg,jpeg,png,gif,svg}`, series(images));
+  watch(`${PATH_TO_SRC}user-content/**/*.{jpg,jpeg,png,gif,svg}`, series(copyImages));
   watch(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`, series(fonts));
   watch(`${PATH_TO_SRC}js/*.js`, series(scripts));
   watch(`${PATH_TO_SRC}img/icons/**/*.svg`, series(createStack, reloadServer));
@@ -185,7 +198,7 @@ export function clear() {
 export function buildProd(done) {
   parallel(
     clear,
-    series(html, tplFiles, styles, fonts, images, scripts, createStack, copyAssets),
+    series(html, tplFiles, styles, fonts, images, copyImages, scripts, createStack, copyAssets),
     startServer,
     watcher
   )(done)
@@ -194,7 +207,7 @@ export function buildProd(done) {
 export function runDev(done) {
   parallel(
     clear,
-    series(html, tplFiles, styles, images, fonts, scripts, createStack, copyAssets),
+    series(html, tplFiles, styles, images, copyImages, fonts, scripts, createStack, copyAssets),
     startServer,
     watcher
   )(done)
