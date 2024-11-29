@@ -54,10 +54,17 @@
                   более 4 мб.</p>
 
                 <div class="update-profile__buttons">
-                  <input class="update-profile__button-choose" type="file" name="avatar" value="Выбрать файл">
+                  <label class="update-profile__button-choose" for="update-profile__button-choose">Выбрать файл</label>
+                  <input class="visually-hidden" id="update-profile__button-choose" type="file" name="avatar"
+                    value="Выбрать файл">
 
                   <?php if(!empty($user->avatar)): ?>
-                  <button class="update-profile__button-delete" type="button">Удалить</button>
+                  <div class="update-profile__checkbox">
+                    <label class="update-profile__delete-avatar" for="update-profile__delete-avatar">Удалить
+                      фото</label>
+                    <input class="update-profile__button-checkbox visually-hidden" type="checkbox" name="delete-avatar"
+                      id="update-profile__delete-avatar">
+                  </div>
                   <?php endif; ?>
                 </div>
               </div>
@@ -87,5 +94,7 @@
   <?php
  endif;
  ?>
+
+
 
 </main>

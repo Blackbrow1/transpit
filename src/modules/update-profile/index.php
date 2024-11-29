@@ -117,15 +117,25 @@ function updateUserAndGoToProfile($user) {
             // Сохраняем имя файла в БД
             $user->avatar = $db_file_name;
             $user->avatarSmall = '277-' . $db_file_name;
-
         }
-
       }
 
+      // Удаление аватарки пользователя
+      if (isset($_POST['delete-avatar']) && $_POST['delete-avatar'] == 'on') {
+        $avatarFolderLocation = ROOT . 'user-content/avatars/';
+        unlink($avatarFolderLocation . $user->avatar);
+        unlink($avatarFolderLocation . '277-' . $user->avatar);
+
+        $user->avatar = '';
+        $user->avatar_small = '';
+      }
 
       R::store($user);
-      $_SESSION['logged_user'] = $user;
-      header('Location: ' . HOST . 'user-card');
+
+      if ($user->id === $_SESSION['logged_user']['id']) {
+        $_SESSION['logged_user'] = $user;
+      }
+      header('Location: ' . HOST . 'user-card/' . $user->id);
       exit();
     }
   }
