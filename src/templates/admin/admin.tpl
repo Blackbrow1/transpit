@@ -73,142 +73,40 @@
       </div>
 
       <ul class="users-list__list">
+        <?php
+        $users = R::findAll('users');
+        foreach(array_reverse($users) as $item): ?>
         <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
+          <p class="users-list__item-user"><?php echo $item->surname; ?>
+            <?php echo mb_substr($item->name, 0, 1); ?>.<?php echo mb_substr($item->patronymic, 0, 1); ?>.
+          </p>
           <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
+            <p>Должность: <span class="users-list__item-post"><?php echo $item->post; ?></span></p>
+            <p>Табельный номер: <span class="users-list__tab-namber"><?php echo $item->tab_number; ?></span></p>
           </div>
 
           <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
+            <a class="users-list__item-button-edit"
+              href="<?php echo HOST; ?>update-profile/<?php echo $item->id; ?>">Редактировать</a>
+
+            <button type="button" class="users-list__item-button-delete">Удалить</button>
+          </div>
+
+          <div class="users-list__popup users-list__popup--none">
+            <p class="users-list__popup-text">Вы точно хотите удалить сотрудника?</p>
+            <a href="<?php echo HOST; ?>admin?id=<?php echo $item->id; ?>"
+              class="users-list__item-button-delete">Удалить</a>
+            <button type="button" class="users-list__item-button-quite">Выйти</button>
           </div>
         </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Начальник смены</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Супервайзер</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Водитель</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
-
-        <li class="users-list__item">
-          <p class="users-list__item-user">Константинопольский Е.С.</p>
-          <div class="users-list__item-info">
-            <p>Должность: <span class="users-list__item-post">Экспедитор</span></p>
-            <p>Табельный номер: <span class="users-list__tab-namber">4556</span></p>
-          </div>
-
-          <div class="users-list__item-buttons">
-            <a class="users-list__item-button-edit" href="#">Редактировать</a>
-            <button class="users-list__item-button-delete" type="button">Удалить</button>
-          </div>
-        </li>
+        <?php endforeach; ?>
       </ul>
 
       <button class="users-list__button button button--all" type="button">Показать всех</button>
     </div>
   </section>
 
-  <section class="users-finished-test">
+  <sec class="users-finished-test">
     <div class="users-finished-test__wrap">
       <h2 class="users-finished-test__title h2">Сотрудники, сдавшие тест</h2>
 
@@ -378,5 +276,5 @@
 
       <button class="users-finished-test__button button button--all" type="button">Показать всех</button>
     </div>
-  </section>
+  </sec tion>
 </main>

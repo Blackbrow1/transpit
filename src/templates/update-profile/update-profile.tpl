@@ -70,20 +70,12 @@
               </div>
 
               <div class="update-profile__img-block">
-                <!-- <picture>
-                  <source width="482" height="428" type="image/webp"
-                    srcset="<?php echo HOST; ?>img/user-img-desktop@1x.webp 1x, <?php echo HOST; ?>img/user-img-desktop@2x.webp 2x">
-                  <img class="update-profile__img" width="482" height="428" loading="lazy"
-                    src="<?php echo HOST; ?>img/user-img-desktop@1x.jpg"
-                    srcset="<?php echo HOST; ?>img/user-img-desktop@2x.jpg 2x" alt="Фото сотрудника">
-                </picture> -->
-
                 <?php if(!empty($user->avatar)): ?>
                 <img class="user-card__avatar-img" width="482" height="428" loading="lazy"
                   src="<?php echo HOST; ?>user-content/avatars/<?php echo $user->avatar; ?>" alt="Фото сотрудника">
                 <?php else: ?>
                 <img class="user-card__avatar-img" width="482" height="428" loading="lazy"
-                  src="<?php echo HOST; ?>user-content/avatars/no-avatar.jpg" alt="Фото сотрудника">
+                  src="<?php echo HOST; ?>img/icons/user.svg" alt="Фото сотрудника">
                 <?php endif; ?>
               </div>
             </div>

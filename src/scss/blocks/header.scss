@@ -28,6 +28,7 @@ use.header__svg {
   height: 40px;
   border-radius: 100%;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .header__avatar-img {

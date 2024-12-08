@@ -833,3 +833,22 @@ try {
     }, 5000);
   });
 } catch {}
+
+// Попап удаления записи о сотруднике
+const usersListButtonDelete = document.querySelectorAll('.users-list__item-button-delete');
+const usersListPopup = document.querySelectorAll('.users-list__popup');
+const usersListButtonQuite = document.querySelector('.users-list__item-button-quite');
+
+usersListButtonDelete.forEach((item, id) => {
+  item.addEventListener('click', () => {
+    usersListPopup.forEach((popup) => {
+      popup.classList.remove('users-list__popup--none');
+    });
+
+  });
+
+  // usersListButtonQuite.addEventListener('click', () => {
+  //   usersListPopup.classList.add('users-list__popup--none');
+  // });
+});
+

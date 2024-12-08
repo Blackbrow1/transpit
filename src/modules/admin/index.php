@@ -1,6 +1,16 @@
 <?php
 $title = 'Кабинет администратора | Транспит';
 
+if (isset($uriArray[1])) {
+  $user = R::load('users', $uriArray[1]);
+} else {
+  if (isset($_SESSION['login']) && $_SESSION['login'] === 1) {
+    $user = R::load('users', $_SESSION['logged_user']['id']);
+  } else {
+    $userNotLoggedIn = true;
+  }
+}
+
 if (isset($_POST['add-user'])) {
   if (trim($_POST['name']) == '') {
     $_SESSION['errors'][] = [
@@ -63,6 +73,15 @@ if (isset($_POST['add-user'])) {
   }
 }
 
+
+// Удаление записи сотрудника из БД
+if (isset($_GET['id'])) {
+  $id = $_GET['id'];
+  $m = R::load('users', $id);
+  R::trash($m);
+  header("Location: " . HOST . "admin");
+  exit();
+}
 
 // ob_start();
 // include ROOT . 'templates/admin/admin.tpl';
