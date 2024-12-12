@@ -69,6 +69,10 @@ switch ($uriModule) {
       require ROOT . "modules/test/index.php";
       break;
 
+    case 'submit-results':
+      require ROOT . "modules/test/submit_results.php";
+      break;
+
     case 'password-recovery':
       require ROOT . "modules/password-recovery/index.php";
       break;

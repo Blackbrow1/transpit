@@ -102,6 +102,10 @@ navItems.forEach((item) => {
 //   getTime(1000 * 60 * 18);
 // });
 
+const answCount = document.querySelector('[name="answ_count"]');
+const percent = document.querySelector('[name="percent"]');
+const resultName = document.querySelector('[name="result_name"]');
+
 let sum = 0;
 
 function getResult() {
@@ -149,11 +153,16 @@ function getResult() {
 
   const progress = Math.round((sum / MAX_QUESTIONS) * 100);
 
+  answCount.value = sum;
+  percent.value = progress;
+
   if (sum >= MIN_QUESTIONS_ACCESS) {
     testResultText.textContent = 'Поздравляем! Тест успешно пройден. ' + sum + ' верных ответа. ' + 'Прогресс ' + progress + '%';
     testResult.classList.add('test__result--access');
     testResult.classList.remove('test__result--hidden');
     timeBlock.classList.add('test__result--hidden');
+
+    resultName.value = 'Зачет';
 
     answerRadioBlock.forEach(item => {
       const answerRadio = item.querySelectorAll('.test__answer-radio');
@@ -205,22 +214,72 @@ function getResult() {
     testResult.classList.add('test__result--fail');
     testResult.classList.remove('test__result--hidden');
     timeBlock.classList.add('test__result--hidden');
+
+    resultName.value = 'Незачет';
   }
 
-  buttonStop.remove();
-  buttonCabinet.classList.remove('test__button-cabinet--none');
+  // buttonStop.remove();
+  // buttonCabinet.classList.remove('test__button-cabinet--none');
 
-  buttonClose.addEventListener('click', () => {
-    testResult.classList.add('test__result--hidden');
-  });
+  // buttonClose.addEventListener('click', () => {
+  //   testResult.classList.add('test__result--hidden');
+  // });
 }
 
 try {
-  testForm.addEventListener('submit', (evt) => {
+  testForm.addEventListener('submit', function(evt) {
     evt.preventDefault();
-    getResult();
+    // getResult();
+
+    const formData = new FormData(this); // собираем данные из формы
+
+    fetch('../modules/test/submit_results.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      document.querySelector('.res').innerHTML = data; // выводим ответ от сервера
+    })
+    .catch(error => {
+      document.querySelector('.res').innerHTML = 'Произошла ошибка при отправке данных.';
+      console.error('Ошибка:', error);
+    });
   });
 } catch {}
+
+// testForm.addEventListener('submit', function(event) {
+//   event.preventDefault(); // Отменяем стандартную отправку формы
+
+//   let formData = new FormData(testForm); // Собираем данные из формы
+
+//   sendResults(formData);
+// });
+
+// async function sendResults(data) {
+//   try {
+//       const response = await fetch('/submit-results', {
+//           method: 'POST',
+//           body: data
+//       });
+
+//       if (!response.ok) {
+//           throw new Error(`Network response was not ok: ${response.status}`);
+//       }
+
+//       const result = await response.json();
+//       displayResultMessage(result.message);
+//   } catch (error) {
+//       console.error('There has been a problem with your fetch operation:', error);
+//   }
+// }
+
+// function displayResultMessage(message) {
+//   const messageDiv = document.querySelector('.res');
+//   messageDiv.innerText = message;
+// }
+
+// Страница обучения
 
 const trainList = [
   {
