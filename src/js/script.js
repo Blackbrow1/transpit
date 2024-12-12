@@ -218,35 +218,37 @@ function getResult() {
     resultName.value = 'Незачет';
   }
 
-  // buttonStop.remove();
-  // buttonCabinet.classList.remove('test__button-cabinet--none');
+  buttonStop.remove();
+  buttonCabinet.classList.remove('test__button-cabinet--none');
 
-  // buttonClose.addEventListener('click', () => {
-  //   testResult.classList.add('test__result--hidden');
-  // });
+  buttonClose.addEventListener('click', () => {
+    testResult.classList.add('test__result--hidden');
+  });
 }
 
 try {
   testForm.addEventListener('submit', function(evt) {
     evt.preventDefault();
-    // getResult();
+    getResult();
 
     const formData = new FormData(this); // собираем данные из формы
 
-    fetch('../modules/test/submit_results.php', {
+    // /modules/test/submit_results.php
+    fetch('submit-results', {
       method: 'POST',
       body: formData
     })
     .then(response => response.text())
     .then(data => {
-      document.querySelector('.res').innerHTML = data; // выводим ответ от сервера
+      console.log('Ответ с сервера получен'); // выводим ответ от сервера
     })
     .catch(error => {
-      document.querySelector('.res').innerHTML = 'Произошла ошибка при отправке данных.';
       console.error('Ошибка:', error);
     });
   });
-} catch {}
+} catch {
+  console.log('Произошла ошибка');
+}
 
 // testForm.addEventListener('submit', function(event) {
 //   event.preventDefault(); // Отменяем стандартную отправку формы

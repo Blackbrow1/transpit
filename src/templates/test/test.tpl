@@ -1,7 +1,3 @@
-<?php
-print_r($_POST)
-?>
-
 <main>
   <section class="test">
     <div class="test__wrap">
@@ -728,15 +724,13 @@ print_r($_POST)
         <input type="hidden" name="test_name" value="Название теста">
         <input type="hidden" name="answ_count" value="">
         <input type="hidden" name="percent" value="">
-        <input type="hidden" name="result_name" value="Зачет">
+        <input type="hidden" name="result_name" value="">
 
         <input class="test__button-stop button" type="submit" name="test-finish" value="Завершить тест">
       </form>
 
       <a class="test__button-cabinet test__button-cabinet--none button" href="<?php echo HOST; ?>user-card">В
         личный кабинет</a>
-
-      <div class="res"></div>
 
       <div class="test__time-block">18:00</div>
     </div>

@@ -1,5 +1,4 @@
 <?php
-
 function updateUserAndGoToProfile($user) {
   if (isset($_POST['update'])) {
     if ( trim($_POST['name']) === '') {
@@ -14,17 +13,11 @@ function updateUserAndGoToProfile($user) {
       $_SESSION['errors'][] = ['title' => 'Введите отчество'];
     }
 
+    $email = R::findOne('users', 'email = ?', array($_POST['email']));
 
-
-
-    // $mails = R::getAssoc('SELECT email FROM users');
-
-    // foreach($mails as $mail) {
-    //   if ($mail === $_POST['email']) {
-    //     $_SESSION['errors'][] = ['title' => 'Такой адрес почты уже зарегистрирован'];
-    //     header('Location: ' . HOST . 'user-card');
-    //   }
-    // }
+    if ($email && $_POST['email'] !== $user->email) {
+      $_SESSION['errors'][] = ['title' => 'Такой Email уже есть в базе. Придумайте другой!'];
+    }
 
 
     // // Обновить инфу в БД

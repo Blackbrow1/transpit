@@ -11,6 +11,7 @@ if (isset($uriArray[1])) {
   }
 }
 
+
 // ob_start();
 // include ROOT . 'templates/test/test.tpl';
 // $content = ob_get_contents();
