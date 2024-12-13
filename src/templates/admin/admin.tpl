@@ -62,10 +62,19 @@
         <form class="users-list__all-users" action="admin.php" method="GET">
           <select class="users-list__select" name="users-list-post">
             <option value="Все" selected>Все</option>
-            <option value="Водитель">Водитель</option>
+            <option value="Водитель спецмашины">Водитель спецмашины</option>
+            <option value="Водитель-экспедитор">Водитель-экспедитор</option>
+            <option value="Водитель автомобиля">Водитель автомобиля</option>
+            <option value="Водитель автопогрузчика">Водитель автопогрузчика</option>
             <option value="Экспедитор">Экспедитор</option>
             <option value="Супервайзер">Супервайзер</option>
             <option value="Начальник смены">Начальник смены</option>
+            <option value="Начальник службы">Начальник службы</option>
+            <option value="Диспетчер по управлению ресурсами">Диспетчер по управлению ресурсами</option>
+            <option value="Инспектор службы логистики">Инспектор службы логистики</option>
+            <option value="Механик">Механик</option>
+            <option value="Руководитель группы">Руководитель группы</option>
+            <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
           </select>
         </form>
 
@@ -94,9 +103,8 @@
 
           <div class="users-list__popup users-list__popup--none">
             <p class="users-list__popup-text">Вы точно хотите удалить сотрудника?</p>
-            <a href="<?php echo HOST; ?>admin?id=<?php echo $item->id; ?>"
-              class="users-list__item-button-delete">Удалить</a>
-            <button type="button" class="users-list__item-button-quite">Выйти</button>
+            <a href="<?php echo HOST; ?>admin?id=<?php echo $item->id; ?>" class="users-list__item-delete-user">Да</a>
+            <button type="button" class="users-list__item-button-quite">Нет</button>
           </div>
         </li>
         <?php endforeach; ?>

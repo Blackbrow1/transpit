@@ -1,5 +1,6 @@
 <main>
   <section class="test">
+    <h1 class="test__main-title visually-hidden">Безопасность на перроне</h1>
     <div class="test__wrap">
       <form class="test__form">
         <fieldset class="test__answer-checkbox-block">
@@ -721,10 +722,10 @@
           </div>
         </fieldset>
 
-        <input type="hidden" name="test_name" value="Название теста">
+        <!-- <input type="hidden" name="test_name" value="Название теста">
         <input type="hidden" name="answ_count" value="">
         <input type="hidden" name="percent" value="">
-        <input type="hidden" name="result_name" value="">
+        <input type="hidden" name="result_name" value=""> -->
 
         <input class="test__button-stop button" type="submit" name="test-finish" value="Завершить тест">
       </form>

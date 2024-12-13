@@ -153,8 +153,8 @@ function getResult() {
 
   const progress = Math.round((sum / MAX_QUESTIONS) * 100);
 
-  answCount.value = sum;
-  percent.value = progress;
+  // answCount.value = sum;
+  // percent.value = progress;
 
   if (sum >= MIN_QUESTIONS_ACCESS) {
     testResultText.textContent = 'Поздравляем! Тест успешно пройден. ' + sum + ' верных ответа. ' + 'Прогресс ' + progress + '%';
@@ -162,7 +162,7 @@ function getResult() {
     testResult.classList.remove('test__result--hidden');
     timeBlock.classList.add('test__result--hidden');
 
-    resultName.value = 'Зачет';
+    // resultName.value = 'Зачет';
 
     answerRadioBlock.forEach(item => {
       const answerRadio = item.querySelectorAll('.test__answer-radio');
@@ -215,7 +215,7 @@ function getResult() {
     testResult.classList.remove('test__result--hidden');
     timeBlock.classList.add('test__result--hidden');
 
-    resultName.value = 'Незачет';
+    // resultName.value = 'Незачет';
   }
 
   buttonStop.remove();
@@ -231,7 +231,12 @@ try {
     evt.preventDefault();
     getResult();
 
-    const formData = new FormData(this); // собираем данные из формы
+    const formData = new FormData(); // собираем данные из формы
+
+    formData.append('test_name', document.querySelector('.test__main-title').textContent);
+    formData.append('answ_count', sum);
+    formData.append('percent', Math.round((sum / MAX_QUESTIONS) * 100));
+    formData.append('result_name', sum < MIN_QUESTIONS_ACCESS ? 'Незачет' : 'Зачет');
 
     // /modules/test/submit_results.php
     fetch('submit-results', {
@@ -249,37 +254,6 @@ try {
 } catch {
   console.log('Произошла ошибка');
 }
-
-// testForm.addEventListener('submit', function(event) {
-//   event.preventDefault(); // Отменяем стандартную отправку формы
-
-//   let formData = new FormData(testForm); // Собираем данные из формы
-
-//   sendResults(formData);
-// });
-
-// async function sendResults(data) {
-//   try {
-//       const response = await fetch('/submit-results', {
-//           method: 'POST',
-//           body: data
-//       });
-
-//       if (!response.ok) {
-//           throw new Error(`Network response was not ok: ${response.status}`);
-//       }
-
-//       const result = await response.json();
-//       displayResultMessage(result.message);
-//   } catch (error) {
-//       console.error('There has been a problem with your fetch operation:', error);
-//   }
-// }
-
-// function displayResultMessage(message) {
-//   const messageDiv = document.querySelector('.res');
-//   messageDiv.innerText = message;
-// }
 
 // Страница обучения
 
@@ -782,7 +756,6 @@ try {
 } catch {}
 
 // Кнопочка с количеством тренингов к прохождению
-
 try {
   const headerTrainingList = document.querySelector('.header__training-list');
   const headerTrainingItem = document.querySelectorAll('.header__training-item');
@@ -842,9 +815,9 @@ try {
     usersItems.forEach(item => {
       item.classList.remove('users-list__item--none');
 
-      if (evt.target.value === 'Водитель') {
+      if (evt.target.value === 'Водитель автомобиля') {
         // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель') {
+        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель автомобиля') {
           item.classList.add('users-list__item--none');
         }
       } else if (evt.target.value === 'Экспедитор') {
@@ -860,6 +833,51 @@ try {
       } else if (evt.target.value === 'Начальник смены') {
         // item.classList.remove('users-list__item--none');
         if (item.querySelector('.users-list__item-post').textContent !== 'Начальник смены') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Водитель спецмашины') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель спецмашины') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Водитель-экспедитор') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель-экспедитор') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Водитель автопогрузчика') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель автопогрузчика') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Начальник службы') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Начальник службы') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Диспетчер по управлению ресурсами') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Диспетчер по управлению ресурсами') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Инспектор службы логистики') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Инспектор службы логистики') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Механик') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Механик') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Руководитель группы') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Руководитель группы') {
+          item.classList.add('users-list__item--none');
+        }
+      } else if (evt.target.value === 'Руководитель логистического комплекса') {
+        // item.classList.remove('users-list__item--none');
+        if (item.querySelector('.users-list__item-post').textContent !== 'Руководитель логистического комплекса') {
           item.classList.add('users-list__item--none');
         }
       } else if (evt.target.value === 'Все') {
@@ -896,20 +914,33 @@ try {
 } catch {}
 
 // Попап удаления записи о сотруднике
-const usersListButtonDelete = document.querySelectorAll('.users-list__item-button-delete');
-const usersListPopup = document.querySelectorAll('.users-list__popup');
-const usersListButtonQuite = document.querySelector('.users-list__item-button-quite');
+const usersListItem = document.querySelectorAll('.users-list__item');
+const backgroundOverlay = document.querySelector('.overlay');
 
-usersListButtonDelete.forEach((item, id) => {
-  item.addEventListener('click', () => {
-    usersListPopup.forEach((popup) => {
-      popup.classList.remove('users-list__popup--none');
-    });
+usersListItem.forEach((item) => {
+  const buttonDelete = item.querySelector('.users-list__item-button-delete');
+  const buttonQuite = item.querySelector('.users-list__item-button-quite');
+  const popup = item.querySelector('.users-list__popup');
 
+  buttonDelete.addEventListener('click', () => {
+    popup.classList.remove('users-list__popup--none');
+    backgroundOverlay.classList.remove('overlay--none');
   });
 
-  // usersListButtonQuite.addEventListener('click', () => {
-  //   usersListPopup.classList.add('users-list__popup--none');
-  // });
-});
+  buttonQuite.addEventListener('click', () => {
+    popup.classList.add('users-list__popup--none');
+    backgroundOverlay.classList.add('overlay--none');
+  });
 
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') { // код клавиши Escape, но можно использовать e.key
+      popup.classList.add('users-list__popup--none');
+      backgroundOverlay.classList.add('overlay--none');
+    }
+  });
+
+  backgroundOverlay.addEventListener('click', () => {
+    popup.classList.add('users-list__popup--none');
+    backgroundOverlay.classList.add('overlay--none');
+  });
+});

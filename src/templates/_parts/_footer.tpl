@@ -41,6 +41,8 @@
   </div>
 </footer>
 
+<div id="overlay" class="overlay overlay--none"></div>
+
 <script src="<?php echo HOST; ?>js/index.bundle.js" type="module"></script>
 </body>
 
