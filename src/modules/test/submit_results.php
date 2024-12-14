@@ -10,12 +10,16 @@ if (isset($uriArray[1])) {
 }
 
 $res = R::dispense('results');
+$res->tab_number = $user->tab_number;
+$res->surname = $user->surname;
+$res->name = $user->name;
+$res->patronymic = $user->patronymic;
+$res->post = $user->post;
+$res->date = date('d.m.Y');
 $res->test_name = $_POST['test_name'];
 $res->answ_count = $_POST['answ_count'];
 $res->percent = $_POST['percent'];
 $res->result_name = $_POST['result_name'];
-$res->tab_number = $user->tab_number;
-$res->date = date('Y-m-d H:i:s');
 $test_res = R::store($res);
 
 ?>

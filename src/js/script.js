@@ -778,32 +778,34 @@ try {
 } catch {}
 
 // Показать следующие 3 элемента при клике
+// function showMoreCounts(list, button) {
+//   let visibleItemCount = 5;
+//   let hiddenItemCount = list.length - visibleItemCount;
 
-const usersListButton = document.querySelector('.users-list__button');
-const usersListItems = document.querySelectorAll('.users-list__item');
+//   for (let i = visibleItemCount; i < list.length; i++) {
+//     list[i].style.display = 'none';
+//   }
 
-let visibleItemCount = 5;
-let hiddenItemCount = usersListItems.length - visibleItemCount;
+//   button.addEventListener('click', () => {
+//     for (let i = visibleItemCount; i < visibleItemCount + hiddenItemCount; i++) {
+//       if (list[i]) {
+//         list[i].style.display = '';
+//       }
+//     }
 
-for (let i = visibleItemCount; i < usersListItems.length; i++) {
-  usersListItems[i].style.display = 'none';
-}
+//     if (visibleItemCount + hiddenItemCount >= list.length) {
+//       button.style.display = 'none';
+//     }
 
-try {
-  usersListButton.addEventListener('click', () => {
-    for (let i = visibleItemCount; i < visibleItemCount + hiddenItemCount; i++) {
-      if (usersListItems[i]) {
-        usersListItems[i].style.display = '';
-      }
-    }
+//     visibleItemCount += hiddenItemCount;
+//   });
+// }
 
-    if (visibleItemCount + hiddenItemCount >= usersListItems.length) {
-      usersListButton.style.display = 'none';
-    }
+// const usersListButton = document.querySelector('.users-list__button');
+// const usersListItems = document.querySelectorAll('.users-list__item');
 
-    visibleItemCount += hiddenItemCount;
-  });
-} catch {}
+// showMoreCounts(usersListItems, usersListButton);
+
 
 // Фильтрация всех сотрудников
 
@@ -944,3 +946,51 @@ usersListItem.forEach((item) => {
     backgroundOverlay.classList.add('overlay--none');
   });
 });
+
+// Показать следующие 5
+let index = 5; // Начальный индекс для отображаемых элементов
+
+function getNextElements(list, button) {
+  // Скрыть все элементы, кроме первых пяти
+  const allItems = list.querySelectorAll('li');
+  allItems.forEach((item, i) => {
+    if (i >= 5) {
+        item.classList.add('remove-elem');
+    }
+  });
+
+  button.addEventListener('click', () => {
+    // Показать следующие 5 элементов
+    for (let i = index; i < index + 5 && i < allItems.length; i++) {
+      allItems[i].classList.remove('remove-elem');
+    }
+
+    index += 5;
+
+    // Если больше нет элементов для отображения, скрыть кнопку
+    if (index >= allItems.length) {
+        button.style.display = 'none';
+    }
+  });
+}
+
+const usersFinishedTestList = document.querySelector('.users-finished-test__list');
+const usersFinishedTestButton = document.querySelector('.users-finished-test__button');
+
+try {
+  getNextElements(usersFinishedTestList, usersFinishedTestButton);
+} catch {}
+
+const usersListItems = document.querySelector('.users-list__list');
+const usersListButton = document.querySelector('.users-list__button');
+
+try {
+  getNextElements(usersListItems, usersListButton);
+} catch {}
+
+const userProgressList = document.querySelector('.user-progress__list');
+const userProgressButton = document.querySelector('.user-progress__button');
+
+try {
+  getNextElements(userProgressList, userProgressButton);
+} catch {}

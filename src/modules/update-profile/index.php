@@ -15,7 +15,7 @@ function updateUserAndGoToProfile($user) {
 
     $email = R::findOne('users', 'email = ?', array($_POST['email']));
 
-    if ($email && $_POST['email'] !== $user->email) {
+    if ($email && $_POST['email'] !== $user->email && $_POST['email'] !== '' && $_POST['email'] !== NULL) {
       $_SESSION['errors'][] = ['title' => 'Такой Email уже есть в базе. Придумайте другой!'];
     }
 

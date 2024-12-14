@@ -42,6 +42,12 @@ if (isset($_POST['add-user'])) {
     ];
   }
 
+  if (trim($_POST['post']) == 'Должность') {
+    $_SESSION['errors'][] = [
+      'title' => 'Задайте должность сотруднику'
+    ];
+  }
+
   // Проверка существующего пользователя
   if (R::count('users', 'tab_number = ?', array($_POST['tab-number'])) > 0) {
     $_SESSION['errors'][] = [
@@ -72,7 +78,6 @@ if (isset($_POST['add-user'])) {
     }
   }
 }
-
 
 // Удаление записи сотрудника из БД
 if (isset($_GET['id'])) {

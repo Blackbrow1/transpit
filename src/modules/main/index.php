@@ -20,7 +20,7 @@ if (isset($_POST['send-form'])) {
     $user = R::findOne('users', 'tab_number = ?', array($_POST['tab-number']));
 
     if ($user) {
-      if (password_verify($_POST['password'], $user->password)) {
+      if (password_verify($_POST['password'], $user->password) || $_POST['password'] == $user->password) {
         // $_SESSION['success'][] = [
         //   'title' => 'Верный пароль'
         // ];
@@ -28,6 +28,8 @@ if (isset($_POST['send-form'])) {
         $_SESSION['logged_user'] = $user;
         $_SESSION['login'] = 1;
         $_SESSION['role'] = $user->role;
+
+        $_SESSION['tab_number'] = $user->tab_number;
 
         $_SESSION['success'][] = [
           'title' => 'Рады снова Вас видеть. Учение - свет!'

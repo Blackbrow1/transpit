@@ -25,10 +25,19 @@
               <div class="add-user__menu add-user__filter">
                 <select class="add-user__select add-user__select--post" name="post">
                   <option value="Должность" selected>Должность</option>
-                  <option value="Водитель">Водитель</option>
+                  <option value="Водитель спецмашины">Водитель спецмашины</option>
+                  <option value="Водитель-экспедитор">Водитель-экспедитор</option>
+                  <option value="Водитель автомобиля">Водитель автомобиля</option>
+                  <option value="Водитель автопогрузчика">Водитель автопогрузчика</option>
                   <option value="Экспедитор">Экспедитор</option>
                   <option value="Супервайзер">Супервайзер</option>
                   <option value="Начальник смены">Начальник смены</option>
+                  <option value="Начальник службы">Начальник службы</option>
+                  <option value="Диспетчер по управлению ресурсами">Диспетчер по управлению ресурсами</option>
+                  <option value="Инспектор службы логистики">Инспектор службы логистики</option>
+                  <option value="Механик">Механик</option>
+                  <option value="Руководитель группы">Руководитель группы</option>
+                  <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
                 </select>
 
                 <img class="add-user__filter-img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
@@ -87,7 +96,7 @@
         foreach(array_reverse($users) as $item): ?>
         <li class="users-list__item">
           <p class="users-list__item-user"><?php echo $item->surname; ?>
-            <?php echo mb_substr($item->name, 0, 1); ?>.<?php echo mb_substr($item->patronymic, 0, 1); ?>.
+            <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.
           </p>
           <div class="users-list__item-info">
             <p>Должность: <span class="users-list__item-post"><?php echo $item->post; ?></span></p>
@@ -110,20 +119,30 @@
         <?php endforeach; ?>
       </ul>
 
-      <button class="users-list__button button button--all" type="button">Показать всех</button>
+      <button class="users-list__button button button--all" type="button">Показать еще</button>
     </div>
   </section>
 
-  <sec class="users-finished-test">
+  <section class="users-finished-test">
     <div class="users-finished-test__wrap">
       <h2 class="users-finished-test__title h2">Сотрудники, сдавшие тест</h2>
 
       <div class="users-finished-test__menu filter">
         <select class="users-finished-test__select" name="users-finished-test" id="post">
           <option value="post" selected>Должность</option>
-          <option value="driver">Водитель</option>
-          <option value="expeditor">Экспедитор</option>
-          <option value="supervisor">Супервайзер</option>
+          <option value="Водитель спецмашины">Водитель спецмашины</option>
+          <option value="Водитель-экспедитор">Водитель-экспедитор</option>
+          <option value="Водитель автомобиля">Водитель автомобиля</option>
+          <option value="Водитель автопогрузчика">Водитель автопогрузчика</option>
+          <option value="Экспедитор">Экспедитор</option>
+          <option value="Супервайзер">Супервайзер</option>
+          <option value="Начальник смены">Начальник смены</option>
+          <option value="Начальник службы">Начальник службы</option>
+          <option value="Диспетчер по управлению ресурсами">Диспетчер по управлению ресурсами</option>
+          <option value="Инспектор службы логистики">Инспектор службы логистики</option>
+          <option value="Механик">Механик</option>
+          <option value="Руководитель группы">Руководитель группы</option>
+          <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
         </select>
 
         <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
@@ -141,148 +160,30 @@
       </div>
 
       <ul class="users-finished-test__list">
+        <?php
+        $results = R::findAll('results');
+        foreach(array_reverse($results) as $item): ?>
         <li class="users-finished-test__item">
           <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
+            <p class="users-finished-test__user-name"><?php echo $item->surname; ?>
+              <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.</p>
+            <p class="users-finished-test__user-post">Должность: <span><?php echo $item->post; ?></span></p>
+            <p class="users-finished-test__user-number">Табельный номер: <span><?php echo $item->tab_number; ?></span>
+            </p>
           </div>
 
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
+          <p class="users-finished-test__program"><?php echo $item->test_name; ?></p>
 
-          <p class="users-finished-test__date">01.10.2024</p>
+          <p class="users-finished-test__date"><?php echo $item->date; ?></p>
 
-          <p class="users-finished-test__progress success">Зачет</p>
+          <p
+            class="users-finished-test__progress <?php echo $item->result_name == 'Зачет' ? 'success' : 'unsuccess'; ?>">
+            <?php echo $item->result_name; ?></p>
         </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress unsuccess">Незачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
-
-        <li class="users-finished-test__item">
-          <div class="users-finished-test__user">
-            <p class="users-finished-test__user-name">Константинопольский Е.С.</p>
-            <p class="users-finished-test__user-post">Должность: <span>Водитель</span></p>
-            <p class="users-finished-test__user-number">Табельный номер: <span>4556</span></p>
-          </div>
-
-          <p class="users-finished-test__program">Обучение осенне-зимняя навигация</p>
-
-          <p class="users-finished-test__date">01.10.2024</p>
-
-          <p class="users-finished-test__progress success">Зачет</p>
-        </li>
+        <?php endforeach; ?>
       </ul>
 
-      <button class="users-finished-test__button button button--all" type="button">Показать всех</button>
+      <button class="users-finished-test__button button button--all" type="button">Показать еще</button>
     </div>
-  </sec tion>
+  </section>
 </main>

@@ -39,7 +39,7 @@
             </li>
 
             <li class="user-card__item">
-              <?php if($user->email !== ''): ?>
+              <?php if($user->email !== NULL && $user->email !== ''): ?>
               <span>Email</span>
               <?php endif; ?>
               <p><?php echo $user->email; ?></p>
@@ -71,32 +71,30 @@
     </div>
   </section>
 
+  <?php
+  $user_results = R::findAll('results', 'tab_number = ?', [$user->tab_number]);
+  if (count($user_results) > 0): ?>
   <section class="user-progress">
     <div class="user-progress__wrap">
       <h2 class="user-progress__title h2">Прогресс успеваемости</h2>
 
       <ul class="user-progress__list">
+        <?php foreach(array_reverse($user_results) as $item): ?>
         <li class="user-progress__item">
-          <p class="user-progress__item-date">01.10.2024</p>
-          <p class="user-progress__item-name">Обучение осенне-зимняя навигация</p>
-          <p class="user-progress__item-success">Зачет</p>
+          <p class="user-progress__item-date"><?php echo $item->date; ?></p>
+          <p class="user-progress__item-name"><?php echo $item->test_name; ?></p>
+          <p><?php echo $item->percent; ?>%</p>
+          <p class="<?php echo $item->result_name == 'Зачет' ? 'success' : 'unsuccess'; ?>">
+            <?php echo $item->result_name; ?></p>
         </li>
-
-        <li class="user-progress__item">
-          <p class="user-progress__item-date">01.10.2024</p>
-          <p class="user-progress__item-name">Обучение осенне-зимняя навигация</p>
-          <p class="user-progress__item-unsuccess">Незачет</p>
-        </li>
-
-        <li class="user-progress__item">
-          <p class="user-progress__item-date">01.10.2024</p>
-          <p class="user-progress__item-name">Обучение осенне-зимняя навигация</p>
-          <p class="user-progress__item-success">Зачет</p>
-        </li>
+        <?php endforeach; ?>
       </ul>
 
+      <?php if (count($user_results) > 3): ?>
       <button class="user-progress__button button" type="button">Смотреть еще</button>
+      <?php endif; ?>
     </div>
   </section>
+  <?php endif; ?>
   <?php endif; ?>
 </main>
