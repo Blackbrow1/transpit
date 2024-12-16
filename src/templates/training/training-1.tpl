@@ -1,7 +1,7 @@
 <main>
   <section class="training">
     <div class="training__wrap">
-      <h1 class="training__title">Безопасность на перроне</h1>
+      <h1 class="training__title">Обучение водителей</h1>
 
       <div class="training__block">
         <h2 class="visually-hidden">Обучающий блок</h2>
@@ -59,7 +59,7 @@
         </div>
       </div>
 
-      <a class="training__button button training__button--disable">Сдать тест</a>
+      <a href="<?php echo HOST; ?>test-hero-1" class="training__button button training__button--disable">Сдать тест</a>
     </div>
   </section>
 </main>

@@ -29,8 +29,6 @@ if (isset($_POST['send-form'])) {
         $_SESSION['login'] = 1;
         $_SESSION['role'] = $user->role;
 
-        $_SESSION['tab_number'] = $user->tab_number;
-
         $_SESSION['success'][] = [
           'title' => 'Рады снова Вас видеть. Учение - свет!'
         ];

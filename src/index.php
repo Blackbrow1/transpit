@@ -31,57 +31,81 @@ $uriModule = $uriArray[0];
 
 // Роутер
 switch ($uriModule) {
-    case '':
-      if (isset($_SESSION['login']) && $_SESSION['login'] === 1) {
-        require ROOT . "modules/user-card/index.php";
-        break;
-      }
+  case '':
+    if (isset($_SESSION['login']) && $_SESSION['login'] === 1) {
+      require ROOT . "modules/user-card/index.php";
+      break;
+    }
 
-    case '':
-        require ROOT . "modules/main/index.php";
-        break;
-
-    case 'logout':
-      require ROOT . "modules/main/logout.php";
+  case '':
+      require ROOT . "modules/main/index.php";
       break;
 
-    case 'admin':
-        require ROOT . "modules/admin/index.php";
-        break;
+  case 'logout':
+    require ROOT . "modules/main/logout.php";
+    break;
 
-    case 'training':
-        require ROOT . "modules/training/index.php";
-        break;
-
-    case 'user-card':
-        require ROOT . "modules/user-card/index.php";
-        break;
-
-    case 'update-profile':
-      require ROOT . "modules/update-profile/index.php";
+  case 'admin':
+      require ROOT . "modules/admin/index.php";
       break;
 
-    case 'test-hero':
-      require ROOT . "modules/test-hero/index.php";
+  case 'training-1':
+      require ROOT . "modules/training/training-1.php";
       break;
 
-    case 'test':
-      require ROOT . "modules/test/index.php";
+  case 'training-2':
+    require ROOT . "modules/training/training-2.php";
+    break;
+
+  case 'training-3':
+    require ROOT . "modules/training/training-3.php";
+    break;
+
+  case 'user-card':
+      require ROOT . "modules/user-card/index.php";
       break;
 
-    case 'submit-results':
-      require ROOT . "modules/test/submit_results.php";
-      break;
+  case 'update-profile':
+    require ROOT . "modules/update-profile/index.php";
+    break;
 
-    case 'password-recovery':
-      require ROOT . "modules/password-recovery/index.php";
-      break;
+  case 'test-hero-1':
+    require ROOT . "modules/test-hero/test-hero-1.php";
+    break;
 
-    case 'set-new-password':
-      require ROOT . "modules/set-new-password/index.php";
-      break;
+  case 'test-hero-2':
+    require ROOT . "modules/test-hero/test-hero-2.php";
+    break;
 
-    default:
-        require ROOT . "modules/main/index.php";
-        break;
+  case 'test-hero-3':
+    require ROOT . "modules/test-hero/test-hero-3.php";
+    break;
+
+  case 'test-1':
+    require ROOT . "modules/test/test-1.php";
+    break;
+
+  case 'test-2':
+    require ROOT . "modules/test/test-2.php";
+    break;
+
+  case 'test-3':
+    require ROOT . "modules/test/test-3.php";
+    break;
+
+  case 'submit-results':
+    require ROOT . "modules/test/submit_results.php";
+    break;
+
+  case 'password-recovery':
+    require ROOT . "modules/password-recovery/index.php";
+    break;
+
+  case 'set-new-password':
+    require ROOT . "modules/set-new-password/index.php";
+    break;
+
+  default:
+      require ROOT . "modules/main/index.php";
+      break;
 }

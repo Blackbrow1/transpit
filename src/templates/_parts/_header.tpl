@@ -46,19 +46,59 @@
             <span class="header__menu-item--all-trainings"></span>
 
             <ul class="header__training-list">
-              <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training">Зимняя подготовка водителей</a>
-              </li>
+              <?php
+              $user_results = R::findAll('results', 'tab_number = ?', [$user->tab_number]);
+              ?>
 
-              <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training">Зимняя подготовка
-                  экспедиторов</a>
-              </li>
+              <?php if ($user->post === 'Водитель-экспедитор' || $user->post === 'Водитель автомобиля' || $user->post === 'Водитель автопогрузчика'):
+              $found = false;
 
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Тест для водителей (осень 2024)' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training">Зимняя подготовка
-                  экспедиторов</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training-1">Обучение водителей (осень
+                  2024)</a>
               </li>
+              <?php endif; ?>
+              <?php endif; ?>
+
+              <?php if ($user->post === 'Супервайзер'):
+              $found = false;
+
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Тест для супервайзеров' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+              <li class="header__training-item">
+                <a class="header__training-link" href="<?php echo HOST; ?>training-2">Тест для супервайзеров</a>
+              </li>
+              <?php endif; ?>
+              <?php endif; ?>
+
+              <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Тест для всех' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+              <li class="header__training-item">
+                <a class="header__training-link" href="<?php echo HOST; ?>training-3">Тест для всех</a>
+              </li>
+              <?php endif; ?>
             </ul>
           </li>
         </ul>
@@ -89,4 +129,5 @@
       </div>
       <?php endif; ?>
     </div>
+
   </header>

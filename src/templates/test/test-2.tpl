@@ -1,6 +1,6 @@
 <main>
   <section class="test">
-    <h1 class="test__main-title visually-hidden">Безопасность на перроне</h1>
+    <h1 class="test__main-title visually-hidden">Тест для супервайзеров</h1>
     <div class="test__wrap">
       <form class="test__form">
         <fieldset class="test__answer-checkbox-block">

@@ -18,6 +18,6 @@ if (isset($uriArray[1])) {
 // ob_end_clean();
 
 include ROOT . 'templates/_parts/_header.tpl';
-include ROOT . 'templates/test/test.tpl';
+include ROOT . 'templates/test/test-2.tpl';
 include ROOT . 'templates/_parts/_footer.tpl';
 ?>

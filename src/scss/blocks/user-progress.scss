@@ -15,17 +15,21 @@
 
 .user-progress__item {
   display: grid;
-  grid-template-columns: 308px 1fr 1fr 175px;
+  grid-template-columns: 308px 1fr 200px 175px;
   padding-top: 20px;
   padding-bottom: 40px;
   border-top: 1px solid $border-color;
 
   p {
     font-size: 20px;
-    line-height: 1;
     font-weight: 500;
   }
 }
+
+ .user-progress__item-name {
+  margin-right: 30px;
+  line-height: 1.2;
+ }
 
 .user-progress__button {
   margin-bottom: 0;

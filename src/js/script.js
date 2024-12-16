@@ -634,6 +634,11 @@ try {
   }
 } catch {}
 
+// Заблокировал кнопку перехода к тесту
+try {
+  trainingButton.style.pointerEvents = 'none';
+} catch {}
+
 try {
   btnNext.addEventListener('click', () => {
     currentActiveIndex++;
@@ -695,7 +700,7 @@ try {
 
     if (currentActiveIndex === trainList.length - 1) {
       trainingButton.classList.remove('training__button--disable');
-      trainingButton.setAttribute('href', 'test-hero');
+      trainingButton.style.pointerEvents = 'auto';
     }
   });
 } catch {}
@@ -750,7 +755,7 @@ try {
 
     if (currentActiveIndex < trainList.length - 1) {
       trainingButton.classList.add('training__button--disable');
-      trainingButton.removeAttribute('href');
+      // trainingButton.removeAttribute('href');
     }
   });
 } catch {}

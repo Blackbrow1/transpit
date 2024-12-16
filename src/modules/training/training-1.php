@@ -17,7 +17,7 @@ if (isset($uriArray[1])) {
 // ob_end_clean();
 
 include ROOT . 'templates/_parts/_header.tpl';
-include ROOT . 'templates/training/training.tpl';
+include ROOT . 'templates/training/training-1.tpl';
 include ROOT . 'templates/_parts/_footer.tpl';
 
 ?>
