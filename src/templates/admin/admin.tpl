@@ -1,68 +1,6 @@
 <main>
-  <?php if (isset($userNotLoggedIn)): ?>
-  <section class="hero" id="hero">
-    <div class="hero__wrap">
-
-      <h1 class="hero__title">Войдите в <span>свой профиль</span></h1>
-
-      <div class="hero__description">
-        <p class="hero__text">Получите ваш логин от личного кабинета у непосредственного руководителя.
-          Логин равен табельному номеру, пароль - 123, по умолчанию. Когда войдете в личный кабинет, то обязательно
-          поменяйте ваш пароль на более сложный.</p>
-
-        <p class="hero__text">Добавьте адрес электронной почты в личном кабинете для восстановления пароля, в случае,
-          если
-          будет утерян старый
-          пароль. Изучите учебные материалы, которые появятся во вкладке "Обучение" и сдавайте тесты. Приятного и
-          продуктивного вам обучения!</p>
-      </div>
-
-      <form class="hero__form" action="<?php echo HOST; ?>" method="POST">
-        <fieldset>
-          <?php include ROOT . "templates/components/errors.tpl"; ?>
-          <?php include ROOT . "templates/components/success.tpl"; ?>
-
-          <legend>Войти в личный кабинет</legend>
-
-          <input class="hero__input hero__input--tab" type="text" name="tab-number" placeholder="Табельный номер"
-            <?php echo isset($_POST['tab-number']) ? 'value="' . $_POST['tab-number'] . '"' : ''; ?>>
-          <input class="hero__input" type="password" name="password" placeholder="Пароль">
-
-          <button class="hero__submit button" type="submit" name="send-form" value="Войти">Войти</button>
-
-          <a class="hero__form-remember-pass" href="<?php echo HOST; ?>password-recovery">Забыли пароль?</a>
-        </fieldset>
-      </form>
-    </div>
-  </section>
-
-  <section class="information">
-    <div class="information__wrap">
-      <h2 class="information__title">Об онлайн-школе ООО "Транспит С-З"</h2>
-
-      <div class="information__content">
-        <p class="information__text">Система обучения создана с целью предоставления сотрудникам ООО "Транспит
-          Северо-Запад" актуальных знаний и информации. Обучение проходит как на рабочем месте, так и вне отрыва от
-          работы.</p>
-
-        <p class="information__text">Система пополняется актуальными дисциплинами, призванными помочь сотрудникам в
-          выполенинии рабочих задач. А так же, дисциплинами, отвечающими за введение в аэропортовую деятельность новых
-          сотрудников.</p>
-
-        <a class="information__button button" href="#hero">Начать пользоваться</a>
-
-        <div class="information__img">
-          <picture>
-            <source width="545" height="408" type="image/webp"
-              srcset="img/inform-img-desktop@1x.webp 1x, img/inform-img-desktop@2x.webp 2x">
-            <img width="545" height="408" loading="lazy" src="img/inform-img-desktop@1x.jpg"
-              srcset="img/inform-img-desktop@2x.jpg 2x" alt="Блюдо от шефа на столе">
-          </picture>
-        </div>
-      </div>
-    </div>
-  </section>
-  <?php else: ?>
+  <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
+  <?php if ($_SESSION['logged_user']['role'] === 'admin'): ?>
   <section class="add-user">
     <div class="add-user__wrap">
 
@@ -134,7 +72,7 @@
       <div class="users-list__menu filter">
         <form class="users-list__all-users" action="admin.php" method="GET">
           <select class="users-list__select" name="users-list-post">
-            <option value="Все" selected>Все</option>
+            <option value="Все" selected>Все сотрудники</option>
             <option value="Водитель спецмашины">Водитель спецмашины</option>
             <option value="Водитель-экспедитор">Водитель-экспедитор</option>
             <option value="Водитель автомобиля">Водитель автомобиля</option>
@@ -193,7 +131,7 @@
 
       <div class="users-finished-test__menu filter">
         <select class="users-finished-test__select" name="users-finished-test" id="post">
-          <option value="post" selected>Должность</option>
+          <option value="all">Все сотрудники</option>
           <option value="Водитель спецмашины">Водитель спецмашины</option>
           <option value="Водитель-экспедитор">Водитель-экспедитор</option>
           <option value="Водитель автомобиля">Водитель автомобиля</option>
@@ -227,7 +165,7 @@
         <?php
         $results = R::findAll('results');
         foreach(array_reverse($results) as $item): ?>
-        <li class="users-finished-test__item">
+        <li data-post="<?php echo $item->post; ?>" class="users-finished-test__item">
           <div class="users-finished-test__user">
             <p class="users-finished-test__user-name"><?php echo $item->surname; ?>
               <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.</p>
@@ -250,5 +188,6 @@
       <button class="users-finished-test__button button button--all" type="button">Показать еще</button>
     </div>
   </section>
+  <?php endif; ?>
   <?php endif; ?>
 </main>

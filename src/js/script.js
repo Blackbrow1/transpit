@@ -952,7 +952,110 @@ usersListItem.forEach((item) => {
   });
 });
 
-// Показать следующие 5
+// Добавить надпись о том, что файл выбран
+const fileInput = document.getElementById('update-profile__button-choose');
+const fileName = document.querySelector('.update-profile__file-name');
+
+fileInput.addEventListener('change', () => {
+    const selectedFile = fileInput.files[0];
+    if (selectedFile) {
+        fileName.textContent = selectedFile.name;
+    } else {
+        fileName.textContent = '';
+    }
+});
+
+// // // Показать следующие 5
+// let index = 5; // Начальный индекс для отображаемых элементов
+
+// function getNextElements(list, button) {
+//   // Скрыть все элементы, кроме первых пяти
+//   const allItems = list.querySelectorAll('li');
+//   allItems.forEach((item, i) => {
+//     if (i >= 5) {
+//         item.classList.add('remove-elem');
+//     }
+//   });
+
+//   button.addEventListener('click', () => {
+//     // Показать следующие 5 элементов
+//     for (let i = index; i < index + 5 && i < allItems.length; i++) {
+//       allItems[i].classList.remove('remove-elem');
+//     }
+
+//     index += 5;
+
+//     // Если больше нет элементов для отображения, скрыть кнопку
+//     if (index >= allItems.length) {
+//         button.style.display = 'none';
+//     }
+//   });
+// }
+
+// const usersFinishedTestList = document.querySelector('.users-finished-test__list');
+// const usersFinishedTestButton = document.querySelector('.users-finished-test__button');
+
+// try {
+//   getNextElements(usersFinishedTestList, usersFinishedTestButton);
+// } catch {}
+
+// const usersListItems = document.querySelector('.users-list__list');
+// const usersListButton = document.querySelector('.users-list__button');
+
+// try {
+//   getNextElements(usersListItems, usersListButton);
+// } catch {}
+
+// const userProgressList = document.querySelector('.user-progress__list');
+// const userProgressButton = document.querySelector('.user-progress__button');
+
+// try {
+//   getNextElements(userProgressList, userProgressButton);
+// } catch {}
+
+
+
+
+// Фильтрация сотрудников сдавших тест
+const filterSelect = document.querySelector('.users-finished-test__select');
+const finishedTestList = document.querySelector('.users-finished-test__list');
+const loadMoreButton = document.querySelector('.users-finished-test__button');
+
+
+function filterEmployees() {
+  // Получаем значение выбранного элемента в select
+  const selectedProfession = document.querySelector('.users-finished-test__select').value;
+
+  // Находим все элементы списка сотрудников
+  const employeesList = document.querySelectorAll('.users-finished-test__list li');
+
+  // Проходимся по каждому сотруднику и добавляем/удаляем класс hidden в зависимости от выбранной профессии
+  employeesList.forEach(employee => {
+      if (selectedProfession === '' || employee.dataset.post === selectedProfession) {
+          employee.classList.remove('remove-elem'); // Показываем сотрудника
+      } else if (selectedProfession === 'all') {
+        employee.classList.remove('remove-elem'); // Показываем всех
+    } else {
+          employee.classList.add('remove-elem'); // Скрываем сотрудника
+      }
+  });
+}
+
+// Привязка обработчика события к select
+const professionSelect = document.querySelector('.users-finished-test__select');
+professionSelect.addEventListener('change', filterEmployees);
+
+filterEmployees();
+
+
+
+
+
+
+
+
+
+// // Показать следующие 5
 let index = 5; // Начальный индекс для отображаемых элементов
 
 function getNextElements(list, button) {
@@ -991,11 +1094,4 @@ const usersListButton = document.querySelector('.users-list__button');
 
 try {
   getNextElements(usersListItems, usersListButton);
-} catch {}
-
-const userProgressList = document.querySelector('.user-progress__list');
-const userProgressButton = document.querySelector('.user-progress__button');
-
-try {
-  getNextElements(userProgressList, userProgressButton);
 } catch {}
