@@ -38,6 +38,7 @@ use.header__svg {
 }
 
 .header__login {
+  position: relative;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -51,6 +52,16 @@ use.header__svg {
   &:hover {
     opacity: 0.6;
   }
+}
+
+.header__login-online {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: $color-success;
 }
 
 .header__menu {

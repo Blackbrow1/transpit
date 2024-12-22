@@ -54,7 +54,7 @@
                   более 4 мб.</p>
 
                 <div class="update-profile__buttons">
-                  <div class="update-profile__file-name"></div>
+                  <p class="update-profile__file-name"></p>
                   <label class="update-profile__button-choose" for="update-profile__button-choose">Выбрать файл</label>
                   <input class="visually-hidden" id="update-profile__button-choose" type="file" name="avatar"
                     value="Выбрать файл">

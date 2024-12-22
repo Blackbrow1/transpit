@@ -816,83 +816,82 @@ try {
 
 const usersSelect = document.querySelector('.users-list__select');
 const usersItems = document.querySelectorAll('.users-list__item');
+const usersListButton = document.querySelector('.users-list__button');
+
+let currentIndex = 0;
+let itemsPerPage = 5;
+
+usersItems.forEach((item, index) => {
+  if (index >= itemsPerPage) {
+    item.classList.add('remove-elem');
+  }
+});
+
+// usersListButton.addEventListener('click', () => {
+//   usersItems.forEach((item, index) => {
+//     console.log(item, index);
+//     if (index <= itemsPerPage + 5) {
+//       item.classList.remove('remove-elem');
+//     }
+//   });
+
+//   itemsPerPage += 5;
+// });
+
 
 try {
-  usersSelect.addEventListener('change', (evt) => {
-    usersItems.forEach(item => {
-      item.classList.remove('users-list__item--none');
+  usersSelect.addEventListener('change', () => {
+    usersListButton.classList.remove('remove-elem');
+    let visibleUsers = [];
+    let counter = 5;
 
-      if (evt.target.value === 'Водитель автомобиля') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель автомобиля') {
-          item.classList.add('users-list__item--none');
+
+    for (let i = 0; i < usersItems.length; i++) {
+      if (usersSelect.value === '' || usersItems[i].dataset.post === usersSelect.value) {
+        visibleUsers.push(usersItems[i]);
+
+        if (visibleUsers.length <= counter) {
+          usersItems[i].classList.remove('remove-elem');
+        } else {
+          usersItems[i].classList.add('remove-elem');
         }
-      } else if (evt.target.value === 'Экспедитор') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Экспедитор') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Супервайзер') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Супервайзер') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Начальник смены') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Начальник смены') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Водитель спецмашины') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель спецмашины') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Водитель-экспедитор') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель-экспедитор') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Водитель автопогрузчика') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Водитель автопогрузчика') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Начальник службы') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Начальник службы') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Диспетчер по управлению ресурсами') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Диспетчер по управлению ресурсами') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Инспектор службы логистики') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Инспектор службы логистики') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Механик') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Механик') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Руководитель группы') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Руководитель группы') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Руководитель логистического комплекса') {
-        // item.classList.remove('users-list__item--none');
-        if (item.querySelector('.users-list__item-post').textContent !== 'Руководитель логистического комплекса') {
-          item.classList.add('users-list__item--none');
-        }
-      } else if (evt.target.value === 'Все') {
-        item.classList.remove('users-list__item--none');
+      } else {
+          usersItems[i].classList.add('remove-elem');
       }
+    }
+
+    usersListButton.addEventListener('click', () => {
+      counter += 5;
+
+      visibleUsers.forEach((item, index) => {
+        // console.log(item, index);
+        if (index < counter) {
+          item.classList.remove('remove-elem');
+        }
+
+        if (counter >= visibleUsers.length) {
+          usersListButton.classList.add('remove-elem');
+          visibleUsers = []
+        }
+      });
     });
+
+
+    console.log(visibleUsers);
   });
+
 } catch {}
+
+console.log(itemsPerPage);
+
+
+// for (let i = 0; i < usersItems.length; i++) {
+//   // usersItems[i].classList.add('remove-elem');
+//   console.log(usersItems[i]);
+//   if (i >= countUsers) {
+//     usersItems[i].classList.add('remove-elem');
+//   }
+// }
 
 // Установить курсор по клику в поле
 try {
@@ -956,14 +955,16 @@ usersListItem.forEach((item) => {
 const fileInput = document.getElementById('update-profile__button-choose');
 const fileName = document.querySelector('.update-profile__file-name');
 
-fileInput.addEventListener('change', () => {
+try {
+  fileInput.addEventListener('change', () => {
     const selectedFile = fileInput.files[0];
     if (selectedFile) {
-        fileName.textContent = selectedFile.name;
+        fileName.textContent = selectedFile.name.length > 15 ? '...' + selectedFile.name.slice(-12) : selectedFile.name.slice(-15)
     } else {
         fileName.textContent = '';
     }
-});
+  });
+} catch {}
 
 // // // Показать следующие 5
 // let index = 5; // Начальный индекс для отображаемых элементов
@@ -1016,82 +1017,82 @@ fileInput.addEventListener('change', () => {
 
 
 
-// Фильтрация сотрудников сдавших тест
-const filterSelect = document.querySelector('.users-finished-test__select');
-const finishedTestList = document.querySelector('.users-finished-test__list');
-const loadMoreButton = document.querySelector('.users-finished-test__button');
+// // Фильтрация сотрудников сдавших тест
+// const filterSelect = document.querySelector('.users-finished-test__select');
+// const finishedTestList = document.querySelector('.users-finished-test__list');
+// const loadMoreButton = document.querySelector('.users-finished-test__button');
 
 
-function filterEmployees() {
-  // Получаем значение выбранного элемента в select
-  const selectedProfession = document.querySelector('.users-finished-test__select').value;
+// function filterEmployees() {
+//   // Получаем значение выбранного элемента в select
+//   const selectedProfession = document.querySelector('.users-finished-test__select').value;
 
-  // Находим все элементы списка сотрудников
-  const employeesList = document.querySelectorAll('.users-finished-test__list li');
+//   // Находим все элементы списка сотрудников
+//   const employeesList = document.querySelectorAll('.users-finished-test__list li');
 
-  // Проходимся по каждому сотруднику и добавляем/удаляем класс hidden в зависимости от выбранной профессии
-  employeesList.forEach(employee => {
-      if (selectedProfession === '' || employee.dataset.post === selectedProfession) {
-          employee.classList.remove('remove-elem'); // Показываем сотрудника
-      } else if (selectedProfession === 'all') {
-        employee.classList.remove('remove-elem'); // Показываем всех
-    } else {
-          employee.classList.add('remove-elem'); // Скрываем сотрудника
-      }
-  });
-}
+//   // Проходимся по каждому сотруднику и добавляем/удаляем класс hidden в зависимости от выбранной профессии
+//   employeesList.forEach(employee => {
+//       if (selectedProfession === '' || employee.dataset.post === selectedProfession) {
+//           employee.classList.remove('remove-elem'); // Показываем сотрудника
+//       } else if (selectedProfession === 'all') {
+//         employee.classList.remove('remove-elem'); // Показываем всех
+//     } else {
+//           employee.classList.add('remove-elem'); // Скрываем сотрудника
+//       }
+//   });
+// }
 
-// Привязка обработчика события к select
-const professionSelect = document.querySelector('.users-finished-test__select');
-professionSelect.addEventListener('change', filterEmployees);
+// // Привязка обработчика события к select
+// const professionSelect = document.querySelector('.users-finished-test__select');
+// professionSelect.addEventListener('change', filterEmployees);
 
-filterEmployees();
-
-
-
+// filterEmployees();
 
 
 
 
 
 
-// // Показать следующие 5
-let index = 5; // Начальный индекс для отображаемых элементов
 
-function getNextElements(list, button) {
-  // Скрыть все элементы, кроме первых пяти
-  const allItems = list.querySelectorAll('li');
-  allItems.forEach((item, i) => {
-    if (i >= 5) {
-        item.classList.add('remove-elem');
-    }
-  });
 
-  button.addEventListener('click', () => {
-    // Показать следующие 5 элементов
-    for (let i = index; i < index + 5 && i < allItems.length; i++) {
-      allItems[i].classList.remove('remove-elem');
-    }
 
-    index += 5;
+// // // Показать следующие 5
+// let index = 5; // Начальный индекс для отображаемых элементов
 
-    // Если больше нет элементов для отображения, скрыть кнопку
-    if (index >= allItems.length) {
-        button.style.display = 'none';
-    }
-  });
-}
+// function getNextElements(list, button) {
+//   // Скрыть все элементы, кроме первых пяти
+//   const allItems = list.querySelectorAll('li');
+//   allItems.forEach((item, i) => {
+//     if (i >= 5) {
+//         item.classList.add('remove-elem');
+//     }
+//   });
 
-const usersFinishedTestList = document.querySelector('.users-finished-test__list');
-const usersFinishedTestButton = document.querySelector('.users-finished-test__button');
+//   button.addEventListener('click', () => {
+//     // Показать следующие 5 элементов
+//     for (let i = index; i < index + 5 && i < allItems.length; i++) {
+//       allItems[i].classList.remove('remove-elem');
+//     }
 
-try {
-  getNextElements(usersFinishedTestList, usersFinishedTestButton);
-} catch {}
+//     index += 5;
 
-const usersListItems = document.querySelector('.users-list__list');
-const usersListButton = document.querySelector('.users-list__button');
+//     // Если больше нет элементов для отображения, скрыть кнопку
+//     if (index >= allItems.length) {
+//         button.style.display = 'none';
+//     }
+//   });
+// }
 
-try {
-  getNextElements(usersListItems, usersListButton);
-} catch {}
+// const usersFinishedTestList = document.querySelector('.users-finished-test__list');
+// const usersFinishedTestButton = document.querySelector('.users-finished-test__button');
+
+// try {
+//   getNextElements(usersFinishedTestList, usersFinishedTestButton);
+// } catch {}
+
+// const usersListItems = document.querySelector('.users-list__list');
+// const usersListButton = document.querySelector('.users-list__button');
+
+// try {
+//   getNextElements(usersListItems, usersListButton);
+// } catch {}

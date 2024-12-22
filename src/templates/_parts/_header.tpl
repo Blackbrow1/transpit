@@ -104,6 +104,10 @@
         </ul>
 
         <div class="header__login">
+          <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
+          <div class="header__login-online"><span class="visually-hidden">Онлайн</span></div>
+          <?php endif; ?>
+
           <a class="header__login-link" href="<?php echo HOST; ?>logout">Выход</a>
 
           <div class="header__avatar">

@@ -17,13 +17,16 @@
             <div class="add-user__inputs">
               <input
                 class="add-user__input add-user__input--surname<?php if (!empty($_POST)): ?><?php if (empty($_POST['surname'])): ?> error-message<?php endif; ?><?php endif; ?>"
-                type="text" name="surname" placeholder="Фамилия">
+                type="text" name="surname" value="<?php if (isset($_POST['surname'])) {echo $_POST['surname'];} ?>"
+                placeholder="Фамилия">
               <input
                 class="add-user__input add-user__input--name<?php if (!empty($_POST)): ?><?php if (empty($_POST['name'])): ?> error-message<?php endif; ?><?php endif; ?>"
-                type="text" name="name" placeholder="Имя">
+                type="text" name="name" value="<?php if (isset($_POST['name'])) {echo $_POST['name'];} ?>"
+                placeholder="Имя">
               <input
                 class="add-user__input add-user__input--patronymic<?php if (!empty($_POST)): ?><?php if (empty($_POST['patronymic'])): ?> error-message<?php endif; ?><?php endif; ?>"
-                type="text" name="patronymic" placeholder="Отчество">
+                type="text" name="patronymic"
+                value="<?php if (isset($_POST['patronymic'])) {echo $_POST['patronymic'];} ?>" placeholder="Отчество">
               <div class="add-user__menu add-user__filter">
                 <select class="add-user__select add-user__select--post" name="post">
                   <option value="Должность" selected>Должность</option>
@@ -47,10 +50,13 @@
               </div>
               <input
                 class="add-user__input add-user__input--tub-number<?php if (!empty($_POST)): ?><?php if (empty($_POST['tab-number'])): ?> error-message<?php endif; ?><?php endif; ?>"
-                type="text" name="tab-number" placeholder="Табельный номер">
+                type="text" name="tab-number"
+                value="<?php if (isset($_POST['tab-number'])) {echo $_POST['tab-number'];} ?>"
+                placeholder="Табельный номер">
               <input
                 class="add-user__input add-user__input--password<?php if (!empty($_POST)): ?><?php if (empty($_POST['password'])): ?> error-message<?php endif; ?><?php endif; ?>"
-                type="password" name="password" placeholder="Пароль">
+                type="password" name="password"
+                value="<?php if (isset($_POST['password'])) {echo $_POST['password'];} ?>" placeholder="Пароль">
 
               <button class="add-user__submit button" type="submit" name="add-user" value="add-user">Добавить</button>
             </div>
@@ -72,7 +78,7 @@
       <div class="users-list__menu filter">
         <form class="users-list__all-users" action="admin.php" method="GET">
           <select class="users-list__select" name="users-list-post">
-            <option value="Все" selected>Все сотрудники</option>
+            <option value="" selected>Все сотрудники</option>
             <option value="Водитель спецмашины">Водитель спецмашины</option>
             <option value="Водитель-экспедитор">Водитель-экспедитор</option>
             <option value="Водитель автомобиля">Водитель автомобиля</option>
@@ -96,7 +102,7 @@
         <?php
         $users = R::findAll('users');
         foreach(array_reverse($users) as $item): ?>
-        <li class="users-list__item">
+        <li data-post="<?php echo $item->post; ?>" class="users-list__item">
           <p class="users-list__item-user"><?php echo $item->surname; ?>
             <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.
           </p>
