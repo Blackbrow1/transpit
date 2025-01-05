@@ -16,6 +16,7 @@
   row-gap: 30px;
   column-gap: 109px;
   height: 66px;
+  font-size: 18px;
 }
 
 .footer__menu-item {
@@ -49,6 +50,7 @@
 .footer__contacts {
   display: flex;
   flex-direction: column;
+  font-size: 18px;
 
   span {
     line-height: 1;
@@ -125,4 +127,83 @@
 
 use.footer__svg {
   fill: $basic-white;
+}
+
+.footer__menu-item--training {
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    .footer__training-list {
+      display: block;
+    }
+
+    .footer__menu-item--all-trainings {
+      opacity: 1;
+    }
+  }
+
+  span {
+    transition: all 0.5s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.footer__menu-item--all-trainings {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -18px;
+  right: -18px;
+  font-size: 14px;
+  color: $text-color;
+  background-color: $basic-white;
+  width: 23px;
+  height: 23px;
+  border-radius: 100px;
+  line-height: 1;
+  opacity: 0.6;
+  transition: all 0.5s ease;
+}
+
+.footer__training-list {
+  position: absolute;
+  padding: 20px 20px;
+  border-radius: 20px;
+  top: 15px;
+  left: 0;
+  width: 350px;
+  background-color: #E1E6EB;
+  z-index: 10;
+  display: none;
+  cursor: default;
+}
+
+.footer__training-item {
+  line-height: 1.5;
+  font-size: 16px;
+
+  a {
+    color: $text-color;
+    font-weight: 500;
+    transition: all 0.5s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__training-delete {
+  display: none;
 }

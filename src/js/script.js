@@ -761,10 +761,10 @@ try {
 } catch {}
 
 // Кнопочка с количеством тренингов к прохождению
-try {
-  const headerTrainingList = document.querySelector('.header__training-list');
-  const headerTrainingItem = document.querySelectorAll('.header__training-item');
-  const headerTrainingSticker = document.querySelector('.header__menu-item--all-trainings');
+function getTrainingCounts(list, item, allTrainings, deleteItem) {
+  const headerTrainingList = document.querySelector(list);
+  const headerTrainingItem = document.querySelectorAll(item);
+  const headerTrainingSticker = document.querySelector(allTrainings);
 
   let trainingsCount = 0;
 
@@ -775,11 +775,19 @@ try {
   });
 
   if (trainingsCount === 0) {
-    headerTrainingSticker.classList.add('header__training-delete');
+    headerTrainingSticker.classList.add(deleteItem);
     headerTrainingList.remove();
   }
 
   headerTrainingSticker.textContent = trainingsCount;
+}
+
+try {
+  getTrainingCounts('.header__training-list', '.header__training-item', '.header__menu-item--all-trainings', 'header__training-delete');
+} catch {}
+
+try {
+  getTrainingCounts('.footer__training-list', '.footer__training-item', '.footer__menu-item--all-trainings', 'footer__training-delete');
 } catch {}
 
 // Показать следующие 3 элемента при клике

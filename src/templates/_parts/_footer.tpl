@@ -1,18 +1,92 @@
 <footer class="footer">
   <div class="footer__wrap">
     <div class="footer__content">
-      <a href="#" class="footer__logo">
+      <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
+      <a href="<?php echo HOST; ?>user-card" class="footer__logo">
         <svg viewBox="0 0 184 35" width="184" height="35">
           <use class="footer__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-desktop"></use>
         </svg>
       </a>
+      <?php else: ?>
+      <a href="#" class="header__logo">
+        <svg viewBox="0 0 184 35" width="184" height="35">
+          <use class="footer__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-desktop"></use>
+        </svg>
+      </a>
+      <?php endif; ?>
 
+      <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
       <ul class="footer__menu-list">
-        <li class="footer__menu-item"><a class="footer__menu-link" href="http://">Результаты</a></li>
-        <li class="footer__menu-item"><a class="footer__menu-link" href="http://">Кабинет</a></li>
-        <li class="footer__menu-item"><a class="footer__menu-link" href="http://">Обучение</a></li>
-        <li class="footer__menu-item"><a class="footer__menu-link" href="http://">Тест</a></li>
+        <?php if ($_SESSION['role'] === 'admin'): ?>
+        <li class="footer__menu-item">
+          <a class="footer__menu-link" href="<?php echo HOST; ?>admin">
+            Админ
+          </a>
+        </li>
+        <?php endif; ?>
+        <li class="footer__menu-item"><a class="footer__menu-link" href="<?php echo HOST; ?>user-card">Кабинет</a></li>
+        <li class="footer__menu-item footer__menu-item--training">
+          <a class="footer__menu-link">Обучение</a>
+          <span class="footer__menu-item--all-trainings"></span>
+
+          <ul class="footer__training-list">
+            <?php
+              $user_results = R::findAll('results', 'tab_number = ?', [$user->tab_number]);
+              ?>
+
+            <?php if ($user->post === 'Водитель-экспедитор' || $user->post === 'Водитель автомобиля' || $user->post === 'Водитель автопогрузчика'):
+              $found = false;
+
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Тест для водителей (осень 2024)' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+            <li class="footer__training-item">
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-1">Обучение водителей (осень
+                2024)</a>
+            </li>
+            <?php endif; ?>
+            <?php endif; ?>
+
+            <?php if ($user->post === 'Супервайзер'):
+              $found = false;
+
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Тест для супервайзеров' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+            <li class="footer__training-item">
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-2">Тест для супервайзеров</a>
+            </li>
+            <?php endif; ?>
+            <?php endif; ?>
+
+            <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Тест для всех' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+            <li class="footer__training-item">
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-3">Тест для всех</a>
+            </li>
+            <?php endif; ?>
+          </ul>
+        </li>
       </ul>
+      <?php endif; ?>
 
       <div class="footer__contacts">
         <a href="tel:+79995555555">+7 (999) 555-55-55</a>
