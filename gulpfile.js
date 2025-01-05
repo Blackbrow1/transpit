@@ -15,8 +15,8 @@ import cleanCss from 'gulp-clean-css';
 import shorthand from 'gulp-shorthand';
 import newer from 'gulp-newer';
 import webp from 'gulp-webp';
-// import fonter from 'gulp-fonter';
-// import ttf2woff2 from 'gulp-ttf2woff2';
+import fonter from 'gulp-fonter';
+import ttf2woff2 from 'gulp-ttf2woff2';
 // import terser from 'gulp-terser';
 import { stacksvg } from 'gulp-stacksvg';
 import svgo from 'gulp-svgmin';
@@ -121,7 +121,12 @@ export function copyImages() {
 }
 
 export function fonts() {
-  return src(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`)
+  return src(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`,
+    {
+      encoding: false,
+      removeBOM: false,
+    }
+  )
   .pipe(plumber({
     errorHandler: notify.onError(error => ({
         title: 'FONTS',
@@ -129,6 +134,12 @@ export function fonts() {
     }))
   }))
   .pipe(newer(PATH_TO_DIST))
+  .pipe(fonter({
+    formats: ['woff']
+  }))
+  .pipe(dest(`${PATH_TO_DIST}fonts/`))
+  .pipe(src(`${PATH_TO_SRC}fonts/*.ttf`))
+  .pipe(ttf2woff2())
   .pipe(dest(`${PATH_TO_DIST}fonts/`));
 }
 

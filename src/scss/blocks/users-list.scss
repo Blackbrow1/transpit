@@ -124,7 +124,6 @@
     top: 0;
     left: -100%;
     background-color: $main-dark-color;
-    border-radius: 10px;
     z-index: -1;
     transition: all 0.5s ease;
   }
@@ -158,9 +157,8 @@
     width: 175px;
     height: 50px;
     top: 0;
-    left: calc(-100% - 2px);
+    left: -104%;
     background-color: $main-dark-color;
-    border-radius: 15px;
     z-index: -1;
     transition: all 0.5s ease;
   }

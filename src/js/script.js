@@ -871,7 +871,7 @@ try {
 
         if (counter >= visibleUsers.length) {
           usersListButton.classList.add('remove-elem');
-          visibleUsers = []
+          // visibleUsers = []
         }
       });
     });

@@ -1,2 +1,26 @@
-@include font-template("HelveticaNeueCyr", 400, normal, url("../fonts/helveticaneuecyr-roman.woff2") format("woff2"), url("../fonts/helveticaneuecyr-roman.woff") format("woff"));
-@include font-template("HelveticaNeueCyr", 500, normal, url("../fonts/helveticaneuecyr-medium.woff2") format("woff2"), url("../fonts/helveticaneuecyr-medium.woff") format("woff"));
+// @include font-template("Geologica", 400, normal, url("../fonts/Geologica-Regular.woff2") format("woff2"), url("../fonts/Geologica-Regular.woff") format("woff"));
+// @include font-template("Geologica", 600, normal, url("../fonts/Geologica-SemiBold.woff2") format("woff2"), url("../fonts/Geologica-SemiBold.woff") format("woff"));
+
+@font-face {
+  font-weight: "300";
+  font-family: "helveticaneuecyr";
+  font-style: normal;
+  src: url("../fonts/helveticaneuecyr-light.woff2") format("woff2"), url("../fonts/helveticaneuecyr-light.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: "400";
+  font-family: "helveticaneuecyr";
+  font-style: normal;
+  src: url("../fonts/helveticaneuecyr-roman.woff2") format("woff2"), url("../fonts/helveticaneuecyr-roman.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: "500";
+  font-family: "helveticaneuecyr";
+  font-style: normal;
+  src: url("../fonts/helveticaneuecyr-medium.woff2") format("woff2"), url("../fonts/helveticaneuecyr-medium.woff") format("woff");
+  font-display: swap;
+}
