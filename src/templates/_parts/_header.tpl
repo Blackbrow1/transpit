@@ -113,7 +113,7 @@
           <div class="header__avatar">
             <?php if(!empty($user->avatar)): ?>
             <img class="header__avatar-img" width="482" height="428" loading="lazy"
-              src="<?php echo HOST; ?>user-content/avatars/<?php echo $user->avatar; ?>" alt="Фото сотрудника">
+              src="<?php echo HOST; ?>user-content/avatars/<?php echo $user->avatarSmall; ?>" alt="Фото сотрудника">
             <?php else: ?>
             <img class="header__avatar-img" width="482" height="428" loading="lazy"
               src="<?php echo HOST; ?>img/icons/user.svg" alt="Фото сотрудника">

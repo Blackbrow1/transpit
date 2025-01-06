@@ -85,8 +85,8 @@ function updateUserAndGoToProfile($user) {
                 file_exists($pictureUrl) ? unlink($pictureUrl) : '' ;
 
                 // Определяем путь к маленькой аватарке и удаляем ее
-                $pictureUrl277 = $avatarFolderLocation . '277-' . $avatar;
-                file_exists( $pictureUrl277) ? unlink($pictureUrl277) : '';
+                $pictureUrl80 = $avatarFolderLocation . '80-' . $avatar;
+                file_exists( $pictureUrl80) ? unlink($pictureUrl80) : '';
             }
 
             // $moveResult = move_uploaded_file($fileTmpLoc, $uploadfile);
@@ -94,22 +94,22 @@ function updateUserAndGoToProfile($user) {
             $db_file_name =
             rand(100000000000,999999999999) . "." . $fileExt;
             $uploadfile482 = $avatarFolderLocation . $db_file_name;
-            $uploadfile277 = $avatarFolderLocation . '277-' . $db_file_name;
+            $uploadfile80 = $avatarFolderLocation . '80-' . $db_file_name;
 
             // Обработать фотографию
             // 1. Обрезать до 160х160
             // 2. Обрезать до 48х48
             $result482 = resize_and_crop($fileTmpLoc, $uploadfile482, 482, 428);
-            $result277 = resize_and_crop($fileTmpLoc, $uploadfile277, 277, 277);
+            $result80 = resize_and_crop($fileTmpLoc, $uploadfile80, 80, 80);
 
-            if ($result482 != true || $result277 != true) {
+            if ($result482 != true || $result80 != true) {
               $_SESSION['errors'][] = ['title' => 'Ошибка сохранения файла'];
               return false;
           }
 
             // Сохраняем имя файла в БД
             $user->avatar = $db_file_name;
-            $user->avatarSmall = '277-' . $db_file_name;
+            $user->avatarSmall = '80-' . $db_file_name;
         }
       }
 
@@ -117,7 +117,7 @@ function updateUserAndGoToProfile($user) {
       if (isset($_POST['delete-avatar']) && $_POST['delete-avatar'] == 'on') {
         $avatarFolderLocation = ROOT . 'user-content/avatars/';
         unlink($avatarFolderLocation . $user->avatar);
-        unlink($avatarFolderLocation . '277-' . $user->avatar);
+        unlink($avatarFolderLocation . '80-' . $user->avatar);
 
         $user->avatar = '';
         $user->avatar_small = '';
