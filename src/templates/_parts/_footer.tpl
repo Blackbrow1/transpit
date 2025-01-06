@@ -97,7 +97,7 @@
     </div>
 
     <div class="footer__tech-info">
-      <a class="footer__policy" href="<?php echo HOST; ?>policy.pdf" target="_blank">Политика конфиденциальности</a>
+      <a class="footer__policy" href="<?php echo HOST; ?>policy.pdf" download>Политика конфиденциальности</a>
 
       <div class="footer__prasaim">
         <span>Разработано в</span>

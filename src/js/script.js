@@ -821,85 +821,62 @@ try {
 
 
 // Фильтрация всех сотрудников
-
 const usersSelect = document.querySelector('.users-list__select');
 const usersItems = document.querySelectorAll('.users-list__item');
 const usersListButton = document.querySelector('.users-list__button');
 
-let currentIndex = 0;
-let itemsPerPage = 5;
+let visibleUsers = [];
+let counter = 5;
+
+for (let i = 0; i < usersItems.length; i++) {
+  visibleUsers.push(usersItems[i]);
+}
 
 usersItems.forEach((item, index) => {
-  if (index >= itemsPerPage) {
+  if (index >= counter) {
     item.classList.add('remove-elem');
   }
 });
 
-// usersListButton.addEventListener('click', () => {
-//   usersItems.forEach((item, index) => {
-//     console.log(item, index);
-//     if (index <= itemsPerPage + 5) {
-//       item.classList.remove('remove-elem');
-//     }
-//   });
+usersSelect.addEventListener('change', () => {
+  usersListButton.classList.remove('remove-elem');
+  visibleUsers = [];
+  counter = 5;
 
-//   itemsPerPage += 5;
-// });
+  for (let i = 0; i < usersItems.length; i++) {
+    if (usersSelect.value === '' || usersItems[i].dataset.post === usersSelect.value) {
+      visibleUsers.push(usersItems[i]);
 
-
-try {
-  usersSelect.addEventListener('change', () => {
-    usersListButton.classList.remove('remove-elem');
-    let visibleUsers = [];
-    let counter = 5;
-
-
-    for (let i = 0; i < usersItems.length; i++) {
-      if (usersSelect.value === '' || usersItems[i].dataset.post === usersSelect.value) {
-        visibleUsers.push(usersItems[i]);
-
-        if (visibleUsers.length <= counter) {
-          usersItems[i].classList.remove('remove-elem');
-        } else {
-          usersItems[i].classList.add('remove-elem');
-        }
+      if (visibleUsers.length <= counter) {
+        usersItems[i].classList.remove('remove-elem');
       } else {
-          usersItems[i].classList.add('remove-elem');
+        usersItems[i].classList.add('remove-elem');
       }
+    } else {
+        usersItems[i].classList.add('remove-elem');
+    }
+  }
+
+  if (visibleUsers.length < counter) {
+    usersListButton.classList.add('remove-elem');
+  } else {
+    usersListButton.classList.remove('remove-elem');
+  }
+});
+
+usersListButton.addEventListener('click', () => {
+  counter += 5;
+
+  visibleUsers.forEach((item, index) => {
+    if (index < counter) {
+      item.classList.remove('remove-elem');
     }
 
-    usersListButton.addEventListener('click', () => {
-      counter += 5;
-
-      visibleUsers.forEach((item, index) => {
-        // console.log(item, index);
-        if (index < counter) {
-          item.classList.remove('remove-elem');
-        }
-
-        if (counter >= visibleUsers.length) {
-          usersListButton.classList.add('remove-elem');
-          // visibleUsers = []
-        }
-      });
-    });
-
-
-    console.log(visibleUsers);
+    if (counter >= visibleUsers.length) {
+      usersListButton.classList.add('remove-elem');
+    }
   });
-
-} catch {}
-
-console.log(itemsPerPage);
-
-
-// for (let i = 0; i < usersItems.length; i++) {
-//   // usersItems[i].classList.add('remove-elem');
-//   console.log(usersItems[i]);
-//   if (i >= countUsers) {
-//     usersItems[i].classList.add('remove-elem');
-//   }
-// }
+});
 
 // Установить курсор по клику в поле
 try {
