@@ -53,14 +53,18 @@
 
 .users-finished-test__user-post,
 .users-finished-test__user-number {
-  line-height: 1;
   font-weight: 500;
   color: $text-color;
   opacity: 0.3;
 }
 
+.users-finished-test__user-number {
+  line-height: 1;
+}
+
 .users-finished-test__user-post {
   margin-bottom: 10px;
+  line-height: 1.4;
 }
 
 .users-finished-test__button {

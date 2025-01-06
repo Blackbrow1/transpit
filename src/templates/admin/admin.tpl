@@ -133,7 +133,7 @@
 
   <section class="users-finished-test">
     <div class="users-finished-test__wrap">
-      <h2 class="users-finished-test__title h2">Сотрудники, сдавшие тест</h2>
+      <h2 class="users-finished-test__title h2">Сотрудники, прошедшие обучение</h2>
 
       <div class="users-finished-test__menu filter">
         <select class="users-finished-test__select" name="users-finished-test" id="post">
