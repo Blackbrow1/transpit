@@ -137,7 +137,7 @@
 
       <div class="users-finished-test__menu filter">
         <select class="users-finished-test__select" name="users-finished-test" id="post">
-          <option value="all">Все сотрудники</option>
+          <option value="">Все сотрудники</option>
           <option value="Водитель спецмашины">Водитель спецмашины</option>
           <option value="Водитель-экспедитор">Водитель-экспедитор</option>
           <option value="Водитель автомобиля">Водитель автомобиля</option>
