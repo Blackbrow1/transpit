@@ -22,7 +22,8 @@
 .users-list__item {
   position: relative;
   display: grid;
-  grid-template-columns: 410px 1fr 380px;
+  grid-template-columns: 390px 1fr min-content;
+  gap: 20px;
   padding-top: 20px;
   padding-bottom: 40px;
   border-top: 1px solid $border-color;
@@ -30,6 +31,10 @@
   &--none {
     display: none;
   }
+}
+
+.users-list__item-post {
+  line-height: 1.4;
 }
 
 .users-list__popup {

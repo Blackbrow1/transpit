@@ -50,14 +50,14 @@
 .footer__contacts {
   display: flex;
   flex-direction: column;
+  align-items: end;
   font-size: 18px;
 
   span {
     line-height: 1;
-
-    &:first-of-type {
-      margin-bottom: 10px;
-    }
+    opacity: 0.6;
+    font-size: 16px;
+    margin-bottom: 5px;
   }
 
   a {
@@ -67,6 +67,10 @@
 
     &:hover {
       opacity: 1;
+    }
+
+    &:first-of-type {
+      margin-bottom: 10px;
     }
   }
 }

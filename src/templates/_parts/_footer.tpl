@@ -89,22 +89,24 @@
       <?php endif; ?>
 
       <div class="footer__contacts">
+        <span>По вопросам обучения:</span>
         <a href="tel:+79995555555">+7 (999) 555-55-55</a>
-        <a href="tel:+79995555555">+7 (999) 555-55-55</a>
+        <span>По вопросам работы платформы:</span>
+        <a href="tel:+79500158171">+7 (950) 015-81-71</a>
       </div>
     </div>
 
     <div class="footer__tech-info">
-      <a class="footer__policy" href="#" target="_blank">Политика конфиденциальности</a>
+      <a class="footer__policy" href="<?php echo HOST; ?>policy.pdf" target="_blank">Политика конфиденциальности</a>
 
-      <p class="footer__prasaim" href="#" target="_blank">
-        <span>Сайт сделан в</span>
+      <div class="footer__prasaim">
+        <span>Разработано в</span>
         <a href="https://prasaim.ru" target="_blank">
           <svg viewBox="0 0 105 21" width="105" height="21">
             <use class="footer__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-prasaim"></use>
           </svg>
         </a>
-      </p>
+      </div>
     </div>
   </div>
 

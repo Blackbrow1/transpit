@@ -26,7 +26,8 @@
 
 .users-finished-test__item {
   display: grid;
-  grid-template-columns: 410px 1fr 205px 175px;
+  grid-template-columns: 390px 1fr 185px 175px;
+  gap: 20px;
   padding-top: 20px;
   padding-bottom: 40px;
   border-top: 1px solid $border-color;
@@ -37,7 +38,7 @@
 .users-finished-test__date,
 .users-finished-test__progress {
   font-size: 20px;
-  line-height: 1;
+  line-height: 1.4;
   font-weight: 500;
 }
 
