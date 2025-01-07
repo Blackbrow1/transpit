@@ -1,3 +1,14 @@
+import { addClassItemActive } from './modules/add-class-item-active.js';
+import { trainingPage } from './modules/training-page.js';
+import { securityTrainingData } from './modules/trainings-data.js';
+import { getTrainingCounts } from './modules/get-training-counts.js';
+import { showMoreUsers } from './modules/show-more-users.js';
+import { showMoreProgressCards } from './modules/show-more-progress-cards.js';
+import { setCursorInInput } from './modules/set-cursor-in-input.js';
+import { removeSuccessMessage } from './modules/remove-success-message.js';
+import { deleteUser } from './modules/delete-user.js';
+import { addFileMessage } from './modules/add-file-message.js';
+
 const answerCheckboxBlock = document.querySelectorAll('.test__answer-checkbox-block');
 const buttonStop = document.querySelector('.test__button-stop');
 const testForm = document.querySelector('.test__form');
@@ -7,8 +18,7 @@ const testResultText = document.querySelector('.test__result-text');
 const timeBlock = document.querySelector('.test__time-block');
 const answerRadioBlock = document.querySelectorAll('.test__answer-radio-block');
 const buttonClose = document.querySelector('.test__result-close');
-const navItems = document.querySelectorAll('.header__menu-item');
-const navItemsTraining = document.querySelectorAll('.header__training-item');
+
 
 const MAX_QUESTIONS = 32;
 const MIN_QUESTIONS_ACCESS = 26;
@@ -57,944 +67,230 @@ const answersData = [
   'answer-30-4'
 ];
 
+window.addEventListener('DOMContentLoaded', () => {
+  // Добавляю класс активному пункту меню
+  addClassItemActive();
 
-try {
-  function getTime(time) {
-    const end = new Date().getTime() + time;
-    if (timeBlock) {
-      const interval = setInterval(() => {
-        timeBlock.textContent = new Intl.DateTimeFormat('ru-RU', {
-          minute: 'numeric',
-          second: 'numeric'
-        }).format(end + 100 - new Date())
-      }, 1000);
+  // Таймер работы кнопки Далее
+  try {
+    function getTime(time) {
+      const end = new Date().getTime() + time;
+      if (timeBlock) {
+        const interval = setInterval(() => {
+          timeBlock.textContent = new Intl.DateTimeFormat('ru-RU', {
+            minute: 'numeric',
+            second: 'numeric'
+          }).format(end + 100 - new Date())
+        }, 1000);
 
-      setTimeout(() => {
-        clearInterval(interval);
-        getResult();
-      }, time);
-    }
-  }
-
-  getTime(1000 * 60 * 18);
-} catch {}
-
-
-
-// Добавляю класс активному пункту меню
-navItems.forEach((item) => {
-  let navLink = item.querySelector('.header__menu-link');
-
-  if (navLink.href == window.location.href) {
-    navLink.classList.add('header__menu-link--active');
-  }
-
-  navItemsTraining.forEach(train => {
-    let link = train.querySelector('.header__training-link');
-
-    if (link.href == window.location.href) {
-      document.querySelector('.header__menu-item--training span').classList.add('header__menu-link--active');
-    }
-  });
-})
-
-// buttonBegin.addEventListener('click', function() {
-//   getTime(1000 * 60 * 18);
-// });
-
-const answCount = document.querySelector('[name="answ_count"]');
-const percent = document.querySelector('[name="percent"]');
-const resultName = document.querySelector('[name="result_name"]');
-
-let sum = 0;
-
-function getResult() {
-  answerRadioBlock.forEach(item => {
-    const answerRadio = item.querySelectorAll('.test__answer-radio');
-
-    answerRadio.forEach(j => {
-      const answerInput = j.querySelector('input');
-
-      answersDataRadio.forEach(elem => {
-        if (answerInput.checked && answerInput.value === elem) {
-          sum += 1;
-        }
-      });
-    });
-  });
-
-  answerCheckboxBlock.forEach(item => {
-    const answerCheckbox = item.querySelectorAll('.test__answer-checkbox');
-    const answerAccData = [];
-
-    answerCheckbox.forEach(j => {
-      const answerInput = j.querySelector('input');
-
-      if (answersData.includes(answerInput.checked && answerInput.value)) {
-        answerAccData.push(true);
-      } else if (answerInput.checked && !answersData.includes(answerInput.value)) {
-        answerAccData.push(false);
+        setTimeout(() => {
+          clearInterval(interval);
+          getResult();
+        }, time);
       }
-
-      if (answersData.includes(answerInput.value) && !answerInput.checked) {
-        answerAccData.push(false);
-      }
-    });
-
-    const answerTrueSet = new Set(answerAccData);
-    const answerTrueSetToArr = [...answerTrueSet];
-
-    if (answerTrueSetToArr.some(item => item === false) || answerTrueSetToArr.length === 0) {
-      sum += 0;
-    } else {
-      sum += 1;
     }
-  });
 
-  const progress = Math.round((sum / MAX_QUESTIONS) * 100);
+    getTime(1000 * 60 * 18);
+  } catch {}
 
-  // answCount.value = sum;
-  // percent.value = progress;
+  // Получение результатов теста
+  let sum = 0;
 
-  if (sum >= MIN_QUESTIONS_ACCESS) {
-    testResultText.textContent = 'Поздравляем! Тест успешно пройден. ' + sum + ' верных ответа. ' + 'Прогресс ' + progress + '%';
-    testResult.classList.add('test__result--access');
-    testResult.classList.remove('test__result--hidden');
-    timeBlock.classList.add('test__result--hidden');
-
-    // resultName.value = 'Зачет';
-
+  function getResult() {
     answerRadioBlock.forEach(item => {
       const answerRadio = item.querySelectorAll('.test__answer-radio');
 
       answerRadio.forEach(j => {
         const answerInput = j.querySelector('input');
-        let label = j.querySelector('label');
 
-        if (answersDataRadio.includes(answerInput.value) && answerInput.checked) {
-          label.style.color = '#477346';
-          label.style.fontWeight = '500';
-        } else if (answerInput.checked && !answersDataRadio.includes(answerInput.value)) {
-          label.style.color = '#d91C0b';
-          label.style.fontWeight = '500';
-        }
-
-        if (answersDataRadio.includes(answerInput.value) && !answerInput.checked) {
-          label.style.color = '#477346';
-          label.style.fontWeight = '500';
-        }
+        answersDataRadio.forEach(elem => {
+          if (answerInput.checked && answerInput.value === elem) {
+            sum += 1;
+          }
+        });
       });
     });
 
     answerCheckboxBlock.forEach(item => {
       const answerCheckbox = item.querySelectorAll('.test__answer-checkbox');
+      const answerAccData = [];
 
       answerCheckbox.forEach(j => {
         const answerInput = j.querySelector('input');
-        let label = j.querySelector('label');
 
         if (answersData.includes(answerInput.checked && answerInput.value)) {
-          label.style.color = '#477346';
-          label.style.fontWeight = '500';
+          answerAccData.push(true);
         } else if (answerInput.checked && !answersData.includes(answerInput.value)) {
-          label.style.color = '#d91C0b';
-          label.style.fontWeight = '500';
+          answerAccData.push(false);
         }
 
         if (answersData.includes(answerInput.value) && !answerInput.checked) {
-          label.style.color = '#477346';
-          label.style.fontWeight = '500';
+          answerAccData.push(false);
         }
       });
-    });
-  }
 
-  if (sum < MIN_QUESTIONS_ACCESS) {
-    testResultText.textContent = 'Тест не пройден. ' + sum + ' верных ответа.' + ' Прогресс ' + progress + '%';
-    testResult.classList.add('test__result--fail');
-    testResult.classList.remove('test__result--hidden');
-    timeBlock.classList.add('test__result--hidden');
+      const answerTrueSet = new Set(answerAccData);
+      const answerTrueSetToArr = [...answerTrueSet];
 
-    // resultName.value = 'Незачет';
-  }
-
-  buttonStop.remove();
-  buttonCabinet.classList.remove('test__button-cabinet--none');
-
-  buttonClose.addEventListener('click', () => {
-    testResult.classList.add('test__result--hidden');
-  });
-}
-
-try {
-  testForm.addEventListener('submit', function(evt) {
-    evt.preventDefault();
-    getResult();
-
-    const formData = new FormData(); // собираем данные из формы
-
-    formData.append('test_name', document.querySelector('.test__main-title').textContent);
-    formData.append('answ_count', sum);
-    formData.append('percent', Math.round((sum / MAX_QUESTIONS) * 100));
-    formData.append('result_name', sum < MIN_QUESTIONS_ACCESS ? 'Незачет' : 'Зачет');
-
-    // /modules/test/submit_results.php
-    fetch('submit-results', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-      console.log('Ответ с сервера получен'); // выводим ответ от сервера
-    })
-    .catch(error => {
-      console.error('Ошибка:', error);
-    });
-  });
-} catch {
-  console.log('Произошла ошибка');
-}
-
-// Страница обучения
-
-const trainList = [
-  {
-    theme: 'Мусор на перроне',
-    imgJpg1: 'img/trainings/sequrity/img-1-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-1-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-1-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-1-desktop@2x.webp',
-    paragraph: [
-      'Любые посторонние предметы, находящиеся вблизи перрона, могут привести к повреждению ВС или оборудования, или же к серьезным инцидентам.',
-      'Всегда поднимайте и утилизируйте посторонние предметы на перроне. Для посторонних предметов на перроне определены специальные контейнеры с маркировкой FOD'
-    ]
-  },
-  {
-    theme: 'Области маневрирования',
-    imgJpg1: 'img/trainings/sequrity/img-2-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-2-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-2-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-2-desktop@2x.webp',
-    paragraph: [
-      'Область маневрирования – исключительно для воздушных судов. ',
-      'Транспортным средствам предоставлен ограниченный вход (въезд), в то время как пешеходам (наземным службам) проход строго воспрещен.'
-    ]
-  },
-  {
-    theme: 'Когда подходить к ВС',
-    imgJpg1: 'img/trainings/sequrity/img-3-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-3-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-3-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-3-desktop@2x.webp',
-    paragraph: [
-      'Дождитесь сигнала «большой палец вверх» от механика или инженера, прежде чем подходить к ВС'
-    ]
-  },
-  {
-    theme: 'Использование СИЗ',
-    imgJpg1: 'img/trainings/sequrity/img-4-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-4-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-4-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-4-desktop@2x.webp',
-    paragraph: [
-      'Всегда носите специальную одежду и средства персональной защиты при работе на перроне. Это необходимо для вашей безопасности'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-5-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-5-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-5-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-5-desktop@2x.webp',
-    paragraph: [
-      'Сообщите инженеру или представителю авиакомпании, если вы обнаружили какое-либо повреждение ВС'
-    ]
-  },
-  {
-    theme: 'Ответственность за безопасность',
-    imgJpg1: 'img/trainings/sequrity/img-6-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-6-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-6-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-6-desktop@2x.webp',
-    paragraph: [
-      'Вне зависимости от того, какую должность вы занимаете или какие обязанности исполняете при обслуживании ВС…',
-      'Если вы работаете на перроне, ВЫ несете ответственность за безопасность!'
-    ]
-  },
-  {
-    theme: 'Нормативно-правовые документы',
-    imgJpg1: 'img/trainings/sequrity/img-7-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-7-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-7-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-7-desktop@2x.webp',
-    paragraph: [
-      'Все действия в Гражданской Авиации регламентируются правилами и положениями.'
-    ]
-  },
-  {
-    theme: 'Международный уровень',
-    imgJpg1: 'img/trainings/sequrity/img-8-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-8-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-8-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-8-desktop@2x.webp',
-    paragraph: [
-      'ICAO - Международная организация гражданской авиации, которая разрабатывает стандарты и рекомендации таких сфер авиаиндустрии, как:',
-      '- аэронавигация',
-      '- инфраструктура',
-      '- Полетная инспекция',
-      '- разработка мер по предупреждению незаконных вмешательств',
-      '- процедуры пересечения границы для международной гражданской авиации ОАЭ являются участником ИКАО и ее специализированных подразделений.'
-    ]
-  },
-  {
-    theme: 'Государственный уровень',
-    imgJpg1: 'img/trainings/sequrity/img-9-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-9-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-9-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-9-desktop@2x.webp',
-    paragraph: [
-      'Главное управление гражданской авиацией ОАЭ (GCAA) контролирует и регулирует гражданскую авиацию в Объединённых Арабских Эмиратах. GCAA несет ответственность за навигацию воздушного транспорта и безопасность полетов.   GCAA представляет ОЭА в ИКАО и ее специализированных подразделениях.',
-      'В РФ эту роль выполняет «Федеральное агентство воздушного транспорта».'
-    ]
-  },
-  {
-    theme: 'Управление гражданской авиацией Дубая',
-    imgJpg1: 'img/trainings/sequrity/img-10-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-10-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-10-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-10-desktop@2x.webp',
-    paragraph: [
-      'Управление гражданской авиацией Дубая (DCAA) – внутренний регулирующий орган Аэропортов Эмирата Дубай, включающий в себя Международный Аэропорт Дубая  и Международный Аэропорт Аль-Мактум.',
-      'Контролирует развитие воздушной индустрии в эмирате и является связующим звеном различных сфер деятельности гражданских аэропортов в Дубае. Регламентирует работу сотрудников в соответствии с правовыми документами, разрабатывает и утверждает нормативно-правовые акты по эксплуатации аэропорта; нормативно-правовые акты – охране труда, безопасность полетов и охране окружающей среды; по обслуживанию на перроне – рекомендации и уведомления.',
-      'В РФ эту функцию исполняет СЕВЕРО-ЗАПАДНОЕ МЕЖРЕГИОНАЛЬНОЕ ТЕРРИТОРИАЛЬНОЕ УПРАВЛЕНИЕ ВОЗДУШНОГО ТРАНСПОРТА ФЕДЕРАЛЬНОГО АГЕНТСТВА ВОЗДУШНОГО ТРАНСПОРТА'
-    ]
-  },
-  {
-    theme: 'Перрон - режимный объект',
-    imgJpg1: 'img/trainings/sequrity/img-11-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-11-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-11-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-11-desktop@2x.webp',
-    paragraph: [
-      'Перрон является режимной территорией и все процессы и нахождение персонала контролируется и строго регламентировано.',
-      'Выявите необычные или подозрительные факторы на картинки.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-12-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-12-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-12-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-12-desktop@2x.webp',
-    paragraph: [
-      'Помните видео и фотосьемка на перроне регламентируется и для того, чтоб ее проводить необходимо получить разрешение от контролирующих органов.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-13-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-13-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-13-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-13-desktop@2x.webp',
-    paragraph: [
-      'По правилам безопасности, сотрудникам не разрешается курить, а так же находиться под воздействием или принимать алкоголь или запрещенные медикаменты во время выполнения служебных обязанностей и нахождения в аэропорту.',
-      'Если вы чувствуете себя нездоровым, сообщите своему супервайзеру или руководству. Ваше плохое самочувствие может сказаться на результатах вашей работы.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-14-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-14-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-14-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-14-desktop@2x.webp',
-    paragraph: [
-      'При использовании специального оборудования или средств передвижения на перроне, необходимо удостовериться в следующем:',
-      '- Водитель должен иметь водительское удостоверение, талон на право управление ТС, путёвку.',
-      '- Должно быть пройдено обучение управлению и работе с соответствующим оборудованием/средством передвижения.',
-      'Средства передвижения на перроне работают по принципу «нет места-нет поездки» (No seat – No ride).'
-    ]
-  },
-  {
-    theme: 'Обеспечение своевременной и безопасной работы аэропорта',
-    imgJpg1: 'img/trainings/sequrity/img-15-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-15-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-15-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-15-desktop@2x.webp',
-    paragraph: [
-      'Аэропорт управляет передвижениями пассажиров, багажа и груза и оборудования между терминалами, стоянками и производственными объектами.  Аэропорт также обеспечивает разворот воздушных судов с помощью служб наземного обслуживания. Для обеспечения своевременной и безопасной работы, необходимо четкое понимание назначений и наименований различных зон аэропорта:',
-      '- Взлетная полоса',
-      '- Рулежная дорожка',
-      '- Перрон'
-    ]
-  },
-  {
-    theme: 'Зона общего доступа',
-    imgJpg1: 'img/trainings/sequrity/img-16-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-16-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-16-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-16-desktop@2x.webp',
-    paragraph: [
-      'Зона общего доступа – зона аэропорта, находящаяся до прохождения каких-либо пунктов безопасности/досмотра ,  таких как таможня или пограничный контроль',
-      'Воздушная зона – является контролируемой зоной аэропорта, которая включает в себя:',
-      '- любую режимную зону ФТС, ФСБ, САБ, например, зал отправления или прибытия',
-      '- зона перрона, или зона стоянки, где идет обслуживание ВС вплоть до момента его отправления'
-    ]
-  },
-  {
-    theme: 'Разметка на перроне',
-    imgJpg1: 'img/trainings/sequrity/img-17-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-17-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-17-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-17-desktop@2x.webp',
-    paragraph: [
-      'Разметка на перроне может отличаться в разных странах, но основные правила таковы:',
-      'Разметка желтого цвета - для воздушного судна. Во время движения самолёта, по таким линям не должно быть никаких преград.',
-      'Белые лини используются для маркировки движения наземного оборудования и транспортных средств. Запрещено пересекать двойную сплошную белую линию.',
-      'Красная линия (иногда) с белыми границами – Equipment Restraint Line (ERL) – границы стоянки ВС. Весь персонал и оборудование должны находиться за пределами этой зоны в момент движения ВС, работы двигателей и до выключения проблесковых маячков ВС.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-18-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-18-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-18-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-18-desktop@2x.webp',
-    paragraph: [
-      'Разметка «красная штриховка» - стоянка и движение транспортных средств запрещены.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-19-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-19-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-19-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-19-desktop@2x.webp',
-    paragraph: [
-      'Разметка «желтая штриховка» – стоянка и движение транспортных средств запрещены, размещение оборудования запрещено.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-20-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-20-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-20-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-20-desktop@2x.webp',
-    paragraph: [
-      'Запрещается пересечение рулежных дорожек вне транспортных средств.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-21-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-21-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-21-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-21-desktop@2x.webp',
-    paragraph: [
-      'Персонал имеет право пересекать данную зону только на транспортном средстве. Транспортное средство должно полностью остановиться, прежде чем пересекать рулежную дорожку. Соблюдайте правила дорожного движения при пересечении рулежной дорожки.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-22-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-22-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-22-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-22-desktop@2x.webp',
-    paragraph: [
-      'Сотрудники наземной службы устанавливают колодки только после выключения  двигателей и «проблесковых маячков» и сигнала «большой палец вверх» от инженера или механика.',
-      'Проблесковые маячки расположены в сверху и под фюзеляжем. Они указывают на то, что двигатели самолета включены, или будут включены в ближайшее время.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-23-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-23-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-23-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-23-desktop@2x.webp',
-    paragraph: [
-      'Колодки устанавливаются в передней и задней частях стойки шасси, когда самолёт находится на стоянке. Колодки предотвращают движение ВС из-за сильного ветра или неровной поверхности.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-24-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-24-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-24-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-24-desktop@2x.webp',
-    paragraph: [
-      'Сигнальные конусы ставятся вокруг ВС, чтобы выделить зону двигателей и крыльев'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-25-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-25-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-25-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-25-desktop@2x.webp',
-    paragraph: [
-      'Во избежание любого повреждения, персонал служб наземного обслуживания должен быть крайне острожен при подъезде и при подсоединении  оборудования к ВС'
-    ]
-  },
-  {
-    theme: 'Служба наземного обслуживания',
-    imgJpg1: 'img/trainings/sequrity/img-26-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-26-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-26-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-26-desktop@2x.webp',
-    paragraph: [
-      'Служба наземного обслуживания устанавливает и подсоединяет трапп к самолету. Для отдаленных стоянок предусмотрены автобусы, чтобы доставлять пассажиров к зданию терминала аэропорта.',
-      'Далее следует процедура разгрузки багажа и груза, и доставка его в соответствующий терминал (пассажирский ли карго-терминал).'
-    ]
-  },
-  {
-    theme: 'Когда все пассажиры вышли из самолета',
-    imgJpg1: 'img/trainings/sequrity/img-27-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-27-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-27-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-27-desktop@2x.webp',
-    paragraph: [
-      'Когда все пассажиры вышли из самолета, начинают работы следующие службы:',
-      '- Происходит заправка самолета',
-      '- Уборка самолета',
-      '- Загрузка бортового питания'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-28-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-28-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-28-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-28-desktop@2x.webp',
-    paragraph: [
-      'В то время как идет посадка пассажиров, происходит загрузка багажа в грузовой отсек. Экипаж рейса забирает необходимые полетные документы, включающие в себя пассажирский манифест, сводно-загрузочную ведомость и какие-либо инструкции для экипажа.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-29-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-29-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-29-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-29-desktop@2x.webp',
-    paragraph: [
-      'После получения разрешения на взлет, закрываются пассажирские и багажные двери. Отгоняется трап.'
-    ]
-  },
-  {
-    theme: '',
-    imgJpg1: 'img/trainings/sequrity/img-30-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/sequrity/img-30-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/sequrity/img-30-desktop@1x.webp',
-    imgWebp2: 'img/trainings/sequrity/img-30-desktop@2x.webp',
-    paragraph: [
-      'Инженер или механик должен удостовериться, что на ВС нет видимых повреждений, и еще раз удостовериться, что на стоянке нет мусора или посторонних предметов.'
-    ]
-  }
-];
-
-// Обучающая страница
-
-const trainingInfo = document.querySelector('.training__info');
-const trainingImgBlock = document.querySelector('.training__img-block');
-const btnNext = document.querySelector('.training__btn--next');
-const btnPrev = document.querySelector('.training__btn--prev');
-const visualCountLenght = document.querySelector('.training__visual-count-lenght');
-const visualCountNum = document.querySelector('.training__visual-count-number');
-const trainingButton = document.querySelector('.training__button');
-const trainingBlockTitle = document.querySelector('.training__block-title');
-
-let currentActiveIndex = 0;
-let currentNum = 1;
-
-try {
-  visualCountLenght.textContent = trainList.length;
-
-  if (currentActiveIndex === 0) {
-    btnPrev.classList.add('training__button--disable');
-    btnPrev.disabled = true;
-
-    trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
-
-    trainList[currentActiveIndex].paragraph.forEach(item => {
-      let par = document.createElement('p');
-      par.textContent = item;
-      trainingInfo.append(par);
-    });
-
-    let container = `
-      <picture>
-        <source width="555" height="487" type="image/webp"
-          srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
-        <img class="training__img" width="555" height="487" loading="lazy"
-          src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
-          alt="Изображение к теме урока">
-      </picture>
-    `;
-
-    trainingImgBlock.innerHTML = container;
-    visualCountNum.textContent = currentNum;
-  }
-} catch {}
-
-// Заблокировал кнопку перехода к тесту
-try {
-  trainingButton.style.pointerEvents = 'none';
-} catch {}
-
-try {
-  btnNext.addEventListener('click', () => {
-    currentActiveIndex++;
-    currentNum++;
-
-    btnNext.classList.add('training__button--disable');
-    btnNext.disabled = true;
-    btnNext.style.cursor = 'default';
-
-    setTimeout(() => {
-      btnNext.classList.remove('training__button--disable');
-      btnNext.disabled = false;
-      btnNext.style.cursor = 'pointer';
-
-      if (currentActiveIndex === trainList.length - 1) {
-        btnNext.classList.add('training__button--disable');
-        btnNext.disabled = true;
-        btnNext.style.cursor = 'default';
-      }
-    }, );
-
-    if (currentActiveIndex < trainList.length) {
-      trainingInfo.innerHTML = '';
-      trainingImgBlock.innerHTML = '';
-
-      trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
-
-      trainList[currentActiveIndex].paragraph.forEach(item => {
-        let par = document.createElement('p');
-        par.textContent = item;
-        trainingInfo.append(par);
-      });
-
-      let container = `
-        <picture>
-          <source width="555" height="487" type="image/webp"
-            srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
-          <img class="training__img" width="555" height="487" loading="lazy"
-            src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
-            alt="Изображение к теме урока">
-        </picture>
-      `;
-
-      trainingImgBlock.innerHTML = container;
-    }
-
-    // if (currentActiveIndex === trainList.length - 1) {
-    //   btnNext.classList.add('training__button--disable');
-    //   btnNext.disabled = true;
-    // }
-
-    if (currentActiveIndex > 0) {
-      btnPrev.classList.remove('training__button--disable');
-      btnPrev.disabled = false;
-      btnPrev.style.cursor = 'pointer';
-    }
-
-    visualCountNum.textContent = currentNum;
-
-    if (currentActiveIndex === trainList.length - 1) {
-      trainingButton.classList.remove('training__button--disable');
-      trainingButton.style.pointerEvents = 'auto';
-    }
-  });
-} catch {}
-
-try {
-  btnPrev.style.cursor = 'default';
-} catch {}
-
-try {
-  btnPrev.addEventListener('click', () => {
-    currentActiveIndex--;
-    currentNum--;
-
-    if (currentActiveIndex >= 0) {
-      trainingInfo.innerHTML = '';
-      trainingImgBlock.innerHTML = '';
-
-      trainingBlockTitle.textContent = trainList[currentActiveIndex].theme;
-
-      trainList[currentActiveIndex].paragraph.forEach(item => {
-        let par = document.createElement('p');
-        par.textContent = item;
-        trainingInfo.append(par);
-      });
-
-      let container = `
-        <picture>
-          <source width="555" height="487" type="image/webp"
-            srcset="${trainList[currentActiveIndex].imgWebp1} 1x, ${trainList[currentActiveIndex].imgWebp2} 2x">
-          <img class="training__img" width="555" height="487" loading="lazy"
-            src="${trainList[currentActiveIndex].imgJpg1}" srcset="${trainList[currentActiveIndex].imgJpg2} 2x"
-            alt="Изображение к теме урока">
-        </picture>
-      `;
-
-      trainingImgBlock.innerHTML = container;
-    }
-
-    if (currentActiveIndex === 0) {
-      btnPrev.classList.add('training__button--disable');
-      btnPrev.disabled = true;
-      btnPrev.style.cursor = 'default';
-    }
-
-    if (currentActiveIndex >= 0) {
-      btnNext.classList.remove('training__button--disable');
-      btnNext.disabled = false;
-      btnNext.style.cursor = 'pointer';
-    }
-
-    visualCountNum.textContent = currentNum;
-
-    if (currentActiveIndex < trainList.length - 1) {
-      trainingButton.classList.add('training__button--disable');
-      // trainingButton.removeAttribute('href');
-    }
-  });
-} catch {}
-
-// Кнопочка с количеством тренингов к прохождению
-function getTrainingCounts(list, item, allTrainings, deleteItem) {
-  const headerTrainingList = document.querySelector(list);
-  const headerTrainingItem = document.querySelectorAll(item);
-  const headerTrainingSticker = document.querySelector(allTrainings);
-
-  let trainingsCount = 0;
-
-  headerTrainingItem.forEach(item => {
-    if (item) {
-      trainingsCount++;
-    }
-  });
-
-  if (trainingsCount === 0) {
-    headerTrainingSticker.classList.add(deleteItem);
-    headerTrainingList.remove();
-  }
-
-  headerTrainingSticker.textContent = trainingsCount;
-}
-
-try {
-  getTrainingCounts('.header__training-list', '.header__training-item', '.header__menu-item--all-trainings', 'header__training-delete');
-} catch {}
-
-try {
-  getTrainingCounts('.footer__training-list', '.footer__training-item', '.footer__menu-item--all-trainings', 'footer__training-delete');
-} catch {}
-
-// Показать следующие 3 элемента при клике
-// function showMoreCounts(list, button) {
-//   let visibleItemCount = 5;
-//   let hiddenItemCount = list.length - visibleItemCount;
-
-//   for (let i = visibleItemCount; i < list.length; i++) {
-//     list[i].style.display = 'none';
-//   }
-
-//   button.addEventListener('click', () => {
-//     for (let i = visibleItemCount; i < visibleItemCount + hiddenItemCount; i++) {
-//       if (list[i]) {
-//         list[i].style.display = '';
-//       }
-//     }
-
-//     if (visibleItemCount + hiddenItemCount >= list.length) {
-//       button.style.display = 'none';
-//     }
-
-//     visibleItemCount += hiddenItemCount;
-//   });
-// }
-
-// const usersListButton = document.querySelector('.users-list__button');
-// const usersListItems = document.querySelectorAll('.users-list__item');
-
-// showMoreCounts(usersListItems, usersListButton);
-
-
-// Фильтрация всех сотрудников
-function showMoreUsers(select, item, button) {
-  const usersSelect = document.querySelector(select);
-  const usersItems = document.querySelectorAll(item);
-  const usersListButton = document.querySelector(button);
-
-  let visibleUsers = [];
-  let counter = 5;
-
-  for (let i = 0; i < usersItems.length; i++) {
-    visibleUsers.push(usersItems[i]);
-  }
-
-  usersItems.forEach((item, index) => {
-    if (index >= counter) {
-      item.classList.add('remove-elem');
-    }
-  });
-
-  usersSelect.addEventListener('change', () => {
-    usersListButton.classList.remove('remove-elem');
-    visibleUsers = [];
-    counter = 5;
-
-    for (let i = 0; i < usersItems.length; i++) {
-      if (usersSelect.value === '' || usersItems[i].dataset.post === usersSelect.value) {
-        visibleUsers.push(usersItems[i]);
-
-        if (visibleUsers.length <= counter) {
-          usersItems[i].classList.remove('remove-elem');
-        } else {
-          usersItems[i].classList.add('remove-elem');
-        }
+      if (answerTrueSetToArr.some(item => item === false) || answerTrueSetToArr.length === 0) {
+        sum += 0;
       } else {
-          usersItems[i].classList.add('remove-elem');
-      }
-    }
-
-    if (visibleUsers.length < counter) {
-      usersListButton.classList.add('remove-elem');
-    } else {
-      usersListButton.classList.remove('remove-elem');
-    }
-  });
-
-  usersListButton.addEventListener('click', () => {
-    counter += 5;
-
-    visibleUsers.forEach((item, index) => {
-      if (index < counter) {
-        item.classList.remove('remove-elem');
-      }
-
-      if (counter >= visibleUsers.length) {
-        usersListButton.classList.add('remove-elem');
+        sum += 1;
       }
     });
-  });
-}
 
-try {
-  showMoreUsers('.users-list__select', '.users-list__item', '.users-list__button');
-} catch {}
+    const progress = Math.round((sum / MAX_QUESTIONS) * 100);
 
-try {
-  showMoreUsers('.users-finished-test__select', '.users-finished-test__item', '.users-finished-test__button');
-} catch {}
+    // answCount.value = sum;
+    // percent.value = progress;
 
-// Показать следующие 3 результата теста в личном кабинете
-function showMoreProgressCards(item, button) {
-  const usersItems = document.querySelectorAll(item);
-  const usersListButton = document.querySelector(button);
+    if (sum >= MIN_QUESTIONS_ACCESS) {
+      testResultText.textContent = 'Поздравляем! Тест успешно пройден. ' + sum + ' верных ответа. ' + 'Прогресс ' + progress + '%';
+      testResult.classList.add('test__result--access');
+      testResult.classList.remove('test__result--hidden');
+      timeBlock.classList.add('test__result--hidden');
 
-  let counter = 3;
+      // resultName.value = 'Зачет';
 
-  usersItems.forEach((item, index) => {
-    if (index >= counter) {
-      item.classList.add('remove-elem');
+      answerRadioBlock.forEach(item => {
+        const answerRadio = item.querySelectorAll('.test__answer-radio');
+
+        answerRadio.forEach(j => {
+          const answerInput = j.querySelector('input');
+          let label = j.querySelector('label');
+
+          if (answersDataRadio.includes(answerInput.value) && answerInput.checked) {
+            label.style.color = '#477346';
+            label.style.fontWeight = '500';
+          } else if (answerInput.checked && !answersDataRadio.includes(answerInput.value)) {
+            label.style.color = '#d91C0b';
+            label.style.fontWeight = '500';
+          }
+
+          if (answersDataRadio.includes(answerInput.value) && !answerInput.checked) {
+            label.style.color = '#477346';
+            label.style.fontWeight = '500';
+          }
+        });
+      });
+
+      answerCheckboxBlock.forEach(item => {
+        const answerCheckbox = item.querySelectorAll('.test__answer-checkbox');
+
+        answerCheckbox.forEach(j => {
+          const answerInput = j.querySelector('input');
+          let label = j.querySelector('label');
+
+          if (answersData.includes(answerInput.checked && answerInput.value)) {
+            label.style.color = '#477346';
+            label.style.fontWeight = '500';
+          } else if (answerInput.checked && !answersData.includes(answerInput.value)) {
+            label.style.color = '#d91C0b';
+            label.style.fontWeight = '500';
+          }
+
+          if (answersData.includes(answerInput.value) && !answerInput.checked) {
+            label.style.color = '#477346';
+            label.style.fontWeight = '500';
+          }
+        });
+      });
     }
 
-    if (usersItems.length < counter) {
-      usersListButton.classList.add('remove-elem');
-    } else {
-      usersListButton.classList.remove('remove-elem');
+    if (sum < MIN_QUESTIONS_ACCESS) {
+      testResultText.textContent = 'Тест не пройден. ' + sum + ' верных ответа.' + ' Прогресс ' + progress + '%';
+      testResult.classList.add('test__result--fail');
+      testResult.classList.remove('test__result--hidden');
+      timeBlock.classList.add('test__result--hidden');
+
+      // resultName.value = 'Незачет';
     }
-  });
 
-  usersListButton.addEventListener('click', () => {
-    counter += 3;
+    buttonStop.remove();
+    buttonCabinet.classList.remove('test__button-cabinet--none');
 
-    usersItems.forEach((item, index) => {
-      if (index < counter) {
-        item.classList.remove('remove-elem');
-      }
-
-      if (counter >= usersItems.length) {
-        usersListButton.classList.add('remove-elem');
-      }
+    buttonClose.addEventListener('click', () => {
+      testResult.classList.add('test__result--hidden');
     });
-  });
-}
+  }
 
-try {
-  showMoreProgressCards('.user-progress__item', '.user-progress__button')
-} catch {}
+  // Отправление результатов в БД без перезагрузки страницы
+  try {
+    testForm.addEventListener('submit', function(evt) {
+      evt.preventDefault();
+      getResult();
 
-// Установить курсор по клику в поле
-try {
-  const loginLink = document.querySelector('.header__login-link');
-  const informationButton = document.querySelector('.information__button');
-  const heroInputTab = document.querySelector('.hero__input--tab');
+      const formData = new FormData(); // собираем данные из формы
 
-  loginLink.addEventListener('click', () => {
-    heroInputTab.focus();
-  });
+      formData.append('test_name', document.querySelector('.test__main-title').textContent);
+      formData.append('answ_count', sum);
+      formData.append('percent', Math.round((sum / MAX_QUESTIONS) * 100));
+      formData.append('result_name', sum < MIN_QUESTIONS_ACCESS ? 'Незачет' : 'Зачет');
 
-  informationButton.addEventListener('click', () => {
-    heroInputTab.focus();
-  });
-} catch {}
+      // /modules/test/submit_results.php
+      fetch('submit-results', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log('Ответ с сервера получен'); // выводим ответ от сервера
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+      });
+    });
+  } catch {
+    console.log('Произошла ошибка');
+  }
 
-// Убрать сообщение об успехе
-const messageContainers = document.querySelectorAll('.message-container');
+  // Обучающая страница
+  try {
+    trainingPage(securityTrainingData);
+  } catch {console.log('Ошибка Обучающая страница');}
 
-try {
-  messageContainers.forEach((item) => {
-    setTimeout(() => {
-      item.remove();
-    }, 5000);
-  });
-} catch {}
+  // Кнопочка с количеством тренингов к прохождению
+  try {
+    getTrainingCounts('.header__training-list', '.header__training-item', '.header__menu-item--all-trainings', 'header__training-delete');
+  } catch {}
 
-// Попап удаления записи о сотруднике
-const usersListItem = document.querySelectorAll('.users-list__item');
-const backgroundOverlay = document.querySelector('.overlay');
+  try {
+    getTrainingCounts('.footer__training-list', '.footer__training-item', '.footer__menu-item--all-trainings', 'footer__training-delete');
+  } catch {}
 
-usersListItem.forEach((item) => {
-  const buttonDelete = item.querySelector('.users-list__item-button-delete');
-  const buttonQuite = item.querySelector('.users-list__item-button-quite');
-  const popup = item.querySelector('.users-list__popup');
+  // Фильтрация всех сотрудников
+  try {
+    showMoreUsers('.users-list__select', '.users-list__item', '.users-list__button');
+  } catch {}
 
-  buttonDelete.addEventListener('click', () => {
-    popup.classList.remove('users-list__popup--none');
-    backgroundOverlay.classList.remove('overlay--none');
-  });
+  try {
+    showMoreUsers('.users-finished-test__select', '.users-finished-test__item', '.users-finished-test__button');
+  } catch {}
 
-  buttonQuite.addEventListener('click', () => {
-    popup.classList.add('users-list__popup--none');
-    backgroundOverlay.classList.add('overlay--none');
-  });
+  // Показать следующие 3 результата теста в личном кабинете
+  try {
+    showMoreProgressCards('.user-progress__item', '.user-progress__button')
+  } catch {}
 
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') { // код клавиши Escape, но можно использовать e.key
-      popup.classList.add('users-list__popup--none');
-      backgroundOverlay.classList.add('overlay--none');
-    }
-  });
+  // Установить курсор по клику в поле
+  try {
+    setCursorInInput();
+  } catch {console.log('Ошибка Установить курсор по клику в поле');}
 
-  backgroundOverlay.addEventListener('click', () => {
-    popup.classList.add('users-list__popup--none');
-    backgroundOverlay.classList.add('overlay--none');
-  });
+  // Убрать сообщение об успехе
+  try {
+    removeSuccessMessage();
+  } catch {console.log('Ошибка Убрать сообщение об успехе');}
+
+  // Попап удаления записи о сотруднике
+  try {
+    deleteUser();
+  } catch {
+    console.log('Ошибка Попап удаления записи о сотруднике');
+  }
+
+  // Добавить надпись о том, что файл выбран
+  try {
+    addFileMessage();
+  } catch {}
 });
-
-// Добавить надпись о том, что файл выбран
-const fileInput = document.getElementById('update-profile__button-choose');
-const fileName = document.querySelector('.update-profile__file-name');
-
-try {
-  fileInput.addEventListener('change', () => {
-    const selectedFile = fileInput.files[0];
-    if (selectedFile) {
-        fileName.textContent = selectedFile.name.length > 15 ? '...' + selectedFile.name.slice(-12) : selectedFile.name.slice(-15)
-    } else {
-        fileName.textContent = '';
-    }
-  });
-} catch {}
