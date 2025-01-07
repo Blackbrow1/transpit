@@ -6,7 +6,7 @@ $mainPage = '#hero';
 if (isset($_POST['send-form'])) {
   if (trim($_POST['tab-number']) == '') {
     $_SESSION['errors'][] = [
-      'title' => 'Введите табельный номер'
+      'title' => 'Введите логин'
     ];
   }
 

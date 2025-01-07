@@ -1,5 +1,5 @@
 <main>
-  <section class="hero" id="hero">
+  <section class="hero">
     <div class="hero__wrap">
 
       <h1 class="hero__title">Внутренняя система обучения <span>ООО “Транспит Северо-Запад”</span></h1>
@@ -23,7 +23,7 @@
 
           <legend>Войти в личный кабинет</legend>
 
-          <input class="hero__input hero__input--tab" type="text" name="tab-number" placeholder="Табельный номер"
+          <input class="hero__input hero__input--tab" type="text" name="tab-number" placeholder="Логин"
             <?php echo isset($_POST['tab-number']) ? 'value="' . $_POST['tab-number'] . '"' : ''; ?>>
           <input class="hero__input" type="password" name="password" placeholder="Пароль">
 
@@ -48,7 +48,7 @@
           выполенинии рабочих задач. А так же, дисциплинами, отвечающими за введение в аэропортовую деятельность новых
           сотрудников.</p>
 
-        <a class="information__button button" href="#hero">Начать пользоваться</a>
+        <button class="information__button button">Начать пользоваться</button>
 
         <div class="information__img">
           <picture>
