@@ -137,7 +137,7 @@
 
       <div class="users-finished-test__menu filter">
         <select class="users-finished-test__select" name="users-finished-test" id="post">
-          <option value="">Все сотрудники</option>
+          <option value="" selected>Все сотрудники</option>
           <option value="Водитель спецмашины">Водитель спецмашины</option>
           <option value="Водитель-экспедитор">Водитель-экспедитор</option>
           <option value="Водитель автомобиля">Водитель автомобиля</option>
@@ -158,7 +158,7 @@
 
       <div class="users-finished-test__menu filter">
         <select class="users-finished-test__year" name="users-finished-test" id="post">
-          <option value="year" selected>Год</option>
+          <option value="" selected>Год</option>
           <option value="2024">2024</option>
           <option value="2025">2025</option>
           <option value="2026">2026</option>
