@@ -123,11 +123,22 @@ function updateUserAndGoToProfile($user) {
         $user->avatar_small = '';
       }
 
-      R::store($user);
+      $result = R::store($user);
 
       if ($user->id === $_SESSION['logged_user']['id']) {
         $_SESSION['logged_user'] = $user;
       }
+
+      if (is_int($result)) {
+        $_SESSION['success'][] = [
+          'title' => 'Профиль успешно обновлен'
+        ];
+      } else {
+        $_SESSION['errors'][] = [
+          'title' => 'Что-то пошло не так. Попробуйте еще раз!'
+        ];
+      }
+
       header('Location: ' . HOST . 'user-card/' . $user->id);
       exit();
     }

@@ -57,12 +57,12 @@ if (isset($_POST['add-user'])) {
 
   if (empty($_SESSION['errors'])) {
     $user = R::dispense('users');
-    $user->name = $_POST['name'];
-    $user->surname = $_POST['surname'];
-    $user->patronymic = $_POST['patronymic'];
-    $user->tab_number = $_POST['tab-number'];
+    $user->name = htmlentities(trim($_POST['name']));
+    $user->surname = htmlentities(trim($_POST['surname']));
+    $user->patronymic = htmlentities(trim($_POST['patronymic']));
+    $user->tab_number = htmlentities(trim($_POST['tab-number']));
     $user->post = $_POST['post'];
-    $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $user->password = password_hash(htmlentities(trim($_POST['password'])), PASSWORD_DEFAULT);
     $user->email = '';
     $user->role = 'user';
     $result = R::store($user);
