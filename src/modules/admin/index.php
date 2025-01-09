@@ -57,9 +57,9 @@ if (isset($_POST['add-user'])) {
 
   if (empty($_SESSION['errors'])) {
     $user = R::dispense('users');
-    $user->name = htmlentities(trim($_POST['name']));
-    $user->surname = htmlentities(trim($_POST['surname']));
-    $user->patronymic = htmlentities(trim($_POST['patronymic']));
+    $user->name = htmlentities(trim(mb_strtoupper(mb_substr($_POST['name'], 0, 1)) . mb_substr($_POST['name'], 1)));
+    $user->surname = htmlentities(trim(mb_strtoupper(mb_substr($_POST['surname'], 0, 1)) . mb_substr($_POST['surname'], 1)));
+    $user->patronymic = htmlentities(trim(mb_strtoupper(mb_substr($_POST['patronymic'], 0, 1)) . mb_substr($_POST['patronymic'], 1)));
     $user->tab_number = htmlentities(trim($_POST['tab-number']));
     $user->post = $_POST['post'];
     $user->password = password_hash(htmlentities(trim($_POST['password'])), PASSWORD_DEFAULT);

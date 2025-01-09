@@ -43,6 +43,7 @@
                   <option value="Механик">Механик</option>
                   <option value="Руководитель группы">Руководитель группы</option>
                   <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
+                  <option value="Аккаунт-менеджер">Аккаунт-менеджер</option>
                 </select>
 
                 <img class="add-user__filter-img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
@@ -92,6 +93,7 @@
             <option value="Механик">Механик</option>
             <option value="Руководитель группы">Руководитель группы</option>
             <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
+            <option value="Аккаунт-менеджер">Аккаунт-менеджер</option>
           </select>
         </form>
 
@@ -151,6 +153,7 @@
           <option value="Механик">Механик</option>
           <option value="Руководитель группы">Руководитель группы</option>
           <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
+          <option value="Аккаунт-менеджер">Аккаунт-менеджер</option>
         </select>
 
         <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
