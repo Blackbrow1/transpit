@@ -1,4 +1,6 @@
 <?php
+$title = 'Редактировать профиль | Транспит';
+
 function updateUserAndGoToProfile($user) {
   if (isset($_POST['update'])) {
     if ( trim($_POST['name']) === '') {
@@ -26,6 +28,7 @@ function updateUserAndGoToProfile($user) {
       $user->surname = htmlentities($_POST['surname']);
       $user->patronymic = htmlentities($_POST['patronymic']);
       $user->email = htmlentities($_POST['email']);
+      $user->post = htmlentities($_POST['post']);
 
       if (isset($_POST['password']) && $_POST['password'] !== '') {
         $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -144,8 +147,6 @@ function updateUserAndGoToProfile($user) {
     }
   }
 }
-
-$title = 'Редактировать профиль | Транспит';
 
 if (isset($_SESSION['login']) && $_SESSION['login'] === 1) {
   if ($_SESSION['logged_user']['role'] === 'user') {

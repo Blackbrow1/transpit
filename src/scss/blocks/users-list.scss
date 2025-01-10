@@ -8,6 +8,7 @@
   margin-bottom: 40px;
 }
 
+.users-list__city-select,
 .users-list__select {
   option[selected] {
     color: $placeholder-color;
@@ -17,6 +18,12 @@
 .users-list__list {
   margin-bottom: 30px;
   border-bottom: 1px solid $border-color;
+}
+
+.users-list__menu {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .users-list__item {

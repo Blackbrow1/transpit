@@ -27,8 +27,20 @@
                 class="add-user__input add-user__input--patronymic<?php if (!empty($_POST)): ?><?php if (empty($_POST['patronymic'])): ?> error-message<?php endif; ?><?php endif; ?>"
                 type="text" name="patronymic"
                 value="<?php if (isset($_POST['patronymic'])) {echo $_POST['patronymic'];} ?>" placeholder="Отчество">
-              <div class="add-user__menu add-user__filter">
-                <select class="add-user__select add-user__select--post" name="post">
+
+              <div class="add-user__city add-user__city--city big-filter">
+                <select class="big-filter__select add-user__select--city" name="user-city">
+                  <option value="" selected>Город</option>
+                  <option value="Санкт-Петербург">Санкт-Петербург</option>
+                  <option value="Москва">Москва</option>
+                </select>
+
+                <img class="big-filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
+                  alt="Открыть меню">
+              </div>
+
+              <div class="add-user__city add-user__city--post big-filter">
+                <select class="big-filter__select add-user__select--post" name="post">
                   <option value="Должность" selected>Должность</option>
                   <option value="Водитель спецмашины">Водитель спецмашины</option>
                   <option value="Водитель-экспедитор">Водитель-экспедитор</option>
@@ -46,18 +58,31 @@
                   <option value="Аккаунт-менеджер">Аккаунт-менеджер</option>
                 </select>
 
-                <img class="add-user__filter-img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
+                <img class="big-filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
                   alt="Открыть меню">
               </div>
+
               <input
                 class="add-user__input add-user__input--tub-number<?php if (!empty($_POST)): ?><?php if (empty($_POST['tab-number'])): ?> error-message<?php endif; ?><?php endif; ?>"
                 type="text" name="tab-number"
                 value="<?php if (isset($_POST['tab-number'])) {echo $_POST['tab-number'];} ?>"
                 placeholder="Табельный номер">
+
               <input
                 class="add-user__input add-user__input--password<?php if (!empty($_POST)): ?><?php if (empty($_POST['password'])): ?> error-message<?php endif; ?><?php endif; ?>"
                 type="password" name="password"
                 value="<?php if (isset($_POST['password'])) {echo $_POST['password'];} ?>" placeholder="Пароль">
+
+              <div class="add-user__city add-user__city--role big-filter">
+                <select class="big-filter__select add-user__select--role" name="user-role">
+                  <option value="" selected>Роль</option>
+                  <option value="Обычный пользователь">Обычный пользователь</option>
+                  <option value="Администратор">Администратор</option>
+                </select>
+
+                <img class="big-filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg"
+                  alt="Открыть меню">
+              </div>
 
               <button class="add-user__submit button" type="submit" name="add-user" value="add-user">Добавить</button>
             </div>
@@ -67,6 +92,7 @@
         <div class="add-user__standart-pass">
           <p>Пароль для нового сотрудника</p>
           <span>123</span>
+          <p>(но можно сразу задать и более сложный)</p>
         </div>
       </div>
     </div>
@@ -77,7 +103,17 @@
       <h2 class="users-list__title h2">Список всех сотрудников</h2>
 
       <div class="users-list__menu filter">
-        <form class="users-list__all-users" action="admin.php" method="GET">
+        <div class="users-list__city filter">
+          <select class="users-list__city-select" name="users-list-city">
+            <option value="" selected>Город</option>
+            <option value="Водитель спецмашины">Санкт-Петербург</option>
+            <option value="Водитель-экспедитор">Москва</option>
+          </select>
+
+          <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
+
+        <div class="users-list__all-users filter">
           <select class="users-list__select" name="users-list-post">
             <option value="" selected>Все сотрудники</option>
             <option value="Водитель спецмашины">Водитель спецмашины</option>
@@ -95,9 +131,9 @@
             <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
             <option value="Аккаунт-менеджер">Аккаунт-менеджер</option>
           </select>
-        </form>
 
-        <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+          <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
       </div>
 
       <ul class="users-list__list">
@@ -137,37 +173,49 @@
     <div class="users-finished-test__wrap">
       <h2 class="users-finished-test__title h2">Сотрудники, прошедшие обучение</h2>
 
-      <div class="users-finished-test__menu filter">
-        <select class="users-finished-test__select" name="users-finished-test" id="post">
-          <option value="" selected>Все сотрудники</option>
-          <option value="Водитель спецмашины">Водитель спецмашины</option>
-          <option value="Водитель-экспедитор">Водитель-экспедитор</option>
-          <option value="Водитель автомобиля">Водитель автомобиля</option>
-          <option value="Водитель автопогрузчика">Водитель автопогрузчика</option>
-          <option value="Экспедитор">Экспедитор</option>
-          <option value="Супервайзер">Супервайзер</option>
-          <option value="Начальник смены">Начальник смены</option>
-          <option value="Начальник службы">Начальник службы</option>
-          <option value="Диспетчер по управлению ресурсами">Диспетчер по управлению ресурсами</option>
-          <option value="Инспектор службы логистики">Инспектор службы логистики</option>
-          <option value="Механик">Механик</option>
-          <option value="Руководитель группы">Руководитель группы</option>
-          <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
-          <option value="Аккаунт-менеджер">Аккаунт-менеджер</option>
-        </select>
+      <div class="users-finished-test__filter">
+        <div class="users-finished-test__city filter">
+          <select class="users-finished-test__city-select" name="users-finished-test-city">
+            <option value="" selected>Город</option>
+            <option value="Водитель спецмашины">Санкт-Петербург</option>
+            <option value="Водитель-экспедитор">Москва</option>
+          </select>
 
-        <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
-      </div>
+          <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
 
-      <div class="users-finished-test__menu filter">
-        <select class="users-finished-test__year" name="users-finished-test" id="post">
-          <option value="" selected>Год</option>
-          <option value="2024">2024</option>
-          <option value="2025">2025</option>
-          <option value="2026">2026</option>
-        </select>
+        <div class="users-finished-test__menu filter">
+          <select class="users-finished-test__select" name="users-finished-test" id="post">
+            <option value="" selected>Все сотрудники</option>
+            <option value="Водитель спецмашины">Водитель спецмашины</option>
+            <option value="Водитель-экспедитор">Водитель-экспедитор</option>
+            <option value="Водитель автомобиля">Водитель автомобиля</option>
+            <option value="Водитель автопогрузчика">Водитель автопогрузчика</option>
+            <option value="Экспедитор">Экспедитор</option>
+            <option value="Супервайзер">Супервайзер</option>
+            <option value="Начальник смены">Начальник смены</option>
+            <option value="Начальник службы">Начальник службы</option>
+            <option value="Диспетчер по управлению ресурсами">Диспетчер по управлению ресурсами</option>
+            <option value="Инспектор службы логистики">Инспектор службы логистики</option>
+            <option value="Механик">Механик</option>
+            <option value="Руководитель группы">Руководитель группы</option>
+            <option value="Руководитель логистического комплекса">Руководитель логистического комплекса</option>
+            <option value="Аккаунт-менеджер">Аккаунт-менеджер</option>
+          </select>
 
-        <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+          <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
+
+        <div class="users-finished-test__menu filter">
+          <select class="users-finished-test__year" name="users-finished-test" id="post">
+            <option value="" selected>Год</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
+
+          <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
       </div>
 
       <ul class="users-finished-test__list">
@@ -198,5 +246,7 @@
     </div>
   </section>
   <?php endif; ?>
-  <?php endif; ?>
+  <?php
+ endif;
+ ?>
 </main>

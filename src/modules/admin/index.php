@@ -48,6 +48,18 @@ if (isset($_POST['add-user'])) {
     ];
   }
 
+  if ($_POST['user-role'] == '') {
+    $_SESSION['errors'][] = [
+      'title' => 'Выберите роль сотрудника'
+    ];
+  }
+
+  if ($_POST['user-city'] == '') {
+    $_SESSION['errors'][] = [
+      'title' => 'Выберите город'
+    ];
+  }
+
   // Проверка существующего пользователя
   if (R::count('users', 'tab_number = ?', array($_POST['tab-number'])) > 0) {
     $_SESSION['errors'][] = [
@@ -57,14 +69,21 @@ if (isset($_POST['add-user'])) {
 
   if (empty($_SESSION['errors'])) {
     $user = R::dispense('users');
-    $user->name = htmlentities(trim(mb_strtoupper(mb_substr($_POST['name'], 0, 1)) . mb_substr($_POST['name'], 1)));
-    $user->surname = htmlentities(trim(mb_strtoupper(mb_substr($_POST['surname'], 0, 1)) . mb_substr($_POST['surname'], 1)));
-    $user->patronymic = htmlentities(trim(mb_strtoupper(mb_substr($_POST['patronymic'], 0, 1)) . mb_substr($_POST['patronymic'], 1)));
+    $user->name = htmlentities(mb_strtoupper(mb_substr(trim($_POST['name']), 0, 1)) . mb_substr(trim($_POST['name']), 1));
+    $user->surname = htmlentities(mb_strtoupper(mb_substr(trim($_POST['surname']), 0, 1)) . mb_substr(trim($_POST['surname']), 1));
+    $user->patronymic = htmlentities(mb_strtoupper(mb_substr(trim($_POST['patronymic']), 0, 1)) . mb_substr(trim($_POST['patronymic']), 1));
     $user->tab_number = htmlentities(trim($_POST['tab-number']));
     $user->post = $_POST['post'];
+    $user->city = $_POST['user-city'];
     $user->password = password_hash(htmlentities(trim($_POST['password'])), PASSWORD_DEFAULT);
     $user->email = '';
-    $user->role = 'user';
+
+    if ($_POST['user-role'] == 'Обычный пользователь') {
+      $user->role = 'user';
+    } else {
+      $user->role = 'admin';
+    }
+
     $result = R::store($user);
 
     if (is_int($result)) {

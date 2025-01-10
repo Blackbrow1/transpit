@@ -24,6 +24,7 @@
 .add-user__inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, min-content);
   column-gap: 20px;
 }
 
@@ -60,22 +61,17 @@
 
   &--submit {
     grid-column: 1 / 2;
-    grid-row: 4 / 5;
-  }
-
-  &--post {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
+    grid-row: 5 / 6;
   }
 
   &--tab-number {
     grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
   }
 
   &--password {
     grid-column: 2 / 3;
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
   }
 
   &::placeholder {
@@ -83,6 +79,22 @@
     line-height: 1;
     color: $placeholder-color;
   }
+}
+
+.add-user__city--city {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  margin-bottom: 20px;
+}
+
+.add-user__city--role {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.add-user__city--post {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
 .add-user__submit {
@@ -95,32 +107,11 @@
   }
 }
 
-.add-user__select {
-  width: 100%;
-  height: 60px;
-  font-size: 16px;
-  padding-left: 22px;
-  font-family: $font-first;
-  background-color: $basic-white;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  line-height: 1;
-  border: 1px solid $border-color;
-
-  &:focus {
-    outline: 1px solid $text-color;
-  }
-
-  option[selected] {
-    color: $placeholder-color;
-  }
-}
-
 .add-user__standart-pass {
   padding: 30px 20px;
   background-color: $main-dark-color;
   width: 175px;
-  height: 220px;
+  height: 300px;
   color: $basic-white;
   border-radius: 20px;
 
@@ -130,24 +121,9 @@
   }
 
   span {
+    display: block;
     font-size: 64px;
     line-height: 1;
+    margin-bottom: 20px;
   }
-}
-
-.add-user__filter {
-  position: relative;
-
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-}
-
-.add-user__filter-img {
-  position: absolute;
-  top: 25px;
-  right: 10px;
-  pointer-events: none;
 }

@@ -36,6 +36,26 @@
               <input class="update-profile__input" type="text" name="patronymic"
                 value="<?php echo isset($_POST['patronymic']) ? $_POST['patronymic'] : $user->patronymic; ?>"
                 placeholder="Отчество">
+
+              <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
+              <?php if ($_SESSION['logged_user']['role'] === 'admin'): ?>
+              <div class="update-profile__menu update-profile__filter">
+                <select class="update-profile__select update-profile__select--post" name="post">
+                  <?php
+                  $user_post = ['Водитель спецмашины', 'Водитель-экспедитор', 'Водитель автомобиля', 'Водитель автопогрузчика', 'Экспедитор', 'Супервайзер', 'Начальник смены', 'Начальник службы', 'Диспетчер по управлению ресурсами', 'Инспектор службы логистики', 'Механик', 'Руководитель группы', 'Руководитель логистического комплекса', 'Аккаунт-менеджер'];
+
+                  foreach($user_post as $item): ?>
+                  <option value="<?php echo $item; ?>" <?php if($item == $user->post): ?>selected<?php endif; ?>>
+                    <?php echo $item; ?></option>
+                  <? endforeach; ?>
+                </select>
+
+                <img class="update-profile__filter-img" width="19" height="10" src="../img/icons/user-menu-btn.svg"
+                  alt="Открыть меню">
+              </div>
+              <?php endif; ?>
+              <?php endif; ?>
+
               <input class="update-profile__input" type="email" name="email"
                 value="<?php echo isset($_POST['email']) ? $_POST['email'] : $user->email; ?>" placeholder="Email">
               <input class="update-profile__input" type="password" name="password" placeholder="Пароль">
@@ -87,4 +107,5 @@
   <?php
  endif;
  ?>
+
 </main>
