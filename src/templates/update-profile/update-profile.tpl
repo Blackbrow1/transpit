@@ -53,6 +53,19 @@
                 <img class="update-profile__filter-img" width="19" height="10" src="../img/icons/user-menu-btn.svg"
                   alt="Открыть меню">
               </div>
+
+              <div class="update-profile__menu update-profile__filter">
+                <select class="update-profile__select update-profile__select--role" name="update-role">
+                  <?php $user_role = ['user', 'admin'];
+                  foreach($user_role as $item): ?><option value="<?php echo $item; ?>"
+                    <?php if($item == $user->role): ?>selected<?php endif; ?>>
+                    <?php echo $item; ?></option>
+                  <? endforeach; ?>
+                </select>
+
+                <img class="update-profile__filter-img" width="19" height="10" src="../img/icons/user-menu-btn.svg"
+                  alt="Открыть меню">
+              </div>
               <?php endif; ?>
               <?php endif; ?>
 
@@ -107,5 +120,6 @@
   <?php
  endif;
  ?>
+
 
 </main>

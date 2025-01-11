@@ -9,6 +9,14 @@ $_SESSION['success'] = [];
 
 session_start();
 
+// Массив защищаемых маршрутов
+$protectedRoutes = ['test-hero-1', 'test-hero-2', 'test-hero-3'];
+
+// Флаг для определения перехода по ссылке
+if (!empty($_GET['link'])) {
+  $_SESSION['is_from_link'] = true;
+}
+
 /* ..........................................
 
 РОУТЕР // ROUTE - МАРШРУТ
@@ -49,9 +57,17 @@ switch ($uriModule) {
       require ROOT . "modules/admin/index.php";
       break;
 
-  case 'training-1':
-      require ROOT . "modules/training/training-1.php";
+  case 'user-card':
+      require ROOT . "modules/user-card/index.php";
       break;
+
+  case 'update-profile':
+    require ROOT . "modules/update-profile/index.php";
+    break;
+
+  case 'training-1':
+    require ROOT . "modules/training/training-1.php";
+    break;
 
   case 'training-2':
     require ROOT . "modules/training/training-2.php";
@@ -61,23 +77,36 @@ switch ($uriModule) {
     require ROOT . "modules/training/training-3.php";
     break;
 
-  case 'user-card':
-      require ROOT . "modules/user-card/index.php";
-      break;
-
-  case 'update-profile':
-    require ROOT . "modules/update-profile/index.php";
-    break;
-
   case 'test-hero-1':
+    if (in_array($uriModule, $protectedRoutes) && empty($_SESSION['is_from_link'])) {
+      header("HTTP/1.0 403 Forbidden");
+      die("Доступ запрещен!");
+    }
+
+    unset($_SESSION['is_from_link']);
+
     require ROOT . "modules/test-hero/test-hero-1.php";
     break;
 
   case 'test-hero-2':
+    if (in_array($uriModule, $protectedRoutes) && empty($_SESSION['is_from_link'])) {
+      header("HTTP/1.0 403 Forbidden");
+      die("Доступ запрещен!");
+    }
+
+    unset($_SESSION['is_from_link']);
+
     require ROOT . "modules/test-hero/test-hero-2.php";
     break;
 
-  case 'test-hero-3':
+  case "test-hero-3":
+    if (in_array($uriModule, $protectedRoutes) && empty($_SESSION['is_from_link'])) {
+      header("HTTP/1.0 403 Forbidden");
+      die("Доступ запрещен!");
+    }
+
+    unset($_SESSION['is_from_link']);
+
     require ROOT . "modules/test-hero/test-hero-3.php";
     break;
 

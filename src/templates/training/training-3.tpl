@@ -59,7 +59,8 @@
         </div>
       </div>
 
-      <a href="<?php echo HOST; ?>test-hero-3" class="training__button button training__button--disable">Сдать тест</a>
+      <a href="<?php echo HOST; ?>test-hero-3?link=true" class="training__button button training__button--disable">Сдать
+        тест</a>
     </div>
   </section>
 </main>

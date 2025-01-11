@@ -28,7 +28,14 @@ function updateUserAndGoToProfile($user) {
       $user->surname = htmlentities($_POST['surname']);
       $user->patronymic = htmlentities($_POST['patronymic']);
       $user->email = htmlentities($_POST['email']);
-      $user->post = htmlentities($_POST['post']);
+
+      if (isset($_POST['post']) && $_POST['post'] !== '') {
+        $user->post = htmlentities($_POST['post']);
+      }
+
+      if (isset($_POST['update-role']) && $_POST['update-role'] !== '') {
+        $user->role = htmlentities($_POST['update-role']);
+      }
 
       if (isset($_POST['password']) && $_POST['password'] !== '') {
         $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
