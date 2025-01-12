@@ -9,14 +9,6 @@ $_SESSION['success'] = [];
 
 session_start();
 
-// Массив защищаемых маршрутов
-$protectedRoutes = ['test-hero-1', 'test-hero-2', 'test-hero-3'];
-
-// Флаг для определения перехода по ссылке
-if (!empty($_GET['link'])) {
-  $_SESSION['is_from_link'] = true;
-}
-
 /* ..........................................
 
 РОУТЕР // ROUTE - МАРШРУТ
@@ -78,47 +70,86 @@ switch ($uriModule) {
     break;
 
   case 'test-hero-1':
-    if (in_array($uriModule, $protectedRoutes) && empty($_SESSION['is_from_link'])) {
-      header("HTTP/1.0 403 Forbidden");
-      die("Доступ запрещен!");
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
     }
 
-    unset($_SESSION['is_from_link']);
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
 
     require ROOT . "modules/test-hero/test-hero-1.php";
     break;
 
   case 'test-hero-2':
-    if (in_array($uriModule, $protectedRoutes) && empty($_SESSION['is_from_link'])) {
-      header("HTTP/1.0 403 Forbidden");
-      die("Доступ запрещен!");
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
     }
 
-    unset($_SESSION['is_from_link']);
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
 
     require ROOT . "modules/test-hero/test-hero-2.php";
     break;
 
   case "test-hero-3":
-    if (in_array($uriModule, $protectedRoutes) && empty($_SESSION['is_from_link'])) {
-      header("HTTP/1.0 403 Forbidden");
-      die("Доступ запрещен!");
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
     }
 
-    unset($_SESSION['is_from_link']);
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
 
     require ROOT . "modules/test-hero/test-hero-3.php";
     break;
 
   case 'test-1':
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
+    }
+
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
+
     require ROOT . "modules/test/test-1.php";
     break;
 
   case 'test-2':
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
+    }
+
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
+
     require ROOT . "modules/test/test-2.php";
     break;
 
   case 'test-3':
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
+    }
+
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
+
     require ROOT . "modules/test/test-3.php";
     break;
 

@@ -59,7 +59,15 @@
         </div>
       </div>
 
-      <a href="<?php echo HOST; ?>test-hero-3?link=true" class="training__button button training__button--disable">Сдать
+      <?php
+      // Создаем уникальный токен для каждой ссылки
+      $_SESSION['token'] = bin2hex(random_bytes(16)); // Генерируем случайный токен длиной 32 символа
+
+      $urlWithToken = "?token={$_SESSION['token']}";
+      ?>
+
+      <a href="<?php echo HOST; ?>test-hero-3<?php echo $urlWithToken; ?>"
+        class="training__button button training__button--disable">Сдать
         тест</a>
     </div>
   </section>

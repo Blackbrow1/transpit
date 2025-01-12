@@ -9,7 +9,15 @@
         правильно на 26 вопросов, что соответствует прогрессу 80%. На прохождение теста отводится 18 минут. Нажимая на
         кнопку, включится таймер</p>
 
-      <a class="test-hero__button button" href="<?php echo HOST; ?>test-3">Начать тестирование</a>
+      <?php
+      // Создаем уникальный токен для каждой ссылки
+      $_SESSION['token'] = bin2hex(random_bytes(16)); // Генерируем случайный токен длиной 32 символа
+
+      $urlWithToken = "?token={$_SESSION['token']}";
+      ?>
+
+      <a class="test-hero__button button" href="<?php echo HOST; ?>test-3<?php echo $urlWithToken; ?>">Начать
+        тестирование</a>
     </div>
   </section>
 </main>
