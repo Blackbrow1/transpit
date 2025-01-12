@@ -2,7 +2,17 @@
   <?php if (isset($userNotLoggedIn)): ?>
   <section class="user-card">
     <div class="user-card__wrap">
-      <h1 class="user-card__title">Войдите в свой <a href="<?php echo HOST; ?>main">профиль</a></h1>
+      <h1 class="user-card__title">Войдите в свой кабинет</h1>
+
+      <a href="<?php echo HOST; ?>main" class="user-card__back">Войти в кабинет</a>
+    </div>
+  </section>
+  <?php elseif(isset($_SESSION['login']) && $_SESSION['login'] === 1 && $user['id'] === 0): ?>
+  <section class="user-card">
+    <div class="user-card__wrap">
+      <h1 class="user-card__title">Такого пользователя не существует</h1>
+
+      <a href="<?php echo HOST; ?>user-card" class="user-card__back">Вернуться в личный кабинет</a>
     </div>
   </section>
   <?php elseif($user['id'] === 0): ?>
@@ -10,7 +20,7 @@
     <div class="user-card__wrap">
       <h1 class="user-card__title">Такого пользователя не существует</h1>
 
-      <a href="<?php echo HOST; ?>user-card" class="user-card__back">Вернуться на главную</a>
+      <a href="<?php echo HOST; ?>main" class="user-card__back">Вернуться на главную</a>
     </div>
   </section>
   <?php else: ?>

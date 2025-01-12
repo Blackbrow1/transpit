@@ -106,9 +106,8 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: calc(-100% - 2px);
+    left: calc(-100% - 4px);
     background-color: $main-dark-color;
-    border-radius: 15px;
     z-index: -1;
     transition: all 0.5s ease;
   }

@@ -1,6 +1,13 @@
 <main>
-  <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
-  <?php if ($_SESSION['logged_user']['role'] === 'admin'): ?>
+  <?php if (isset($userNotLoggedIn)): ?>
+  <section class="user-card">
+    <div class="user-card__wrap">
+      <h1 class="user-card__title">Войдите в личный кабинет</h1>
+
+      <a href="<?php echo HOST; ?>main" class="user-card__back">Войти в кабинет</a>
+    </div>
+  </section>
+  <?php elseif (isset($_SESSION['login']) && $_SESSION['login'] === 1 && $_SESSION['logged_user']['role'] === 'admin'): ?>
   <section class="add-user">
     <div class="add-user__wrap">
 
@@ -245,8 +252,13 @@
       <button class="users-finished-test__button button button--all" type="button">Показать еще</button>
     </div>
   </section>
+  <?php else: ?>
+  <section class="user-card">
+    <div class="user-card__wrap">
+      <h1 class="user-card__title">У вас нет прав администратора</h1>
+
+      <a href="<?php echo HOST; ?>user-card" class="user-card__back">Вернуться в личный кабинет</a>
+    </div>
+  </section>
   <?php endif; ?>
-  <?php
- endif;
- ?>
 </main>

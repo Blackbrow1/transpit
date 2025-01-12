@@ -67,8 +67,7 @@
       ?>
 
       <a href="<?php echo HOST; ?>test-hero-3<?php echo $urlWithToken; ?>"
-        class="training__button button training__button--disable">Сдать
-        тест</a>
+        class="training__button button training__button--disable">Сдать тест</a>
     </div>
   </section>
 </main>

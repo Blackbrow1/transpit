@@ -145,7 +145,7 @@ export function fonts() {
 }
 
 export function scripts() {
-  return src(`${PATH_TO_SRC}js/*.js`)
+  return src(`${PATH_TO_SRC}js/**/*.js`)
   .pipe(babel())
   .pipe(webpack(webpackConfig))
   // .pipe(terser())
@@ -193,7 +193,7 @@ export function watcher() {
   watch(`${PATH_TO_SRC}img/**/*.{jpg,jpeg,png,gif,svg}`, series(images));
   watch(`${PATH_TO_SRC}user-content/**/*.{jpg,jpeg,png,gif,svg}`, series(copyImages));
   watch(`${PATH_TO_SRC}fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}`, series(fonts));
-  watch(`${PATH_TO_SRC}js/*.js`, series(scripts));
+  watch(`${PATH_TO_SRC}js/**/*.js`, series(scripts));
   watch(`${PATH_TO_SRC}img/icons/**/*.svg`, series(createStack, reloadServer));
   watch(PATHS_TO_STATIC, series(copyAssets, reloadServer));
 };
