@@ -166,6 +166,11 @@ switch ($uriModule) {
     break;
 
   default:
-      require ROOT . "modules/main/index.php";
-      break;
-}
+    // if (isset($_SESSION['login']) && $_SESSION['login'] === 1) {
+    //   require ROOT . "modules/user-card/index.php";
+    //   break;
+    // }
+
+    require ROOT . "modules/main/index.php";
+    break;
+  }

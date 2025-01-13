@@ -88,7 +88,7 @@
               <?php
               $found = false;
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Тест для всех' && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === 'Безопасность на перроне (весна 2025)' && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
@@ -96,7 +96,8 @@
 
               if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training-3">Тест для всех</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training-3">Безопасность на перроне (весна
+                  2025)</a>
               </li>
               <?php endif; ?>
             </ul>

@@ -1,7 +1,7 @@
 <main>
   <section class="training">
     <div class="training__wrap">
-      <h1 class="training__title">Обучение для всех</h1>
+      <h1 class="training__title">Безопасность на перроне</h1>
 
       <div class="training__block">
         <h2 class="visually-hidden">Обучающий блок</h2>
