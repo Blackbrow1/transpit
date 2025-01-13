@@ -15,11 +15,11 @@ import { addFileMessage } from './modules/add-file-message.js';
 // const buttonCabinet = document.querySelector('.test__button-cabinet');
 // const testResult = document.querySelector('.test__result');
 // const testResultText = document.querySelector('.test__result-text');
-const timeBlock = document.querySelector('.test__time-block');
+//const timeBlock = document.querySelector('.test__time-block');
 // const answerRadioBlock = document.querySelectorAll('.test__answer-radio-block');
 // const buttonClose = document.querySelector('.test__result-close');
 
-import {airsideSafetyRadioData, airsideSafetyCheckboxData} from './modules/testes-data.js';
+import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData} from './modules/testes-data.js';
 import { showTestTime } from './modules/show-test-time.js';
 import { getTestResult } from './modules/test-result.js';
 
@@ -76,11 +76,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Результаты тестирования
   try {
-    const resultsTestSafetyAssess = getTestResult('#airside-safety', airsideSafetyRadioData, airsideSafetyCheckboxData, 18, 14)
-    showTestTime('#airside-safety', resultsTestSafetyAssess, 1000 * 60 * 10)
-  } catch {
+    const resultsTestSafetyAssess = getTestResult('#airside-safety', airsideSafetyRadioData, airsideSafetyCheckboxData, 18, 14);
+    showTestTime('#airside-safety', resultsTestSafetyAssess, 1000 * 60 * 10);
+  } catch {}
 
-  }
+  try {
+    const resultsTestSupervisors = getTestResult('#basics-supervisor-job', supervisorsRadioData, supervisorsCheckboxData, 32, 26);
+    showTestTime('#basics-supervisor-job', resultsTestSupervisors, 1000 * 60 * 18);
+  } catch {}
 
   //try {
     // function getTime(time) {

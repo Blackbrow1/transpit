@@ -3,4 +3,49 @@ const airsideSafetyRadioData = ['answer-2-1', 'answer-3-1', 'answer-4-1', 'answe
 
 const airsideSafetyCheckboxData = ['answer-1-1', 'answer-7-1', 'answer-9-1', 'answer-17-1', 'answer-18-1'];
 
-export {airsideSafetyRadioData, airsideSafetyCheckboxData}
+// Обучение супервайзеров
+const supervisorsRadioData = [
+  'answer-2-2',
+  'answer-4-2',
+  'answer-5-2',
+  'answer-6-3',
+  'answer-7-2',
+  'answer-9-2',
+  'answer-10-1',
+  'answer-11-3',
+  'answer-12-1',
+  'answer-13-3',
+  'answer-14-1',
+  'answer-15-3',
+  'answer-16-1',
+  'answer-17-1',
+  'answer-19-1',
+  'answer-20-1',
+  'answer-21-1',
+  'answer-23-3',
+  'answer-24-1',
+  'answer-26-1',
+  'answer-27-2',
+  'answer-28-1',
+  'answer-31-2',
+  'answer-32-3'
+];
+
+const supervisorsCheckboxData = [
+  'answer-1-1',
+  'answer-1-3',
+  'answer-3-2',
+  'answer-3-4',
+  'answer-3-5',
+  'answer-8-2',
+  'answer-8-4',
+  'answer-18-3',
+  'answer-22-4',
+  'answer-25-2',
+  'answer-25-4',
+  'answer-29-3',
+  'answer-30-4',
+  'answer-30-4'
+];
+
+export {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData}

@@ -72,7 +72,7 @@
               $found = false;
 
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Тест для супервайзеров' && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === 'Основы работы супервайзера (весна 2025)' && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
@@ -80,7 +80,7 @@
 
               if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training-2">Тест для супервайзеров</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training-1">Основы работы супервайзера</a>
               </li>
               <?php endif; ?>
               <?php endif; ?>
@@ -96,8 +96,7 @@
 
               if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training-3">Безопасность на перроне (весна
-                  2025)</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training-3">Безопасность на перроне</a>
               </li>
               <?php endif; ?>
             </ul>

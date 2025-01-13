@@ -1,6 +1,6 @@
 <main>
-  <section class="test">
-    <h1 class="test__main-title visually-hidden">Тест для супервайзеров</h1>
+  <section id="basics-supervisor-job" class="test">
+    <h1 class="test__main-title visually-hidden">Основы работы супервайзера (весна 2025)</h1>
     <div class="test__wrap">
       <form class="test__form">
         <fieldset class="test__answer-checkbox-block">
