@@ -56,7 +56,8 @@
 
               <div class="update-profile__menu update-profile__filter">
                 <select class="update-profile__select update-profile__select--role" name="update-role">
-                  <?php $user_role = ['user', 'admin'];
+                  <?php $user_role = ['user', 'watcher', 'admin'];
+
                   foreach($user_role as $item): ?><option value="<?php echo $item; ?>"
                     <?php if($item == $user->role): ?>selected<?php endif; ?>>
                     <?php echo $item; ?></option>

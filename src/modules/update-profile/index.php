@@ -156,7 +156,7 @@ function updateUserAndGoToProfile($user) {
 }
 
 if (isset($_SESSION['login']) && $_SESSION['login'] === 1) {
-  if ($_SESSION['logged_user']['role'] === 'user') {
+  if ($_SESSION['logged_user']['role'] === 'user' || $_SESSION['logged_user']['role'] === 'watcher') {
     $user = R::load('users', $_SESSION['logged_user']['id']);
 
     updateUserAndGoToProfile($user);

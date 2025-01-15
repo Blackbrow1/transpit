@@ -29,6 +29,37 @@ if (isset($uri[1])) {
 $uriArray = explode('/', $uri[0]);
 $uriModule = $uriArray[0];
 
+////////////////////////////////////////////////////////
+// Путь к файлу, хранящему последний год обновления
+$updateFilePath = 'last_update.txt';
+
+// Проверка существования файла
+if (!file_exists($updateFilePath)) {
+    // Если файла нет, создаём его и записываем туда текущий год
+    file_put_contents($updateFilePath, date('Y-m-d'));
+}
+
+// Читаем последний сохранённую дату
+$lastUpdateDate = file_get_contents($updateFilePath);
+
+// Текущие год, месяц и день
+$currentDate = date('Y-m-d');
+list($currentYear, $currentMonth, $currentDay) = explode('-', $currentDate);
+
+// Проверяем, наступило ли 1 сентября нового года
+if ($currentYear > substr($lastUpdateDate, 0, 4) || ($currentYear == substr($lastUpdateDate, 0, 4) && $currentMonth >= 9 && $currentDay >= 1)) {
+    // Обновляем файл
+    file_put_contents($updateFilePath, $currentDate);
+
+    // Формируем строку с новой датой
+    $dateString = "Основы работы супервайзера (весна $currentYear)";
+} else {
+    // Используем старую дату
+    $lastYear = substr($lastUpdateDate, 0, 4);
+    $dateString = "Основы работы супервайзера (весна $lastYear)";
+}
+///////////////////////////////////////////////////////
+
 // Роутер
 switch ($uriModule) {
   case '':

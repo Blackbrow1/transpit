@@ -28,7 +28,7 @@
       <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 1): ?>
       <div class="header__menu">
         <ul class="header__menu-list">
-          <?php if ($_SESSION['role'] === 'admin'): ?>
+          <?php if ($_SESSION['role'] === 'admin' || $_SESSION['role'] === 'watcher'): ?>
           <li class="header__menu-item">
             <a class="header__menu-link" href="<?php echo HOST; ?>admin">
               Админ
@@ -72,7 +72,7 @@
               $found = false;
 
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Основы работы супервайзера (весна 2025)' && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === $dateString && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }

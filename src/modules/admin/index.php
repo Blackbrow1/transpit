@@ -80,6 +80,8 @@ if (isset($_POST['add-user'])) {
 
     if ($_POST['user-role'] == 'Обычный пользователь') {
       $user->role = 'user';
+    } else if ($_POST['user-role'] == 'Наблюдатель') {
+      $user->role = 'watcher';
     } else {
       $user->role = 'admin';
     }

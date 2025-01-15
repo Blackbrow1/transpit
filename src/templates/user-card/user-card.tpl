@@ -60,7 +60,7 @@
           <?php if ($_SESSION['logged_user']['role'] === 'admin'): ?>
           <a class="user-card__button button"
             href="<?php echo HOST; ?>update-profile/<?php echo $user->id; ?>">Редактировать профиль</a>
-          <?php elseif ($_SESSION['logged_user']['role'] === 'user'): ?>
+          <?php elseif ($_SESSION['logged_user']['role'] === 'user' || $_SESSION['logged_user']['role'] === 'watcher'): ?>
           <?php if ($_SESSION['logged_user']['id'] === $user->id): ?>
           <a class="user-card__button button" href="<?php echo HOST; ?>update-profile">Редактировать профиль</a>
           <?php endif; ?>
