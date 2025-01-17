@@ -22,6 +22,7 @@ import { addFileMessage } from './modules/add-file-message.js';
 import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData} from './modules/testes-data.js';
 import { showTestTime } from './modules/show-test-time.js';
 import { getTestResult } from './modules/test-result.js';
+import { getRandomAnswers } from './modules/get-random-answers.js';
 
 // const MAX_QUESTIONS = 32;
 // const MIN_QUESTIONS_ACCESS = 26;
@@ -81,9 +82,14 @@ window.addEventListener('DOMContentLoaded', () => {
   } catch {}
 
   try {
-    const resultsTestSupervisors = getTestResult('#basics-supervisor-job', supervisorsRadioData, supervisorsCheckboxData, 32, 26);
-    showTestTime('#basics-supervisor-job', resultsTestSupervisors, 1000 * 60 * 18);
+    // Вывести рандомно 20 вопросов
+    getRandomAnswers('#basics-supervisor-job', '.test__list', '.test__item', 20);
+
+    const resultsTestSupervisors = getTestResult('#basics-supervisor-job', supervisorsRadioData, supervisorsCheckboxData, 20, 16);
+
+    showTestTime('#basics-supervisor-job', resultsTestSupervisors, 1000 * 60 * 11);
   } catch {}
+
 
   //try {
     // function getTime(time) {

@@ -22,10 +22,6 @@
     padding: 30px 20px;
     border: 1px solid $border-color;
     border-radius: 15px;
-
-    &:not(:last-of-type) {
-      margin-bottom: 40px;
-    }
   }
 
   fieldset legend {
@@ -38,6 +34,12 @@
 
   fieldset div:not(:last-of-type) {
     margin-bottom: 15px;
+  }
+}
+
+.test__item {
+  &:not(:last-child) {
+    margin-bottom: 40px;
   }
 }
 
