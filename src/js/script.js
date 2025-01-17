@@ -335,7 +335,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 //////////////////////////////////////
-
+// Фильтрация по году
 function showMoreDate(select, item, button) {
   const usersSelect = document.querySelector(select);
   const usersItems = document.querySelectorAll(item);

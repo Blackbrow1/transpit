@@ -1,4 +1,13 @@
 <main>
+  <?php if (isset($userNotLoggedIn)): ?>
+  <section class="user-card">
+    <div class="user-card__wrap">
+      <h1 class="user-card__title">Войдите в личный кабинет</h1>
+
+      <a href="<?php echo HOST; ?>main" class="user-card__back">Войти в кабинет</a>
+    </div>
+  </section>
+  <?php else: ?>
   <section class="training">
     <div class="training__wrap">
       <h1 class="training__title">Обучение для супервайзеров</h1>
@@ -70,4 +79,5 @@
         class="training__button button training__button--disable">Сдать тест</a>
     </div>
   </section>
+  <?php endif; ?>
 </main>
