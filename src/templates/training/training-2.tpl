@@ -8,9 +8,9 @@
     </div>
   </section>
   <?php else: ?>
-  <section class="training">
+  <section id="training-human-factor" class="training">
     <div class="training__wrap">
-      <h1 class="training__title">Обучение для супервайзеров</h1>
+      <h1 class="training__title">Человеческий фактор</h1>
 
       <div class="training__block">
         <h2 class="visually-hidden">Обучающий блок</h2>

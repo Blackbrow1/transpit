@@ -80,7 +80,8 @@
 
             if (!$found): ?>
             <li class="footer__training-item">
-              <a class="footer__training-link" href="<?php echo HOST; ?>training-3">Безопасность на перроне</a>
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-aircraft-safety">Безопасность на
+                перроне</a>
             </li>
             <?php endif; ?>
           </ul>

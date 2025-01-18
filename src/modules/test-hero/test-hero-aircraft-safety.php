@@ -11,13 +11,12 @@ if (isset($uriArray[1])) {
   }
 }
 
-
 // ob_start();
-// include ROOT . 'templates/test/test.tpl';
+// include ROOT . 'templates/test-hero/test-hero.tpl';
 // $content = ob_get_contents();
 // ob_end_clean();
 
 include ROOT . 'templates/_parts/_header.tpl';
-include ROOT . 'templates/test/test-3.tpl';
+include ROOT . 'templates/test-hero/test-hero-aircraft-safety.tpl';
 include ROOT . 'templates/_parts/_footer.tpl';
 ?>

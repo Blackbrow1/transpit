@@ -88,6 +88,7 @@ switch ($uriModule) {
     require ROOT . "modules/update-profile/index.php";
     break;
 
+  // Страницы теоретического обучения
   case 'training-1':
     require ROOT . "modules/training/training-1.php";
     break;
@@ -96,10 +97,11 @@ switch ($uriModule) {
     require ROOT . "modules/training/training-2.php";
     break;
 
-  case 'training-3':
-    require ROOT . "modules/training/training-3.php";
+  case 'training-aircraft-safety':
+    require ROOT . "modules/training/training-aircraft-safety.php";
     break;
 
+  // Страницы описания тестов
   case 'test-hero-1':
     // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
     if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
@@ -128,7 +130,7 @@ switch ($uriModule) {
     require ROOT . "modules/test-hero/test-hero-2.php";
     break;
 
-  case "test-hero-3":
+  case "test-hero-aircraft-safety":
     // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
     if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
       // Ошибка, если токен не передан или не совпадает
@@ -139,9 +141,10 @@ switch ($uriModule) {
     // Удаляем токен из сессии, чтобы избежать повторного использования
     unset($_SESSION['token']);
 
-    require ROOT . "modules/test-hero/test-hero-3.php";
+    require ROOT . "modules/test-hero/test-hero-aircraft-safety.php";
     break;
 
+  // Страницы тестов
   case 'test-1':
     // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
     if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
@@ -170,7 +173,7 @@ switch ($uriModule) {
     require ROOT . "modules/test/test-2.php";
     break;
 
-  case 'test-3':
+  case 'test-aircraft-safety':
     // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
     if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
       // Ошибка, если токен не передан или не совпадает
@@ -181,7 +184,7 @@ switch ($uriModule) {
     // Удаляем токен из сессии, чтобы избежать повторного использования
     unset($_SESSION['token']);
 
-    require ROOT . "modules/test/test-3.php";
+    require ROOT . "modules/test/test-aircraft-safety.php";
     break;
 
   case 'submit-results':

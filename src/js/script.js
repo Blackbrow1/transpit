@@ -1,6 +1,6 @@
 import { addClassItemActive } from './modules/add-class-item-active.js';
 import { trainingPage } from './modules/training-page.js';
-import { securityTrainingData } from './modules/trainings-data.js';
+import { securityTrainingData, humanFactorTrainingData } from './modules/trainings-data.js';
 import { getTrainingCounts } from './modules/get-training-counts.js';
 import { showMoreUsers } from './modules/show-more-users.js';
 import { showMoreProgressCards } from './modules/show-more-progress-cards.js';
@@ -77,14 +77,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Результаты тестирования
   try {
+    // Вывести рандомно 18 вопросов
+    getRandomAnswers('#airside-safety', '.test__list', '.test__item', 18);
+
     const resultsTestSafetyAssess = getTestResult('#airside-safety', airsideSafetyRadioData, airsideSafetyCheckboxData, 18, 14);
-    showTestTime('#airside-safety', resultsTestSafetyAssess, 1000 * 60 * 10);
+
+    showTestTime('#airside-safety', resultsTestSafetyAssess, 1000 * 60 * 12);
   } catch {}
 
   try {
     // Вывести рандомно 20 вопросов
     getRandomAnswers('#basics-supervisor-job', '.test__list', '.test__item', 20);
 
+    // Получить результаты теста
     const resultsTestSupervisors = getTestResult('#basics-supervisor-job', supervisorsRadioData, supervisorsCheckboxData, 20, 16);
 
     showTestTime('#basics-supervisor-job', resultsTestSupervisors, 1000 * 60 * 11);
@@ -285,9 +290,13 @@ window.addEventListener('DOMContentLoaded', () => {
   //   console.log('Произошла ошибка');
   // }
 
-  // Обучающая страница
+  // Обучающая страница Безопасность на перроне
   try {
-    trainingPage(securityTrainingData);
+    trainingPage(securityTrainingData, '#training-security-safety');
+  } catch {console.log('Ошибка Обучающая страница');}
+
+  try {
+    trainingPage(humanFactorTrainingData, '#training-human-factor');
   } catch {console.log('Ошибка Обучающая страница');}
 
   // Кнопочка с количеством тренингов к прохождению

@@ -1,5 +1,5 @@
 <?php
-$title = 'Обучение сотрудников | Транспит';
+$title = 'Страница тестирования | Транспит';
 
 if (isset($uriArray[1])) {
   $user = R::load('users', $uriArray[1]);
@@ -11,13 +11,13 @@ if (isset($uriArray[1])) {
   }
 }
 
+
 // ob_start();
-// include ROOT . 'templates/training/training.tpl';
+// include ROOT . 'templates/test/test.tpl';
 // $content = ob_get_contents();
 // ob_end_clean();
 
 include ROOT . 'templates/_parts/_header.tpl';
-include ROOT . 'templates/training/training-3.tpl';
+include ROOT . 'templates/test/test-aircraft-safety.tpl';
 include ROOT . 'templates/_parts/_footer.tpl';
-
 ?>

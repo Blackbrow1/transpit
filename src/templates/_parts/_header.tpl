@@ -96,7 +96,23 @@
 
               if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training-3">Безопасность на перроне</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training-aircraft-safety">Безопасность на
+                  перроне</a>
+              </li>
+              <?php endif; ?>
+
+              <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Человеческий фактор (январь 2025)' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+              <li class="header__training-item">
+                <a class="header__training-link" href="<?php echo HOST; ?>training-2">Человеческий фактор</a>
               </li>
               <?php endif; ?>
             </ul>

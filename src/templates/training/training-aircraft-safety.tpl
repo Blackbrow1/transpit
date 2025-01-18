@@ -8,7 +8,7 @@
     </div>
   </section>
   <?php else: ?>
-  <section class="training">
+  <section id="training-security-safety" class="training">
     <div class="training__wrap">
       <h1 class="training__title">Безопасность на перроне</h1>
 
@@ -75,7 +75,7 @@
       $urlWithToken = "?token={$_SESSION['token']}";
       ?>
 
-      <a href="<?php echo HOST; ?>test-hero-3<?php echo $urlWithToken; ?>"
+      <a href="<?php echo HOST; ?>test-hero-aircraft-safety<?php echo $urlWithToken; ?>"
         class="training__button button training__button--disable">Сдать тест</a>
     </div>
   </section>
