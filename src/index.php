@@ -139,10 +139,9 @@ switch ($uriModule) {
     }
 
     // Удаляем токен из сессии, чтобы избежать повторного использования
-    unset($_SESSION['token']);
-    header("Location: " . HOST . 'user-card');
-
     require ROOT . "modules/test-hero/test-hero-aircraft-safety.php";
+    unset($_SESSION['token']);
+
     break;
 
   // Страницы тестов
