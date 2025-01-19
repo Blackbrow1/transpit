@@ -181,10 +181,9 @@ switch ($uriModule) {
       exit;
     }
 
-    require ROOT . "modules/test/test-aircraft-safety.php";
     // Удаляем токен из сессии, чтобы избежать повторного использования
     unset($_SESSION['token']);
-
+    require ROOT . "modules/test/test-aircraft-safety.php";
     break;
 
   case 'submit-results':
