@@ -8,7 +8,7 @@
     </div>
   </section>
   <?php else: ?>
-  <section class="training">
+  <section id="training-for-supervisors" class="training">
     <div class="training__wrap">
       <h1 class="training__title">Основы работы супервайзера</h1>
 

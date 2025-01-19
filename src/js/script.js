@@ -299,6 +299,10 @@ window.addEventListener('DOMContentLoaded', () => {
     trainingPage(humanFactorTrainingData, '#training-human-factor');
   } catch {console.log('Ошибка Обучающая страница');}
 
+  try {
+    trainingPage(securityTrainingData, '#training-for-supervisors');
+  } catch {console.log('Ошибка Обучающая страница');}
+
   // Кнопочка с количеством тренингов к прохождению
   try {
     getTrainingCounts('.header__training-list', '.header__training-item', '.header__menu-item--all-trainings', 'header__training-delete');
