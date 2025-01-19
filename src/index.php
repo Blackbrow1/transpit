@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE); // Скрыть предупреждения типа E_NOTICE
+ini_set('display_errors', 0);       // Отключить вывод ошибок на экран
 
 require_once 'config.php';
 require_once 'db.php';
