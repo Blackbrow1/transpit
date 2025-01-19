@@ -54,7 +54,7 @@
               $found = false;
 
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Тест для водителей (осень 2024)' && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === 'Обучение водителей (осень 2024)' && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
@@ -62,8 +62,7 @@
 
               if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training-1">Обучение водителей (осень
-                  2024)</a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training-1">Обучение водителей</a>
               </li>
               <?php endif; ?>
               <?php endif; ?>
@@ -72,7 +71,7 @@
               $found = false;
 
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === $dateString && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === $testNameAddDate && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
@@ -80,7 +79,8 @@
 
               if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training-1">Основы работы супервайзера</a>
+                <a class="header__training-link"
+                  href="<?php echo HOST; ?>training-1"><?php echo $testNameAddDate; ?></a>
               </li>
               <?php endif; ?>
               <?php endif; ?>

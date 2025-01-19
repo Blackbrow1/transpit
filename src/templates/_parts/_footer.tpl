@@ -8,7 +8,7 @@
         </svg>
       </a>
       <?php else: ?>
-      <a href="#" class="header__logo">
+      <a href="#" class="footer__logo">
         <svg viewBox="0 0 184 35" width="184" height="35">
           <use class="footer__svg" href="<?php echo HOST; ?>img/icons/stack.svg#logo-desktop"></use>
         </svg>
@@ -30,15 +30,13 @@
           <span class="footer__menu-item--all-trainings"></span>
 
           <ul class="footer__training-list">
-            <?php
-              $user_results = R::findAll('results', 'tab_number = ?', [$user->tab_number]);
-              ?>
+            <?php $user_results = R::findAll('results', 'tab_number = ?', [$user->tab_number]); ?>
 
             <?php if ($user->post === 'Водитель-экспедитор' || $user->post === 'Водитель автомобиля' || $user->post === 'Водитель автопогрузчика'):
               $found = false;
 
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Тест для водителей (осень 2024)' && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === 'Обучение водителей (осень 2024)' && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
@@ -46,8 +44,7 @@
 
               if (!$found): ?>
             <li class="footer__training-item">
-              <a class="footer__training-link" href="<?php echo HOST; ?>training-1">Обучение водителей (осень
-                2024)</a>
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-1">Обучение водителей</a>
             </li>
             <?php endif; ?>
             <?php endif; ?>
@@ -56,15 +53,15 @@
               $found = false;
 
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Основы работы супервайзера (весна 2025)' && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === $testNameAddDate && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
               }
 
-            if (!$found): ?>
+              if (!$found): ?>
             <li class="footer__training-item">
-              <a class="footer__training-link" href="<?php echo HOST; ?>training-1">Основы работы супервайзера</a>
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-1"><?php echo $testNameAddDate; ?></a>
             </li>
             <?php endif; ?>
             <?php endif; ?>
@@ -78,14 +75,31 @@
                   }
               }
 
-            if (!$found): ?>
+              if (!$found): ?>
             <li class="footer__training-item">
               <a class="footer__training-link" href="<?php echo HOST; ?>training-aircraft-safety">Безопасность на
                 перроне</a>
             </li>
             <?php endif; ?>
+
+            <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Человеческий фактор (январь 2025)' && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+            <li class="footer__training-item">
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-2">Человеческий фактор</a>
+            </li>
+            <?php endif; ?>
           </ul>
         </li>
+      </ul>
+      </li>
       </ul>
       <?php endif; ?>
 

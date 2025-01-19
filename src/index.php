@@ -54,11 +54,11 @@ if ($currentYear > substr($lastUpdateDate, 0, 4) || ($currentYear == substr($las
     file_put_contents($updateFilePath, $currentDate);
 
     // Формируем строку с новой датой
-    $dateString = "Основы работы супервайзера (весна $currentYear)";
+    $testNameAddDate = "Основы работы супервайзера (весна $currentYear)";
 } else {
     // Используем старую дату
     $lastYear = substr($lastUpdateDate, 0, 4);
-    $dateString = "Основы работы супервайзера (весна $lastYear)";
+    $testNameAddDate = "Основы работы супервайзера (весна $lastYear)";
 }
 ///////////////////////////////////////////////////////
 
