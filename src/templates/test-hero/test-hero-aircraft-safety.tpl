@@ -12,7 +12,9 @@
       // Создаем уникальный токен для каждой ссылки
       $_SESSION['token'] = bin2hex(random_bytes(16)); // Генерируем случайный токен длиной 32 символа
 
-      $urlWithToken = "?token={$_SESSION['token']}";
+      if (isset($_SESSION['token'])) {
+        $urlWithToken = "?token={$_SESSION['token']}";
+      }
       ?>
 
       <a class="test-hero__button button"
