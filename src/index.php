@@ -139,9 +139,9 @@ switch ($uriModule) {
     }
 
     // Удаляем токен из сессии, чтобы избежать повторного использования
-    require ROOT . "modules/test-hero/test-hero-aircraft-safety.php";
     unset($_SESSION['token']);
 
+    require ROOT . "modules/test-hero/test-hero-aircraft-safety.php";
     break;
 
   // Страницы тестов
@@ -183,6 +183,7 @@ switch ($uriModule) {
 
     // Удаляем токен из сессии, чтобы избежать повторного использования
     unset($_SESSION['token']);
+
     require ROOT . "modules/test/test-aircraft-safety.php";
     break;
 
