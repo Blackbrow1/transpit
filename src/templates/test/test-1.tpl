@@ -1,6 +1,6 @@
 <main>
   <section id="basics-supervisor-job" class="test">
-    <h1 class="test__main-title visually-hidden"><?php echo $dateString; ?></h1>
+    <h1 class="test__main-title visually-hidden">Основы работы супервайзера <?php echo $dateMonth; ?></h1>
 
     <div class="test__wrap">
       <form class="test__form">

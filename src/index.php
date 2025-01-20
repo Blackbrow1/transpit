@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE); // Скрыть предупреждения типа E_NOTICE
-ini_set('display_errors', 0);       // Отключить вывод ошибок на экран
+// error_reporting(E_ALL & ~E_NOTICE); // Скрыть предупреждения типа E_NOTICE
+// ini_set('display_errors', 0);       // Отключить вывод ошибок на экран
 
 require_once 'config.php';
 require_once 'db.php';
@@ -48,17 +48,63 @@ $lastUpdateDate = file_get_contents($updateFilePath);
 $currentDate = date('Y-m-d');
 list($currentYear, $currentMonth, $currentDay) = explode('-', $currentDate);
 
-// Проверяем, наступило ли 1 сентября нового года
-if ($currentYear > substr($lastUpdateDate, 0, 4) || ($currentYear == substr($lastUpdateDate, 0, 4) && $currentMonth >= 9 && $currentDay >= 1)) {
+// Проверяем, наступило ли 1 апреля или 1 октября нового полугодия
+if (($currentYear > substr($lastUpdateDate, 0, 4))
+    || ($currentYear == substr($lastUpdateDate, 0, 4) && ($currentMonth >= 4 && $currentDay >= 1))
+    || ($currentYear == substr($lastUpdateDate, 0, 4) && ($currentMonth >= 10 && $currentDay >= 1))) {
     // Обновляем файл
     file_put_contents($updateFilePath, $currentDate);
 
+    // Определяем сезон: весна или осень
+    if ($currentMonth < 10 && $currentMonth > 4) {
+      $season = 'Весна';
+    } else {
+      $season = 'Осень';
+    }
+
     // Формируем строку с новой датой
-    $testNameAddDate = "Основы работы супервайзера (весна $currentYear)";
+    $dateString = "($season $currentYear)";
 } else {
     // Используем старую дату
     $lastYear = substr($lastUpdateDate, 0, 4);
-    $testNameAddDate = "Основы работы супервайзера (весна $lastYear)";
+
+    // Определяем прошлый сезон: весна или осень
+    if ($currentMonth < 10 && $currentMonth > 4) {
+      $lastSeason = 'Весна';
+    } else {
+      $lastSeason = 'Осень';
+    }
+
+    // Формируем строку со старой датой
+    $dateString = "($lastSeason $lastYear)";
+}
+
+// Смена даты каждый месяц
+$months = [
+  "01" => "Январь",
+  "02" => "Февраль",
+  "03" => "Март",
+  "04" => "Апрель",
+  "05" => "Май",
+  "06" => "Июнь",
+  "07" => "Июль",
+  "08" => "Август",
+  "09" => "Сентябрь",
+  "10" => "Октябрь",
+  "11" => "Ноябрь",
+  "12" => "Декабрь"
+];
+
+if ($currentYear > substr($lastUpdateDate, 0, 4)) {
+  // Обновляем файл
+  file_put_contents($updateFilePath, $currentDate);
+
+  // Формируем строку с новой датой
+  $dateMonth = "($months[$currentMonth] $currentYear)";
+} else {
+  // Используем старую дату
+  $lastYear = substr($lastUpdateDate, 0, 4);
+  $dateMonth = "($months[$currentMonth] $lastYear)";
 }
 ///////////////////////////////////////////////////////
 

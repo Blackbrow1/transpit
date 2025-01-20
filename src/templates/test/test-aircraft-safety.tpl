@@ -1,6 +1,6 @@
 <main>
   <section id="airside-safety" class="test">
-    <h1 class="test__main-title visually-hidden">Безопасность на перроне (весна 2025)</h1>
+    <h1 class="test__main-title visually-hidden">Безопасность на перроне <?php echo $dateString; ?></h1>
     <div class="test__wrap">
       <form class="test__form">
         <ul class="test__list">

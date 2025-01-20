@@ -71,7 +71,7 @@
               $found = false;
 
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === $testNameAddDate && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === 'Основы работы супервайзера ' . $dateMonth && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
@@ -79,8 +79,8 @@
 
               if (!$found): ?>
               <li class="header__training-item">
-                <a class="header__training-link"
-                  href="<?php echo HOST; ?>training-1"><?php echo $testNameAddDate; ?></a>
+                <a class="header__training-link" href="<?php echo HOST; ?>training-1">Основы работы супервайзера
+                  <?php echo $dateMonth; ?></a>
               </li>
               <?php endif; ?>
               <?php endif; ?>
@@ -88,7 +88,23 @@
               <?php
               $found = false;
               foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Безопасность на перроне (весна 2025)' && $test['result_name'] === 'Зачет') {
+                  if ($test['test_name'] === 'Человеческий фактор ' . $dateMonth && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+              <li class="header__training-item">
+                <a class="header__training-link" href="<?php echo HOST; ?>training-2">Человеческий фактор
+                  <?php echo $dateMonth; ?></a>
+              </li>
+              <?php endif; ?>
+
+              <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Безопасность на перроне ' . $dateString && $test['result_name'] === 'Зачет') {
                       $found = true;
                       break;
                   }
@@ -97,22 +113,7 @@
               if (!$found): ?>
               <li class="header__training-item">
                 <a class="header__training-link" href="<?php echo HOST; ?>training-aircraft-safety">Безопасность на
-                  перроне</a>
-              </li>
-              <?php endif; ?>
-
-              <?php
-              $found = false;
-              foreach ($user_results as $test) {
-                  if ($test['test_name'] === 'Человеческий фактор (январь 2025)' && $test['result_name'] === 'Зачет') {
-                      $found = true;
-                      break;
-                  }
-              }
-
-              if (!$found): ?>
-              <li class="header__training-item">
-                <a class="header__training-link" href="<?php echo HOST; ?>training-2">Человеческий фактор</a>
+                  перроне <?php echo $dateString; ?></a>
               </li>
               <?php endif; ?>
             </ul>
@@ -149,5 +150,6 @@
       </div>
       <?php endif; ?>
     </div>
+
 
   </header>

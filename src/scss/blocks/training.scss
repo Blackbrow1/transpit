@@ -20,14 +20,13 @@
   justify-content: space-between;
   gap: 30px;
   margin-bottom: 30px;
-  padding: 26px 30px 40px 30px;
+  padding: 40px 30px;
   border: 1px solid $border-color;
   border-radius: 20px;
 }
 
 .training__block-title {
   margin-bottom: 20px;
-  margin-top: 20px;
   font-size: 36px;
   line-height: 1;
   font-weight: 500;
@@ -53,9 +52,9 @@
 
 .training__visual-count {
   grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  grid-row: 2 / 3;
   justify-self: start;
-  align-self: flex-end;
+  align-self: flex-start;
   font-size: 20px;
   line-height: 1;
   font-weight: 500;
@@ -65,7 +64,7 @@
   display: flex;
   justify-content: space-between;
   grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  grid-row: 2 / 3;
   justify-self: end;
   width: 110px;
 }
@@ -87,7 +86,7 @@
 
 .training__img-block {
   grid-column: 1 / -1;
-  grid-row: 2 / 3;
+  grid-row: 1 / 2;
   width: 555px;
   height: 487px;
   border-radius: 20px;
