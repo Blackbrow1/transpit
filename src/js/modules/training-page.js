@@ -19,11 +19,18 @@ function trainingPage(trainListData, id) {
     btnPrev.classList.add('training__button--disable');
     btnPrev.disabled = true;
 
-    trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
+    if (trainListData[currentActiveIndex].theme) {
+      trainingBlockTitle.style.display = 'block';
+      trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
+    } else {
+      trainingBlockTitle.style.display = 'none';
+    }
+
+    // trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
 
     trainListData[currentActiveIndex].paragraph.forEach(item => {
       let par = document.createElement('p');
-      par.textContent = item;
+      par.innerHTML = item;
       trainingInfo.append(par);
     });
 
@@ -68,11 +75,18 @@ function trainingPage(trainListData, id) {
       trainingInfo.innerHTML = '';
       trainingImgBlock.innerHTML = '';
 
-      trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
+      if (trainListData[currentActiveIndex].theme) {
+        trainingBlockTitle.style.display = 'block';
+        trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
+      } else {
+        trainingBlockTitle.style.display = 'none';
+      }
+
+      // trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
 
       trainListData[currentActiveIndex].paragraph.forEach(item => {
         let par = document.createElement('p');
-        par.textContent = item;
+        par.innerHTML = item;
         trainingInfo.append(par);
       });
 
@@ -118,11 +132,18 @@ function trainingPage(trainListData, id) {
       trainingInfo.innerHTML = '';
       trainingImgBlock.innerHTML = '';
 
-      trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
+      if (trainListData[currentActiveIndex].theme) {
+        trainingBlockTitle.style.display = 'block';
+        trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
+      } else {
+        trainingBlockTitle.style.display = 'none';
+      }
+
+      // trainingBlockTitle.textContent = trainListData[currentActiveIndex].theme;
 
       trainListData[currentActiveIndex].paragraph.forEach(item => {
         let par = document.createElement('p');
-        par.textContent = item;
+        par.innerHTML = item;
         trainingInfo.append(par);
       });
 

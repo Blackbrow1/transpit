@@ -6,6 +6,18 @@
   color: $color-unsuccess;
 }
 
+.main-color {
+  color: $main-dark-color;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.text-size-26 {
+  font-size: 26px;
+}
+
 .error-message {
   background-color: $error-mesage-color;
 }
