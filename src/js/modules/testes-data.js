@@ -48,4 +48,8 @@ const supervisorsCheckboxData = [
   'answer-30-4'
 ];
 
-export {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData}
+const humanFactorRadioData = ['answer-1-2', 'answer-2-1', 'answer-3-3', 'answer-4-1', 'answer-6-1', 'answer-7-3', 'answer-8-1', 'answer-9-1', 'answer-10-1'];
+
+const humanFactorCheckboxData = ['answer-5-3'];
+
+export {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData}

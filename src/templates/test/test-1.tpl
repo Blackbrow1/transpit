@@ -157,12 +157,12 @@
 
               <div class="test__answer-radio">
                 <input class="visually-hidden" type="radio" name="answer-6" value="answer-6-2" id="answer-6-2">
-                <label for="answer-6-2">Не более 45 минут</label>
+                <label for="answer-6-2">Не более 41 минуты</label>
               </div>
 
               <div class="test__answer-radio">
                 <input class="visually-hidden" type="radio" name="answer-6" value="answer-6-3" id="answer-6-3">
-                <label for="answer-6-3">Не более 32 минут</label>
+                <label for="answer-6-3">Не более 31 минуты</label>
               </div>
             </fieldset>
           </li>

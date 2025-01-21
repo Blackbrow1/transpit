@@ -9,7 +9,7 @@ import { removeSuccessMessage } from './modules/remove-success-message.js';
 import { deleteUser } from './modules/delete-user.js';
 import { addFileMessage } from './modules/add-file-message.js';
 
-import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData} from './modules/testes-data.js';
+import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData} from './modules/testes-data.js';
 import { showTestTime } from './modules/show-test-time.js';
 import { getTestResult } from './modules/test-result.js';
 import { getRandomAnswers } from './modules/get-random-answers.js';
@@ -36,6 +36,16 @@ window.addEventListener('DOMContentLoaded', () => {
     const resultsTestSupervisors = getTestResult('#basics-supervisor-job', supervisorsRadioData, supervisorsCheckboxData, 20, 16);
 
     showTestTime('#basics-supervisor-job', resultsTestSupervisors, 1000 * 60 * 11);
+  } catch {}
+
+  try {
+    // Вывести рандомно 10 вопросов
+    getRandomAnswers('#human-factor', '.test__list', '.test__item', 10);
+
+    // Получить результаты теста
+    const resultsTestHumanFactor = getTestResult('#human-factor', humanFactorRadioData, humanFactorCheckboxData, 10, 8);
+
+    showTestTime('#human-factor', resultsTestHumanFactor, 1000 * 60 * 7);
   } catch {}
 
   // Обучающая страница Безопасность на перроне
