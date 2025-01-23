@@ -21,10 +21,6 @@ if (isset($_POST['send-form'])) {
 
     if ($user) {
       if (password_verify($_POST['password'], $user->password) || $_POST['password'] == $user->password) {
-        // $_SESSION['success'][] = [
-        //   'title' => 'Верный пароль'
-        // ];
-
         $_SESSION['logged_user'] = $user;
         $_SESSION['login'] = 1;
         $_SESSION['role'] = $user->role;

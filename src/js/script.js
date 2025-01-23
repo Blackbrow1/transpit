@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Получить результаты теста
     const resultsTestSupervisors = getTestResult('#basics-supervisor-job', supervisorsRadioData, supervisorsCheckboxData, 20, 16);
 
-    showTestTime('#basics-supervisor-job', resultsTestSupervisors, 1000 * 60 * 11);
+    showTestTime('#basics-supervisor-job', resultsTestSupervisors, 1000 * 60 * 13); // 11
   } catch {}
 
   try {
@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Получить результаты теста
     const resultsTestHumanFactor = getTestResult('#human-factor', humanFactorRadioData, humanFactorCheckboxData, 10, 8);
 
-    showTestTime('#human-factor', resultsTestHumanFactor, 1000 * 60 * 7);
+    showTestTime('#human-factor', resultsTestHumanFactor, 1000 * 60 * 7); // 7
   } catch {}
 
   // Обучающая страница Безопасность на перроне

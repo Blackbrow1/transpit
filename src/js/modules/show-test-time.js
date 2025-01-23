@@ -2,6 +2,8 @@ function showTestTime(testId, res, time) {
   const testIdData = document.querySelector(testId);
   const timeBlock = testIdData.querySelector('.test__time-block');
 
+  const buttonStop = testIdData.querySelector('.test__button-stop');
+
   const end = new Date().getTime() + time;
   if (timeBlock) {
     const interval = setInterval(() => {
@@ -13,7 +15,7 @@ function showTestTime(testId, res, time) {
 
     setTimeout(() => {
       clearInterval(interval);
-      res;
+      buttonStop.click();
     }, time);
   }
 }

@@ -1,50 +1,3 @@
-// const MAX_QUESTIONS = 32;
-// const MIN_QUESTIONS_ACCESS = 26;
-
-// const answersDataRadio = [
-//   'answer-2-2',
-//   'answer-4-2',
-//   'answer-5-2',
-//   'answer-6-3',
-//   'answer-7-2',
-//   'answer-9-2',
-//   'answer-10-1',
-//   'answer-11-3',
-//   'answer-12-1',
-//   'answer-13-3',
-//   'answer-14-1',
-//   'answer-15-3',
-//   'answer-16-1',
-//   'answer-17-1',
-//   'answer-19-1',
-//   'answer-20-1',
-//   'answer-21-1',
-//   'answer-23-3',
-//   'answer-24-1',
-//   'answer-26-1',
-//   'answer-27-2',
-//   'answer-28-1',
-//   'answer-31-2',
-//   'answer-32-3'
-// ];
-
-// const answersData = [
-//   'answer-1-1',
-//   'answer-1-3',
-//   'answer-3-2',
-//   'answer-3-4',
-//   'answer-3-5',
-//   'answer-8-2',
-//   'answer-8-4',
-//   'answer-18-3',
-//   'answer-22-4',
-//   'answer-25-2',
-//   'answer-25-4',
-//   'answer-29-3',
-//   'answer-30-4',
-//   'answer-30-4'
-// ];
-
 let sum = 0;
 
 function getTestResult(testId, answersDataRadio, answersData, MAX_QUESTIONS, MIN_QUESTIONS_ACCESS) {
@@ -108,9 +61,6 @@ function getTestResult(testId, answersDataRadio, answersData, MAX_QUESTIONS, MIN
     });
 
     const progress = Math.round((sum / MAX_QUESTIONS) * 100);
-
-    // answCount.value = sum;
-    // percent.value = progress;
 
     if (sum >= MIN_QUESTIONS_ACCESS) {
       testResultText.textContent = 'Поздравляем! Тест успешно пройден. ' + sum + ' верных ответа. ' + 'Прогресс ' + progress + '%';
