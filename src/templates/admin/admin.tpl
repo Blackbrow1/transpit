@@ -115,8 +115,8 @@
         <div class="users-list__city filter">
           <select class="users-list__city-select" name="users-list-city">
             <option value="" selected>Город</option>
-            <option value="Водитель спецмашины">Санкт-Петербург</option>
-            <option value="Водитель-экспедитор">Москва</option>
+            <option value="Санкт-Петербург">Санкт-Петербург</option>
+            <option value="Москва">Москва</option>
           </select>
 
           <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
@@ -149,13 +149,15 @@
         <?php
         $users = R::findAll('users');
         foreach(array_reverse($users) as $item): ?>
-        <li data-post="<?php echo $item->post; ?>" class="users-list__item">
+        <li data-post="<?php echo $item->post; ?>" data-city="<?php echo $item->city; ?>" class="users-list__item">
           <p class="users-list__item-user"><?php echo $item->surname; ?>
             <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.
           </p>
           <div class="users-list__item-info">
             <p>Должность: <span class="users-list__item-post"><?php echo $item->post; ?></span></p>
             <p>Табельный номер: <span class="users-list__tab-namber"><?php echo $item->tab_number; ?></span></p>
+            <p class="users-list__light-color">Город: <span><?php echo $item->city; ?></span>
+            </p>
           </div>
 
           <div class="users-list__item-buttons">
@@ -265,5 +267,6 @@
       <a href="<?php echo HOST; ?>user-card" class="user-card__back">Вернуться в личный кабинет</a>
     </div>
   </section>
-  <?php endif; ?>
+  <?php
+ endif; ?>
 </main>

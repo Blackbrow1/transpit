@@ -71,8 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
   } catch {}
 
   // Фильтрация всех сотрудников
+  // try {
+  //   showMoreUsers('.users-list__select', '.users-list__item', '.users-list__button');
+  // } catch {}
+
   try {
-    showMoreUsers('.users-list__select', '.users-list__item', '.users-list__button');
+    showMoreUsers('.users-list__select', '.users-list__city-select', '.users-list__item', '.users-list__button');
   } catch {}
 
   try {
