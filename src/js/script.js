@@ -2,7 +2,7 @@ import { addClassItemActive } from './modules/add-class-item-active.js';
 import { trainingPage } from './modules/training-page.js';
 import { securityTrainingData, humanFactorTrainingData } from './modules/trainings-data.js';
 import { getTrainingCounts } from './modules/get-training-counts.js';
-import { showMoreUsers } from './modules/show-more-users.js';
+import { showMoreUsers, showMoreUsersAndYears } from './modules/show-more-users.js';
 import { showMoreProgressCards } from './modules/show-more-progress-cards.js';
 import { setCursorInInput } from './modules/set-cursor-in-input.js';
 import { removeSuccessMessage } from './modules/remove-success-message.js';
@@ -71,16 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
   } catch {}
 
   // Фильтрация всех сотрудников
-  // try {
-  //   showMoreUsers('.users-list__select', '.users-list__item', '.users-list__button');
-  // } catch {}
-
   try {
     showMoreUsers('.users-list__select', '.users-list__city-select', '.users-list__item', '.users-list__button');
   } catch {}
 
   try {
-    showMoreUsers('.users-finished-test__select', '.users-finished-test__item', '.users-finished-test__button');
+    showMoreUsersAndYears('.users-finished-test__select', '.users-finished-test__city-select', '.users-finished-test__year', '.users-finished-test__item', '.users-finished-test__button');
   } catch {}
 
   // Показать следующие 3 результата теста в личном кабинете

@@ -190,8 +190,8 @@
         <div class="users-finished-test__city filter">
           <select class="users-finished-test__city-select" name="users-finished-test-city">
             <option value="" selected>Город</option>
-            <option value="Водитель спецмашины">Санкт-Петербург</option>
-            <option value="Водитель-экспедитор">Москва</option>
+            <option value="Санкт-Петербург">Санкт-Петербург</option>
+            <option value="Москва">Москва</option>
           </select>
 
           <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
@@ -235,12 +235,18 @@
         <?php
         $results = R::findAll('results');
         foreach(array_reverse($results) as $item): ?>
-        <li data-post="<?php echo $item->post; ?>" class="users-finished-test__item">
+        <?php $result = R::findOne('users', 'tab_number = ?', [$item->tab_number]);
+        $year = date('Y', strtotime($item->date));
+        ?>
+
+        <li data-post="<?php echo $item->post; ?>" data-city="<?php echo $result->city; ?>"
+          data-year="<?php echo $year; ?>" class="users-finished-test__item">
           <div class="users-finished-test__user">
             <p class="users-finished-test__user-name"><?php echo $item->surname; ?>
               <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.</p>
             <p class="users-finished-test__user-post">Должность: <span><?php echo $item->post; ?></span></p>
             <p class="users-finished-test__user-number">Табельный номер: <span><?php echo $item->tab_number; ?></span>
+            <p class="users-finished-test__user-city">Город: <span><?php echo $result->city; ?></span>
             </p>
           </div>
 

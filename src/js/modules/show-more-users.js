@@ -197,4 +197,51 @@ function showMoreUsers(selectUsers, selectCities, item, button) {
   applyFilters();
 }
 
-export {showMoreUsers}
+function showMoreUsersAndYears(selectUsers, selectCities, selectYears, item, button) {
+  const usersSelect = document.querySelector(selectUsers);
+  const citiesSelect = document.querySelector(selectCities);
+  const yearsSelect = document.querySelector(selectYears);
+  const usersItems = document.querySelectorAll(item);
+  const usersListButton = document.querySelector(button);
+
+  let visibleUsers = [];
+  let counter = 5;
+
+  function applyFilters() {
+    visibleUsers = Array.from(usersItems).filter(userItem => {
+      const postMatches = usersSelect.value === '' || userItem.dataset.post === usersSelect.value;
+      const cityMatches = citiesSelect.value === '' || userItem.dataset.city === citiesSelect.value;
+      const yearMatches = yearsSelect.value === '' || userItem.dataset.year === yearsSelect.value;
+      return postMatches && cityMatches && yearMatches;
+    });
+
+    renderVisibleUsers(visibleUsers.slice(0, counter));
+    toggleShowMoreButton(visibleUsers.length > counter);
+  }
+
+  function renderVisibleUsers(usersToDisplay) {
+    usersItems.forEach(userItem => {
+      userItem.classList.toggle('remove-elem', !usersToDisplay.includes(userItem));
+    });
+  }
+
+  function toggleShowMoreButton(showButton) {
+    usersListButton.classList.toggle('remove-elem', !showButton);
+  }
+
+  function showMore() {
+    counter += 5;
+    renderVisibleUsers(visibleUsers.slice(0, counter));
+    toggleShowMoreButton(counter < visibleUsers.length);
+  }
+
+  usersSelect.addEventListener('change', applyFilters);
+  citiesSelect.addEventListener('change', applyFilters);
+  yearsSelect.addEventListener('change', applyFilters);
+  usersListButton.addEventListener('click', showMore);
+
+  // Начальная инициализация
+  applyFilters();
+}
+
+export {showMoreUsers, showMoreUsersAndYears}
