@@ -84,15 +84,10 @@
 
 .users-list__item-info {
   p {
-    line-height: 1;
     font-weight: 500;
 
     &:not(:last-of-type) {
-      margin-bottom: 10px;
-    }
-
-    span {
-      line-height: 1;
+      margin-bottom: 5px;
     }
   }
 }
