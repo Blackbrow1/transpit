@@ -72,7 +72,7 @@ if (isset($_POST['add-user'])) {
     $user->name = htmlentities(mb_strtoupper(mb_substr(trim($_POST['name']), 0, 1)) . mb_substr(trim($_POST['name']), 1));
     $user->surname = htmlentities(mb_strtoupper(mb_substr(trim($_POST['surname']), 0, 1)) . mb_substr(trim($_POST['surname']), 1));
     $user->patronymic = htmlentities(mb_strtoupper(mb_substr(trim($_POST['patronymic']), 0, 1)) . mb_substr(trim($_POST['patronymic']), 1));
-    $user->tab_number = htmlentities(trim($_POST['tab-number']));
+    $user->tab_number = htmlentities(strtolower(trim($_POST['tab-number'])));
     $user->post = $_POST['post'];
     $user->city = $_POST['user-city'];
     $user->password = password_hash(htmlentities(trim($_POST['password'])), PASSWORD_DEFAULT);

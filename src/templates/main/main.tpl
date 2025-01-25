@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero__wrap">
 
-      <h1 class="hero__title">Внутренняя система обучения <span>ООО “Транспит Северо-Запад”</span></h1>
+      <h1 class="hero__title">Внутренняя система обучения. <span>Группа компаний “Транспит”</span></h1>
 
       <div class="hero__description">
         <p class="hero__text">Получите ваш логин и пароль от личного кабинета у непосредственного руководителя. Когда
