@@ -179,6 +179,8 @@
       <button class="users-list__button button button--all" type="button">Показать еще</button>
     </div>
   </section>
+  <?php else: header("Location: " . HOST . 'user-card'); ?>
+
   <?php endif; ?>
 
   <?php if($_SESSION['logged_user']['role'] === 'admin' || $_SESSION['logged_user']['role'] === 'watcher'): ?>
