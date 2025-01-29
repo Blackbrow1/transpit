@@ -50,6 +50,7 @@
               $user_results = R::findAll('results', 'tab_number = ?', [$user->tab_number]);
               ?>
 
+              <!-- Обучение водителей -->
               <?php if ($user->post === 'Водитель-экспедитор' || $user->post === 'Водитель автомобиля' || $user->post === 'Водитель автопогрузчика'):
               $found = false;
 
@@ -67,6 +68,7 @@
               <?php endif; ?>
               <?php endif; ?>
 
+              <!-- Обучение супервайзеров -->
               <?php if ($user->post === 'Супервайзер'):
               $found = false;
 
@@ -85,6 +87,8 @@
               <?php endif; ?>
               <?php endif; ?>
 
+              <!-- Обучение для всех -->
+              <!-- Человеческий фактор -->
               <?php
               $found = false;
               foreach ($user_results as $test) {
@@ -101,6 +105,7 @@
               </li>
               <?php endif; ?>
 
+              <!-- Безопасность на перроне -->
               <?php
               $found = false;
               foreach ($user_results as $test) {
