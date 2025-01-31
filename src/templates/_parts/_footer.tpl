@@ -33,7 +33,7 @@
             <?php $user_results = R::findAll('results', 'tab_number = ?', [$user->tab_number]); ?>
 
             <!-- Обучение водителей -->
-            <?php if ($user->post === 'Водитель-экспедитор' || $user->post === 'Водитель автомобиля' || $user->post === 'Водитель автопогрузчика'):
+            <!-- <?php if ($user->post === 'Водитель-экспедитор' || $user->post === 'Водитель автомобиля' || $user->post === 'Водитель автопогрузчика'):
               $found = false;
 
               foreach ($user_results as $test) {
@@ -48,10 +48,10 @@
               <a class="footer__training-link" href="<?php echo HOST; ?>training-1">Обучение водителей</a>
             </li>
             <?php endif; ?>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
             <!-- Обучение супервайзеров -->
-            <?php if ($user->post === 'Супервайзер'):
+            <!-- <?php if ($user->post === 'Супервайзер'):
               $found = false;
 
               foreach ($user_results as $test) {
@@ -67,7 +67,7 @@
                 <?php echo $dateMonth; ?></a>
             </li>
             <?php endif; ?>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
             <!-- Обучение для всех -->
             <!-- Человеческий фактор -->
@@ -141,7 +141,5 @@
 
 <script src="<?php echo HOST; ?>js/index.bundle.js" type="module"></script>
 </body>
-
-
 
 </html>

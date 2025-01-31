@@ -197,10 +197,11 @@ function showMoreUsers(selectUsers, selectCities, item, button) {
   applyFilters();
 }
 
-function showMoreUsersAndYears(selectUsers, selectCities, selectYears, item, button) {
+function showMoreUsersAndYears(selectUsers, selectCities, selectYears, selectResult, item, button) {
   const usersSelect = document.querySelector(selectUsers);
   const citiesSelect = document.querySelector(selectCities);
   const yearsSelect = document.querySelector(selectYears);
+  const resultSelect = document.querySelector(selectResult);
   const usersItems = document.querySelectorAll(item);
   const usersListButton = document.querySelector(button);
 
@@ -212,7 +213,8 @@ function showMoreUsersAndYears(selectUsers, selectCities, selectYears, item, but
       const postMatches = usersSelect.value === '' || userItem.dataset.post === usersSelect.value;
       const cityMatches = citiesSelect.value === '' || userItem.dataset.city === citiesSelect.value;
       const yearMatches = yearsSelect.value === '' || userItem.dataset.year === yearsSelect.value;
-      return postMatches && cityMatches && yearMatches;
+      const resultMatches = resultSelect.value === '' || userItem.dataset.result === resultSelect.value;
+      return postMatches && cityMatches && yearMatches && resultMatches;
     });
 
     renderVisibleUsers(visibleUsers.slice(0, counter));
@@ -238,6 +240,7 @@ function showMoreUsersAndYears(selectUsers, selectCities, selectYears, item, but
   usersSelect.addEventListener('change', applyFilters);
   citiesSelect.addEventListener('change', applyFilters);
   yearsSelect.addEventListener('change', applyFilters);
+  resultSelect.addEventListener('change', applyFilters);
   usersListButton.addEventListener('click', showMore);
 
   // Начальная инициализация

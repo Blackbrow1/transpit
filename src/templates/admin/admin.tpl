@@ -227,12 +227,28 @@
           <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
         </div>
 
-        <div class="users-finished-test__menu filter">
-          <select class="users-finished-test__year" name="users-finished-test" id="post">
+        <div class="users-finished-test__menu-year filter">
+          <select class="users-finished-test__year" name="users-finished-test-year" id="year">
             <option value="" selected>Год</option>
-            <option value="2024">2024</option>
-            <option value="2025">2025</option>
-            <option value="2026">2026</option>
+
+            <?php
+            $currentYear = date('Y');
+            $years = range(2024, $currentYear);
+
+            foreach ($years as $year):
+            ?>
+            <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+            <?php endforeach; ?>
+          </select>
+
+          <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
+
+        <div class="users-finished-test__menu-result filter">
+          <select class="users-finished-test__result" name="users-finished-test-result" id="result">
+            <option value="" selected>Результат</option>
+            <option value="Зачет">Зачет</option>
+            <option value="Незачет">Незачет</option>
           </select>
 
           <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
@@ -248,7 +264,8 @@
         ?>
 
         <li data-post="<?php echo $item->post; ?>" data-city="<?php echo $result->city; ?>"
-          data-year="<?php echo $year; ?>" class="users-finished-test__item">
+          data-year="<?php echo $year; ?>" data-result="<?php echo $item->result_name; ?>"
+          class="users-finished-test__item">
           <div class="users-finished-test__user">
             <p class="users-finished-test__user-name"><?php echo $item->surname; ?>
               <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.</p>
@@ -282,5 +299,6 @@
     </div>
   </section>
   <?php
- endif; ?>
+ endif;
+ ?>
 </main>

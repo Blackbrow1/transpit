@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
   } catch {}
 
   try {
-    showMoreUsersAndYears('.users-finished-test__select', '.users-finished-test__city-select', '.users-finished-test__year', '.users-finished-test__item', '.users-finished-test__button');
+    showMoreUsersAndYears('.users-finished-test__select', '.users-finished-test__city-select', '.users-finished-test__year', '.users-finished-test__result', '.users-finished-test__item', '.users-finished-test__button');
   } catch {}
 
   // Показать следующие 3 результата теста в личном кабинете
