@@ -1201,4 +1201,230 @@ const rpoTrainingData = [
   }
 ];
 
-export {securityTrainingData, humanFactorTrainingData, rpoTrainingData}
+const safetyManagmentSystemTrainingData = [
+  {
+    theme: 'Safety Management System',
+    imgJpg1: 'img/trainings/human-factor/img-1-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-1-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-1-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-1-desktop@2x.webp',
+    paragraph: [
+      '<span class="main-color bold">Safety Management System</span> –  Система Управления Безопасностью Полетов Государственная программа обеспечения безопасности полетов воздушных судов гражданской авиации (утв. распоряжением Правительства РФ от 6 мая 2008 г. N 641-р)',
+      'Безопасность полетов воздушных судов гражданской авиации представляет собой состояние авиационной транспортной системы, при котором риск причинения вреда лицам или нанесения ущерба имуществу снижен до приемлемого уровня и поддерживается на этом либо более низком уровне посредством непрерывного процесса выявления источников опасности и контроля факторов риска.'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-2-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-2-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-2-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-2-desktop@2x.webp',
+    paragraph: [
+      'Система управления безопасностью (Safety Management System, SMS/СУБП) является структурой, регулирующей безопасность (охрана труда и производственная безопасность) в компаниях группы ТРАНСПИТ. Каждый сотрудник является ее частью. Это позволяет осуществлять систематизированный подход к контролю за безопасностью, включая необходимые организационные структуры, отчетность, стандарты и процедуры.',
+      'Пройдя этот тренинг, вы сможете:',
+      '- понять общие положения системы SMS/СУБП',
+      '- перечислить основные компоненты SMS/СУБП',
+      '- осознать важность выявления и обнаружения опасности, вмешательства и информирования',
+      '- перечислить способы отправки отчета о нарушении безопасности и опасных факторах'
+    ]
+  },
+  {
+    theme: 'Руководство, инструкции и требования системы SMS/СУБП берут свою основу из следующих источников:',
+    imgJpg1: 'img/trainings/human-factor/img-3-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-3-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-3-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-3-desktop@2x.webp',
+    paragraph: [
+      'Международные',
+      'Международная Организация Гражданской Авиации (ICAO) – специализированное учреждение ООН, устанавливающее международные нормы гражданской авиации и координирующее её развитие с целью повышения безопасности и эффективности. Стандарты и рекомендации установлены в Приложении 19 к Конвенции ICAO и Руководстве по управлению безопасностью ICAO (ICAO SMM).'
+    ]
+  },
+  {
+    theme: 'Руководство, инструкции и требования системы SMS/СУБП берут свою основу из следующих источников:',
+    imgJpg1: 'img/trainings/human-factor/img-4-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-4-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-4-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-4-desktop@2x.webp',
+    paragraph: [
+      'Национальные',
+      'ОАЭ: Главное Управление гражданской авиации (GCAA) является государственным регулятивным органом ОАЭ. Оно публикует положения SMS в параграфе Х Положения о гражданской авиации ОАЭ (CAR).',
+      'РФ: "Воздушный кодекс Российской Федерации" от 19.03.1997 N 60-ФЗ Распоряжение Правительства РФ от 6 мая 2008 г. № 641-р'
+    ]
+  },
+  {
+    theme: 'Руководство, инструкции и требования системы SMS/СУБП берут свою основу из следующих источников:',
+    imgJpg1: 'img/trainings/human-factor/img-5-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-5-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-5-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-5-desktop@2x.webp',
+    paragraph: [
+      'Производственные',
+      'TRANSPIT: В руководстве по SMS группы «ТРАНСПИТ» изложен подход компании к управлению безопасностью. Руководство по SMS доступно всем сотрудникам.',
+      'SOVEX: “Положение о системе управления промышленной безопасностью дочернего зависимого общества” ГазпромНефть СК-08.60.01 Руководство Системы управления безопасностью полетов АО «Совекс»'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-6-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-6-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-6-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-6-desktop@2x.webp',
+    paragraph: [
+      'Система SMS/СУБП группы «ТРАНСПИТ» состоит из четырех компонентов:',
+      '1. Обеспечение безопасности полетов',
+      '2. Популяризация СУБП',
+      '3. Управление факторами риска для безопасности полетов',
+      '4. Политика и цели в области обеспечения безопасности полетов'
+    ]
+  },
+  {
+    theme: 'Политика и цели в области обеспечения безопасности полетов',
+    imgJpg1: 'img/trainings/human-factor/img-7-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-7-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-7-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-7-desktop@2x.webp',
+    paragraph: [
+      'Данный компонент выделяет принципы, процессы и методы системы управления безопасностью SMS, а также обозначает желаемые результаты.',
+      'Состоит из пяти элементов:',
+      '- Обязательства и ответственность руководства',
+      '- Ответственность за обеспечение безопасность полетов',
+      '- Назначение ведущих сотрудников, ответственных за безопасность полетов',
+      '- Координация плана мероприятий на случай аварийной ситуации',
+      '- Документация СУБП'
+    ]
+  },
+  {
+    theme: 'Обеспечение безопасности полетов',
+    imgJpg1: 'img/trainings/human-factor/img-8-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-8-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-8-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-8-desktop@2x.webp',
+    paragraph: [
+      'Данный компонент состоит из процессов и действий, позволяющих определить, достигнута ли цель, поставленная системой SMS/СУБП. Это достигается путем постоянного мониторинга и собственного / внутреннего аудита.',
+      'Состоит из трех элементов:',
+      '- Мониторинг и измерение показателей эффективности обеспечения безопасности полетов',
+      '- Контролирование осуществления изменений',
+      '- Постоянное совершенствование СУБП/SMS'
+    ]
+  },
+  {
+    theme: 'Популяризация безопасности полетов',
+    imgJpg1: 'img/trainings/human-factor/img-9-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-9-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-9-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-9-desktop@2x.webp',
+    paragraph: [
+      'Цель данного компонента – непрерывное совершенствование культуры безопасности в организации, а также необходимое информирование и инструктаж персонала в соответствии с занимаемой должностью.',
+      'Состоит из двух компонентов:',
+      '- Инструктаж и обучение',
+      '- Обмен информацией о безопасности полетов'
+    ]
+  },
+  {
+    theme: 'Управление факторами риска для безопасности полетов',
+    imgJpg1: 'img/trainings/human-factor/img-10-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-10-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-10-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-10-desktop@2x.webp',
+    paragraph: [
+      'Данный компонент обеспечивает систематический контроль рисков, угроз безопасности, а также средств предотвращения соответствующих негативных последствий.',
+      'Состоит из двух элементов:',
+      '- Выявление опасных факторов',
+      '- Оценка и уменьшение факторов риска для безопасности полетов'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-11-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-11-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-11-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-11-desktop@2x.webp',
+    paragraph: [
+      'Являясь поставщиками для большого числа авиакомпаний, вы несете ответственность за безопасность ваших коллег и клиентов. <span class="unsuccess">Ваша задача</span> – способствовать тому, чтобы безопасность на рабочем месте была соблюдена.',
+      'Вы должны знать о том, что происходит вокруг вас. Обращайте внимание на опасность.  Убедитесь, что ваше действие или бездействие не приведет к чрезвычайной ситуации.'
+    ]
+  },
+  {
+    theme: 'Соблюдение техники безопасности на рабочем месте',
+    imgJpg1: 'img/trainings/human-factor/img-12-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-12-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-12-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-12-desktop@2x.webp',
+    paragraph: [
+      'Многие подразделения имеют свои стандартизированные производственные инструкции, их сотрудники проходят специальный инструктаж по технике безопасности, промышленной безопасности и охране труда. В процессе повседневной работы персонал должен убедиться, что:',
+      '1. Все действия производятся с соблюдением техники безопасности.',
+      '2. В ситуациях, ограниченных по времени, решения, принимаемые персоналом, должны быть направлены на минимизацию рисков возникновения угроз безопасности, а также основаны на соблюдении Производственных инструкций и правил инструктажа по безопасности. В случае возникновения опасности следует прекратить выполняемые действия либо предпринять оценку угроз безопасности.',
+      '3. Об обнаружении опасного фактора и нарушениях техники безопасности должно быть составлено сообщение.'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-13-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-13-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-13-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-13-desktop@2x.webp',
+    paragraph: [
+      'Эффективное и своевременное информирование об опасности и нарушениях техники безопасности является важной частью системы контроля безопасности. Отчет о безопасности позволит своевременно приять меры, ликвидировать опасность и сократить риски.',
+      'Фундаментальной составляющей СУБП является своевременное и детальное предоставление информации, касающейся угроз безопасности, риска возникновения несчастных случаев и чрезвычайных ситуаций. Сообщите вашему начальнику смены или руководителю о рисках возникновения угроз безопасности на рабочем месте.'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-14-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-14-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-14-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-14-desktop@2x.webp',
+    paragraph: [
+      'Добровольное сообщение о фактах, негативно влияющих на безопасность, может подать любой работник организации, работники взаимодействующих организаций и авиакомпаний.'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-15-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-15-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-15-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-15-desktop@2x.webp',
+    paragraph: [
+      'Добровольное сообщение может подаваться:',
+      '- в устной форме по телефону начальника смены: +7 (981) 715-43-19',
+      '- в письменной форме по электронной почте: transpit@transpit.ru',
+      '- в письменной форме по адресу 196210, Санкт-Петербург, ул. Пилотов, д. 8 лит. А'
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-16-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-16-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-16-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-16-desktop@2x.webp',
+    paragraph: [
+      'Добровольное анонимное сообщение может подаваться:',
+      '- в устной форме  по телефону начальника смены: +7 (981) 715-43-19',
+      '- в письменной форме  в специально определенные и маркированный почтовый ящик на территории ООО «ТРАНСПИТ СЕВЕРО-ЗАПАД» (Санкт-Петербург, Пулковское шоссе, д. 8 лит. А) рядом с пандусом погрузки службы логистики.',
+      '- Бланки заявлений об опасном факторе для безопасности полетов хранятся в кабинете начальника смены службы логистики, а пример заявления можно найти на информационном стенде (Санкт-Петербург, Пулковское шоссе, д. 8 лит. А).'
+    ]
+  },
+  {
+    theme: 'Расположение почтового ящика и бланка заявления',
+    imgJpg1: 'img/trainings/human-factor/img-17-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-17-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-17-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-17-desktop@2x.webp',
+    paragraph: [
+      ''
+    ]
+  },
+  {
+    theme: '',
+    imgJpg1: 'img/trainings/human-factor/img-18-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/human-factor/img-18-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/human-factor/img-18-desktop@1x.webp',
+    imgWebp2: 'img/trainings/human-factor/img-18-desktop@2x.webp',
+    paragraph: [
+      '«Помните, где бы вы ни работали: если вы увидели опасность, сообщите о ней. Предотвратите несчастный случай своими действиями. Безопасность – это ваша ответственность; безопасность – в ваших руках.»',
+      'Гайдукович Д.Г. (Генеральный директор)'
+    ]
+  }
+];
+
+export {securityTrainingData, humanFactorTrainingData, rpoTrainingData, safetyManagmentSystemTrainingData}
