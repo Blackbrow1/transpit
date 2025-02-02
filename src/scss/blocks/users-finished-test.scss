@@ -15,6 +15,7 @@
 
 .users-finished-test__filter {
   display: flex;
+  justify-content: flex-start;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -76,6 +77,15 @@
 .users-finished-test__user-number,
 .users-finished-test__user-post {
   margin-bottom: 5px;
+}
+
+.users-finished-test__download {
+  margin-left: auto;
+  margin-bottom: 0;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 10px;
+  width: auto;
 }
 
 .users-finished-test__button {

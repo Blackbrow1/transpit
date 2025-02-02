@@ -105,6 +105,59 @@ window.addEventListener('DOMContentLoaded', () => {
   try {
     addFileMessage();
   } catch {}
+
+
+  //////////////////////////////////////
+
+  document.getElementById('download-pdf').addEventListener('click', () => {
+    const items = document.querySelectorAll('.users-finished-test__item');
+    let results = [];
+
+    items.forEach(item => {
+        const post = item.dataset.post;
+        const city = item.dataset.city;
+        const year = item.dataset.year;
+        const result = item.dataset.result;
+        const userName = item.querySelector('.users-finished-test__user-name').textContent.trim();
+        const tabNumber = item.querySelector('.users-finished-test__user-number span').textContent.trim();
+        const testName = item.querySelector('.users-finished-test__program').textContent.trim();
+        const date = item.querySelector('.users-finished-test__date').textContent.trim();
+
+        results.push({
+            userName,
+            post,
+            tabNumber,
+            city,
+            testName,
+            date,
+            result
+        });
+    });
+
+    // Отправляем данные на сервер для генерации PDF
+    sendDataToServer(results);
+});
+
+function sendDataToServer(data) {
+    fetch('generate-pdf.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ results: data })
+    }).then(response => response.blob())
+      .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = 'results.pdf'; // Имя файла для скачивания
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+      });
+}
+
 });
 
 
@@ -113,67 +166,67 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //////////////////////////////////////
 // Фильтрация по году
-function showMoreDate(select, item, button) {
-  const usersSelect = document.querySelector(select);
-  const usersItems = document.querySelectorAll(item);
-  const usersListButton = document.querySelector(button);
+// function showMoreDate(select, item, button) {
+//   const usersSelect = document.querySelector(select);
+//   const usersItems = document.querySelectorAll(item);
+//   const usersListButton = document.querySelector(button);
 
-  let visibleUsers = [];
-  let counter = 5;
+//   let visibleUsers = [];
+//   let counter = 5;
 
-  for (let i = 0; i < usersItems.length; i++) {
-    visibleUsers.push(usersItems[i]);
-  }
+//   for (let i = 0; i < usersItems.length; i++) {
+//     visibleUsers.push(usersItems[i]);
+//   }
 
-  usersItems.forEach((item, index) => {
-    if (index >= counter) {
-      item.classList.add('remove-elem');
-    }
-  });
+//   usersItems.forEach((item, index) => {
+//     if (index >= counter) {
+//       item.classList.add('remove-elem');
+//     }
+//   });
 
-  usersSelect.addEventListener('change', () => {
-    usersListButton.classList.remove('remove-elem');
-    visibleUsers = [];
-    counter = 5;
+//   usersSelect.addEventListener('change', () => {
+//     usersListButton.classList.remove('remove-elem');
+//     visibleUsers = [];
+//     counter = 5;
 
-    for (let i = 0; i < usersItems.length; i++) {
-      const [, , year] = usersItems[i].querySelector('.users-finished-test__date').textContent.split('.')
-      console.log(year);
-      if (usersSelect.value === '' || usersSelect.value === year) {
-        visibleUsers.push(usersItems[i]);
+//     for (let i = 0; i < usersItems.length; i++) {
+//       const [, , year] = usersItems[i].querySelector('.users-finished-test__date').textContent.split('.')
+//       console.log(year);
+//       if (usersSelect.value === '' || usersSelect.value === year) {
+//         visibleUsers.push(usersItems[i]);
 
-        if (visibleUsers.length <= counter) {
-          usersItems[i].classList.remove('remove-elem');
-        } else {
-          usersItems[i].classList.add('remove-elem');
-        }
-      } else {
-          usersItems[i].classList.add('remove-elem');
-      }
-    }
+//         if (visibleUsers.length <= counter) {
+//           usersItems[i].classList.remove('remove-elem');
+//         } else {
+//           usersItems[i].classList.add('remove-elem');
+//         }
+//       } else {
+//           usersItems[i].classList.add('remove-elem');
+//       }
+//     }
 
-    if (visibleUsers.length < counter) {
-      usersListButton.classList.add('remove-elem');
-    } else {
-      usersListButton.classList.remove('remove-elem');
-    }
-  });
+//     if (visibleUsers.length < counter) {
+//       usersListButton.classList.add('remove-elem');
+//     } else {
+//       usersListButton.classList.remove('remove-elem');
+//     }
+//   });
 
-  usersListButton.addEventListener('click', () => {
-    counter += 5;
+//   usersListButton.addEventListener('click', () => {
+//     counter += 5;
 
-    visibleUsers.forEach((item, index) => {
-      if (index < counter) {
-        item.classList.remove('remove-elem');
-      }
+//     visibleUsers.forEach((item, index) => {
+//       if (index < counter) {
+//         item.classList.remove('remove-elem');
+//       }
 
-      if (counter >= visibleUsers.length) {
-        usersListButton.classList.add('remove-elem');
-      }
-    });
-  });
-}
+//       if (counter >= visibleUsers.length) {
+//         usersListButton.classList.add('remove-elem');
+//       }
+//     });
+//   });
+// }
 
-try {
-  showMoreDate('.users-finished-test__year', '.users-finished-test__item', '.users-finished-test__button')
-} catch {}
+// try {
+//   showMoreDate('.users-finished-test__year', '.users-finished-test__item', '.users-finished-test__button')
+// } catch {}

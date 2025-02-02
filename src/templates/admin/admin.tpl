@@ -253,6 +253,8 @@
 
           <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
         </div>
+
+        <button id="download-pdf" class="users-finished-test__download button">Скачать результаты в PDF</button>
       </div>
 
       <ul class="users-finished-test__list">

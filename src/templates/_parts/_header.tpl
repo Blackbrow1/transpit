@@ -156,5 +156,4 @@
       <?php endif; ?>
     </div>
 
-
   </header>
