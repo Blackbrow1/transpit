@@ -1,5 +1,5 @@
 // Безопасность на перроне
-const airsideSafetyRadioData = ['answer-2-3', 'answer-3-1', 'answer-4-1', 'answer-5-4', 'answer-6-1', 'answer-8-2', 'answer-10-1', 'answer-11-1', 'answer-12-2', 'answer-13-2', 'answer-14-2', 'answer-15-3', 'answer-16-3'];
+const airsideSafetyRadioData = ['answer-2-3', 'answer-3-1', 'answer-4-1', 'answer-5-4', 'answer-6-1', 'answer-8-2', 'answer-10-1', 'answer-11-2', 'answer-12-2', 'answer-13-1', 'answer-14-2', 'answer-15-3', 'answer-16-3'];
 
 const airsideSafetyCheckboxData = ['answer-1-1', 'answer-7-4', 'answer-9-4', 'answer-17-2', 'answer-18-4'];
 

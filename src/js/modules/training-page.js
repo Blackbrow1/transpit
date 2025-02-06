@@ -69,7 +69,7 @@ function trainingPage(trainListData, id) {
         btnNext.disabled = true;
         btnNext.style.cursor = 'default';
       }
-    }, );
+    }, 15000);
 
     if (currentActiveIndex < trainListData.length) {
       trainingInfo.innerHTML = '';
