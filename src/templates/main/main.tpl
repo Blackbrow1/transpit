@@ -35,7 +35,7 @@
     </div>
   </section>
 
-  <sec class="information">
+  <section class="information">
     <div class="information__wrap">
       <h2 class="information__title">О внутреннем обучении в компании</h2>
 
@@ -60,5 +60,5 @@
         </div>
       </div>
     </div>
-  </sec tion>
+  </section>
 </main>
