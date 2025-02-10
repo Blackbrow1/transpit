@@ -52,4 +52,19 @@ const humanFactorRadioData = ['answer-1-2', 'answer-2-1', 'answer-3-3', 'answer-
 
 const humanFactorCheckboxData = ['answer-5-3'];
 
-export {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData}
+// RPO
+const rpoRadioData = ['answer-1-1', 'answer-2-2', 'answer-3-2', 'answer-4-1', 'answer-5-2', 'answer-6-2', 'answer-7-1', 'answer-8-3'];
+
+const rpoCheckboxData = ['answer-9-3', 'answer-10-1'];
+
+// SMS
+const safetyManagmentSystemRadioData = ['answer-5-2', 'answer-8-3'];
+
+const safetyManagmentSystemCheckboxData = ['answer-1-1', 'answer-1-2', 'answer-1-3', 'answer-2-2', 'answer-2-3', 'answer-3-1', 'answer-3-2', 'answer-3-3', 'answer-4-1', 'answer-6-1', 'answer-6-2', 'answer-6-3', 'answer-7-1', 'answer-7-3', 'answer-7-5', 'answer-9-1', 'answer-9-2', 'answer-9-3', 'answer-10-1', 'answer-10-2', 'answer-10-3'];
+
+// GSE
+const gseRadioData = ['answer-1-2', 'answer-3-1', 'answer-4-2', 'answer-5-1', 'answer-7-2', 'answer-8-1', 'answer-9-2', 'answer-10-3'];
+
+const gseCheckboxData = ['answer-2-2', 'answer-6-2'];
+
+export {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData, rpoRadioData, rpoCheckboxData, safetyManagmentSystemRadioData, safetyManagmentSystemCheckboxData, gseRadioData, gseCheckboxData}

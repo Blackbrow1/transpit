@@ -113,7 +113,7 @@
     <div class="users-list__wrap">
       <h2 class="users-list__title h2">Список всех сотрудников</h2>
 
-      <div class="users-list__menu filter">
+      <div class="users-list__menu">
         <div class="users-list__city filter">
           <select class="users-list__city-select" name="users-list-city">
             <option value="" selected>Город</option>
@@ -126,7 +126,7 @@
 
         <div class="users-list__all-users filter">
           <select class="users-list__select" name="users-list-post">
-            <option value="" selected>Все сотрудники</option>
+            <option value="" selected>Должность</option>
             <option value="Водитель спецмашины">Водитель спецмашины</option>
             <option value="Водитель-экспедитор">Водитель-экспедитор</option>
             <option value="Водитель автомобиля">Водитель автомобиля</option>
@@ -147,13 +147,31 @@
 
           <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
         </div>
+
+        <div class="users-list__all-user-names filter">
+          <select class="users-list__names-select" name="users-list-names">
+            <option value="" selected>ФИО</option>
+
+            <?php $users = R::findAll('users');
+             foreach(array_reverse($users) as $item): ?>
+            <option
+              value="<?php echo $item->surname; ?> <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.">
+              <?php echo $item->surname; ?> <?php echo mb_substr($item->name, 0, 1); ?>.
+              <?php echo mb_substr($item->patronymic, 0, 1); ?>.</option>
+            <?php endforeach; ?>
+          </select>
+
+          <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
       </div>
 
       <ul class="users-list__list">
         <?php
         $users = R::findAll('users');
         foreach(array_reverse($users) as $item): ?>
-        <li data-post="<?php echo $item->post; ?>" data-city="<?php echo $item->city; ?>" class="users-list__item">
+        <li data-post="<?php echo $item->post; ?>" data-city="<?php echo $item->city; ?>"
+          data-name="<?php echo $item->surname; ?> <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>."
+          class="users-list__item">
           <p class="users-list__item-user"><?php echo $item->surname; ?>
             <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.
           </p>
@@ -205,7 +223,7 @@
 
         <div class="users-finished-test__menu filter">
           <select class="users-finished-test__select" name="users-finished-test" id="post">
-            <option value="" selected>Все сотрудники</option>
+            <option value="" selected>Должность</option>
             <option value="Водитель спецмашины">Водитель спецмашины</option>
             <option value="Водитель-экспедитор">Водитель-экспедитор</option>
             <option value="Водитель автомобиля">Водитель автомобиля</option>
@@ -227,9 +245,25 @@
           <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
         </div>
 
+        <div class="users-finished-test__all-user-names filter">
+          <select class="users-finished-test__names-select" name="users-finished-test-names">
+            <option value="" selected>ФИО</option>
+
+            <?php $users = R::findAll('users');
+             foreach(array_reverse($users) as $item): ?>
+            <option
+              value="<?php echo $item->surname; ?> <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.">
+              <?php echo $item->surname; ?> <?php echo mb_substr($item->name, 0, 1); ?>.
+              <?php echo mb_substr($item->patronymic, 0, 1); ?>.</option>
+            <?php endforeach; ?>
+          </select>
+
+          <img class="filter__img" width="19" height="10" src="../../img/icons/user-menu-btn.svg" alt="Открыть меню">
+        </div>
+
         <div class="users-finished-test__menu-year filter">
           <select class="users-finished-test__year" name="users-finished-test-year" id="year">
-            <option value="" selected>Год</option>
+            <option value="">Год</option>
 
             <?php
             $currentYear = date('Y');
@@ -237,7 +271,8 @@
 
             foreach ($years as $year):
             ?>
-            <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+            <option value="<?php echo $year; ?>" <?php if($year == $currentYear) {echo 'selected';} ?>>
+              <?php echo $year; ?></option>
             <?php endforeach; ?>
           </select>
 
@@ -266,6 +301,7 @@
         ?>
 
         <li data-post="<?php echo $item->post; ?>" data-city="<?php echo $result->city; ?>"
+          data-name="<?php echo $item->surname; ?> <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>."
           data-year="<?php echo $year; ?>" data-result="<?php echo $item->result_name; ?>"
           class="users-finished-test__item">
           <div class="users-finished-test__user">

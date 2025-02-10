@@ -1,5 +1,5 @@
 <?php
-$title = 'Страница тестирования | Транспит';
+$title = 'Тест "Безопасность на перроне" | Транспит';
 
 if (isset($uriArray[1])) {
   $user = R::load('users', $uriArray[1]);

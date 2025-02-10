@@ -143,9 +143,10 @@
 //   });
 // }
 
-function showMoreUsers(selectUsers, selectCities, item, button) {
+function showMoreUsers(selectUsers, selectCities, selectNames, item, button) {
   const usersSelect = document.querySelector(selectUsers);
   const citiesSelect = document.querySelector(selectCities);
+  const namesSelect = document.querySelector(selectNames);
   const usersItems = document.querySelectorAll(item);
   const usersListButton = document.querySelector(button);
 
@@ -156,7 +157,8 @@ function showMoreUsers(selectUsers, selectCities, item, button) {
     visibleUsers = Array.from(usersItems).filter(userItem => {
       const postMatches = usersSelect.value === '' || userItem.dataset.post === usersSelect.value;
       const cityMatches = citiesSelect.value === '' || userItem.dataset.city === citiesSelect.value;
-      return postMatches && cityMatches;
+      const namesMatches = namesSelect.value === '' || userItem.dataset.name === namesSelect.value;
+      return postMatches && cityMatches && namesMatches;
     });
 
     renderVisibleUsers(visibleUsers.slice(0, counter));
@@ -191,15 +193,17 @@ function showMoreUsers(selectUsers, selectCities, item, button) {
 
   usersSelect.addEventListener('change', applyFilters);
   citiesSelect.addEventListener('change', applyFilters);
+  namesSelect.addEventListener('change', applyFilters);
   usersListButton.addEventListener('click', showMore);
 
   // Начальная инициализация
   applyFilters();
 }
 
-function showMoreUsersAndYears(selectUsers, selectCities, selectYears, selectResult, item, button) {
+function showMoreUsersAndYears(selectUsers, selectCities, selectNames, selectYears, selectResult, item, button) {
   const usersSelect = document.querySelector(selectUsers);
   const citiesSelect = document.querySelector(selectCities);
+  const namesSelect = document.querySelector(selectNames);
   const yearsSelect = document.querySelector(selectYears);
   const resultSelect = document.querySelector(selectResult);
   const usersItems = document.querySelectorAll(item);
@@ -212,9 +216,10 @@ function showMoreUsersAndYears(selectUsers, selectCities, selectYears, selectRes
     visibleUsers = Array.from(usersItems).filter(userItem => {
       const postMatches = usersSelect.value === '' || userItem.dataset.post === usersSelect.value;
       const cityMatches = citiesSelect.value === '' || userItem.dataset.city === citiesSelect.value;
+      const namesMatches = namesSelect.value === '' || userItem.dataset.name === namesSelect.value;
       const yearMatches = yearsSelect.value === '' || userItem.dataset.year === yearsSelect.value;
       const resultMatches = resultSelect.value === '' || userItem.dataset.result === resultSelect.value;
-      return postMatches && cityMatches && yearMatches && resultMatches;
+      return postMatches && cityMatches && namesMatches && yearMatches && resultMatches;
     });
 
     renderVisibleUsers(visibleUsers.slice(0, counter));
@@ -239,6 +244,7 @@ function showMoreUsersAndYears(selectUsers, selectCities, selectYears, selectRes
 
   usersSelect.addEventListener('change', applyFilters);
   citiesSelect.addEventListener('change', applyFilters);
+  namesSelect.addEventListener('change', applyFilters);
   yearsSelect.addEventListener('change', applyFilters);
   resultSelect.addEventListener('change', applyFilters);
   usersListButton.addEventListener('click', showMore);
