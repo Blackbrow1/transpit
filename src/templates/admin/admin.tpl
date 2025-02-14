@@ -289,7 +289,7 @@
           <img class="filter__img" width="19" height="10" src="./img/icons/user-menu-btn.svg" alt="Открыть меню">
         </div>
 
-        <button id="download-pdf" class="users-finished-test__download button">Скачать результаты в PDF</button>
+        <button class="users-finished-test__download button" id="downloadCsvButton">Скачать результаты</button>
       </div>
 
       <ul class="users-finished-test__list">
@@ -303,7 +303,7 @@
         <li data-post="<?php echo $item->post; ?>" data-city="<?php echo $result->city; ?>"
           data-name="<?php echo $item->surname; ?> <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>."
           data-year="<?php echo $year; ?>" data-result="<?php echo $item->result_name; ?>"
-          class="users-finished-test__item">
+          data-percent="<?php echo $item->percent; ?>" class="users-finished-test__item">
           <div class="users-finished-test__user">
             <p class="users-finished-test__user-name"><?php echo $item->surname; ?>
               <?php echo mb_substr($item->name, 0, 1); ?>. <?php echo mb_substr($item->patronymic, 0, 1); ?>.</p>
