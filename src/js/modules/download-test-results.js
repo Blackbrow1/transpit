@@ -113,10 +113,11 @@ function downloadTestResults(selectUsers, selectCities, selectNames, selectYears
     // Начальная инициализация
     applyFilters();
 
-    let rows = [['ФИО', 'Должность', 'Город', 'Дата', 'Программа', 'Процент', 'Результат']];
+    let rows = [['ФИО', 'Должность', 'Табельный номер', 'Город', 'Дата', 'Программа', 'Процент', 'Результат']];
 
     visibleUsers.forEach(item => {
          const post = item.dataset.post;
+         const tabNumber = item.dataset.tabnumber.slice(0, -4);
          const city = item.dataset.city;
          const name = item.dataset.name;
          const resPercent = item.dataset.percent;
@@ -127,7 +128,7 @@ function downloadTestResults(selectUsers, selectCities, selectNames, selectYears
          const dateText = item.querySelector('.users-finished-test__date').textContent.trim();
 
          // Добавляем данные в массив
-         rows.push([name, post, city, dateText, programText, resPercent, result]);
+         rows.push([name, post, tabNumber, city, dateText, programText, resPercent, result]);
      });
 
      // Формируем строку CSV
