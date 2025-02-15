@@ -109,10 +109,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   // Скачать результаты тестов
-  try {
-    downloadTestResults();
-  } catch {
+  // try {
+  //   downloadTestResults();
+  // } catch {}
 
-  }
+  try {
+    downloadTestResults('.users-finished-test__select', '.users-finished-test__city-select', '.users-finished-test__names-select', '.users-finished-test__year', '.users-finished-test__result', '.users-finished-test__item', '#downloadCsvButton');
+  } catch {}
 });
 
