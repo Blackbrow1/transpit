@@ -105,6 +105,23 @@
               </li>
               <?php endif; ?>
 
+              <!-- РПО -->
+              <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'РПО и правила маневрирования в зоне стоянки ВС ' . $dateMonth && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+              <li class="header__training-item">
+                <a class="header__training-link" href="<?php echo HOST; ?>training-rpo">РПО и правила маневрирования в
+                  зоне стоянки ВС <?php echo $dateMonth; ?></a>
+              </li>
+              <?php endif; ?>
+
               <!-- Безопасность на перроне -->
               <?php
               $found = false;
@@ -155,5 +172,6 @@
       </div>
       <?php endif; ?>
     </div>
+
 
   </header>

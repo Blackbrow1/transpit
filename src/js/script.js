@@ -1,6 +1,6 @@
 import { addClassItemActive } from './modules/add-class-item-active.js';
 import { trainingPage } from './modules/training-page.js';
-import { securityTrainingData, humanFactorTrainingData } from './modules/trainings-data.js';
+import { securityTrainingData, humanFactorTrainingData, rpoTrainingData } from './modules/trainings-data.js';
 import { getTrainingCounts } from './modules/get-training-counts.js';
 import { showMoreUsers, showMoreUsersAndYears } from './modules/show-more-users.js';
 import { showMoreProgressCards } from './modules/show-more-progress-cards.js';
@@ -9,7 +9,7 @@ import { removeSuccessMessage } from './modules/remove-success-message.js';
 import { deleteUser } from './modules/delete-user.js';
 import { addFileMessage } from './modules/add-file-message.js';
 
-import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData} from './modules/testes-data.js';
+import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData, rpoRadioData, rpoCheckboxData} from './modules/testes-data.js';
 import { showTestTime } from './modules/show-test-time.js';
 import { getTestResult } from './modules/test-result.js';
 import { getRandomAnswers } from './modules/get-random-answers.js';
@@ -49,13 +49,27 @@ window.addEventListener('DOMContentLoaded', () => {
     showTestTime('#human-factor', resultsTestHumanFactor, 1000 * 60 * 7); // 7
   } catch {}
 
-  // Обучающая страница Безопасность на перроне
+  try {
+    // Вывести рандомно 10 вопросов
+    getRandomAnswers('#rpo', '.test__list', '.test__item', 10);
+
+    // Получить результаты теста
+    const resultsTestRPO = getTestResult('#rpo', rpoRadioData, rpoCheckboxData, 10, 8);
+
+    showTestTime('#rpo', resultsTestRPO, 1000 * 60 * 7); // 7
+  } catch {}
+
+  // Обучающая страница
   try {
     trainingPage(securityTrainingData, '#training-security-safety');
   } catch {console.log('Ошибка Обучающая страница');}
 
   try {
     trainingPage(humanFactorTrainingData, '#training-human-factor');
+  } catch {console.log('Ошибка Обучающая страница');}
+
+  try {
+    trainingPage(rpoTrainingData, '#training-rpo');
   } catch {console.log('Ошибка Обучающая страница');}
 
   try {
@@ -107,6 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
     addFileMessage();
   } catch {}
 
+  // Скачать результаты всех сотрудников
   try {
     downloadTestResults('.users-finished-test__select', '.users-finished-test__city-select', '.users-finished-test__names-select', '.users-finished-test__year', '.users-finished-test__result', '.users-finished-test__item', '#downloadCsvButton');
   } catch {}

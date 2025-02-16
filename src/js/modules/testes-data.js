@@ -53,7 +53,7 @@ const humanFactorRadioData = ['answer-1-2', 'answer-2-1', 'answer-3-3', 'answer-
 const humanFactorCheckboxData = ['answer-5-3'];
 
 // RPO
-const rpoRadioData = ['answer-1-1', 'answer-2-2', 'answer-3-2', 'answer-4-1', 'answer-5-2', 'answer-6-2', 'answer-7-1', 'answer-8-3'];
+const rpoRadioData = ['answer-1-2', 'answer-2-2', 'answer-3-2', 'answer-4-1', 'answer-5-2', 'answer-6-2', 'answer-7-1', 'answer-8-3'];
 
 const rpoCheckboxData = ['answer-9-3', 'answer-10-1'];
 
