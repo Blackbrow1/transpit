@@ -122,6 +122,23 @@
               </li>
               <?php endif; ?>
 
+              <!-- GSE -->
+              <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Основы безопасности ПРР и использования средств Механизации ' . $dateMonth && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+              <li class="header__training-item">
+                <a class="header__training-link" href="<?php echo HOST; ?>training-gse">Основы безопасности ПРР и
+                  использования средств Механизации <?php echo $dateMonth; ?></a>
+              </li>
+              <?php endif; ?>
+
               <!-- Безопасность на перроне -->
               <?php
               $found = false;
@@ -189,6 +206,7 @@
       </div>
       <?php endif; ?>
     </div>
+
 
 
 

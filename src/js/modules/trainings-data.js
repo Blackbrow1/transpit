@@ -1428,7 +1428,7 @@ const smsTrainingData = [
   }
 ];
 
-const GSEtrainingData = [
+const gseTrainingData = [
   {
     theme: 'Введение:',
     imgJpg1: 'img/trainings/human-factor/img-1-desktop@1x.jpg',
@@ -1710,4 +1710,4 @@ const GSEtrainingData = [
   }
 ];
 
-export {securityTrainingData, humanFactorTrainingData, rpoTrainingData, smsTrainingData, GSEtrainingData}
+export {securityTrainingData, humanFactorTrainingData, rpoTrainingData, smsTrainingData, gseTrainingData}
