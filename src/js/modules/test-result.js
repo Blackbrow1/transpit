@@ -133,7 +133,7 @@ function getTestResult(testId, answersDataRadio, answersData, MAX_QUESTIONS, MIN
 
     const formData = new FormData(); // собираем данные из формы
 
-    formData.append('test_name', document.querySelector('.test__main-title').textContent);
+    formData.append('test_name', document.querySelector('.test__main-title').textContent.trim());
     formData.append('answ_count', sum);
     formData.append('percent', Math.round((sum / MAX_QUESTIONS) * 100));
     formData.append('result_name', sum < MIN_QUESTIONS_ACCESS ? 'Незачет' : 'Зачет');

@@ -1,7 +1,8 @@
 <main>
   <section id="rpo" class="test">
-    <h1 class="test__main-title visually-hidden">РПО и правила маневрирования в зоне стоянки ВС
-      <?php echo $dateMonth; ?></h1>
+    <h1 class="test__main-title visually-hidden">
+      РПО и правила маневрирования в зоне стоянки ВС <?php echo $dateMonth; ?>
+    </h1>
     <div class="test__wrap">
       <form class="test__form">
         <ul class="test__list">

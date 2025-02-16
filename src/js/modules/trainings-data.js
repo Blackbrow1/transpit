@@ -1202,7 +1202,7 @@ const rpoTrainingData = [
   }
 ];
 
-const safetyManagmentSystemTrainingData = [
+const smsTrainingData = [
   {
     theme: 'Safety Management System',
     imgJpg1: 'img/trainings/human-factor/img-1-desktop@1x.jpg',
@@ -1210,7 +1210,7 @@ const safetyManagmentSystemTrainingData = [
     imgWebp1: 'img/trainings/human-factor/img-1-desktop@1x.webp',
     imgWebp2: 'img/trainings/human-factor/img-1-desktop@2x.webp',
     paragraph: [
-      '<span class="main-color bold">Safety Management System</span> –  Система Управления Безопасностью Полетов Государственная программа обеспечения безопасности полетов воздушных судов гражданской авиации (утв. распоряжением Правительства РФ от 6 мая 2008 г. N 641-р)',
+      '<span class="main-color text-size-26">Safety Management System</span> –  Система Управления Безопасностью Полетов Государственная программа обеспечения безопасности полетов воздушных судов гражданской авиации (утв. распоряжением Правительства РФ от 6 мая 2008 г. N 641-р)',
       'Безопасность полетов воздушных судов гражданской авиации представляет собой состояние авиационной транспортной системы, при котором риск причинения вреда лицам или нанесения ущерба имуществу снижен до приемлемого уровня и поддерживается на этом либо более низком уровне посредством непрерывного процесса выявления источников опасности и контроля факторов риска.'
     ]
   },
@@ -1236,7 +1236,7 @@ const safetyManagmentSystemTrainingData = [
     imgWebp1: 'img/trainings/human-factor/img-3-desktop@1x.webp',
     imgWebp2: 'img/trainings/human-factor/img-3-desktop@2x.webp',
     paragraph: [
-      'Международные',
+      '<span class="main-color text-size-26">Международные</span>',
       'Международная Организация Гражданской Авиации (ICAO) – специализированное учреждение ООН, устанавливающее международные нормы гражданской авиации и координирующее её развитие с целью повышения безопасности и эффективности. Стандарты и рекомендации установлены в Приложении 19 к Конвенции ICAO и Руководстве по управлению безопасностью ICAO (ICAO SMM).'
     ]
   },
@@ -1247,7 +1247,7 @@ const safetyManagmentSystemTrainingData = [
     imgWebp1: 'img/trainings/human-factor/img-4-desktop@1x.webp',
     imgWebp2: 'img/trainings/human-factor/img-4-desktop@2x.webp',
     paragraph: [
-      'Национальные',
+      '<span class="main-color text-size-26">Национальные</span>',
       'ОАЭ: Главное Управление гражданской авиации (GCAA) является государственным регулятивным органом ОАЭ. Оно публикует положения SMS в параграфе Х Положения о гражданской авиации ОАЭ (CAR).',
       'РФ: "Воздушный кодекс Российской Федерации" от 19.03.1997 N 60-ФЗ Распоряжение Правительства РФ от 6 мая 2008 г. № 641-р'
     ]
@@ -1259,9 +1259,9 @@ const safetyManagmentSystemTrainingData = [
     imgWebp1: 'img/trainings/human-factor/img-5-desktop@1x.webp',
     imgWebp2: 'img/trainings/human-factor/img-5-desktop@2x.webp',
     paragraph: [
-      'Производственные',
-      'TRANSPIT: В руководстве по SMS группы «ТРАНСПИТ» изложен подход компании к управлению безопасностью. Руководство по SMS доступно всем сотрудникам.',
-      'SOVEX: “Положение о системе управления промышленной безопасностью дочернего зависимого общества” ГазпромНефть СК-08.60.01 Руководство Системы управления безопасностью полетов АО «Совекс»'
+      '<span class="main-color text-size-26">Производственные</span>',
+      '<span class="main-color">TRANSPIT:</span> В руководстве по SMS группы «ТРАНСПИТ» изложен подход компании к управлению безопасностью. Руководство по SMS доступно всем сотрудникам.',
+      '<span class="main-color">SOVEX:</span> “Положение о системе управления промышленной безопасностью дочернего зависимого общества” ГазпромНефть СК-08.60.01 Руководство Системы управления безопасностью полетов АО «Совекс»'
     ]
   },
   {
@@ -1342,7 +1342,7 @@ const safetyManagmentSystemTrainingData = [
     imgWebp2: 'img/trainings/human-factor/img-11-desktop@2x.webp',
     paragraph: [
       'Являясь поставщиками для большого числа авиакомпаний, вы несете ответственность за безопасность ваших коллег и клиентов. <span class="unsuccess">Ваша задача</span> – способствовать тому, чтобы безопасность на рабочем месте была соблюдена.',
-      'Вы должны знать о том, что происходит вокруг вас. Обращайте внимание на опасность.  Убедитесь, что ваше действие или бездействие не приведет к чрезвычайной ситуации.'
+      '<span class="unsuccess">Вы должны знать о том, что происходит вокруг вас.</span> Обращайте внимание на опасность.  Убедитесь, что ваше действие или бездействие не приведет к чрезвычайной ситуации.'
     ]
   },
   {
@@ -1386,7 +1386,7 @@ const safetyManagmentSystemTrainingData = [
     imgWebp1: 'img/trainings/human-factor/img-15-desktop@1x.webp',
     imgWebp2: 'img/trainings/human-factor/img-15-desktop@2x.webp',
     paragraph: [
-      'Добровольное сообщение может подаваться:',
+      '<span class="main-color text-size-26">Добровольное сообщение может подаваться:</span>',
       '- в устной форме по телефону начальника смены: +7 (981) 715-43-19',
       '- в письменной форме по электронной почте: transpit@transpit.ru',
       '- в письменной форме по адресу 196210, Санкт-Петербург, ул. Пилотов, д. 8 лит. А'
@@ -1399,7 +1399,7 @@ const safetyManagmentSystemTrainingData = [
     imgWebp1: 'img/trainings/human-factor/img-16-desktop@1x.webp',
     imgWebp2: 'img/trainings/human-factor/img-16-desktop@2x.webp',
     paragraph: [
-      'Добровольное анонимное сообщение может подаваться:',
+      '<span class="main-color text-size-26">Добровольное анонимное сообщение может подаваться:</span>',
       '- в устной форме  по телефону начальника смены: +7 (981) 715-43-19',
       '- в письменной форме  в специально определенные и маркированный почтовый ящик на территории ООО «ТРАНСПИТ СЕВЕРО-ЗАПАД» (Санкт-Петербург, Пулковское шоссе, д. 8 лит. А) рядом с пандусом погрузки службы логистики.',
       '- Бланки заявлений об опасном факторе для безопасности полетов хранятся в кабинете начальника смены службы логистики, а пример заявления можно найти на информационном стенде (Санкт-Петербург, Пулковское шоссе, д. 8 лит. А).'
@@ -1422,7 +1422,7 @@ const safetyManagmentSystemTrainingData = [
     imgWebp1: 'img/trainings/human-factor/img-18-desktop@1x.webp',
     imgWebp2: 'img/trainings/human-factor/img-18-desktop@2x.webp',
     paragraph: [
-      '«Помните, где бы вы ни работали: если вы увидели опасность, сообщите о ней. Предотвратите несчастный случай своими действиями. Безопасность – это ваша ответственность; безопасность – в ваших руках.»',
+      '<span class="main-color text-size-26">«Помните, где бы вы ни работали: если вы увидели опасность, сообщите о ней. Предотвратите несчастный случай своими действиями. Безопасность – это ваша ответственность; безопасность – в ваших руках.»</span>',
       'Гайдукович Д.Г. (Генеральный директор)'
     ]
   }
@@ -1710,4 +1710,4 @@ const GSEtrainingData = [
   }
 ];
 
-export {securityTrainingData, humanFactorTrainingData, rpoTrainingData, safetyManagmentSystemTrainingData, GSEtrainingData}
+export {securityTrainingData, humanFactorTrainingData, rpoTrainingData, smsTrainingData, GSEtrainingData}

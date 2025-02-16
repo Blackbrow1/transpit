@@ -122,6 +122,23 @@
                 перроне <?php echo $dateString; ?></a>
             </li>
             <?php endif; ?>
+
+            <!-- SMS -->
+            <?php
+              $found = false;
+              foreach ($user_results as $test) {
+                  if ($test['test_name'] === 'Система управления безопасностью полетов ' . $dateString && $test['result_name'] === 'Зачет') {
+                      $found = true;
+                      break;
+                  }
+              }
+
+              if (!$found): ?>
+            <li class="footer__training-item">
+              <a class="footer__training-link" href="<?php echo HOST; ?>training-sms">Система управления безопасностью
+                полетов <?php echo $dateString; ?></a>
+            </li>
+            <?php endif; ?>
           </ul>
         </li>
       </ul>
@@ -160,6 +177,7 @@
 
 <script src="<?php echo HOST; ?>js/index.bundle.js" type="module"></script>
 </body>
+
 
 
 </html>

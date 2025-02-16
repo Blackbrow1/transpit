@@ -1,6 +1,6 @@
 import { addClassItemActive } from './modules/add-class-item-active.js';
 import { trainingPage } from './modules/training-page.js';
-import { securityTrainingData, humanFactorTrainingData, rpoTrainingData } from './modules/trainings-data.js';
+import { securityTrainingData, humanFactorTrainingData, rpoTrainingData, smsTrainingData } from './modules/trainings-data.js';
 import { getTrainingCounts } from './modules/get-training-counts.js';
 import { showMoreUsers, showMoreUsersAndYears } from './modules/show-more-users.js';
 import { showMoreProgressCards } from './modules/show-more-progress-cards.js';
@@ -9,7 +9,7 @@ import { removeSuccessMessage } from './modules/remove-success-message.js';
 import { deleteUser } from './modules/delete-user.js';
 import { addFileMessage } from './modules/add-file-message.js';
 
-import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData, rpoRadioData, rpoCheckboxData} from './modules/testes-data.js';
+import {airsideSafetyRadioData, airsideSafetyCheckboxData, supervisorsRadioData, supervisorsCheckboxData, humanFactorRadioData, humanFactorCheckboxData, rpoRadioData, rpoCheckboxData, safetyManagmentSystemRadioData, safetyManagmentSystemCheckboxData} from './modules/testes-data.js';
 import { showTestTime } from './modules/show-test-time.js';
 import { getTestResult } from './modules/test-result.js';
 import { getRandomAnswers } from './modules/get-random-answers.js';
@@ -59,6 +59,16 @@ window.addEventListener('DOMContentLoaded', () => {
     showTestTime('#rpo', resultsTestRPO, 1000 * 60 * 7); // 7
   } catch {}
 
+  try {
+    // Вывести рандомно 10 вопросов
+    getRandomAnswers('#sms', '.test__list', '.test__item', 10);
+
+    // Получить результаты теста
+    const resultsTestSMS = getTestResult('#sms', safetyManagmentSystemRadioData, safetyManagmentSystemCheckboxData, 10, 8);
+
+    showTestTime('#sms', resultsTestSMS, 1000 * 60 * 7); // 7
+  } catch {}
+
   // Обучающая страница
   try {
     trainingPage(securityTrainingData, '#training-security-safety');
@@ -70,6 +80,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   try {
     trainingPage(rpoTrainingData, '#training-rpo');
+  } catch {console.log('Ошибка Обучающая страница');}
+
+  try {
+    trainingPage(smsTrainingData, '#training-sms');
   } catch {console.log('Ошибка Обучающая страница');}
 
   try {

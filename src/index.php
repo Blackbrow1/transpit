@@ -77,6 +77,10 @@ switch ($uriModule) {
     require ROOT . "modules/training/training-rpo.php";
     break;
 
+  case 'training-sms':
+    require ROOT . "modules/training/training-sms.php";
+    break;
+
   // Страницы описания тестов
   case 'test-hero-1':
     // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
@@ -134,6 +138,20 @@ switch ($uriModule) {
     require ROOT . "modules/test-hero/test-hero-rpo.php";
     break;
 
+  case "test-hero-sms":
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
+    }
+
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
+
+    require ROOT . "modules/test-hero/test-hero-sms.php";
+    break;
+
   // Страницы тестов
   case 'test-1':
     // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
@@ -189,6 +207,20 @@ switch ($uriModule) {
     unset($_SESSION['token']);
 
     require ROOT . "modules/test/test-rpo.php";
+    break;
+
+  case 'test-sms':
+    // Проверяем, передан ли токен и совпадает ли он с сохраненным в сессии
+    if (!isset($_GET['token']) || $_GET['token'] !== $_SESSION['token']) {
+      // Ошибка, если токен не передан или не совпадает
+      header("Location: " . HOST . 'user-card');
+      exit;
+    }
+
+    // Удаляем токен из сессии, чтобы избежать повторного использования
+    unset($_SESSION['token']);
+
+    require ROOT . "modules/test/test-sms.php";
     break;
 
   case 'submit-results':
