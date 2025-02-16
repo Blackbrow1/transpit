@@ -1,5 +1,8 @@
 <?php
 $title = 'Личная карточка сотрудника | Транспит';
+$keywords = 'личный кабинет';
+$description = 'Личный кабинет сотрудника"';
+$url = 'https://transpit-edu.ru/user-card';
 
 if (isset($uriArray[1])) {
   $user = R::load('users', $uriArray[1]);

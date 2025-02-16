@@ -1,5 +1,8 @@
 <?php
 $title = 'Редактировать профиль | Транспит';
+$keywords = '';
+$description = 'Редактировать профиль"';
+$url = 'https://transpit-edu.ru/update-profile';
 
 function updateUserAndGoToProfile($user) {
   if (isset($_POST['update'])) {

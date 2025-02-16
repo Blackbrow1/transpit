@@ -33,8 +33,12 @@ const PATH_TO_SRC = './src/';
 const PATH_TO_DIST = './dist/';
 const PATH_TO_RAW = './raw/';
 const PATHS_TO_STATIC = [
+  `${PATH_TO_SRC}*.ico`,
+  `${PATH_TO_SRC}*.webmanifest`,
   `${PATH_TO_SRC}favicons/*.{png,svg}`,
   `${PATH_TO_SRC}.htaccess`,
+  `${PATH_TO_SRC}sitemap.xml`,
+  `${PATH_TO_SRC}robots.txt`,
   `${PATH_TO_SRC}libs/**/*`,
   `${PATH_TO_SRC}db.php`,
   `${PATH_TO_SRC}policy.pdf`,

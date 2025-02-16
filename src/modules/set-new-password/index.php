@@ -1,5 +1,8 @@
 <?php
 $title = 'Задать новый пароль | Транспит';
+$keywords = '';
+$description = 'Задать новый пароль';
+$url = 'https://transpit-edu.ru/set-new-password';
 
 // 1) Пришли по секретной ссылке с EMAIl
 if (!empty($_GET['email']) && !empty($_GET['code'])) {

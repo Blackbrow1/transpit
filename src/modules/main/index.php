@@ -2,6 +2,9 @@
 
 $title = 'Онлайн-школа ООО "Транспит Северо-Запад"';
 $mainPage = '#hero';
+$keywords = 'обучение, онлайн школа, онлайн курсы, СДО, система дистанционного обучения';
+$description = 'Внутренняя система дистанционного обучения';
+$url = 'https://transpit-edu.ru/main';
 
 if (isset($_POST['send-form'])) {
   if (trim($_POST['tab-number']) == '') {

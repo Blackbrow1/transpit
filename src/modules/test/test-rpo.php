@@ -1,5 +1,8 @@
 <?php
 $title = 'Тест "РПО и правила маневрирования в зоне стоянки ВС" | Транспит';
+$keywords = 'тест';
+$description = 'Страница тестирования "РПО и правила маневрирования в зоне стоянки ВС"';
+$url = 'https://transpit-edu.ru/test-rpo';
 
 if (isset($uriArray[1])) {
   $user = R::load('users', $uriArray[1]);

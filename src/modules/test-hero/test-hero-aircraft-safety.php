@@ -1,5 +1,8 @@
 <?php
 $title = 'Описание теста "Безопасность на перроне" | Транспит';
+$keywords = 'тест';
+$description = 'Описание теста "Безопасность на перроне"';
+$url = 'https://transpit-edu.ru/test-hero-aircraft-safety';
 
 // Создаем уникальный токен для каждой ссылки
 $_SESSION['token'] = bin2hex(random_bytes(16)); // Генерируем случайный токен длиной 32 символа

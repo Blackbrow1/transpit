@@ -1,5 +1,8 @@
 <?php
 $title = 'Тест "Система управления безопасностью полетов" | Транспит';
+$keywords = 'тест';
+$description = 'Страница тестирования "Система управления безопасностью полетов"';
+$url = 'https://transpit-edu.ru/test-sms';
 
 if (isset($uriArray[1])) {
   $user = R::load('users', $uriArray[1]);

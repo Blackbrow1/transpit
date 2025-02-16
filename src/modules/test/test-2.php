@@ -1,5 +1,8 @@
 <?php
 $title = 'Страница тестирования | Транспит';
+$keywords = 'тест';
+$description = 'Страница тестирования';
+$url = 'https://transpit-edu.ru/test-2';
 
 if (isset($uriArray[1])) {
   $user = R::load('users', $uriArray[1]);

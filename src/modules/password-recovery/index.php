@@ -1,5 +1,8 @@
 <?php
 $title = 'Восстановить пароль | Транспит';
+$keywords = '';
+$description = 'Восстановить пароль';
+$url = 'https://transpit-edu.ru/password-recovery';
 
 if (isset($_POST['popup-submit'])) {
   $_POST['email'] = trim($_POST['email']);

@@ -4,7 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1240">
+  <meta name="keywords" content="<?php echo $keywords; ?>">
+  <meta name="description" content="<?php echo $description; ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?php echo $title; ?>">
+  <meta property="og:description" content="<?php echo $description; ?>">
+  <meta property="og:url" content="<?php echo $url; ?>">
+  <meta property="og:image" content="https://transpit-edu.ru/img/preview.jpg">
+  <meta property="og:site_name" content="Онлайн-школа Группы компаний Транспит">
+  <meta property="og:locale" content="ru_RU">
   <title><?php echo $title; ?></title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicons/32.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicons/180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/helveticaneuecyr-medium.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/helveticaneuecyr-medium.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/helveticaneuecyr-roman.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/helveticaneuecyr-roman.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo HOST; ?>css/main.css">
 </head>
 

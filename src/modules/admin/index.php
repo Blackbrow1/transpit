@@ -1,5 +1,8 @@
 <?php
 $title = 'Кабинет администратора | Транспит';
+$keywords = '';
+$description = 'Страница администратора';
+$url = 'https://transpit-edu.ru/admin';
 
 if (isset($uriArray[1])) {
   $user = R::load('users', $uriArray[1]);
