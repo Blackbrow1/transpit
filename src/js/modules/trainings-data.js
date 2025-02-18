@@ -773,10 +773,10 @@ const humanFactorTrainingData = [
 const rpoTrainingData = [
   {
     theme: 'Введение',
-    imgJpg1: 'img/trainings/human-factor/img-1-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-1-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-1-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-1-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-1-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-1-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-1-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-1-desktop@2x.webp',
     paragraph: [
       'ООО «Транспит Северо-Запад» заботится о безопасности как своих сотрудников, так и имущества АК!',
       'Выполнение мероприятий по подъезду-отъезду ТС к ВС Связано с воздействие многих факторов риска, будь то сезонное изменение погодных условий, излишняя уверенность в себе или несоблюдение правил ПО руководителем ПО.',
@@ -786,10 +786,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Вождение',
-    imgJpg1: 'img/trainings/human-factor/img-2-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-2-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-2-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-2-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-2-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-2-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-2-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-2-desktop@2x.webp',
     paragraph: [
       'При вождении на перроне необходимо соблюдать определенные правила безопасности:',
       '1. Соблюдайте все правила безопасности, следуйте указаниям дорожных знаков, соблюдайте скоростной режим.',
@@ -805,10 +805,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Посторонние предметы',
-    imgJpg1: 'img/trainings/human-factor/img-3-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-3-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-3-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-3-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-3-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-3-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-3-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-3-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Посторонние предметы</span> – это мусор или забытые предметы, которые потенциально могут причинить вред.',
       '<span class="unsuccess">Пример:</span> при попадании в двигатель посторонние предметы могут нанести серьезные повреждения или стать причиной возгорания двигателя. Переносимые струей реактивного двигателя, посторонние предметы могут ранить персонал или повредить наземное оборудование.',
@@ -817,10 +817,10 @@ const rpoTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-4-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-4-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-4-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-4-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-4-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-4-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-4-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-4-desktop@2x.webp',
     paragraph: [
       'Выполняя процедуры ПО, руководитель ПО находится в зоне многих факторов риска.',
       'Перрон и территории размещения воздушных судов – являются зоной повышенной опасности.',
@@ -834,10 +834,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Факторы риска на перроне',
-    imgJpg1: 'img/trainings/human-factor/img-5-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-5-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-5-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-5-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-5-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-5-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-5-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-5-desktop@2x.webp',
     paragraph: [
       'На перроне существует множество потенциальных угроз безопасности. Например:',
       '1. Люди (служащие других организаций, задействованные в наземном обслуживании ВС);',
@@ -849,10 +849,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Факторы риска вблизи воздушного судна',
-    imgJpg1: 'img/trainings/human-factor/img-6-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-6-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-6-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-6-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-6-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-6-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-6-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-6-desktop@2x.webp',
     paragraph: [
       'Вблизи воздушного судна существует множество потенциальных угроз безопасности. Например:',
       '1. Двери ВС, багажные люки, тянущиеся кабели, антенны торчащие из корпуса воздушного судна;',
@@ -862,10 +862,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Неблагоприятные погодные условия',
-    imgJpg1: 'img/trainings/human-factor/img-7-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-7-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-7-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-7-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-7-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-7-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-7-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-7-desktop@2x.webp',
     paragraph: [
       'При неблагоприятных погодных условиях необходимо принимать особые меры. При выполнение работ следуйте правилам неукоснительно выполняйте требования руководящих документов. Более того, учитывайте всю имеющуюся информацию, и принимайте решение, безопасно ли продолжать работу.',
       '- Сбавьте скорость при ухудшении видимости.',
@@ -878,10 +878,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Вблизи воздушного судна',
-    imgJpg1: 'img/trainings/human-factor/img-8-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-8-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-8-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-8-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-8-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-8-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-8-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-8-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Когда безопасно приближаться к воздушному судну?</span>',
       '- Нельзя приближаться к воздушному судну не убедившись в том, что это безопасно.',
@@ -891,10 +891,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Знайте значение навигационных огней воздушных судов:',
-    imgJpg1: 'img/trainings/human-factor/img-9-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-9-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-9-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-9-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-9-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-9-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-9-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-9-desktop@2x.webp',
     paragraph: [
       '<span class="unsuccess">Красный</span> с левого борта – левая сторона ВС (если красный огонь справа от Вас – воздушное судно приближается)',
       '<span class="success">Зеленый</span> с правого борта – правая сторона воздушного судна.',
@@ -904,40 +904,40 @@ const rpoTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-10-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-10-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-10-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-10-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-10-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-10-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-10-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-10-desktop@2x.webp',
     paragraph: [
       '<span class="unsuccess">Никогда</span> не приближайтесь к воздушному судну до отключения проблесковых огней предупреждения столкновений'
     ]
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-11-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-11-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-11-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-11-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-11-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-11-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-11-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-11-desktop@2x.webp',
     paragraph: [
       '<span class="unsuccess">Никогда</span> не приближайтесь к воздушному судну до блокировки шасси (установка упорных колодок под колеса ВС)'
     ]
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-12-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-12-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-12-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-12-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-12-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-12-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-12-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-12-desktop@2x.webp',
     paragraph: [
       'Соблюдайте дистанцию до опасных зон двигателя. Не стоит недооценивать силу реактивных двигателей и винтов.'
     ]
   },
   {
     theme: 'Круг безопасности',
-    imgJpg1: 'img/trainings/human-factor/img-13-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-13-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-13-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-13-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-13-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-13-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-13-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-13-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Круг безопасности (зона обслуживания ВС)</span> – это условная граница вокруг воздушного судна, составляющая около 5 метров от конечных точек воздушного судна. При нахождении внутри круга безопасности...',
       '- Максимальная скорость вождения – 5 км/ч (скорость пешехода).',
@@ -948,10 +948,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Сигналы, подаваемые руководителем подъезда/отъезда автолифта к/от ВС',
-    imgJpg1: 'img/trainings/human-factor/img-14-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-14-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-14-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-14-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-14-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-14-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-14-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-14-desktop@2x.webp',
     paragraph: [
       'Водитель и руководитель подъездом/отъездом при подъезде/отъезде к/от ВС должны установить между собой визуальный контакт для обеспечения собственной безопасности, безопасности окружающих и воздушного судна.',
       'При приближении к воздушному судну руководителю подъездом/отъездом к/от ВС следует применять сигналы руками утвержденные и применяемые в АО «МАШ», для помощи водителю при маневрировании в тесном пространстве.',
@@ -960,43 +960,43 @@ const rpoTrainingData = [
   },
   {
     theme: 'Сигналы руками',
-    imgJpg1: 'img/trainings/human-factor/img-15-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-15-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-15-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-15-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-15-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-15-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-15-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-15-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Шасси блокированы</span>',
       'Руки руководителя подъездом/отъездом находятся над головой, одна рука сжата в кулак и касается ладони другой руки.'
     ]
   },
   {
-    theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-16-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-16-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-16-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-16-desktop@2x.webp',
+    theme: 'Сигналы руками',
+    imgJpg1: 'img/trainings/rpo/img-16-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-16-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-16-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-16-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Вперед/назад</span>',
       'Руки руководителя подъездом/отъездом согнуты в локтях и находятся на уровне плеч, двигаясь вперед и назад, движение рук повторяется.'
     ]
   },
   {
-    theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-17-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-17-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-17-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-17-desktop@2x.webp',
+    theme: 'Сигналы руками',
+    imgJpg1: 'img/trainings/rpo/img-17-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-17-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-17-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-17-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Стоп</span>',
       'Руки руководителя подъездом/отъездом скрещены над головой.'
     ]
   },
   {
-    theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-18-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-18-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-18-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-18-desktop@2x.webp',
+    theme: 'Сигналы руками',
+    imgJpg1: 'img/trainings/rpo/img-18-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-18-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-18-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-18-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Поворот налево</span>',
       'Одна рука указывает направление движения транспортного средства, другая рука двигается вперед/назад перпендикулярно к телу руководителя подъездом/отъездом.',
@@ -1004,11 +1004,11 @@ const rpoTrainingData = [
     ]
   },
   {
-    theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-19-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-19-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-19-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-19-desktop@2x.webp',
+    theme: 'Сигналы руками',
+    imgJpg1: 'img/trainings/rpo/img-19-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-19-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-19-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-19-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Поворот направо</span>',
       'Одна рука указывает направление движения транспортного средства, другая рука двигается вперед/назад перпендикулярно к телу руководителя подъездом/отъездом.',
@@ -1017,10 +1017,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Подъезд к воздушному судну',
-    imgJpg1: 'img/trainings/human-factor/img-20-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-20-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-20-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-20-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-20-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-20-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-20-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-20-desktop@2x.webp',
     paragraph: [
       '1. Остановка автолифта на Т образном знаке. Экспедитор покидает АЛ, занимая место необходимое для осуществления процедуры подгона АЛ.',
       '2. Первая остановка при въезде в зону обслуживания ВС, проверка тормозов.',
@@ -1029,10 +1029,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Подъезд к воздушному судну',
-    imgJpg1: 'img/trainings/human-factor/img-21-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-21-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-21-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-21-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-21-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-21-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-21-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-21-desktop@2x.webp',
     paragraph: [
       '4. Вторая проверка тормозов на остановке у средней части крыла.',
       '5. Руководитель подъездом/отъездом занимает положение примерно 1 – 1,5 метра от воздушного судна, и продолжает подгон автолифта к ВС, направляет движение водителя на себя.',
@@ -1041,10 +1041,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Подгон автолифта к воздушному судну, окончательная остановка',
-    imgJpg1: 'img/trainings/human-factor/img-22-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-22-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-22-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-22-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-22-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-22-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-22-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-22-desktop@2x.webp',
     paragraph: [
       '7. Перед окончательной установкой автолифта у ВС, руководитель подъездом/отъездом должен расположиться сбоку от автолифта. Одной рукой он указывает на дверь бортовой кухни, другой рукой – место, где автолифт должен остановиться.',
       '8. Четвертая, окончательная остановка, водитель устанавливает автолифт на ручной тормоз.',
@@ -1053,10 +1053,10 @@ const rpoTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-23-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-23-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-23-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-23-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-23-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-23-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-23-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-23-desktop@2x.webp',
     paragraph: [
       'При руководстве подъездом/отъездом автолифта к/от воздушного судна будьте внимательны:',
       '- Никогда не двигайтесь спиной вперед, направляя автолифт;',
@@ -1067,10 +1067,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Подъем и опускание кузова автолифта',
-    imgJpg1: 'img/trainings/human-factor/img-24-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-24-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-24-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-24-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-24-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-24-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-24-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-24-desktop@2x.webp',
     paragraph: [
       'Во время подъема и опускания кузова автолифта крайне высок риск повреждения воздушного судна.',
       'Водитель и руководитель подъездом/отъездом при подъеме и опускании кузова автолифта должны быть предельно внимательны, чтобы не допустить повреждения воздушного судна, исключить контакт автолифта с воздушным судном.',
@@ -1081,50 +1081,50 @@ const rpoTrainingData = [
   },
   {
     theme: 'Отъезд автолифта от ВС, движение назад',
-    imgJpg1: 'img/trainings/human-factor/img-25-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-25-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-25-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-25-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-25-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-25-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-25-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-25-desktop@2x.webp',
     paragraph: [
-      '1. По окончанию обслуживания ВС, водитель возвращается в кабину автолифта, убирает подъездом/отъездом занимает положение в 3- 5 метрах сзади от стабилизаторы (опоры), руководитель автолифта и направляет автолифт назад подъездом/отъездом убирает из под задней части колеса упорную колодку, передняя упорная колодка остается на месте.'
+      '1. По окончанию обслуживания ВС, водитель возвращается в кабину автолифта, убирает стабилизаторы (опоры), руководитель подъездом/отъездом убирает из под задней части колеса упорную колодку, передняя упорная колодка остается на месте.'
     ]
   },
   {
     theme: 'Отъезд автолифта от ВС, движение назад',
-    imgJpg1: 'img/trainings/human-factor/img-26-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-26-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-26-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-26-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-26-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-26-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-26-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-26-desktop@2x.webp',
     paragraph: [
       '2. Руководитель подъездом/отъездом занимает положение в 3-5 метрах сзади от автолифта и направляет автолифт назад.'
     ]
   },
   {
     theme: 'Отъезд автолифта от ВС, движение назад',
-    imgJpg1: 'img/trainings/human-factor/img-27-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-27-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-27-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-27-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-27-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-27-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-27-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-27-desktop@2x.webp',
     paragraph: [
       '3. Водитель и руководитель подъездом/отъездом должны поддерживать постоянный визуальный контакт во время движения автолифта назад. Если водитель не видит руководителя подъездом/отъездом или не уверен в точности его указаний, он должен немедленно <span class="unsuccess">ОСТАНОВИТЬСЯ</span> и проконсультироваться с руководителем подъездом/отъездом.'
     ]
   },
   {
     theme: 'Отъезд автолифта от ВС, движение назад',
-    imgJpg1: 'img/trainings/human-factor/img-28-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-28-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-28-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-28-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-28-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-28-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-28-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-28-desktop@2x.webp',
     paragraph: [
       '4. Руководитель подъездом/отъездом руководит движением автолифта до момента выезда автолифта из зоны обслуживания ВС.'
     ]
   },
   {
     theme: 'Действия в чрезвычайных ситуациях',
-    imgJpg1: 'img/trainings/human-factor/img-29-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-29-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-29-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-29-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-29-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-29-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-29-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-29-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Открытие дверей воздушного судна</span>',
       'По правилам ООО «Транспит Северо-Запад», работникам задействованным в наземном обслуживании воздушного судна запрещается самостоятельно открывать, закрывать двери воздушного судна.',
@@ -1134,10 +1134,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Действия в чрезвычайных ситуациях',
-    imgJpg1: 'img/trainings/human-factor/img-30-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-30-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-30-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-30-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-30-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-30-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-30-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-30-desktop@2x.webp',
     paragraph: [
       'Открытие/закрытие дверей воздушного судна производится в соответствии с требования и правилами установленными в ООО «Транспит Северо-Запад», с целью исключения повреждения воздушного судна никогда не открывайте и не закрывайте дверь ВС самостоятельно, открывать и закрывать двери ВС может только работник авиакомпании имеющий разрешение на выполнение этих операций.',
       'В случае срабатывания аварийного трапа примите все меры направленные на исключение получения травм и повреждения оборудования. Немедленно проинформируйте сменного начальника службы доставки и работника отдела БОВС о происшествии.',
@@ -1146,10 +1146,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Действия в чрезвычайных ситуациях',
-    imgJpg1: 'img/trainings/human-factor/img-31-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-31-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-31-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-31-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-31-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-31-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-31-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-31-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Несчастный случай с персоналом:</span>',
       '1. Оповестите о происшествии начальника смены службы логистики.',
@@ -1164,10 +1164,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Действия в чрезвычайных ситуациях',
-    imgJpg1: 'img/trainings/human-factor/img-32-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-32-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-32-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-32-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-31-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-31-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-31-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-31-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Повреждение воздушного судна:</span>',
       '1. Сделайте фотографии, если это не нарушает требования авиационной безопасности аэропорта.',
@@ -1183,10 +1183,10 @@ const rpoTrainingData = [
   },
   {
     theme: 'Действия в чрезвычайных ситуациях',
-    imgJpg1: 'img/trainings/human-factor/img-33-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-33-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-33-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-33-desktop@2x.webp',
+    imgJpg1: 'img/trainings/rpo/img-31-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/rpo/img-31-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/rpo/img-31-desktop@1x.webp',
+    imgWebp2: 'img/trainings/rpo/img-31-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Авария с участием транспортного средства – ДТП:</span>',
       '1. Сделайте фотографии, если это не нарушает требований авиационной безопасности аэропорта.',
@@ -1205,10 +1205,10 @@ const rpoTrainingData = [
 const smsTrainingData = [
   {
     theme: 'Safety Management System',
-    imgJpg1: 'img/trainings/human-factor/img-1-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-1-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-1-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-1-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-1-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-1-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-1-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-1-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Safety Management System</span> –  Система Управления Безопасностью Полетов Государственная программа обеспечения безопасности полетов воздушных судов гражданской авиации (утв. распоряжением Правительства РФ от 6 мая 2008 г. N 641-р)',
       'Безопасность полетов воздушных судов гражданской авиации представляет собой состояние авиационной транспортной системы, при котором риск причинения вреда лицам или нанесения ущерба имуществу снижен до приемлемого уровня и поддерживается на этом либо более низком уровне посредством непрерывного процесса выявления источников опасности и контроля факторов риска.'
@@ -1216,10 +1216,10 @@ const smsTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-2-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-2-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-2-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-2-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-2-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-2-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-2-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-2-desktop@2x.webp',
     paragraph: [
       'Система управления безопасностью (Safety Management System, SMS/СУБП) является структурой, регулирующей безопасность (охрана труда и производственная безопасность) в компаниях группы ТРАНСПИТ. Каждый сотрудник является ее частью. Это позволяет осуществлять систематизированный подход к контролю за безопасностью, включая необходимые организационные структуры, отчетность, стандарты и процедуры.',
       'Пройдя этот тренинг, вы сможете:',
@@ -1231,10 +1231,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Руководство, инструкции и требования системы SMS/СУБП берут свою основу из следующих источников:',
-    imgJpg1: 'img/trainings/human-factor/img-3-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-3-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-3-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-3-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-3-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-3-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-3-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-3-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Международные</span>',
       'Международная Организация Гражданской Авиации (ICAO) – специализированное учреждение ООН, устанавливающее международные нормы гражданской авиации и координирующее её развитие с целью повышения безопасности и эффективности. Стандарты и рекомендации установлены в Приложении 19 к Конвенции ICAO и Руководстве по управлению безопасностью ICAO (ICAO SMM).'
@@ -1242,10 +1242,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Руководство, инструкции и требования системы SMS/СУБП берут свою основу из следующих источников:',
-    imgJpg1: 'img/trainings/human-factor/img-4-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-4-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-4-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-4-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-4-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-4-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-4-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-4-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Национальные</span>',
       'ОАЭ: Главное Управление гражданской авиации (GCAA) является государственным регулятивным органом ОАЭ. Оно публикует положения SMS в параграфе Х Положения о гражданской авиации ОАЭ (CAR).',
@@ -1254,10 +1254,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Руководство, инструкции и требования системы SMS/СУБП берут свою основу из следующих источников:',
-    imgJpg1: 'img/trainings/human-factor/img-5-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-5-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-5-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-5-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-5-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-5-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-5-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-5-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Производственные</span>',
       '<span class="main-color">TRANSPIT:</span> В руководстве по SMS группы «ТРАНСПИТ» изложен подход компании к управлению безопасностью. Руководство по SMS доступно всем сотрудникам.',
@@ -1266,10 +1266,10 @@ const smsTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-6-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-6-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-6-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-6-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-6-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-6-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-6-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-6-desktop@2x.webp',
     paragraph: [
       'Система SMS/СУБП группы «ТРАНСПИТ» состоит из четырех компонентов:',
       '1. Обеспечение безопасности полетов',
@@ -1280,10 +1280,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Политика и цели в области обеспечения безопасности полетов',
-    imgJpg1: 'img/trainings/human-factor/img-7-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-7-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-7-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-7-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-7-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-7-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-7-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-7-desktop@2x.webp',
     paragraph: [
       'Данный компонент выделяет принципы, процессы и методы системы управления безопасностью SMS, а также обозначает желаемые результаты.',
       'Состоит из пяти элементов:',
@@ -1296,10 +1296,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Обеспечение безопасности полетов',
-    imgJpg1: 'img/trainings/human-factor/img-8-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-8-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-8-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-8-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-8-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-8-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-8-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-8-desktop@2x.webp',
     paragraph: [
       'Данный компонент состоит из процессов и действий, позволяющих определить, достигнута ли цель, поставленная системой SMS/СУБП. Это достигается путем постоянного мониторинга и собственного / внутреннего аудита.',
       'Состоит из трех элементов:',
@@ -1310,10 +1310,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Популяризация безопасности полетов',
-    imgJpg1: 'img/trainings/human-factor/img-9-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-9-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-9-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-9-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-9-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-9-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-9-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-9-desktop@2x.webp',
     paragraph: [
       'Цель данного компонента – непрерывное совершенствование культуры безопасности в организации, а также необходимое информирование и инструктаж персонала в соответствии с занимаемой должностью.',
       'Состоит из двух компонентов:',
@@ -1323,10 +1323,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Управление факторами риска для безопасности полетов',
-    imgJpg1: 'img/trainings/human-factor/img-10-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-10-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-10-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-10-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-10-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-10-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-10-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-10-desktop@2x.webp',
     paragraph: [
       'Данный компонент обеспечивает систематический контроль рисков, угроз безопасности, а также средств предотвращения соответствующих негативных последствий.',
       'Состоит из двух элементов:',
@@ -1336,10 +1336,10 @@ const smsTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-11-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-11-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-11-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-11-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-11-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-11-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-11-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-11-desktop@2x.webp',
     paragraph: [
       'Являясь поставщиками для большого числа авиакомпаний, вы несете ответственность за безопасность ваших коллег и клиентов. <span class="unsuccess">Ваша задача</span> – способствовать тому, чтобы безопасность на рабочем месте была соблюдена.',
       '<span class="unsuccess">Вы должны знать о том, что происходит вокруг вас.</span> Обращайте внимание на опасность.  Убедитесь, что ваше действие или бездействие не приведет к чрезвычайной ситуации.'
@@ -1347,10 +1347,10 @@ const smsTrainingData = [
   },
   {
     theme: 'Соблюдение техники безопасности на рабочем месте',
-    imgJpg1: 'img/trainings/human-factor/img-12-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-12-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-12-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-12-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-12-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-12-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-12-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-12-desktop@2x.webp',
     paragraph: [
       'Многие подразделения имеют свои стандартизированные производственные инструкции, их сотрудники проходят специальный инструктаж по технике безопасности, промышленной безопасности и охране труда. В процессе повседневной работы персонал должен убедиться, что:',
       '1. Все действия производятся с соблюдением техники безопасности.',
@@ -1360,10 +1360,10 @@ const smsTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-13-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-13-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-13-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-13-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-13-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-13-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-13-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-13-desktop@2x.webp',
     paragraph: [
       'Эффективное и своевременное информирование об опасности и нарушениях техники безопасности является важной частью системы контроля безопасности. Отчет о безопасности позволит своевременно приять меры, ликвидировать опасность и сократить риски.',
       'Фундаментальной составляющей СУБП является своевременное и детальное предоставление информации, касающейся угроз безопасности, риска возникновения несчастных случаев и чрезвычайных ситуаций. Сообщите вашему начальнику смены или руководителю о рисках возникновения угроз безопасности на рабочем месте.'
@@ -1371,20 +1371,20 @@ const smsTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-14-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-14-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-14-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-14-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-14-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-14-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-14-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-14-desktop@2x.webp',
     paragraph: [
       'Добровольное сообщение о фактах, негативно влияющих на безопасность, может подать любой работник организации, работники взаимодействующих организаций и авиакомпаний.'
     ]
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-15-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-15-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-15-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-15-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-15-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-15-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-15-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-15-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Добровольное сообщение может подаваться:</span>',
       '- в устной форме по телефону начальника смены: +7 (981) 715-43-19',
@@ -1394,10 +1394,10 @@ const smsTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-16-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-16-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-16-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-16-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-16-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-16-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-16-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-16-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">Добровольное анонимное сообщение может подаваться:</span>',
       '- в устной форме  по телефону начальника смены: +7 (981) 715-43-19',
@@ -1407,20 +1407,20 @@ const smsTrainingData = [
   },
   {
     theme: 'Расположение почтового ящика и бланка заявления',
-    imgJpg1: 'img/trainings/human-factor/img-17-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-17-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-17-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-17-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-17-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-17-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-17-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-17-desktop@2x.webp',
     paragraph: [
       ''
     ]
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-18-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-18-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-18-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-18-desktop@2x.webp',
+    imgJpg1: 'img/trainings/sms/img-18-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/sms/img-18-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/sms/img-18-desktop@1x.webp',
+    imgWebp2: 'img/trainings/sms/img-18-desktop@2x.webp',
     paragraph: [
       '<span class="main-color text-size-26">«Помните, где бы вы ни работали: если вы увидели опасность, сообщите о ней. Предотвратите несчастный случай своими действиями. Безопасность – это ваша ответственность; безопасность – в ваших руках.»</span>',
       'Гайдукович Д.Г. (Генеральный директор)'
@@ -1431,10 +1431,10 @@ const smsTrainingData = [
 const gseTrainingData = [
   {
     theme: 'Введение:',
-    imgJpg1: 'img/trainings/human-factor/img-1-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-1-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-1-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-1-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-1-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-1-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-1-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-1-desktop@2x.webp',
     paragraph: [
       'ООО «Транспит Северо-Запад» заботится о Вашей безопасности!',
       'Выполнение ПРР может быть особенно опасна не только из-за двигателей воздушных судов, машин, шума или неблагоприятных погодных условий, но и из-за повсеместной суеты и участия многих людей в организации ПРР.',
@@ -1444,10 +1444,10 @@ const gseTrainingData = [
   },
   {
     theme: '',
-    imgJpg1: 'img/trainings/human-factor/img-2-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-2-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-2-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-2-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-2-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-2-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-2-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-2-desktop@2x.webp',
     paragraph: [
       'Случаи, когда люди получают травму или происходит повреждение собственности, являются лишь верхушкой айсберга и часто им предшествуют нештатные ситуации или проявление неосторожности. Информирование помогает улучшить управление безопасностью и избегать таких потенциальных опасностей, как...',
       '1. Аварии. Ситуации при которых персонал получает травмы или происходит повреждение собственности.',
@@ -1459,10 +1459,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Подготовка',
-    imgJpg1: 'img/trainings/human-factor/img-3-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-3-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-3-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-3-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-3-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-3-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-3-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-3-desktop@2x.webp',
     paragraph: [
       'Аварии — это лишь верхушка айсберга',
       'Униформа и средства индивидуальной защиты',
@@ -1475,10 +1475,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Подготовка',
-    imgJpg1: 'img/trainings/human-factor/img-4-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-4-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-4-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-4-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-4-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-4-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-4-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-4-desktop@2x.webp',
     paragraph: [
       'Осмотр перед началом движения',
       '1. Перед каждой поездкой необходимо осматривать транспортное средство во избежание возникновения нештатных ситуаций, вызванных эксплуатацией неисправных транспортных средств.',
@@ -1491,10 +1491,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Кейтеринг',
-    imgJpg1: 'img/trainings/human-factor/img-5-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-5-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-5-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-5-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-5-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-5-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-5-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-5-desktop@2x.webp',
     paragraph: [
       'БКО, тележки и контейнеры.',
       '- Отправной точкой каждой поездки является кухня и цех комплектации.',
@@ -1504,10 +1504,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Кейтеринг',
-    imgJpg1: 'img/trainings/human-factor/img-6-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-6-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-6-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-6-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-6-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-6-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-6-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-6-desktop@2x.webp',
     paragraph: [
       'Аккуратно обращайтесь с тележками и контейнерами и помните, что тележки могут быть неустойчивы и в процессе перемещения могут упасть.',
       'Перемещая тележку толкайте ее от себя, никогда не тяните тележку за собой.',
@@ -1516,90 +1516,90 @@ const gseTrainingData = [
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-7-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-7-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-7-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-7-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-7-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-7-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-7-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-7-desktop@2x.webp',
     paragraph: [
       'Основной механизм управления погрузочной площадкой (ПП) АЛ, находится на внешней стороне кузова АЛ. Он управляет спуск/подъёмом ПП, а также на нем находится выключатель освещения ПП, для выполнения работ в тёмное время суток.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-8-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-8-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-8-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-8-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-8-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-8-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-8-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-8-desktop@2x.webp',
     paragraph: [
       'Вспомогательный механизм управления ПП. Находится непосредственно на стойке ПП и управляется экспедитором. В случае отсутствия вспомогательного механизма, операция спуск/подъёмом производится с основного механизма управления водителем АЛ.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-9-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-9-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-9-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-9-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-9-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-9-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-9-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-9-desktop@2x.webp',
     paragraph: [
       'Для собственной безопасности и предотвращения случаев падения БКО с ПП, следует оставлять место для безопасного и комфортного размещения сотрудника производящего ПРР.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-10-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-10-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-10-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-10-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-10-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-10-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-10-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-10-desktop@2x.webp',
     paragraph: [
-      'Не корректное размещение БКО, приводит к небезопасному размещению сотрудника осуществляющего ПРР на наклонной части ПП. Такое размещение может стать причиной падения как сотрудника, так и БКО, что может привести к травмам сотрудника и порче имущества АК.'
+      'Некорректное размещение БКО, приводит к небезопасному размещению сотрудника осуществляющего ПРР на наклонной части ПП. Такое размещение может стать причиной падения как сотрудника, так и БКО, что может привести к травмам сотрудника и порче имущества АК.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-11-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-11-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-11-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-11-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-11-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-11-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-11-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-11-desktop@2x.webp',
     paragraph: [
       'Внутренняя часть кузова АЛ оборудована панелью управления освещением, а также панелью управления подъёмным механизмом погрузочного кузова АЛ.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-12-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-12-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-12-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-12-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-12-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-12-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-12-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-12-desktop@2x.webp',
     paragraph: [
       'Панель управления подъёмного механизма кузова содержит: джойстик управления выдвижной платформы, рычаг управления спуск/подъёма, сигнальную лампочку касания ВС, сигнальную лампочку выдвижения аутригеров АЛ, кнопку оповещения об аварийной ситуации и джойстик наружного освещения.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-13-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-13-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-13-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-13-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-13-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-13-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-13-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-13-desktop@2x.webp',
     paragraph: [
       'После поднятия кузова АЛ на необходимую для выполнения работ высоту, первым делом необходимо выдвинуть поручни безопасности. Поручни безопасности не оборудованы автоматизированной системой выдвижения и закреплены рычагом на винтовой основе.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-14-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-14-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-14-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-14-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-14-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-14-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-14-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-14-desktop@2x.webp',
     paragraph: [
       'Ослабьте крепление поручней до достижения свободного хода, поворачивая рычаг крепления по часовой стрелке. После чего следует выдвинуть поручни максимально близко к фюзеляжу ВС, но не допуская соприкосновения с ним (на расстояние 5-7см). Эта простая процедура поможет уберечь как вас, так сотрудников АК, от падения с высоты.'
     ]
   },
   {
     theme: 'Погрузка в автолифт',
-    imgJpg1: 'img/trainings/human-factor/img-15-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-15-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-15-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-15-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-15-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-15-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-15-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-15-desktop@2x.webp',
     paragraph: [
       '1. Всегда ставьте тележки на тормоза и стягивайте их вместе специальными ремнями.',
       '2. Равномерно распределяйте груз, чтобы обеспечить равновесие (это особенно важно при подъеме кузова автолифта).',
@@ -1608,10 +1608,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Вблизи ВС',
-    imgJpg1: 'img/trainings/human-factor/img-16-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-16-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-16-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-16-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-16-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-16-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-16-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-16-desktop@2x.webp',
     paragraph: [
       'Во время подъема и опускания кузова автолифта крайне высок риск повреждения воздушного судна.',
       'Водитель и руководитель подъездом/отъездом при подъеме и опускании кузова автолифта. должны быть предельно внимательны, чтобы не допустить повреждения воздушного судна, исключить контакт автолифта с воздушным судном.',
@@ -1622,10 +1622,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Вблизи ВС',
-    imgJpg1: 'img/trainings/human-factor/img-17-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-17-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-17-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-17-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-17-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-17-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-17-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-17-desktop@2x.webp',
     paragraph: [
       'ООО «Транспит Северо-Запад» при наземном обслуживании ВС (разгрузка/загрузка бортового питания использует бесконтактный метод). Это означает, что автолифт и оборудование не контактируют с воздушным судном в процессе выполнения работ.',
       'Более того, при разгрузке/загрузке бортового питания нужно следить за расположением передней площадки автолифта относительно порога двери воздушного судна, передняя площадка автолифта должна быть расположена параллельно порогу двери воздушного судна.',
@@ -1634,50 +1634,50 @@ const gseTrainingData = [
   },
   {
     theme: 'Расположение платформы автолифта',
-    imgJpg1: 'img/trainings/human-factor/img-18-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-18-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-18-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-18-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-18-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-18-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-18-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-18-desktop@2x.webp',
     paragraph: [
       'Для обеспечения собственной безопасности и исключения случаев повреждения оборудования, необходимо помнить правила установки передней платформы автолифта при разгрузке/загрузке бортового питания из/на воздушное судно.'
     ]
   },
   {
     theme: 'Платформа автолифта',
-    imgJpg1: 'img/trainings/human-factor/img-19-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-19-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-19-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-19-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-19-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-19-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-19-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-19-desktop@2x.webp',
     paragraph: [
       'Платформа в (поднятом положении), расстояние от платформы автолифта до дверного проема воздушного судна составляет 10-30 см. В случае, если расстояние между платформой автолифта и дверным проемом воздушного судна превышает 30 см, необходимо опустить кузов автолифта и изменить его положение, расположить ближе к воздушному судну.'
     ]
   },
   {
     theme: 'Поручни безопасности',
-    imgJpg1: 'img/trainings/human-factor/img-20-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-20-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-20-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-20-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-20-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-20-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-20-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-20-desktop@2x.webp',
     paragraph: [
-      'По окончанию открытия дверей воздушного судна, до начала выполнения работ по разгрузке/загрузке бортового питания, необходимо установить поручни безопасности как можно ближе к воздушному судну, но без контакта с ним (расстояние от поручня до фюзеляжа воздушного судна 10 см). Поручни безопасности защищают Вас от падения.'
+      'По окончании открытия дверей воздушного судна, до начала выполнения работ по разгрузке/загрузке бортового питания, необходимо установить поручни безопасности как можно ближе к воздушному судну, но без контакта с ним (расстояние от поручня до фюзеляжа воздушного судна 10 см). Поручни безопасности защищают Вас от падения.'
     ]
   },
   {
     theme: 'Переходной трап/мост (при необходимости)',
-    imgJpg1: 'img/trainings/human-factor/img-21-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-21-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-21-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-21-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-21-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-21-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-21-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-21-desktop@2x.webp',
     paragraph: [
       'До начала выполнения работ по разгрузке/загрузке бортового питания необходимо установить переходной трап/мост: осторожно опустите переходной трап/мост со стороны автолифта на прорезиненное покрытие поверхности воздушного судна.'
     ]
   },
   {
     theme: 'Погрузка БКО на ВС',
-    imgJpg1: 'img/trainings/human-factor/img-22-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-22-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-22-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-22-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-22-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-22-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-22-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-22-desktop@2x.webp',
     paragraph: [
       'Перемещение предметов на телегах во время загрузки/разгрузки запрещено!!!',
       'Всегда ставьте тележку на тормоз после погрузки в воздушное судно и закрепляйте тележки и контейнеры блокировочным механизмом.',
@@ -1686,10 +1686,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Открытие дверей воздушного судна',
-    imgJpg1: 'img/trainings/human-factor/img-23-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-23-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-23-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-23-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-23-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-23-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-23-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-23-desktop@2x.webp',
     paragraph: [
       'По правилам ООО «Транспит Северо-Запад», работникам задействованным в наземном обслуживании воздушного судна запрещается самостоятельно открывать, закрывать двери воздушного судна.',
       'Неверные действия при открытии, закрытии дверей воздушного судна могут активировать аварийный трап, сила выброса аварийного трапа может легко сбить Вас с платформы автолифта, также могут быть подвергнуты опасности работники других подразделений, задействованные в наземном обслуживании воздушного судна и технические средства.',
@@ -1698,10 +1698,10 @@ const gseTrainingData = [
   },
   {
     theme: 'Открытие дверей воздушного судна',
-    imgJpg1: 'img/trainings/human-factor/img-24-desktop@1x.jpg',
-    imgJpg2: 'img/trainings/human-factor/img-24-desktop@2x.jpg',
-    imgWebp1: 'img/trainings/human-factor/img-24-desktop@1x.webp',
-    imgWebp2: 'img/trainings/human-factor/img-24-desktop@2x.webp',
+    imgJpg1: 'img/trainings/gse/img-24-desktop@1x.jpg',
+    imgJpg2: 'img/trainings/gse/img-24-desktop@2x.jpg',
+    imgWebp1: 'img/trainings/gse/img-24-desktop@1x.webp',
+    imgWebp2: 'img/trainings/gse/img-24-desktop@2x.webp',
     paragraph: [
       'Открытие/закрытие дверей воздушного судна производится в соответствии с требования и правилами установленными в ООО «Транспит Северо-Запад», с целью исключения повреждения воздушного судна никогда не открывайте и не закрывайте дверь ВС самостоятельно, открывать и закрывать двери ВС может только работник авиакомпании имеющий разрешение на выполнение этих операций.',
       'В случае срабатывания аварийного трапа примите все меры направленные на исключение получения травм и повреждения оборудования. Немедленно проинформируйте сменного начальника службы доставки и работника отдела БОВС о происшествии.',
